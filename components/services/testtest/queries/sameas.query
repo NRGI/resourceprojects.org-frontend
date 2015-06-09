@@ -1,3 +1,4 @@
+DEFINE input:same-as "yes"
 select ?name (count(?s) as ?projects) where {
     ?s rdf:type <http://virtuoso.nrgi-dev.default.opendataservices.uk0.bigv.io/t/project> .
     ?s foaf:name ?name .

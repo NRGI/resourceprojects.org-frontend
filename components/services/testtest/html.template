@@ -1,6 +1,22 @@
 {%include "../../includes/header.inc"%}
-    <div class="container-fluid">
-        This is a test test test test....
+    <div class="container">
+        <div class="span5">
+            <h1>With input:same-as</h1>
+            <ul>
+            {% for row in  models.sameas %}
+                <li>{{ row.name.value }} {{ row.projects.value }}</li>
+            {% endfor %}
+           </ul>
+        </div>
+
+        <div class="span5">
+            <h1>Without input:same-as</h1>
+            <ul>
+            {% for row in  models.main %}
+                <li>{{ row.name.value }} {{ row.projects.value }}</li>
+            {% endfor %}
+            </ul>
+        </div>
     </div>
   </body>
 </html>
