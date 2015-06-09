@@ -23,3 +23,8 @@ Running a docker build each time you change a file can be a bit too slow for dev
 docker run --publish=127.0.0.2:80:80 --name=lodspeakr-tcontainer --rm --link virtuoso:virtuoso -v `pwd`/components:/var/www/html/lodspeakr/components lodspeakr
 ```
 
+Lodspeakr uses the full URL of the site in links, so you may keep being taken to the wrong copy. You may want to add the following in your hosts file:
+
+```
+127.0.0.2       lodspeakr.nrgi-dev.default.opendataservices.uk0.bigv.io
+```
