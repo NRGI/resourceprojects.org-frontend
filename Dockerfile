@@ -18,7 +18,8 @@ RUN cd /var/www/html/lodspeakr; ./install.sh base-url=http://lodspeakr.nrgi-dev.
 # Create some directories and make them writeable by apache
 RUN chown -R www-data /var/www/html/lodspeakr/cache /var/www/html/lodspeakr/meta /var/www/html/lodspeakr/components
 
-ADD components/services /var/www/html/lodspeakr/components/services
+RUN rm -r /var/www/html/lodspeakr/components
+ADD components /var/www/html/lodspeakr/components
 
 # expose the HTTP port to the outer world
 EXPOSE 80
