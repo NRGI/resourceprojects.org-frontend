@@ -14,7 +14,7 @@ RUN rm /var/www/html/index.html
 RUN git clone https://github.com/alangrafu/lodspeakr.git /var/www/html/lodspeakr
 
 # Run the install script
-RUN cd /var/www/html/lodspeakr; ./install.sh base-url=http://lodspeakr.nrgi-dev.default.opendataservices.uk0.bigv.io/ base-namespace=http://virtuoso.nrgi-dev.default.opendataservices.uk0.bigv.io/ sparql-endpoint=http://virtuoso:8890/sparql
+RUN cd /var/www/html/lodspeakr; ./install.sh base-url=http://lodspeakr.nrgi-dev.default.opendataservices.uk0.bigv.io/ base-namespace=http://resourceprojects.org/ sparql-endpoint=http://virtuoso:8890/sparql
 # Create some directories and make them writeable by apache
 RUN chown -R www-data /var/www/html/lodspeakr/cache /var/www/html/lodspeakr/meta /var/www/html/lodspeakr/components
 
