@@ -1,0 +1,11 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT * WHERE {
+    OPTIONAL {
+        <{{uri}}> skos:prefLabel ?name
+    }
+    OPTIONAL {
+        <{{uri}}> rp:hasLocation ?location .
+        ?location skos:prefLabel ?location_name
+    }
+} LIMIT 1
