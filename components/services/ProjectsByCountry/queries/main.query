@@ -1,0 +1,7 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+select ?s where {
+    ?s rdf:type rp:Project .
+    ?s rp:hasLocation <http://resourceprojects.org/data/Country/{{lodspk.args.arg0}}>  
+}
+limit {{lodspk.maxResults}}

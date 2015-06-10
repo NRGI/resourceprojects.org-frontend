@@ -1,0 +1,3 @@
+SELECT ?s ?p  WHERE {
+    ?s ?p <{{uri}}> 
+} LIMIT {{lodspk.maxResults}}

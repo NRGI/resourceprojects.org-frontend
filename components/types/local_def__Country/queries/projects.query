@@ -1,0 +1,9 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT * WHERE {
+    ?uri rp:hasLocation <{{uri}}> .
+    ?uri a rp:Project .
+    OPTIONAL {
+        ?uri skos:prefLabel ?name
+    }
+} LIMIT {{lodspk.maxResults}}

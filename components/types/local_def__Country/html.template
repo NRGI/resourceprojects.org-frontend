@@ -1,0 +1,23 @@
+{%include "../../includes/header.inc"%}
+    <div class="container-fluid">
+    <h1>Country</h1>
+
+    {%include "../../includes/default_table.inc"%}
+
+    <h2>Projects</h2>
+
+    <table class="table table-striped">
+    <thead>
+      <tr><th>ID</th><th>Name</th></tr>
+    </thead>
+    {% for project in models.projects %}    
+    <tr>
+        <td><a href="{{project.uri.value}}">{{ project.uri.curie }}</a></td>
+        <td><a href="{{project.uri.value}}">{{ project.name.value }}</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+    
+    </div>    
+  </body>
+</html>

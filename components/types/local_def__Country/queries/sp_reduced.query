@@ -1,0 +1,6 @@
+SELECT ?s ?p  WHERE {
+    ?s ?p <{{uri}}> .
+    FILTER NOT EXISTS {
+        ?s a base_def:Project
+    }
+} LIMIT {{lodspk.maxResults}}
