@@ -1,0 +1,7 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT DISTINCT * WHERE {
+    ?resource a rp:{{lodspk.args.arg0}}
+    OPTIONAL { ?resource skos:prefLabel ?name }
+}order by ?resource
+limit {{lodspk.maxResults}}

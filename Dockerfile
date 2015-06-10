@@ -21,5 +21,8 @@ RUN chown -R www-data /var/www/html/lodspeakr/cache /var/www/html/lodspeakr/meta
 RUN rm -r /var/www/html/lodspeakr/components
 ADD components /var/www/html/lodspeakr/components
 
+# Change module priorities https://github.com/alangrafu/lodspeakr/wiki/Changing-priorities-of-modules
+RUN cd /var/www/html/lodspeakr; utils/lodspk.sh enable module type 1
+
 # expose the HTTP port to the outer world
 EXPOSE 80
