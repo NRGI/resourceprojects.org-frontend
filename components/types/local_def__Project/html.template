@@ -1,0 +1,9 @@
+{%include "../../includes/header.inc"%}
+    <div class="container-fluid">
+    <h1>Project</h1>
+
+    <a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">(Default View)</a>
+    
+    </div>    
+  </body>
+</html>

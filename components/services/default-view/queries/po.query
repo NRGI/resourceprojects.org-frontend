@@ -1,0 +1,3 @@
+SELECT DISTINCT ?p ?o  WHERE {
+    <{{lodspk.args.all|deurifier}}> ?p ?o .
+} LIMIT {{lodspk.maxResults}}
