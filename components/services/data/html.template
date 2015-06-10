@@ -1,11 +1,23 @@
 {%include "../../includes/header.inc"%}
+{% if lodspk.args.arg0 %}
+
     <div class="container-fuild">
       <h1>Instances of {{lodspk.args.arg0}}</h1>
         <ul>
     {% for row in models.main %}
-        <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.resource.curie }}{% endif %}</a></li>
+        <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
     {% endfor %}
     </ul>
-   </div>
+
+{% else %}
+
+    <ul>
+    {% for row in models.main %}
+    <li><a href="{{lodspk.baseUrl}}data/{{ row.type.localname }}">{{row.type.localname}}</a></li>
+    {% endfor %}
+    </ul>
+
+{% endif %}
+    </div>
   </body>
 </html>

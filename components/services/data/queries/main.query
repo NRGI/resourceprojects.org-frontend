@@ -1,7 +1,20 @@
 prefix rp: <http://resourceprojects.org/def/>
 
+{% if lodspk.args.arg0 %}
+
 SELECT DISTINCT * WHERE {
     ?uri a rp:{{lodspk.args.arg0}}
     OPTIONAL { ?uri skos:prefLabel ?name }
-}order by ?uri
+}
 limit {{lodspk.maxResults}}
+
+{% else %}
+
+SELECT DISTINCT ?type WHERE {
+    GRAPH <http://resourceprojects.org/> {
+        ?s a ?type
+    }
+}
+limit {{lodspk.maxResults}}
+
+{% endif %}
