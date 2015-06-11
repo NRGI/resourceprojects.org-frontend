@@ -6,6 +6,7 @@ SELECT DISTINCT * WHERE {
     ?uri a rp:{{lodspk.args.arg0}}
     OPTIONAL { ?uri skos:prefLabel ?name }
 }
+ORDER BY (?name)
 limit {{lodspk.maxResults}}
 
 {% else %}
