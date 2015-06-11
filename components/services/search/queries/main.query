@@ -4,7 +4,9 @@ SELECT DISTINCT ?resource ?label WHERE {
       ?resource rdfs:label ?label .
     }
   }UNION{
-    ?resource rdfs:label ?label .
+    { ?resource rdfs:label ?label }
+    UNION
+    { ?resource skos:prefLabel ?label }
   }
   FILTER(regex(str(?label), "{{lodspk.args.arg0}}", "i"))
 }
