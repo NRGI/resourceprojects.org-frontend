@@ -1,15 +1,21 @@
 {%include "../../includes/header.inc"%}
-    <div class="container-fluid">
-    <h1>Project: {{first.main.name.value}}</h1>
-
-    <p>
-    <a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">(Default View)</a>
-    </p>
-
-    <p>
-    Location: <a href="{{ first.main.location.value }}">{{ first.main.location_name.value }}</a>
-    </p>
-    
+    <div class="container">
+      <div class="page-header">
+        <h1>{{first.main.name.value}} <small>Project</small></h1>
+      </div>
+      <p>Description (with provenance of description?)
+      <p>
+      Location: <a href="{{ first.main.location.value }}">{{ first.main.location_name.value }}</a>
+      </p>
+      <p>
+      Participants/Companies:
+      </p>
+      <p>
+      Licenses:
+      </p>
+      <p>
+      <a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">(Detailed View)</a>
+      </p>
     </div>    
   </body>
 </html>
