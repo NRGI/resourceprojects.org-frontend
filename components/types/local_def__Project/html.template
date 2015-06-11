@@ -4,7 +4,7 @@
         <h1>{{first.main.name.value}} <small>Project</small></h1>
       </div>
       <p>Description (with provenance of description?)
-      <p>
+      </p>
       Location: <a href="{{ first.main.location.value }}">{{ first.main.location_name.value }}</a>
       </p>
       <p>
