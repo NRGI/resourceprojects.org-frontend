@@ -6,4 +6,7 @@ SELECT * WHERE {
     OPTIONAL {
         ?uri skos:prefLabel ?name
     }
+    FILTER NOT EXISTS {
+        ?uri owl:sameAs ?b
+    }
 } LIMIT {{lodspk.maxResults}}
