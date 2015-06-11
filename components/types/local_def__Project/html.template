@@ -7,9 +7,20 @@
       </p>
       Location: <a href="{{ first.main.location.value }}">{{ first.main.location_name.value }}</a>
       </p>
-      <p>
-      Participants/Companies:
-      </p>
+      
+      <h2>Participanting Companies</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>Name</th><th>Share</th></tr>
+        </thead>
+        {% for company in models.companies %}    
+        <tr>
+            <td><a href="">{{ company.company_name.value }}</a></td>
+            <td>{{ company.share.value }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      
       <p>
       Licenses:
       </p>
@@ -19,3 +30,5 @@
     </div>    
   </body>
 </html>
+
+
