@@ -1,23 +1,42 @@
 {%include "../../includes/header.inc"%}
-    <div class="container-fluid">
-    <h1>Country</h1>
+    <div class="container">
+      <div class="page-header">
+          <h1>{{first.main.name.value}} <small>Country</small></h1>
+      </div>
 
-    {%include "../../includes/default_table.inc"%}
+      <h2>Projects</h2>
 
-    <h2>Projects</h2>
-
-    <table class="table table-striped">
-    <thead>
-      <tr><th>ID</th><th>Name</th></tr>
-    </thead>
-    {% for project in models.projects %}    
-    <tr>
-        <td><a href="{{project.uri.value}}">{{ project.uri.curie }}</a></td>
-        <td><a href="{{project.uri.value}}">{{ project.name.value }}</a></td>
-    </tr>
-    {% endfor %}
-    </table>
+      <table class="table table-striped">
+      <thead>
+        <tr><th>ID</th><th>Name</th></tr>
+      </thead>
+      {% for project in models.projects %}    
+      <tr>
+          <td><a href="{{project.uri.value}}">{{ project.uri.curie }}</a></td>
+          <td><a href="{{project.uri.value}}">{{ project.name.value }}</a></td>
+      </tr>
+      {% endfor %}
+      </table>
+      
+      <h2>Licences</h2>
+      
+      
+      <table class="table table-striped">
+      <thead>
+        <tr><th>ID</th><th>Name</th></tr>
+      </thead>
+      {% for licence in models.licenses %}    
+      <tr>
+          <td><a href="{{licence.uri.value}}">{{ licence.uri.curie }}</a></td>
+          <td><a href="{{licence.uri.value}}">{{ licence.name.value }}</a></td>
+      </tr>
+      {% endfor %}
+      </table>
     
+      <p>
+      <a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">(Detailed View)</a>
+      </p>
+      
     </div>    
   </body>
 </html>

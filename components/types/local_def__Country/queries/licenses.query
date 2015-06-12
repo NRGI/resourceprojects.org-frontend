@@ -1,0 +1,12 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT * WHERE {
+    ?uri rp:hasLocation <{{uri}}> .
+    ?uri a rp:License .
+    OPTIONAL {
+        ?uri skos:prefLabel ?name
+    }
+    FILTER NOT EXISTS {
+        ?uri owl:sameAs ?b
+    }
+} LIMIT {{lodspk.maxResults}}
