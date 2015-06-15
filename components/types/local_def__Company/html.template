@@ -3,8 +3,9 @@
       <div class="page-header">
           <h1>{{first.main.name.value}} <small>Company</small></h1>
       </div>
-      <p>Description (with provenance of description?)
-      </p>
+      <p>Our Company ID: {{uri|explode:"/"|pop}} </p>
+
+      <p>Description (with provenance of description?)</p>
       <p>
       Countries/Locations:
       </p>
