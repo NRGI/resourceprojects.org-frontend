@@ -1,8 +1,10 @@
 {%include "../../includes/header.inc"%}
+  
+  <div class="container">
 
 {% if lodspk.args.arg0 %}
 
-    <div class="container">
+    
       <div class="page-header">
         <h1>{{lodspk.args.arg0}} <small></small></h1>
       </div>
@@ -13,7 +15,9 @@
       </ul>
 
 {% else %}
-
+      <div class="page-header">
+        <h1>Browse..<small></small></h1>
+      </div>
       <ul>
       {% for row in models.main %}
       <li><a href="{{lodspk.baseUrl}}data/{{ row.type.localname }}">{{row.type.localname}}</a></li>

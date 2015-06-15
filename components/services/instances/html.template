@@ -3,7 +3,7 @@
       <div class="page-header">
         <h1>{{lodspk.args.arg0}} <small></small></h1>
       </div>
-      <--<h1>Instances of class {{lodspk.args.arg0}}</h1>-->
+      <h1>Instances of class {{lodspk.args.arg0}}</h1>
         <ul>
     {% for row in models.main %}
         <li><a href="{{ row.resource.value }}">{{row.resource.curie}}</a></li>
