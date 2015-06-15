@@ -3,6 +3,7 @@
       <div class="page-header">
         <h1>{{first.main.name.value}} <small>Project</small></h1>
       </div>
+      <p>Our Project ID: {{uri|explode:"/"|pop}} </p>
       <p>Description (with provenance of description?)
       </p>
       Location: <a href="{{ first.main.location.value }}">{{ first.main.location_name.value }}</a>
