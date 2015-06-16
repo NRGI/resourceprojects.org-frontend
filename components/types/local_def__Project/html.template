@@ -22,9 +22,24 @@
         {% endfor %}
       </table>
       
-      <p>
-      Licenses:
-      </p>
+ 
+      <h2>Licenses</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Volume</th><th>Units</th><th>Payment made by Company</th><th>Payyment Received by Government</th></tr>
+        </thead>
+        {% for row in models.licenses %}    
+        <tr>
+            <td><a href="{{ row.licence.value }}">{{ row.licence.value }}</a></td>
+            <td>{{ row.licence_name.value|explode:"/"|pop }}</td>
+            <td>{{ row.volume.value }}</td>
+            <td>{{ row.production_unit.value }}</td>
+            <td>{{ row.payment_by_company.value }}</td>
+            <td>{{ row.payment_received.value }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
       <p>
       <a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">(Detailed View)</a>
       </p>
