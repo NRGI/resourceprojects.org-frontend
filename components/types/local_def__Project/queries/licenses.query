@@ -5,7 +5,7 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT * WHERE {
-    ?license  rp:relatedProject <http://resourceprojects.org/data/Project/id/baw-ed73> .
+    ?license  rp:relatedProject <{{uri}}> .
     ?license rp_misc:productionVolume ?volume .
     ?license rp_misc:productionUnit	?production_unit .
     ?license rp_misc:paymentByCompanyUs ?payment_by_company .
