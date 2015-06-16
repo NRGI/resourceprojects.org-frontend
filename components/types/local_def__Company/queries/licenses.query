@@ -1,0 +1,18 @@
+DEFINE input:same-as "yes"
+
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+prefix skos_: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT * WHERE {
+    ?participant rp:organization <{{uri}}> .
+    ?participant rp:participatingIn ?license .
+    ?license a rp:License  .
+    ?license rp_misc:productionVolume ?volume .
+    ?license rp_misc:productionUnit ?production_unit .
+    ?license rp_misc:paymentByCompanyUs ?payment_by_company .
+    ?license rp_misc:paymentReceivedByGovernmentUs ?payment_received .
+    OPTIONAL {
+        ?license skos_:prefLabel ?license_name
+    }
+}

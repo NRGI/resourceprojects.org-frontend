@@ -1,12 +1,14 @@
+DEFINE input:same-as "yes"
+
 prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT * WHERE {
-    ?uri rp:hasLocation <{{uri}}> .
-    ?uri a rp:Project .
-    OPTIONAL {
-        ?uri skos:prefLabel ?name
-    }
-    FILTER NOT EXISTS {
-        ?uri owl:sameAs ?b
-    }
-} LIMIT {{lodspk.maxResults}}
+    ?participant rp:organization <{{uri}}> .
+    ?participant rp:participatingIn ?project .
+    ?project a rp:Project  .
+    ?project skos_:prefLabel ?name .
+    ?project rp:hasParticipant ?participant .
+    ?participant rp_misc:share ?share
+}
