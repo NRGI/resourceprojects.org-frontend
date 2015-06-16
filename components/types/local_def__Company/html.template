@@ -8,6 +8,12 @@
       <p>Description (with provenance of description?)</p>
       <p>
       Countries/Locations:
+       {% for row in models.countries %}
+       <a href="{{ row.location.value }}">{{ row.country_name.value }}</a> 
+       <!--<ul>
+          <li><a href="{{ row.location.value }}">{{ row.country_name.value }}</a></li>
+      </ul>-->
+       {% endfor %}
       </p>
       
       <h2>Licenses</h2>
