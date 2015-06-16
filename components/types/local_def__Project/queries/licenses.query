@@ -5,13 +5,13 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT * WHERE {
-    ?licence  rp:relatedProject <http://resourceprojects.org/data/Project/id/baw-ed73> .
-    ?licence rp_misc:productionVolume ?volume .
-    ?licence rp_misc:productionUnit	?production_unit .
-    ?licence rp_misc:paymentByCompanyUs ?payment_by_company .
-    ?licence rp_misc:paymentReceivedByGovernmentUs ?payment_received .
+    ?license  rp:relatedProject <http://resourceprojects.org/data/Project/id/baw-ed73> .
+    ?license rp_misc:productionVolume ?volume .
+    ?license rp_misc:productionUnit	?production_unit .
+    ?license rp_misc:paymentByCompanyUs ?payment_by_company .
+    ?license rp_misc:paymentReceivedByGovernmentUs ?payment_received .
     OPTIONAL {
-        ?licence skos_:prefLabel ?licence_name
+        ?license skos_:prefLabel ?license_name
     }
 }
 

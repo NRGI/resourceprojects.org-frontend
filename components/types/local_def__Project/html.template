@@ -30,8 +30,8 @@
         </thead>
         {% for row in models.licenses %}    
         <tr>
-            <td><a href="{{ row.licence.value }}">{{ row.licence.value }}</a></td>
-            <td>{{ row.licence_name.value|explode:"/"|pop }}</td>
+            <td><a href="{{ row.license.value }}">{{ row.license.value }}</a></td>
+            <td>{{ row.license_name.value|explode:"/"|pop }}</td>
             <td>{{ row.volume.value }}</td>
             <td>{{ row.production_unit.value }}</td>
             <td>{{ row.payment_by_company.value }}</td>
