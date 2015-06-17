@@ -2,7 +2,7 @@ prefix rp: <http://resourceprojects.org/def/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT * WHERE {
-    ?participant rp:hasLocation <http://resourceprojects.org/data/Country/gh> .
+    ?participant rp:hasLocation <{{uri}}> .
     ?participant a rp:Participant .
     ?participant rp:organization ?company .
     OPTIONAL {
