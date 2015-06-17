@@ -18,6 +18,20 @@
       {% endfor %}
       </table>
       
+      <h2>Companies</h2>
+
+      <table class="table table-striped">
+      <thead>
+        <tr><th>ID</th><th>Name</th></tr>
+      </thead>
+      {% for row in models.companies %}    
+      <tr>
+          <td><a href="{{row.company.value}}">{{ row.company.curie }}</a></td>
+          <td>{{ row.name.value }}</a></td>
+      </tr>
+      {% endfor %}
+      </table>
+      
       <h2>Licences</h2>
       
       

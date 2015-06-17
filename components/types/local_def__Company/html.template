@@ -8,10 +8,45 @@
       <p>Description (with provenance of description?)</p>
       <p>
       Countries/Locations:
+       {% for row in models.countries %}
+       <a href="{{ row.location.value }}">{{ row.country_name.value }}</a> 
+       <!--<ul>
+          <li><a href="{{ row.location.value }}">{{ row.country_name.value }}</a></li>
+      </ul>-->
+       {% endfor %}
       </p>
-      <p>
-      Licenses:
-      </p>
+      
+      <h2>Licenses</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Volume</th><th>Units</th><th>Payment made by Company</th><th>Payyment Received by Government</th></tr>
+        </thead>
+        {% for row in models.licenses %}    
+        <tr>
+            <td><a href="{{ row.license.value }}">{{ row.license.value|explode:"/"|pop }}</a></td>
+            <td>{{ row.license_name.value }}</td>
+            <td>{{ row.volume.value }}</td>
+            <td>{{ row.production_unit.value }}</td>
+            <td>{{ row.payment_by_company.value }}</td>
+            <td>{{ row.payment_received.value }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      
+      <h2>Projects</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Share</th></tr>
+        </thead>
+        {% for row in models.projects %}    
+        <tr>
+            <td><a href="{{ row.project.value }}">{{ row.project.value}}</a></td>
+            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
+            <td>{{ row.name.value }}</a></td>
+            <td>{{ row.share.value }}</td>
+        </tr>
+        {% endfor %}
+      </table>
       
       <p>
       <a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">(Detailed View)</a>

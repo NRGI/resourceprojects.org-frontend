@@ -6,9 +6,9 @@ prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT * WHERE {
     ?participant rp:organization <{{uri}}> .
-    ?participant rp:participatingIn ?project .
-    ?project a rp:Project  .
-    ?project skos_:prefLabel ?name .
-    ?project rp:hasParticipant ?participant .
-    ?participant rp_misc:share ?share
+    ?participant rp:hasLocation ?location .
+    ?location a rp:Country .
+    OPTIONAL {
+        ?location skos_:prefLabel ?country_name
+    }
 }
