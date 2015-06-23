@@ -1,0 +1,11 @@
+prefix rp: <http://resourceprojects.org/def/>
+prefix skos_: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT * WHERE {
+    <{{uri}}> rp:hasParticipant ?participant .
+    ?participant rp:organization ?company .
+    
+    OPTIONAL {
+        ?company skos:prefLabel ?name
+    }
+}
