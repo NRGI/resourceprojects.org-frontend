@@ -1,0 +1,69 @@
+{%include "../../includes/header.inc"%}
+    <div class="container">
+      <div class="page-header">
+          <h1>{{first.main.name.value}} <small>License</small></h1>
+      </div>
+      <!--<p>Our License ID: {{uri|explode:"/"|pop}} </p>-->
+
+      <!--<p>Description (with provenance of description?)</p>
+      <p>-->
+      Countries/Locations:
+       {% for row in models.countries %}
+       <a href="{{ row.location.value }}">{{ row.country_name.value }}</a> 
+       <!--<ul>
+          <li><a href="{{ row.location.value }}">{{ row.country_name.value }}</a></li>
+      </ul>-->
+       {% endfor %}
+      </p>
+      
+      <h2>License <small>{{uri|explode:"/"|pop}}</small></h2>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Volume</th><th>Units</th><th>Payment made by Company</th><th>Payyment Received by Government</th></tr>
+        </thead>
+        {% for row in models.licenses %}    
+        <tr>
+            <td><a href="{{ uri }}">{{uri|explode:"/"|pop}}</a></td>
+            <td>{{ row.license_name.value }}</td>
+            <td>{{ row.volume.value }}</td>
+            <td>{{ row.production_unit.value }}</td>
+            <td>{{ row.payment_by_company.value }}</td>
+            <td>{{ row.payment_received.value }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      
+      <h2>Projects</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>ID</th><th>Name</th></tr>
+        </thead>
+        {% for row in models.projects %}    
+        <tr>
+            <td><a href="{{ row.project.value }}">{{ row.project.value}}</a></td>
+            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
+            <td>{{ row.name.value }}</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+      
+      <h2>Companies</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>ID</th><th>Name</th></tr>
+        </thead>
+        {% for row in models.company %}    
+        <tr>
+            <td><a href="{{ row.company.value }}">{{ row.company.value}}</a></td>
+            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
+            <td>{{ row.name.value }}</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+      
+      <p>
+      <a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">(Detailed View)</a>
+      </p>
+    </div>    
+  </body>
+</html>
