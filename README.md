@@ -4,7 +4,7 @@ Pre-requisites
 To run lodspeakr you will need an instance of virtuoso running.
 
 ```
-docker run -p 127.0.0.1:8890:8890 --name=virtuoso caprenter/automated-build-virtuoso
+docker run -p 127.0.0.1:8890:8890 --name=virtuoso -v /usr/local/var/lib/virtuoso/db caprenter/automated-build-virtuoso 
 ```
 
 Development
