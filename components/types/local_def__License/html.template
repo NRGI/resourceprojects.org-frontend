@@ -19,7 +19,7 @@
       <h2>License <small>{{uri|explode:"/"|pop}}</small></h2>
       <table class="table table-striped">
         <thead>
-          <tr><th>ID</th><th>Name</th><th>Volume</th><th>Units</th><th>Payment made by Company</th><th>Payyment Received by Government</th></tr>
+          <tr><th>ID</th><th>Name</th><th>Volume</th><th>Units</th><th>Payment made by Company</th><th>Payment Received by Government</th></tr>
         </thead>
         {% for row in models.licenses %}    
         <tr>
