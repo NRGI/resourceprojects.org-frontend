@@ -32,7 +32,7 @@
         </tr>
         {% endfor %}
       </table>
-      
+
       <h2>Projects</h2>
       <table class="table table-striped">
         <thead>
@@ -40,8 +40,19 @@
         </thead>
         {% for row in models.projects %}    
         <tr>
-            <td><a href="{{ row.project.value }}">{{ row.project.value}}</a></td>
-            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
+            <!--<td><a href="{{ row.project.value }}">{{ row.project.value}}</a></td>-->
+            <td>
+              <a href="{{ row.project.value }}">
+                {% for i,path_item in row.project.value|uripath|explode:"/" %}
+                  {% if i >= 3  %}
+                    {{ path_item }}
+                    {% if i == 3  %}
+                    /
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </a>
+            </td>
             <td>{{ row.name.value }}</a></td>
         </tr>
         {% endfor %}
@@ -54,8 +65,8 @@
         </thead>
         {% for row in models.company %}    
         <tr>
-            <td><a href="{{ row.company.value }}">{{ row.company.value}}</a></td>
-            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
+            <!--<td><a href="{{ row.company.value }}">{{ row.company.value}}</a></td>-->
+            <td><a href="{{ row.company.value }}">{{ row.company.value|explode:"/"|pop }}</a></td>
             <td>{{ row.name.value }}</a></td>
         </tr>
         {% endfor %}
