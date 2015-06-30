@@ -10,5 +10,5 @@ SELECT * WHERE {
     ?project a rp:Project  .
     ?project skos_:prefLabel ?name .
     ?project rp:hasParticipant ?participant .
-    ?participant rp_misc:share ?share
+    OPTIONAL { ?participant rp_misc:share ?share }
 }

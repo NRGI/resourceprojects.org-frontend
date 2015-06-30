@@ -8,11 +8,9 @@ SELECT * WHERE {
     ?participant rp:organization <{{uri}}> .
     ?participant rp:participatingIn ?license .
     ?license a rp:License  .
-    ?license rp_misc:productionVolume ?volume .
-    ?license rp_misc:productionUnit ?production_unit .
-    ?license rp_misc:paymentByCompanyUs ?payment_by_company .
-    ?license rp_misc:paymentReceivedByGovernmentUs ?payment_received .
-    OPTIONAL {
-        ?license skos_:prefLabel ?license_name
-    }
+    OPTIONAL { ?license skos_:prefLabel ?license_name } .
+    OPTIONAL { ?license rp_misc:productionVolume ?volume } .
+    OPTIONAL { ?license rp_misc:productionUnit ?production_unit } .
+    OPTIONAL { ?license rp_misc:paymentByCompanyUs ?payment_by_company } .
+    OPTIONAL { ?license rp_misc:paymentReceivedByGovernmentUs ?payment_received }
 }
