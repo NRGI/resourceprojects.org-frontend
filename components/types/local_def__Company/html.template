@@ -48,6 +48,22 @@
         {% endfor %}
       </table>
       
+      <h2>Payments</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>ID</th><th>Currency</th><th>Date</th><th>Value</th></tr>
+        </thead>
+        {% for row in models.payments %}    
+        <tr>
+            <td><a href="{{ row.payments.value }}">{{ row.companyPayment.value }}</a></td>
+            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
+            <td>{{ row.currency.value }}</a></td>
+            <td>{{ row.date.value }}</a></td>
+            <td>{{ row.value.value }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      
       <p>
       <a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">(Detailed View)</a>
       </p>

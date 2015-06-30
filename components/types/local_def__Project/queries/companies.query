@@ -4,10 +4,9 @@ prefix rp: <http://resourceprojects.org/def/>
 prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?company_name ?share ?company WHERE {
-    <{{uri}}> rp:hasParticipant ?participant .
-    ?participant rp:organization ?company .
+SELECT ?company_name ?company WHERE {
+    <{{uri}}> rp:hasStake ?stakes .
+    ?stakes rp:hasStakeholder ?company .
     ?company a rp:Company .
-    ?company skos_:prefLabel ?company_name .
-    ?participant rp_misc:share ?share .
+    OPTIONAL { ?company skos_:prefLabel ?company_name } 
 }

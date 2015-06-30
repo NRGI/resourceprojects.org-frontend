@@ -5,10 +5,9 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT * WHERE {
-    ?participant rp:organization <{{uri}}> .
-    ?participant rp:participatingIn ?project .
+    <{{uri}}> rp:hasStakeholding ?stakes .
+    ?stakes rp:isStakeIn ?project .
     ?project a rp:Project  .
     ?project skos_:prefLabel ?name .
-    ?project rp:hasParticipant ?participant .
     OPTIONAL { ?participant rp_misc:share ?share }
 }

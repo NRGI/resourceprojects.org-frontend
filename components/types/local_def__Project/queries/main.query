@@ -14,7 +14,6 @@ SELECT * WHERE {
         <{{uri}}> rp:hasLocation ?location .
         ?location skos_:prefLabel ?location_name
     }
-    OPTIONAL {
-        <{{uri}}> rp_misc:commodityType ?commodity
-    }
+    OPTIONAL { <{{uri}}> rp_misc:commodityType ?commodityType }
+    OPTIONAL { <{{uri}}> rp_misc:commodityDetails ?commodityDetails }
 } LIMIT 1
