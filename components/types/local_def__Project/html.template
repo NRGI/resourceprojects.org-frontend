@@ -8,7 +8,9 @@
       </p>
       Location: <a href="{{ first.main.location.value }}">{{ first.main.location_name.value }}</a>
       </p>
-      
+      <p>
+      Commodity Type: <a href="{{ first.main.location.value }}">{{ first.main.commodity.value }}</a>
+      </p>
       <h2>Participanting Companies</h2>
       <table class="table table-striped">
         <thead>
