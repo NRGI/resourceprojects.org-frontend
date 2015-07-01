@@ -1,0 +1,22 @@
+DEFINE input:same-as "yes"
+
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+# We can't use the prefix 'skos' as lodspeakr will then put a prefix satement
+# before the DEFINE statement, which is not allowed.
+prefix skos_: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT * WHERE {
+        OPTIONAL { 
+          <{{uri}}> rp:productionStatistics ?stats 
+          OPTIONAL { ?stats rp_misc:price ?price }
+          OPTIONAL { ?stats rp:priceUnit ?priceUnit }
+          OPTIONAL { ?stats rp:unit ?unit }
+          OPTIONAL { ?stats rp:volume ?volume }
+          OPTIONAL { ?stats rp:year ?year }
+          
+        }
+} 
+
+
+
