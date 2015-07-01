@@ -1,10 +1,14 @@
 
 body {
-padding-top: 100px;
+  padding-top: 100px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
 }
 
 .navbar-fixed-top {
+  border-top: 7px solid rgba(3,151,215,0.3);
   border-bottom: 1px rgb(85,114,136) solid;
+  border-bottom: 1px solid #EEEFE8;
 }
 
 .navbar-inner {
@@ -41,3 +45,35 @@ color: rgb(85,114,136);
   color:rgb(255,111,76);
   text-decoration: none;
   background-color: #fff;
+}
+
+footer {
+margin-top: 40px;
+padding-top: 20px;
+/*border-top: 4px solid rgb(215, 219, 223);*/
+border-top: 8px solid #D6D8CB;
+background: #EEEFE8;
+color: #333;
+}
+
+h2.block-title {
+  color: #494641;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding:10px 0 2px;
+  line-height: 16px;
+}
+
+.strapline {
+font-size: 1.2em;
+}
+
+footer a {
+  color: #494641;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

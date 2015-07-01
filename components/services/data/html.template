@@ -27,5 +27,4 @@
 {% endif %}
 
     </div>
-  </body>
-</html>
+{%include "../../includes/footer.inc"%}
