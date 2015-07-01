@@ -1,3 +1,12 @@
+
+body {
+padding-top: 100px;
+}
+
+.navbar-fixed-top {
+  border-bottom: 1px rgb(85,114,136) solid;
+}
+
 .navbar-inner {
   min-height: 40px;
   padding-right: 20px;
@@ -16,6 +25,7 @@
 h1, h2, h3, th {
 color: rgb(85,114,136);
 }
+
 
 .navbar .nav>li>a {
   float: none;
