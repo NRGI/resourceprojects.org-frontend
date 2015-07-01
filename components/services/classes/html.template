@@ -9,5 +9,4 @@
       {% endfor %}
       </ul>
     </div>
-  </body>
-</html>
+{%include "../../includes/footer.inc"%}

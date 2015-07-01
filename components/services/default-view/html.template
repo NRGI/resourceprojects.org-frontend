@@ -41,5 +41,4 @@
     </table>
     </div>    
     
-  </body>
-</html>
+{%include "../../includes/footer.inc"%}

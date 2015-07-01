@@ -69,6 +69,5 @@
       <p>
       <a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">(Detailed View)</a>
       </p>
-    </div>    
-  </body>
-</html>
+    </div>
+{%include "../../includes/footer.inc"%}
