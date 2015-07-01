@@ -13,7 +13,13 @@ SELECT * WHERE {
     OPTIONAL {
         <{{uri}}> rp:hasLocation ?location .
         ?location skos_:prefLabel ?location_name
-    }
+    }   
     OPTIONAL { <{{uri}}> rp_misc:commodityType ?commodityType }
     OPTIONAL { <{{uri}}> rp_misc:commodityDetails ?commodityDetails }
+    OPTIONAL { <{{uri}}> rp_misc:identifier	?identifier }
+    OPTIONAL { <{{uri}}> rp_misc:titleProjecttype	?projectType }
+    OPTIONAL { <{{uri}}> rp_misc:url ?url }
 } LIMIT 1
+
+
+
