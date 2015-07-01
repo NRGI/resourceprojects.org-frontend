@@ -36,13 +36,14 @@
       <h2>Projects</h2>
       <table class="table table-striped">
         <thead>
-          <tr><th>ID</th><th>Name</th><th>Share</th></tr>
+          <tr><th>ID</th><th>Name</th><th>Country</th><th>Share</th></tr>
         </thead>
         {% for row in models.projects %}    
         <tr>
             <td><a href="{{ row.project.value }}">{{ row.project.value}}</a></td>
             <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
-            <td>{{ row.name.value }}</a></td>
+            <td>{{ row.name.value }}</td>
+            <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
             <td>{{ row.share.value }}</td>
         </tr>
         {% endfor %}
@@ -55,12 +56,12 @@
         </thead>
         {% for row in models.payments %}    
         <tr>
-            <td><a href="{{ row.payments.value }}">{{ row.companyPayment.value }}</a></td>
+            <td><a href="{{ row.companyPayment.value }}">{{ row.companyPayment.value }}</a></td>
             <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
-            <td>{{ row.currency.value }}</a></td>
-            <td>{{ row.date.value }}</a></td>
-            <td>{{ row.type.value }}</a></td>
-            <td>{{ row.payee_name.value }}</a></td>
+            <td>{{ row.currency.value }}</td>
+            <td>{{ row.date.value }}</td>
+            <td>{{ row.type.value }}</td>
+            <td><a href="{{ row.payee.value }}">{{ row.payee_name.value }}</a></td>
             <td>{{ row.value.value }}</td>
         </tr>
         {% endfor %}

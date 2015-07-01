@@ -9,5 +9,7 @@ SELECT * WHERE {
     ?stakes rp:isStakeIn ?project .
     ?project a rp:Project  .
     ?project skos_:prefLabel ?name .
+    ?project rp:hasLocation ?country .
+    ?country skos_:prefLabel ?country_name 
     OPTIONAL { ?participant rp_misc:share ?share }
 }
