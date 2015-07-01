@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LODSPeaKr Basic Menu</title>
+    <title>Natural Resource Governance Institute</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -23,6 +23,7 @@
       }
     </style>
     <link href="{{lodspk.home}}css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="{{lodspk.home}}css/nrgi.css" rel="stylesheet" type="text/css" media="screen" />
     <script type="text/javascript" src="{{lodspk.home}}js/jquery.js"></script>
     <script type="text/javascript" src="{{lodspk.home}}js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{{lodspk.home}}js/bootstrap-typeahead.js"></script>
@@ -45,7 +46,8 @@
     </script>
   </head>
   <body>
- <div class="navbar navbar-fixed-top">
+
+  <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -53,7 +55,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="{{lodspk.home}}">{{lodspk.title}}</a>
+          <!--<a class="brand" href="{{lodspk.home}}">{{lodspk.title}}</a>-->
+          <a class="brand" href="{{lodspk.home}}"><img src="{{lodspk.home}}img/NRGI_Logo_RGB_no_strapline.jpg" width="185" height="65" alt="Natural Resource Governance Institute Logo"/></a>
           <div class="nav-collapse">
             <ul class="nav">
               <li><a href="{{lodspk.home}}">Home</a></li>
