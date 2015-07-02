@@ -13,8 +13,17 @@ limit {{lodspk.maxResults}}
 
 
 
-{% endif %}
 
+{% else %}
+
+SELECT DISTINCT ?type WHERE {
+    GRAPH <http://resourceprojects.org/> {
+        ?s a ?type
+    }
+}
+limit {{lodspk.maxResults}}
+
+{% endif %}
 
 
 
