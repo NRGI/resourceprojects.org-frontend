@@ -8,5 +8,6 @@ SELECT ?company_name ?company WHERE {
     <{{uri}}> rp:hasStake ?stakes .
     ?stakes rp:hasStakeholder ?company .
     ?company a rp:Company .
-    OPTIONAL { ?company skos_:prefLabel ?company_name } 
+    OPTIONAL { ?company skos_:prefLabel ?company_name }  
 }
+

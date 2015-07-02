@@ -27,10 +27,11 @@
       <h2>Production Stats</h2>
        <table class="table table-striped">
         <thead>
-          <tr><th>Price</th><th>Price per unit</th><th>Unit</th><th>Volume</th><th>Year</th></tr>
+          <tr><th>ID</th><th>Price</th><th>Price per unit</th><th>Unit</th><th>Volume</th><th>Year</th></tr>
         </thead>
       {% for row in models.production_stats %} 
        <tr>
+          <td><a href="{{ row.stats.value }}">{{ row.stats.value|explode:"/"|pop }}</a></td>
           <td>{{ row.price.value }}</td>
           <td>{{ row.priceUnit.value }}</td>
           <td>{{ row.unit.value }}</td>
@@ -61,7 +62,7 @@
         </thead>
         {% for row in models.licenses %}    
         <tr>
-            <td><a href="{{ row.license.value }}">{{ row.license.value }}</a></td>
+            <td><a href="{{ row.license.value }}">{{ row.license.value|explode:"/"|pop }}</a></td>
             <td>{{ row.license_name.value|explode:"/"|pop }}</td>
             <td>{{ row.volume.value }}</td>
             <td>{{ row.production_unit.value }}</td>
