@@ -9,7 +9,7 @@
       <p>
       Countries/Locations:
        {% for row in models.countries %}
-       <a href="{{ row.location.value }}">{{ row.country_name.value }}</a> 
+       <a href="{{ row.location.value }}">{{ row.country_name.value }}</a>{%if !forloop.last%},{% endif %}
        <!--<ul>
           <li><a href="{{ row.location.value }}">{{ row.country_name.value }}</a></li>
       </ul>-->
