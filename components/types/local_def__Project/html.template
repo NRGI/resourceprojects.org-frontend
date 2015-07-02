@@ -6,7 +6,8 @@
       <p>Our Project ID: {{uri|explode:"/"|pop}} </p>
       <p>Description (with provenance of description?)
       </p>
-      Location: <a href="{{ first.main.location.value }}">{{ first.main.location_name.value }}</a>
+      Location: {% for location in models.main %} <a href="{{ location.location.value }}">{{ location.location_name.value }}</a>{%if !forloop.last%},{% endif %}
+      {% endfor %}
       </p>
       <p>
       Commodity Type: {{ first.main.commodityType.value }}
