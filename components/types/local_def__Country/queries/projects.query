@@ -1,12 +1,17 @@
 prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
 
 SELECT * WHERE {
-    ?uri rp:hasLocation <{{uri}}> .
-    ?uri a rp:Project .
+    ?project rp:hasLocation <{{uri}}> .
+    ?project a rp:Project .
     OPTIONAL {
-        ?uri skos:prefLabel ?name
+        ?project skos:prefLabel ?name
     }
+    OPTIONAL { ?project rp_misc:commodityType ?commodityType }
     FILTER NOT EXISTS {
-        ?uri owl:sameAs ?b
+        ?project owl:sameAs ?b
     }
-} LIMIT {{lodspk.maxResults}}
+} 
+ORDER BY (?name)
+
+LIMIT {{lodspk.maxResults}}

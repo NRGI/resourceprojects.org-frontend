@@ -8,12 +8,13 @@
 
       <table class="table table-striped">
       <thead>
-        <tr><th>ID</th><th>Name</th></tr>
+        <tr><th>Name</th><th>ID</th><th>Commodity Type</th></tr>
       </thead>
       {% for project in models.projects %}    
       <tr>
-          <td><a href="{{project.uri.value}}">{{ project.uri.curie }}</a></td>
-          <td><a href="{{project.uri.value}}">{{ project.name.value }}</a></td>
+          <td><a href="{{project.project.value}}">{{ project.name.value }}</a></td>
+          <td><a href="{{project.project.value}}">{{ project.project.value }}</a></td>
+          <td>{{ project.commodityType.value }}</td>
       </tr>
       {% endfor %}
       </table>
@@ -22,17 +23,17 @@
 
       <table class="table table-striped">
       <thead>
-        <tr><th>ID</th><th>Name</th></tr>
+        <tr><th>Name</th><th>ID</th></tr>
       </thead>
       {% for row in models.companies %}    
       <tr>
-          <td><a href="{{row.company.value}}">{{ row.company.curie }}</a></td>
-          <td>{{ row.name.value }}</a></td>
+          <td><a href="{{row.company.value}}">{{ row.name.value }}</a></td>
+          <td><a href="{{row.company.value}}">{{ row.company.value|explode:"/"|pop }}</a></td>
       </tr>
       {% endfor %}
       </table>
       
-      <h2>Licences</h2>
+      <!--<h2>Licences</h2>
       
       
       <table class="table table-striped">
@@ -45,7 +46,7 @@
           <td><a href="{{licence.uri.value}}">{{ licence.name.value }}</a></td>
       </tr>
       {% endfor %}
-      </table>
+      </table>-->
       
       <h2>Payments</h2>
       <table class="table table-striped">
@@ -54,12 +55,12 @@
         </thead>
         {% for row in models.payments %}    
         <tr>
-            <td><a href="{{ row.companyPayment.value }}">{{ row.companyPayment.value }}</a></td>
+            <td><a href="{{ row.companyPayment.value }}">{{ row.companyPayment.value|explode:"/"|pop }}</a></td>
             <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
-            <td>{{ row.currency.value }}</a></td>
-            <td>{{ row.date.value }}</a></td>
-            <td>{{ row.type.value }}</a></td>
-            <td>{{ row.company_name.value }}</a></td>
+            <td>{{ row.currency.value }}</td>
+            <td>{{ row.date.value }}</td>
+            <td>{{ row.type.value }}</td>
+            <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
             <td>{{ row.value.value }}</td>
         </tr>
         {% endfor %}
