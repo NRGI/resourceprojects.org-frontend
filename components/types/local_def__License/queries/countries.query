@@ -5,9 +5,15 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT * WHERE {
-    <{{uri}}> rp:hasLocation ?location .
-    ?location a rp:Country .
+    ?stake rp:isStakeIn <{{uri}}> .
+
+    ?stake rp:isStakeIn ?project .
+    ?project a rp:Project .
+    ?project rp:hasLocation ?country
     OPTIONAL {
-        ?location skos_:prefLabel ?country_name
+        ?country skos_:prefLabel ?country_name
     }
+
+
+
 }

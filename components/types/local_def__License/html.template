@@ -3,19 +3,22 @@
       <div class="page-header">
           <h1>{{first.main.name.value}} <small>License</small></h1>
       </div>
-      <!--<p>Our License ID: {{uri|explode:"/"|pop}} </p>-->
+      <p>Our License ID: {{uri|explode:"/"|pop}} </p>
 
       <!--<p>Description (with provenance of description?)</p>
       <p>-->
       Countries/Locations:
        {% for row in models.countries %}
-       <a href="{{ row.location.value }}">{{ row.country_name.value }}</a> 
+       <a href="{{ row.country.value }}">{{ row.country_name.value }}</a>{%if forloop.last%},{% endif %}
+       
        <!--<ul>
           <li><a href="{{ row.location.value }}">{{ row.country_name.value }}</a></li>
       </ul>-->
        {% endfor %}
       </p>
       
+      <!-- We don't have this info in Licenses anymore. They are in Production Stats against Projects-->
+      <!--
       <h2>License <small>{{uri|explode:"/"|pop}}</small></h2>
       <table class="table table-striped">
         <thead>
@@ -32,6 +35,7 @@
         </tr>
         {% endfor %}
       </table>
+      -->
       
       <h2>Projects</h2>
       <table class="table table-striped">
@@ -47,6 +51,9 @@
         {% endfor %}
       </table>
       
+      <!-- Also we can't find companies associated with a license. Only with a project. It would be wrong to infer
+      that companies involved in the project are connected to this license-->
+      <!--
       <h2>Companies</h2>
       <table class="table table-striped">
         <thead>
@@ -60,7 +67,7 @@
         </tr>
         {% endfor %}
       </table>
-      
+      -->
       <p>
       <a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">(Detailed View)</a>
       </p>

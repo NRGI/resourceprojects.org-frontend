@@ -1,0 +1,30 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+{% if lodspk.args.arg0 == 'Country' %}
+
+SELECT DISTINCT ?uri ?name (COUNT(?project) as ?pCount) WHERE {
+    ?uri a rp:Country .
+    ?project rp:hasLocation ?uri
+    OPTIONAL { ?uri skos:prefLabel ?name }
+}
+GROUP BY ?uri ?name
+ORDER BY (?name)
+limit {{lodspk.maxResults}}
+
+
+
+
+{% else %}
+
+SELECT DISTINCT ?type WHERE {
+    GRAPH <http://resourceprojects.org/> {
+        ?s a ?type
+    }
+}
+limit {{lodspk.maxResults}}
+
+{% endif %}
+
+
+
+
