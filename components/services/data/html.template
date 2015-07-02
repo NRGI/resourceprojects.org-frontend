@@ -7,17 +7,31 @@
       <div class="page-header">
         <h1>{{lodspk.args.arg0}} <small></small></h1>
       </div>
+             <table class="table table-striped" about="{{uri}}">
+          <thead>
+            <tr><th>Project</th><th>ID</th><th>Country</th><th>Commodity Type</th></tr>
+          </thead>
+          {% for row in models.projects %}
+          <tr>
+              <td><a href="{{ row.project.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></td>
+              <td><a href="{{ row.project.value }}">{{ row.project.value }}</a></td>
+              <td>{{row.country_name.value}}</td>
+              <td>{{row.commodityType.value}}</td>
+          </tr>
+          {% endfor %}
+        </table>
       <ul>
-      {% for row in models.main %}
+      <!--{% for row in models.main %}
           <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
       {% endfor %}
-      </ul>
+      </ul>-->
   
   {% endif %}
   {% if lodspk.args.arg0 == 'Company' %}
       <div class="page-header">
         <h1>{{lodspk.args.arg0}} <small></small></h1>
       </div>
+
       <ul>
       {% for row in models.main %}
           <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>

@@ -19,7 +19,7 @@ SELECT * WHERE {
     OPTIONAL { <{{uri}}> rp_misc:identifier	?identifier }
     OPTIONAL { <{{uri}}> rp_misc:titleProjecttype	?projectType }
     OPTIONAL { <{{uri}}> rp_misc:url ?url }
-} LIMIT 1
+}
 
 
 
