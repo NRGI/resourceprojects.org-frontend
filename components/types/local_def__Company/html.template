@@ -9,14 +9,14 @@
       <p>
       Countries/Locations:
        {% for row in models.countries %}
-       <a href="{{ row.location.value }}">{{ row.country_name.value }}</a> 
+       <a href="{{ row.location.value }}">{{ row.country_name.value }}</a>{%if !forloop.last%},{% endif %}
        <!--<ul>
           <li><a href="{{ row.location.value }}">{{ row.country_name.value }}</a></li>
       </ul>-->
        {% endfor %}
       </p>
       
-      <h2>Licenses</h2>
+      <!--<h2>Licenses</h2>
       <table class="table table-striped">
         <thead>
           <tr><th>ID</th><th>Name</th><th>Volume</th><th>Units</th><th>Payment made by Company</th><th>Payment Received by Government</th></tr>
@@ -31,12 +31,12 @@
             <td>{{ row.payment_received.value }}</td>
         </tr>
         {% endfor %}
-      </table>
+      </table>-->
       
       <h2>Projects</h2>
       <table class="table table-striped">
         <thead>
-          <tr><th>ID</th><th>Name</th><th>Country</th><th>Share</th></tr>
+          <tr><th>ID</th><th>Name</th><th>Country</th><th>Commodity Type</th><th>Share</th></tr>
         </thead>
         {% for row in models.projects %}    
         <tr>
@@ -44,6 +44,7 @@
             <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
             <td>{{ row.name.value }}</td>
             <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
+            <td>{{ row.commodityType.value }}</td>
             <td>{{ row.share.value }}</td>
         </tr>
         {% endfor %}

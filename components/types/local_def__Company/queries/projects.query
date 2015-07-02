@@ -12,4 +12,5 @@ SELECT * WHERE {
     ?project rp:hasLocation ?country .
     ?country skos_:prefLabel ?country_name 
     OPTIONAL { ?participant rp_misc:share ?share }
+    OPTIONAL { ?project rp_misc:commodityType ?commodityType }
 }
