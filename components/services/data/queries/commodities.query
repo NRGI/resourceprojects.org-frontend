@@ -1,0 +1,24 @@
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+
+{% if lodspk.args.arg0 == 'Country' %}
+
+SELECT DISTINCT ?name ?uri ?commodityType (COUNT(?commodityType) as ?cCount) WHERE {
+    ?uri a rp:Country .
+    ?project rp:hasLocation ?uri
+    OPTIONAL { ?uri skos:prefLabel ?name }
+    OPTIONAL { ?project rp_misc:commodityType ?commodityType }
+}
+GROUP BY ?uri ?commodityType  ?name
+
+ORDER BY (?name)
+limit {{lodspk.maxResults}}
+
+
+
+{% endif %}
+
+
+
+
+
