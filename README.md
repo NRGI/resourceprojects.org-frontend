@@ -1,3 +1,12 @@
+
+Introduction
+------------
+
+This is the code (will) run the http://resourceprojects.org website.
+
+It is deployed using a Docker container, which is built on Docker hub at:
+https://registry.hub.docker.com/u/bjwebb/resourceprojects.org-frontend/
+
 Pre-requisites
 --------------
 
@@ -5,6 +14,16 @@ To run lodspeakr you will need an instance of virtuoso running.
 
 ```
 docker run -p 127.0.0.1:8890:8890 --name=virtuoso -v /usr/local/var/lib/virtuoso/db caprenter/automated-build-virtuoso 
+```
+
+Running from docker hub
+-----------------------
+
+```
+# Pull the latest version
+docker pull bjwebb/resourceprojects.org-frontend
+# Run it
+docker run --publish=127.0.0.2:80:80 --name=lodspeakr-container --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ bjwebb/resourceprojects.org-frontend
 ```
 
 Development
@@ -28,8 +47,10 @@ docker run --publish=127.0.0.2:80:80 --name=lodspeakr-container --rm --link virt
 Uploading data into virtuoso
 ----------------------------
 
+*Note:* The prefer method of loading data is using the ETL load container at https://github.com/NRGI/resource-projects-etl/#running-with-docker , however, if you you want to you can also upload data manually.
+
 * Go to http://localhost:8890/conductor/
-* Log in. Default uusername/password is dba/dba
+* Log in. Default username/password is dba/dba
 * Click the linked data tab.
 
 If you've previously uploaded resourceprojects data, delete the old data - go to Linked Data -> Graphs -> Graphs and hit the delete button on the resourceprojects.org row
