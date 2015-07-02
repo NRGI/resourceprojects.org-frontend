@@ -9,7 +9,11 @@
           <ul class="unstyled"><li><a href="http://www.resourcegovernance.org/">Natural Resource Governace Institute (Main Website)</a></li></ul>
         </div>
         <div class="span4">
-          <h2 class="block-title">Block 2</h2>
+          <h2 class="block-title">Advanced</h2>
+          <ul class="unstyled">
+            <li><a href="{{lodspk.home}}classes">Classes</a></li>
+              <li><a href="{{lodspk.home}}namedGraphs">Named Graphs</a></li>
+          </ul>
         </div>
         <div class="span4">
           <h2 class="block-title">Block 3</h2>

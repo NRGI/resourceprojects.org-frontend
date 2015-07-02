@@ -64,8 +64,7 @@
               <li><a href="{{lodspk.home}}/data/Country">Countries</a></li>
               <li><a href="{{lodspk.home}}/data/Company">Companies</a></li>
               <li><a href="{{lodspk.home}}/data/License">Licenses</a></li>
-              <li><a href="{{lodspk.home}}classes">Classes</a></li>
-              <li><a href="{{lodspk.home}}namedGraphs">Named Graphs</a></li>
+              
             </ul>
             <form class="navbar-search pull-left" action="">
               <input type="text" data-provide="typeahead" class="typeahead search-query span2" placeholder="Search"/>
