@@ -4,8 +4,6 @@
           <h1>{{first.main.name.value}} <small>Payment</small></h1>
       </div>
 
-
-      <h2>Payments</h2>
       <table class="table table-striped">
         <thead>
           <tr><th>ID</th><th>Currency</th><th>Date</th><th>Paid by</th><th>Paid To</th><th>Value</th></tr>
