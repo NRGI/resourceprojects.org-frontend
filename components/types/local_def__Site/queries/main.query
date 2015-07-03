@@ -1,0 +1,25 @@
+DEFINE input:same-as "yes"
+
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+prefix skos_: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT * WHERE {
+    OPTIONAL { <{{uri}}> rp:lat ?lat }
+    OPTIONAL { <{{uri}}> rp:lng ?lng }
+    OPTIONAL { <{{uri}}> skos_:prefLabel ?name }
+    OPTIONAL { <{{uri}}> rp:commodity ?commodity }
+    OPTIONAL { ?commodity skos_:prefLabel ?commodity_name }
+    OPTIONAL { <{{uri}}> rp_misc:address	?address }
+    OPTIONAL { <{{uri}}> rp_misc:capacity	?capacity }
+    OPTIONAL { <{{uri}}> rp_misc:cite	?cite }
+    OPTIONAL { <{{uri}}> rp_misc:locationPrecision	?locationPrecision }
+    OPTIONAL { <{{uri}}> rp_misc:notes	?notes }
+    OPTIONAL { <{{uri}}> rp_misc:siteType	?siteType }
+    OPTIONAL { <{{uri}}> rp_misc:status	?status }
+    OPTIONAL { <{{uri}}> rp_misc:units	?units }
+    OPTIONAL { <{{uri}}> rp:trueAt ?trueAt }
+
+}
+
+
