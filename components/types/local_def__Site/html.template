@@ -1,9 +1,28 @@
 {%include "../../includes/header.inc"%}
     <div class="container">
       <div class="page-header">
-          <h1>{{first.main.name.value}} <small>Payment</small></h1>
+          <h1>{{first.main.name.value}} <small>Site</small></h1>
       </div>
+      
+      <p>Notes: {{first.main.notes.value}}</p>
+      <p>Co-ordinates: Lat {{first.main.lat.value}} Lng {{first.main.lng.value}}</p>
+      
+      
+          <p>Commodity: <a href="{{first.main.commodity.value}}">{{first.main.commodity_name.value}}</a></p>
 
+          <p>Address: {{first.main.address.value}}</p>
+          <p>Capacity: {{first.main.capacity.value}}</p>
+          <p>Cite: {{first.main.cite.value}}</p>
+          <p>LocationPrecision: {{first.main.locationPrecision.value}}</p>
+          <p>Notes: {{first.main.notes.value}}</p>
+          <p>SiteType: {{first.main.siteType.value}}</p>
+          <p>Status: {{first.main.status.value}}</p>
+          <p>Units: {{first.main.units.value}}</p>
+          <p>True at: {{first.main.trueAt.value}}</p>
+          {{models.main|googlemaps:"lat,lng,name"}}
+
+          
+      <!--<h2>Payments</h2>
       <table class="table table-striped">
         <thead>
           <tr><th>ID</th><th>Currency</th><th>Date</th><th>Paid by</th><th>Paid To</th><th>Value</th></tr>
@@ -19,7 +38,7 @@
             <td>{{ row.value.value }}</td>
         </tr>
         {% endfor %}
-      </table>
+      </table>--->
       
       <p>
       <a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">(Detailed View)</a>
