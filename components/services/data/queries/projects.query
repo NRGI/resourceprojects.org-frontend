@@ -1,6 +1,43 @@
 prefix rp: <http://resourceprojects.org/def/>
 prefix rp_misc: <http://resourceprojects.org/def/misc/>
 
+
+{% if lodspk.args.arg0 == 'Commodity' %}
+
+SELECT DISTINCT * WHERE {
+    ?uri a rp:{{lodspk.args.arg0}}
+    OPTIONAL { ?uri skos:prefLabel ?name }
+}
+ORDER BY (?name)
+limit {{lodspk.maxResults}}
+
+{% endif %}
+
+
+{% if lodspk.args.arg0 == 'Company' %}
+
+SELECT DISTINCT * WHERE {
+    ?uri a rp:{{lodspk.args.arg0}}
+    OPTIONAL { ?uri skos:prefLabel ?name }
+}
+ORDER BY (?name)
+limit 1
+
+{% endif %}
+
+
+{% if lodspk.args.arg0 == 'CompanyPayment' %}
+
+SELECT DISTINCT * WHERE {
+    ?uri a rp:{{lodspk.args.arg0}}
+    OPTIONAL { ?uri skos:prefLabel ?name }
+}
+ORDER BY (?name)
+limit {{lodspk.maxResults}}
+
+{% endif %}
+
+
 {% if lodspk.args.arg0 == 'Country' %}
 
 SELECT DISTINCT ?uri ?name (COUNT(?project) as ?pCount) WHERE {
@@ -9,6 +46,54 @@ SELECT DISTINCT ?uri ?name (COUNT(?project) as ?pCount) WHERE {
     OPTIONAL { ?uri skos:prefLabel ?name }
 }
 GROUP BY ?uri ?name
+ORDER BY (?name)
+limit {{lodspk.maxResults}}
+
+{% endif %}
+
+
+{% if lodspk.args.arg0 == 'Entity' %}
+
+SELECT DISTINCT * WHERE {
+    ?uri a rp:{{lodspk.args.arg0}}
+    OPTIONAL { ?uri skos:prefLabel ?name }
+}
+ORDER BY (?name)
+limit {{lodspk.maxResults}}
+
+{% endif %}
+
+
+{% if lodspk.args.arg0 == 'GovernmentReceipt' %}
+
+SELECT DISTINCT * WHERE {
+    ?uri a rp:{{lodspk.args.arg0}}
+    OPTIONAL { ?uri skos:prefLabel ?name }
+}
+ORDER BY (?name)
+limit {{lodspk.maxResults}}
+
+{% endif %}
+
+
+{% if lodspk.args.arg0 == 'License' %}
+
+SELECT DISTINCT * WHERE {
+    ?uri a rp:{{lodspk.args.arg0}}
+    OPTIONAL { ?uri skos:prefLabel ?name }
+}
+ORDER BY (?name)
+limit 1
+
+{% endif %}
+
+
+{% if lodspk.args.arg0 == 'Production' %}
+
+SELECT DISTINCT * WHERE {
+    ?uri a rp:{{lodspk.args.arg0}}
+    OPTIONAL { ?uri skos:prefLabel ?name }
+}
 ORDER BY (?name)
 limit {{lodspk.maxResults}}
 
@@ -30,30 +115,43 @@ ORDER BY ?name ?country_name
 {% endif %}
 
 
-{% if lodspk.args.arg0 == 'Company' %}
+{% if lodspk.args.arg0 == 'Site' %}
 
 SELECT DISTINCT * WHERE {
     ?uri a rp:{{lodspk.args.arg0}}
     OPTIONAL { ?uri skos:prefLabel ?name }
 }
 ORDER BY (?name)
-limit 1
+limit {{lodspk.maxResults}}
 
 {% endif %}
 
 
-{% if lodspk.args.arg0 == 'License' %}
+{% if lodspk.args.arg0 == 'SourceRecord' %}
 
 SELECT DISTINCT * WHERE {
     ?uri a rp:{{lodspk.args.arg0}}
     OPTIONAL { ?uri skos:prefLabel ?name }
 }
 ORDER BY (?name)
-limit 1
+limit {{lodspk.maxResults}}
+
+{% endif %}
+
+
+{% if lodspk.args.arg0 == 'Stake' %}
+
+SELECT DISTINCT * WHERE {
+    ?uri a rp:{{lodspk.args.arg0}}
+    OPTIONAL { ?uri skos:prefLabel ?name }
+}
+ORDER BY (?name)
+limit {{lodspk.maxResults}}
 
 {% endif %}
 
 {% if !lodspk.args.arg0 %}
+
 SELECT DISTINCT ?type WHERE {
     GRAPH <http://resourceprojects.org/> {
         ?s a ?type

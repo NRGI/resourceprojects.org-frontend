@@ -3,30 +3,20 @@
   <div class="container">
 
 {% if lodspk.args.arg0 %}
-  {% if lodspk.args.arg0 == 'Project' %}
+
+    {% if lodspk.args.arg0 == 'Commodity' %}
+    
       <div class="page-header">
         <h1>{{lodspk.args.arg0}} <small></small></h1>
       </div>
-             <table class="table table-striped" about="{{uri}}">
-          <thead>
-            <tr><th>Project</th><th>ID</th><th>Country</th><th>Commodity Type</th></tr>
-          </thead>
-          {% for row in models.projects %}
-          <tr>
-              <td><a href="{{ row.project.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></td>
-              <td><a href="{{ row.project.value }}">{{ row.project.value }}</a></td>
-              <td>{{row.country_name.value}}</td>
-              <td>{{row.commodityType.value}}</td>
-          </tr>
-          {% endfor %}
-        </table>
       <ul>
-      <!--{% for row in models.main %}
+      {% for row in models.main %}
           <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
       {% endfor %}
-      </ul>-->
-  
+      </ul> 
+      
   {% endif %}
+  
   {% if lodspk.args.arg0 == 'Company' %}
       <div class="page-header">
         <h1>{{lodspk.args.arg0}} <small></small></h1>
@@ -39,6 +29,20 @@
       </ul>
   
   {% endif %}
+
+  {% if lodspk.args.arg0 == 'CompanyPayment' %}
+      <div class="page-header">
+        <h1>{{lodspk.args.arg0}} <small></small></h1>
+      </div>
+
+      <ul>
+      {% for row in models.main %}
+          <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
+      {% endfor %}
+      </ul>
+  
+  {% endif %}
+  
   {% if lodspk.args.arg0 == 'Country' %}
     
       <div class="page-header">
@@ -105,6 +109,33 @@
       </ul>-->
       
   {% endif %}
+
+  {% if lodspk.args.arg0 == 'Entity' %}
+      <div class="page-header">
+        <h1>{{lodspk.args.arg0}} <small></small></h1>
+      </div>
+
+      <ul>
+      {% for row in models.main %}
+          <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
+      {% endfor %}
+      </ul>
+  
+  {% endif %}
+    
+  {% if lodspk.args.arg0 == 'GovernmentReceipt' %}
+      <div class="page-header">
+        <h1>{{lodspk.args.arg0}} <small></small></h1>
+      </div>
+
+      <ul>
+      {% for row in models.main %}
+          <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
+      {% endfor %}
+      </ul>
+  
+  {% endif %}
+  
   {% if lodspk.args.arg0 == 'License' %}
     
       <div class="page-header">
@@ -116,7 +147,85 @@
       {% endfor %}
       </ul> 
       
+  {% endif %}
+  
+  {% if lodspk.args.arg0 == 'Production' %}
+      <div class="page-header">
+        <h1>{{lodspk.args.arg0}} <small></small></h1>
+      </div>
+
+      <ul>
+      {% for row in models.main %}
+          <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
+      {% endfor %}
+      </ul>
+  
+  {% endif %}
+  
+  {% if lodspk.args.arg0 == 'Project' %}
+      <div class="page-header">
+        <h1>{{lodspk.args.arg0}} <small></small></h1>
+      </div>
+             <table class="table table-striped" about="{{uri}}">
+          <thead>
+            <tr><th>Project</th><th>ID</th><th>Country</th><th>Commodity Type</th></tr>
+          </thead>
+          {% for row in models.projects %}
+          <tr>
+              <td><a href="{{ row.project.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></td>
+              <td><a href="{{ row.project.value }}">{{ row.project.value }}</a></td>
+              <td>{{row.country_name.value}}</td>
+              <td>{{row.commodityType.value}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      <ul>
+      <!--{% for row in models.main %}
+          <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
+      {% endfor %}
+      </ul>-->
+  
+  {% endif %}
+  
+  {% if lodspk.args.arg0 == 'Site' %}
+    
+      <div class="page-header">
+        <h1>{{lodspk.args.arg0}} <small></small></h1>
+      </div>
+      <ul>
+      {% for row in models.main %}
+          <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
+      {% endfor %}
+      </ul> 
+      
   {% endif %}  
+  
+  {% if lodspk.args.arg0 == 'SourceRecord' %}
+    
+      <div class="page-header">
+        <h1>{{lodspk.args.arg0}} <small></small></h1>
+      </div>
+      <ul>
+      {% for row in models.main %}
+          <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
+      {% endfor %}
+      </ul> 
+      
+  {% endif %} 
+  
+  {% if lodspk.args.arg0 == 'Stake' %}
+    
+      <div class="page-header">
+        <h1>{{lodspk.args.arg0}} <small></small></h1>
+      </div>
+      <ul>
+      {% for row in models.main %}
+          <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
+      {% endfor %}
+      </ul> 
+      
+  {% endif %} 
+  
 {% else %}
 
       <div class="page-header">
