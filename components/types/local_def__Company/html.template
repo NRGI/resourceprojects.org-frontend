@@ -60,7 +60,7 @@
             <td><a href="{{ row.companyPayment.value }}">{{ row.companyPayment.value }}</a></td>
             <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
             <td>{{ row.currency.value }}</td>
-            <td>{{ row.date.value }}</td>
+            <td>{{ row.date.value|date:"Y" }}</td>
             <td>{{ row.type.value }}</td>
             <td><a href="{{ row.payee.value }}">{{ row.payee_name.value }}</a></td>
             <td>{{ row.value.value }}</td>
