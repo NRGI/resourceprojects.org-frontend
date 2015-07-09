@@ -3,7 +3,16 @@
       <div class="page-header">
         <h1>{{first.main.name.value}} <small>Project</small></h1>
       </div>
-      <p>Our Project ID: {{uri|explode:"/"|pop}} </p>
+      <p>Our Project ID: 
+          {% for i,path_item in uri|explode:"/" %}
+            {% if i >= 4  %}
+              {{ path_item }}
+                {% if i == 4  %}
+                   /
+                {% endif %}
+            {% endif %}
+          {% endfor %}
+      </p>
       <p>Description (with provenance of description?)
       </p>
       Location: {% for location in models.main %} <a href="{{ location.location.value }}">{{ location.location_name.value }}</a>{%if !forloop.last%},{% endif %}
