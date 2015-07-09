@@ -60,10 +60,10 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li><a href="{{lodspk.home}}">Home</a></li>
-              <li><a href="{{lodspk.home}}/data/Project">Projects</a></li>
-              <li><a href="{{lodspk.home}}/data/Country">Countries</a></li>
-              <li><a href="{{lodspk.home}}/data/Company">Companies</a></li>
-              <li><a href="{{lodspk.home}}/data/License">Licenses</a></li>
+              <li><a href="{{lodspk.home}}data/Project">Projects</a></li>
+              <li><a href="{{lodspk.home}}data/Country">Countries</a></li>
+              <li><a href="{{lodspk.home}}data/Company">Companies</a></li>
+              <li><a href="{{lodspk.home}}data/License">Licenses</a></li>
               
             </ul>
             <form class="navbar-search pull-left" action="">
