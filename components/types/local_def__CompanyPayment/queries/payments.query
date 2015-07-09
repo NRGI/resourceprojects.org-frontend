@@ -9,6 +9,7 @@ SELECT * WHERE {
     OPTIONAL { <{{uri}}> rp:currency ?currency } .
     OPTIONAL { <{{uri}}> rp:value ?value } .
     OPTIONAL { <{{uri}}> rp:date ?date } .
+    OPTIONAL { <{{uri}}> rp:year ?year } .
     OPTIONAL { 
         <{{uri}}> rp:payer ?payer .
         ?payer skos_:prefLabel ?payer_name

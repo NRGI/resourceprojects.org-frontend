@@ -13,7 +13,15 @@
             <td><a href="{{ uri }}">{{ uri|explode:"/"|pop }}</a></td>
             <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
             <td>{{ row.currency.value }}</td>
-            <td>{{ row.date.value|date:"Y" }}</td>
+            {%if row.date%}
+              <td>{{ row.date.value|date:"Y" }}</td>
+              {%else%}
+                {%if row.year%}
+                  <td>{{ row.year.value }}</td>
+                {%else%}
+                  <td></td>
+                {%endif%}
+            {%endif%}
             <td><a href="{{ row.payer.value }}">{{ row.payer_name.value }}</a></td>
             <td><a href="{{ row.payee.value }}">{{ row.payee_name.value }}</a></td>
             <td>{{ row.value.value }}</td>
