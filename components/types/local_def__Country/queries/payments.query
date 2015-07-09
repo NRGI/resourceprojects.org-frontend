@@ -5,12 +5,13 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT * WHERE {
-    ?companyPayment rp:payee <{{uri}}> .
+    ?project rp:hasLocation <{{uri}}> .
+    ?companyPayment rp:relatedProject ?project .
     ?companyPayment rp:payer ?company
     OPTIONAL { ?company skos_:prefLabel ?company_name }
     OPTIONAL { ?companyPayment rp:currency ?currency }
     OPTIONAL { ?companyPayment rp:value ?value } 
     OPTIONAL { ?companyPayment rp:date ?date } 
-    OPTIONAL { <{{uri}}> rp:year ?year }
+    OPTIONAL { ?companyPayment rp:year ?year }
     OPTIONAL { ?companyPayment rp_misc:type ?type }
 }
