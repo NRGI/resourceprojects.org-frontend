@@ -21,13 +21,13 @@
       <div class="page-header">
         <h1>{{lodspk.args.arg0}} <small></small></h1>
       </div>
-
+      {%include "../../includes/pager.inc"%}
       <ul>
       {% for row in models.main %}
           <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
       {% endfor %}
       </ul>
-  
+      {%include "../../includes/pager.inc"%}
   {% endif %}
 
   {% if lodspk.args.arg0 == 'CompanyPayment' %}
@@ -166,7 +166,8 @@
       <div class="page-header">
         <h1>{{lodspk.args.arg0}} <small></small></h1>
       </div>
-             <table class="table table-striped" about="{{uri}}">
+      {%include "../../includes/pager.inc"%}
+        <table class="table table-striped" about="{{uri}}">
           <thead>
             <tr><th>Project</th><th>ID</th><th>Country</th><th>Commodity Type</th></tr>
           </thead>
@@ -184,6 +185,7 @@
           <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
       {% endfor %}
       </ul>-->
+      {%include "../../includes/pager.inc"%}
   
   {% endif %}
   

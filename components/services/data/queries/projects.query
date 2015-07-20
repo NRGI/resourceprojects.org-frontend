@@ -111,7 +111,8 @@ SELECT DISTINCT * WHERE {
 }
 GROUP BY ?name ?country_name
 ORDER BY ?name ?country_name
-
+LIMIT {{lodspk.limit}}
+OFFSET {{lodspk.offset}}
 {% endif %}
 
 
