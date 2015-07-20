@@ -1,0 +1,10 @@
+{%include "../includes/header.inc"%}
+
+
+    <div class="container fourofour">
+      <h1>Error 500</h1>
+      <p>You requested <strong>{{uri}}</strong> but that is a resource we couldn't find. Please check the spelling of the URI or report it to the system adminsitrator.</p>
+    </div>
+
+
+{%include "../includes/footer.inc"%}
