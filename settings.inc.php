@@ -1,5 +1,20 @@
 <?php
 
+$offset = 0;
+if(!empty($_GET['offset'])) {
+    $offset = (int) $_GET['offset'];
+}
+$lodspk['offset'] = $offset;
+
+$limit = 50;
+if(!empty($_GET['limit'])) {
+    $limit = (int) $_GET['limit'];
+}
+$lodspk['limit'] = $limit;
+
+$lodspk['next'] = $offset + $limit;
+$lodspk['prev'] = $offset - $limit;
+
 $conf['endpoint']['local'] = 'http://virtuoso:8890/sparql';
 $conf['home'] = '/var/www/html/lodspeakr/';
 $conf['basedir'] = 'BASE_URL';

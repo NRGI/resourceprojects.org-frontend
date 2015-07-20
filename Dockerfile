@@ -32,4 +32,7 @@ ADD start.sh /var/www/html/lodspeakr/start.sh
 # Change module priorities https://github.com/alangrafu/lodspeakr/wiki/Changing-priorities-of-modules
 RUN utils/lodspk.sh enable module type 1
 
+ADD htaccess-modified /var/www/html/lodspeakr/.htaccess
+ADD htaccess-parent-modified /var/www/html/.htaccess
+
 CMD ["./start.sh"]

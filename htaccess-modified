@@ -1,0 +1,8 @@
+RewriteEngine on
+
+RewriteRule ^$ index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{SCRIPT_FILENAME} !.*/index.php$
+# Add QSA flag to pass through query string
+RewriteRule ^(.*)$ index.php?q=$1 [QSA,L]
