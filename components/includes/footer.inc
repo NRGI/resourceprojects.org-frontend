@@ -21,6 +21,28 @@
       </div>
     </div>
   </footer>
-
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.13.3/jquery.tablesorter.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.13.3/jquery.tablesorter.widgets.min.js"></script>
+  <script>$(function() { $("table.table").tablesorter(); });</script>
+  <script type="text/javascript" src="{{lodspk.home}}js/bootstrap3-typeahead.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+      $('.typeahead').typeahead({
+          source: function (typeahead, query) {
+            $('.typeahead').addClass('wait');[]
+            return $.get('{{lodspk.home}}search/'+encodeURIComponent(query), { }, function (data) {
+                $('.typeahead').removeClass('wait');[]
+                return typeahead.process(data);
+            }, 'json');
+          },
+          onselect: function (obj) {
+            $('.typeahead').attr('disabled', true);
+            window.location = obj.uri;
+          }
+      });
+  });
+  </script>
   </body>
 </html>

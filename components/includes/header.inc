@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="{{lodspk.home}}css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="{{lodspk.home}}css/nrgi.css" rel="stylesheet" type="text/css" media="screen" />
     <link rel="alternate" type="application/rdf+xml" title="RDF/XML Version" href="{{lodspk.local.value}}.rdf" />
     <link rel="alternate" type="text/turtle" title="Turtle Version" href="{{lodspk.local.value}}.ttl" />
     <link rel="alternate" type="text/plain" title="N-Triples Version" href="{{lodspk.local.value}}.nt" />
@@ -22,28 +23,6 @@
         background-position: right;
       }
     </style>
-    <link href="{{lodspk.home}}css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="{{lodspk.home}}css/nrgi.css" rel="stylesheet" type="text/css" media="screen" />
-    <script type="text/javascript" src="{{lodspk.home}}js/jquery.js"></script>
-    <script type="text/javascript" src="{{lodspk.home}}js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{lodspk.home}}js/bootstrap-typeahead.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-        $('.typeahead').typeahead({
-            source: function (typeahead, query) {
-              $('.typeahead').addClass('wait');[]
-              return $.get('{{lodspk.home}}search/'+encodeURIComponent(query), { }, function (data) {
-                  $('.typeahead').removeClass('wait');[]
-                  return typeahead.process(data);
-              }, 'json');
-            },
-            onselect: function (obj) {
-              $('.typeahead').attr('disabled', true);
-              window.location = obj.uri;
-            }
-        });
-    });
-    </script>
   </head>
   <body>
 
@@ -59,7 +38,7 @@
           <!--<a class="brand" href="{{lodspk.home}}">{{lodspk.title}}</a>-->
           <a class="brand" href="{{lodspk.home}}"><img src="{{lodspk.home}}img/NRGI_Logo_RGB_no_strapline.jpg" width="185" height="65" alt="Natural Resource Governance Institute Logo"/></a>
           <div class="nav-collapse">
-            <ul class="nav">
+            <ul class="nav list-inline">
               <!--<li><a href="{{lodspk.home}}">Home</a></li>-->
               <li><a href="{{lodspk.home}}project">Projects</a></li>
               <li><a href="{{lodspk.home}}country">Countries</a></li>
