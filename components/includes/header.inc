@@ -50,6 +50,7 @@
   <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
+          <div class="banner">Some message here to let people know this site is still in production</div>
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
