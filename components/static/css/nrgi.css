@@ -6,7 +6,7 @@ body {
 }
 
 .navbar-fixed-top {
-  border-top: 7px solid rgba(3,151,215,0.3);
+  border-top: 25px solid rgba(3,151,215,0.3);
   border-bottom: 1px rgb(85,114,136) solid;
   border-bottom: 1px solid #EEEFE8;
 }
@@ -76,4 +76,9 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+.banner {
+  margin-top: -23px;
+  margin-bottom: 10px;
 }
