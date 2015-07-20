@@ -4,18 +4,18 @@
           <p>The Natural Resource Governance Institute promotes the effective, transparent and accountable management of oil, gas and mineral resources for the public good.</p>
       </div>
       <div class="row">
-        <div class="span4">
+        <div class="col-md-4">
           <h2 class="block-title">Links</h2>
           <ul class="unstyled"><li><a href="http://www.resourcegovernance.org/">Natural Resource Governace Institute (Main Website)</a></li></ul>
         </div>
-        <div class="span4">
+        <div class="col-md-4">
           <h2 class="block-title">Advanced</h2>
           <ul class="unstyled">
             <li><a href="{{lodspk.home}}classes">Classes</a></li>
               <li><a href="{{lodspk.home}}namedGraphs">Named Graphs</a></li>
           </ul>
         </div>
-        <div class="span4">
+        <div class="col-md-4">
           <h2 class="block-title">Block 3</h2>
         </div>
       </div>
