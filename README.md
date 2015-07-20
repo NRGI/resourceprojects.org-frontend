@@ -47,7 +47,7 @@ docker run --publish=127.0.0.2:80:80 --name=lodspeakr-container --rm --link virt
 Uploading data into virtuoso
 ----------------------------
 
-*Note:* The prefer method of loading data is using the ETL load container at https://github.com/NRGI/resource-projects-etl/#running-with-docker , however, if you you want to you can also upload data manually.
+**Note:** The prefer method of loading data is using the ETL load container at https://github.com/NRGI/resource-projects-etl/#running-with-docker , however, if you you want to you can also upload data manually.
 
 * Go to http://localhost:8890/conductor/
 * Log in. Default username/password is dba/dba
