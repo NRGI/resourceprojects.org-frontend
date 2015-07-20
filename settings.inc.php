@@ -3,6 +3,9 @@
 $offset = 0;
 if(!empty($_GET['offset'])) {
     $offset = (int) $_GET['offset'];
+    if ($offset < 0) {
+      $offset = 0;
+    }
 }
 $lodspk['offset'] = $offset;
 
@@ -14,6 +17,10 @@ $lodspk['limit'] = $limit;
 
 $lodspk['next'] = $offset + $limit;
 $lodspk['prev'] = $offset - $limit;
+
+if ($lodspk['prev'] <= 0) {
+      $lodspk['prev'] = 0;
+    }
 
 $conf['endpoint']['local'] = 'http://virtuoso:8890/sparql';
 $conf['home'] = '/var/www/html/lodspeakr/';
