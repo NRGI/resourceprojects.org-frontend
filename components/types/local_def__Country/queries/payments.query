@@ -4,7 +4,7 @@ prefix rp: <http://resourceprojects.org/def/>
 prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT * WHERE {
+SELECT ?companyPayment ?currency ?value ?date ?year ?type ?company_name ?company  WHERE {
     ?project rp:hasLocation <{{uri}}> .
     ?companyPayment rp:relatedProject ?project .
     ?companyPayment rp:payer ?company
@@ -15,3 +15,4 @@ SELECT * WHERE {
     OPTIONAL { ?companyPayment rp:year ?year }
     OPTIONAL { ?companyPayment rp_misc:type ?type }
 }
+ORDER BY DESC (?value)
