@@ -19,7 +19,7 @@
           <p>Status: {{first.main.status.value}}</p>
           <p>Units: {{first.main.units.value}}</p>
           <p>True at: {{first.main.trueAt.value}}</p>
-          {{models.main|googlemaps:"lat,lng,name"}}
+          {{models.main|googlemaps:"lat,lng,name,zoom=3"}}
 
           
       <!--<h2>Payments</h2>
