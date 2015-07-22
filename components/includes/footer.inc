@@ -6,11 +6,11 @@
       <div class="row">
         <div class="col-md-4">
           <h2 class="block-title">Links</h2>
-          <ul class="unstyled"><li><a href="http://www.resourcegovernance.org/">Natural Resource Governace Institute (Main Website)</a></li></ul>
+          <ul class="list-unstyled"><li><a href="http://www.resourcegovernance.org/">Natural Resource Governace Institute (Main Website)</a></li></ul>
         </div>
         <div class="col-md-4">
           <h2 class="block-title">Advanced</h2>
-          <ul class="unstyled">
+          <ul class="list-unstyled">
             <li><a href="{{lodspk.home}}classes">Classes</a></li>
               <li><a href="{{lodspk.home}}namedGraphs">Named Graphs</a></li>
           </ul>
