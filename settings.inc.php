@@ -40,5 +40,3 @@ $conf['mirror_external_uris'] = $conf['ns']['local'];
 $lodspk['title'] = 'LODSPeaKr';
 
 $conf['modules']['available'] = array('static','type','service');
-
-$conf['root'] = 'data/';
