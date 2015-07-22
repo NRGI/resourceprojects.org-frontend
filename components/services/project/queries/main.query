@@ -1,0 +1,16 @@
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+
+SELECT DISTINCT * WHERE {
+    ?project a rp:Project .
+    ?project rp:hasLocation ?country
+    OPTIONAL { ?country skos:prefLabel ?country_name }
+    OPTIONAL { ?project skos:prefLabel ?name }
+    OPTIONAL { ?project rp_misc:commodityType ?commodityType }
+}
+GROUP BY ?name ?country_name
+ORDER BY ?name ?country_name
+LIMIT {{lodspk.limit}}
+OFFSET {{lodspk.offset}}
+
+

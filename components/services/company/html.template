@@ -1,0 +1,16 @@
+{%include "../../includes/header.inc"%}
+  
+<div class="container">
+  <div class="page-header">
+    <h1>Companies <small></small></h1>
+  </div>
+  {%include "../../includes/pager.inc"%}
+  <ul>
+  {% for row in models.main %}
+      <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
+  {% endfor %}
+  </ul>
+  {%include "../../includes/pager.inc"%}
+</div>
+
+{%include "../../includes/footer.inc"%}

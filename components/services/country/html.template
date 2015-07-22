@@ -1,0 +1,60 @@
+{%include "../../includes/header.inc"%}
+  
+<div class="container">
+  <div class="page-header">
+    <h1>Countries <small></small></h1>
+  </div>
+  <table class="table table-striped" about="{{uri}}">
+    <thead>
+      <tr><th>Country</th><th>No. Projects</th><th>Oil</th><th>Gas</th><th>Oil &amp; Gas</th><th>Mining</th></tr>
+    </thead>
+    {% for row in models.projects %}
+      <tr>
+        <td><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li></td>
+        <td>{{row.pCount.value}}</td>
+        <td>
+        {% for comm_row in models.commodities %}
+          {% if comm_row.commodityType.value == 'Oil' %}
+            {% if row.uri.value == comm_row.uri.value %}
+              {{comm_row.cCount.value}}
+            {% endif %}
+           {% endif %}
+        {% endfor %}
+        </td>
+        <td>
+        {% for comm_row in models.commodities %}
+          {% if comm_row.commodityType.value == 'Gas' %}
+            {% if row.uri.value == comm_row.uri.value %}
+              {{comm_row.cCount.value}}
+            {% endif %}
+           {% endif %}
+        {% endfor %}
+        </td>
+        <td>
+        {% for comm_row in models.commodities %}
+          {% if comm_row.commodityType.value == 'Oil & Gas' %}
+            {% if row.uri.value == comm_row.uri.value %}
+              {{comm_row.cCount.value}}
+            {% endif %}
+           {% endif %}
+        {% endfor %}
+        </td>
+        <td>
+        {% for comm_row in models.commodities %}
+          {% if comm_row.commodityType.value == 'Mining' %}
+            {% if row.uri.value == comm_row.uri.value %}
+              {{comm_row.cCount.value}}
+            {% endif %}
+           {% endif %}
+        {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+  <!--<ul>
+  {% for row in models.main %}
+      <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
+  {% endfor %}
+  </ul>-->
+</div>
+{%include "../../includes/footer.inc"%}

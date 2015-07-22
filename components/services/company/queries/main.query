@@ -1,0 +1,11 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT DISTINCT * WHERE {
+    ?uri a rp:Company
+    OPTIONAL { ?uri skos:prefLabel ?name }
+}
+ORDER BY (?name)
+LIMIT {{lodspk.limit}}
+OFFSET {{lodspk.offset}}
+
+

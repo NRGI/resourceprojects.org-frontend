@@ -1,0 +1,9 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT DISTINCT * WHERE {
+    ?uri a rp:Country
+    OPTIONAL { ?uri skos:prefLabel ?name }
+}
+ORDER BY (?name)
+limit {{lodspk.maxResults}}
+
