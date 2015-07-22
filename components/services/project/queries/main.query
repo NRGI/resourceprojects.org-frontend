@@ -1,12 +1,13 @@
 prefix rp: <http://resourceprojects.org/def/>
 prefix rp_misc: <http://resourceprojects.org/def/misc/>
 
-SELECT DISTINCT * WHERE {
+SELECT DISTINCT ?project ?country ?country_name ?name ?commodityType WHERE {
     ?project a rp:Project .
     ?project rp:hasLocation ?country
     OPTIONAL { ?country skos:prefLabel ?country_name }
     OPTIONAL { ?project skos:prefLabel ?name }
-    OPTIONAL { ?project rp_misc:commodityType ?commodityType }
+    OPTIONAL { ?project rp:commodity ?commodity.
+    ?commodity rp_misc:commodityType ?commodityType }
 }
 GROUP BY ?name ?country_name
 ORDER BY ?name ?country_name
