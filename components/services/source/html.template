@@ -1,8 +1,20 @@
 {%include "../../includes/header.inc"%}
+    
     <div class="container">
-    <h1>Default view</h1>
+      <div class="page-header">
+        <h1>{{first.main.name.value}} <small>Source</small></h1>
+      </div>
+      
+      {% for row in models.main %}
+        <p>Description: {{ row.description.value }}  </p>
+        <p>Source date: {{ row.sourceDate.value|date:"Y-m-d"}} </p>
+        <p>Retreived date: {{ row.retrievedDate.value|date:"Y-m-d" }}  </p>
+        <p>Type: {{ row.sourceType.value }}  </p>
+        <p>Link: {{ row.url.value }}  </p>
+        <p>Contributor: {{ row.contributor_name.value }} <a href="mailto:{{ row.mail_box.value }}">mail</a> <a href="{{ row.contributor_link.value }}">link</a></p>
+      {% endfor %}
 
-    <table class="table table-striped" about="{{uri}}">
+   <!-- <table class="table table-striped" about="{{uri}}">
     <thead>
       <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
     </thead>
@@ -34,10 +46,10 @@
       <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
     </thead>
 
-    </table>
-    </div>    
+    </table> -->
     
     {%include "../../includes/advanced_links.inc"%}
     
-  </body>
-</html>
+    </div>     
+
+{%include "../../includes/footer.inc"%}

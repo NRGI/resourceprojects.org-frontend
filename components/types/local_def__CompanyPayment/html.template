@@ -29,9 +29,7 @@
         {% endfor %}
       </table>
       
-      <p>
-      <a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">(Detailed View)</a>
-      </p>
+      {%include "../../includes/advanced_links.inc"%}
       
     </div>    
 {%include "../../includes/footer.inc"%}

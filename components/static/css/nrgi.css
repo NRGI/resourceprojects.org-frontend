@@ -174,3 +174,9 @@ footer a:hover {
 .page-header {
   margin: 70px 0 20px;
 }
+
+div.advanced-links {
+  margin:20px 0;
+  border-top: 1px solid #EEEFE8;
+  padding-top: 20px;
+}
