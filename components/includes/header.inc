@@ -60,12 +60,11 @@
           <a class="brand" href="{{lodspk.home}}"><img src="{{lodspk.home}}img/NRGI_Logo_RGB_no_strapline.jpg" width="185" height="65" alt="Natural Resource Governance Institute Logo"/></a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li><a href="{{lodspk.home}}">Home</a></li>
-              <li><a href="{{lodspk.home}}data/Project">Projects</a></li>
-              <li><a href="{{lodspk.home}}data/Country">Countries</a></li>
-              <li><a href="{{lodspk.home}}data/Company">Companies</a></li>
-              <li><a href="{{lodspk.home}}data/License">Licenses</a></li>
-              
+              <!--<li><a href="{{lodspk.home}}">Home</a></li>-->
+              <li><a href="{{lodspk.home}}project">Projects</a></li>
+              <li><a href="{{lodspk.home}}country">Countries</a></li>
+              <li><a href="{{lodspk.home}}company">Companies</a></li>
+              <li><a href="{{lodspk.home}}license">Licenses</a></li>
             </ul>
             <form class="navbar-search pull-left" action="">
               <input type="text" data-provide="typeahead" class="typeahead search-query span2" placeholder="Search"/>
