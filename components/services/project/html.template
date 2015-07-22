@@ -19,11 +19,7 @@
     </tr>
     {% endfor %}
   </table>
-    <!--<ul>
-    {% for row in models.main %}
-        <li><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li>
-    {% endfor %}
-    </ul>-->
+  
     
     {%include "../../includes/pager.inc"%}
 </div>
