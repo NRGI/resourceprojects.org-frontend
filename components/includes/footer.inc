@@ -30,17 +30,18 @@
   <script type="text/javascript">
   $(document).ready(function(){
       $('.typeahead').typeahead({
-          source: function (typeahead, query) {
-            $('.typeahead').addClass('wait');[]
+          source: function (query, process) {
+            $('.typeahead').addClass('wait');
             return $.get('{{lodspk.home}}search/'+encodeURIComponent(query), { }, function (data) {
-                $('.typeahead').removeClass('wait');[]
-                return typeahead.process(data);
+                $('.typeahead').removeClass('wait');
+                return process(data);
             }, 'json');
           },
-          onselect: function (obj) {
+          afterSelect: function (obj) {
             $('.typeahead').attr('disabled', true);
             window.location = obj.uri;
-          }
+          },
+          displayText: function(item){ return item.value;}
       });
   });
   </script>
