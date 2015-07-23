@@ -40,6 +40,7 @@
           <div class="nav-collapse">
             <ul class="nav list-inline">
               <!--<li><a href="{{lodspk.home}}">Home</a></li>-->
+              <li><a href="{{lodspk.home}}about.html">About</a></li>
               <li><a href="{{lodspk.home}}project">Projects</a></li>
               <li><a href="{{lodspk.home}}country">Countries</a></li>
               <li><a href="{{lodspk.home}}company">Companies</a></li>
