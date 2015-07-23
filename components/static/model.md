@@ -1,7 +1,5 @@
 % Data Model
 
-# Data model
-
 To be able to rapidly iterate on the data model for ResourceProjects.org we have built on a [linked data](http://linkeddata.org/) model. Our data is therefore an extensible [graph structure](https://en.wikipedia.org/wiki/Graph_(abstract_data_type)), with a set of core entities and properties defined by an ontology.
 
 The ontology is a work in progress and [can be found here](https://github.com/NRGI/resource-projects-etl/blob/master/ontology/resource-projects-ontology.rdf) (RDF). Detailed documentation is in the works. 
