@@ -4,7 +4,8 @@ prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 SELECT DISTINCT ?company ?name WHERE {
     ?project rp:hasLocation <{{uri}}> .
     ?project rp:hasStake ?stake .
-    ?stake rp:hasStakeholder ?company .
+    ?stake rp:isStakeIn ?company .
+    ?company a rp:Company 
     OPTIONAL {
         ?company skos_:prefLabel ?name
     }
