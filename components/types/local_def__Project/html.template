@@ -13,18 +13,18 @@
             {% endif %}
           {% endfor %}
       </p>
-      <p>Description (with provenance of description?)
-      </p>
-      Location: {% for location in models.main %} <a href="{{ location.location.value }}">{{ location.location_name.value }}</a>{%if !forloop.last%},{% endif %}
+      <!--<p>Description (with provenance of description?)</p>-->
+      Location: {% for location in models.countries %} <a href="{{ location.location.value }}">{{ location.location_name.value }}</a>{%if !forloop.last%},{% endif %}
       {% endfor %}
       </p>
       <p>
-      Commodity Type: {{ first.main.commodityType.value }}
+      Commodity Type: {% for row in models.commodities %} {{ row.commodityType.value }} {%if !forloop.last%},{% endif %}
+      {% endfor %}
       </p>
-      <p>
+      <!--<p>
       Commodity Details: {{ first.main.commodityDetails.value }}
-      </p>
-      <p>
+      </p>-->
+      <!--<p>
       Identifier: {{ first.main.identifier.value }}
       </p>
       <p>
@@ -32,7 +32,7 @@
       </p>
       <p>
       Link: {{ first.main.url.value }}
-      </p>
+      </p>-->
       <h2>Production Stats</h2>
        <table class="table table-striped">
         <thead>
@@ -62,21 +62,29 @@
         </tr>
         {% endfor %}
       </table>
-      
- 
-      <h2>Licenses</h2>
+
+      <h2>Payments</h2>
       <table class="table table-striped">
         <thead>
-          <tr><th>ID</th><th>Name</th><th>Volume</th><th>Units</th><th>Payment made by Company</th><th>Payment Received by Government</th></tr>
+          <tr><th>ID</th><th>Currency</th><th>Payment Date</th><th>Type</th><th>Paid by</th><th>Value</th></tr>
         </thead>
-        {% for row in models.licenses %}    
+        {% for row in models.payments %}    
         <tr>
-            <td><a href="{{ row.license.value }}">{{ row.license.value|explode:"/"|pop }}</a></td>
-            <td>{{ row.license_name.value|explode:"/"|pop }}</td>
-            <td>{{ row.volume.value }}</td>
-            <td>{{ row.production_unit.value }}</td>
-            <td>{{ row.payment_by_company.value }}</td>
-            <td>{{ row.payment_received.value }}</td>
+            <td><a href="{{ row.companyPayment.value }}">{{ row.companyPayment.value|explode:"/"|pop }}</a></td>
+            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
+            <td>{{ row.currency.value }}</td>
+            {%if row.date%}
+              <td>{{ row.date.value|date:"Y" }}</td>
+              {%else%}
+                {%if row.year%}
+                  <td>{{ row.year.value }}</td>
+                {%else%}
+                  <td></td>
+                {%endif%}
+            {%endif%}
+            <td>{{ row.type.value }}</td>
+            <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
+            <td>{{ row.value.value }}</td>
         </tr>
         {% endfor %}
       </table>

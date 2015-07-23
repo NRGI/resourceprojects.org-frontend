@@ -1,16 +1,14 @@
-DEFINE input:same-as "yes"
-
 prefix rp: <http://resourceprojects.org/def/>
 prefix rp_misc: <http://resourceprojects.org/def/misc/>
 # We can't use the prefix 'skos' as lodspeakr will then put a prefix satement
 # before the DEFINE statement, which is not allowed.
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?name ?identifier ?projectType ?url WHERE {
+SELECT ?location ?location_name WHERE {
+
     OPTIONAL {
-        <{{uri}}> skos_:prefLabel ?name
-    }  
-    OPTIONAL { <{{uri}}> rp_misc:identifier	?identifier }
-    OPTIONAL { <{{uri}}> rp_misc:titleProjecttype	?projectType }
-    OPTIONAL { <{{uri}}> rp_misc:url ?url }
+        <{{uri}}> rp:hasLocation ?location .
+        ?location skos_:prefLabel ?location_name
+    }   
 }
+GROUP BY ?location_name
