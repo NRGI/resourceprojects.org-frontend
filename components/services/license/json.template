@@ -1,6 +1,0 @@
-[
-    {% for row in models.main %}{% if ! forloop.first %}, {% endif %}{
-        "uri": "{{ row.uri.value }}"
-        "name": "{{ row.name.value }}"
-    }{% endfor %}
-]
