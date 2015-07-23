@@ -7,12 +7,9 @@
 
       <p>Description (with provenance of description?)</p>
       <p>
-      Countries/Locations:
+      Active in:
        {% for row in models.countries %}
-       <a href="{{ row.location.value }}">{{ row.country_name.value }}</a>{%if !forloop.last%},{% endif %}
-       <!--<ul>
-          <li><a href="{{ row.location.value }}">{{ row.country_name.value }}</a></li>
-      </ul>-->
+       <a href="{{ row.country.value }}">{{ row.country_name.value }}</a>{%if !forloop.last%},{% endif %}
        {% endfor %}
       </p>
       
