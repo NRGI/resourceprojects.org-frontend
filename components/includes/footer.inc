@@ -5,8 +5,14 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <h2 class="block-title">Links</h2>
-          <ul class="list-unstyled"><li><a href="http://www.resourcegovernance.org/">Natural Resource Governace Institute (Main Website)</a></li></ul>
+            <p>This site is a prototype, based on under-contributed data. No warranty of the accuracy or completeness of data is provided, and users should always check against original sources before making decisions based upon the data presented here. 
+            </p>
+            <p>
+            Unless otherwise stated, all data on the the site is available as open data under <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">Creative Commons License CC-BY-SA</a>.   
+            <p>
+            <p>
+            Errors and omissions can be reported to: <a href="mailto:apedersen@resourcegovernance.org">apedersen@resourcegovernance.org</a>
+            </p>
         </div>
         <div class="col-md-4">
           <h2 class="block-title">Advanced</h2>
@@ -16,7 +22,10 @@
           </ul>
         </div>
         <div class="col-md-4">
-          <h2 class="block-title">Block 3</h2>
+          <h2 class="block-title">
+               <h2 class="block-title">Links</h2>
+               <ul class="list-unstyled"><li><a href="http://www.resourcegovernance.org/">Natural Resource Governance Institute (Main Website)</a></li></ul>         
+          </h2>
         </div>
       </div>
     </div>
