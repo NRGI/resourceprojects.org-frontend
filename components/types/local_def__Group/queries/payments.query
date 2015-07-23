@@ -1,0 +1,17 @@
+DEFINE input:same-as "yes"
+
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+prefix skos_: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT * WHERE {
+    ?companyPayment rp:payer <{{uri}}> .
+    OPTIONAL { ?companyPayment rp:payee ?payee .
+              ?payee skos_:prefLabel ?payee_name
+              }
+    OPTIONAL { ?companyPayment rp:currency ?currency }
+    OPTIONAL { ?companyPayment rp:value ?value } 
+    OPTIONAL { ?companyPayment rp:date ?date } 
+    OPTIONAL { ?companyPayment rp:year ?year }
+    OPTIONAL { ?companyPayment rp_misc:type ?type }
+}
