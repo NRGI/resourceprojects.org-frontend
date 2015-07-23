@@ -33,21 +33,6 @@
       {% endfor %}
       </table>
       
-      <!--<h2>Licences</h2>
-      
-      
-      <table class="table table-striped">
-      <thead>
-        <tr><th>ID</th><th>Name</th></tr>
-      </thead>
-      {% for licence in models.licenses %}    
-      <tr>
-          <td><a href="{{licence.uri.value}}">{{ licence.uri.curie }}</a></td>
-          <td><a href="{{licence.uri.value}}">{{ licence.name.value }}</a></td>
-      </tr>
-      {% endfor %}
-      </table>-->
-      
       <h2>Payments</h2>
       <table class="table table-striped">
         <thead>
