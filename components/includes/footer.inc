@@ -18,8 +18,8 @@
         <div class="col-md-4">
           <h2 class="block-title">Advanced</h2>
           <ul class="list-unstyled">
-            <li><a href="{{lodspk.home}}classes">Classes</a></li>
-              <li><a href="{{lodspk.home}}namedGraphs">Named Graphs</a></li>
+            <li><a href="/classes">Classes</a></li>
+              <li><a href="/namedGraphs">Named Graphs</a></li>
           </ul>
         </div>
         <div class="col-md-4">
@@ -36,13 +36,13 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.13.3/jquery.tablesorter.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.13.3/jquery.tablesorter.widgets.min.js"></script>
   <script>$(function() { $("table.table").tablesorter(); });</script>
-  <script type="text/javascript" src="{{lodspk.home}}js/bootstrap3-typeahead.js"></script>
+  <script type="text/javascript" src="/js/bootstrap3-typeahead.js"></script>
   <script type="text/javascript">
   $(document).ready(function(){
       $('.typeahead').typeahead({
           source: function (query, process) {
             $('.typeahead').addClass('wait');
-            return $.get('{{lodspk.home}}search/'+encodeURIComponent(query), { }, function (data) {
+            return $.get('/search/'+encodeURIComponent(query), { }, function (data) {
                 $('.typeahead').removeClass('wait');
                 return process(data);
             }, 'json');
