@@ -1,0 +1,10 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT DISTINCT ?groups ?name (COUNT(?company) as ?cCount) WHERE {
+    ?groups a rp:Group .
+    ?groups rp:groupMember ?members .
+    ?members rp:organisation ?company
+    OPTIONAL { ?groups skos:prefLabel ?name }
+}
+ORDER BY (?name)
+

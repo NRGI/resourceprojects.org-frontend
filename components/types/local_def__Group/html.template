@@ -1,0 +1,74 @@
+{%include "../../includes/header.inc"%}
+    <div class="container">
+      <div class="page-header">
+          <h1>{{first.main.name.value}} <small>Group of Companies</small></h1>
+      </div>
+      <p>Our Group of Companies ID: {{uri|explode:"/"|pop}} </p>
+
+      <p>Description (with provenance of description?)</p>
+      <p>
+      Active in:
+       {% for row in models.countries %}
+       <a href="{{ row.country.value }}">{{ row.country_name.value }}</a>{%if !forloop.last%},{% endif %}
+       {% endfor %}
+      </p>
+      
+      <h2>Companies</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>Name</th></tr>
+        </thead>
+        {% for row in models.company %}    
+        <tr>
+            <td><a href="{{ row.company.value }}">{{ row.name.value }}</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+      
+      <h2>Projects</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Country</th><th>Commodity Type</th><th>Share</th></tr>
+        </thead>
+        {% for row in models.projects %}    
+        <tr>
+            <td><a href="{{ row.project.value }}">{{ row.project.value}}</a></td>
+            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
+            <td>{{ row.name.value }}</td>
+            <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
+            <td>{{ row.commodityType.value }}</td>
+            <td>{{ row.share.value }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      
+      <h2>Payments</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>ID</th><th>Currency</th><th>Payment Date</th><th>Type</th><th>Paid to</th><th>Value</th></tr>
+        </thead>
+        {% for row in models.payments %}    
+        <tr>
+            <td><a href="{{ row.companyPayment.value }}">{{ row.companyPayment.value }}</a></td>
+            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
+            <td>{{ row.currency.value }}</td>
+            {%if row.date%}
+              <td>{{ row.date.value|date:"Y" }}</td>
+              {%else%}
+                {%if row.year%}
+                  <td>{{ row.year.value }}</td>
+                {%else%}
+                  <td></td>
+                {%endif%}
+            {%endif%}
+            <td>{{ row.type.value }}</td>
+            <td><a href="{{ row.payee.value }}">{{ row.payee_name.value }}</a></td>
+            <td>{{ row.value.value }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      
+      {%include "../../includes/advanced_links.inc"%}
+      
+    </div>
+{%include "../../includes/footer.inc"%}

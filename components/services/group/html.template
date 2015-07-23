@@ -1,0 +1,21 @@
+{%include "../../includes/header.inc"%}
+  
+<div class="container">
+  <div class="page-header">
+    <h1>Groups <small></small></h1>
+  </div>
+
+  <table class="table table-striped">
+  <thead>
+    <tr><th>Name</th><th>No. Companies</th></tr>
+  </thead>
+  {% for row in models.main %}    
+  <tr>
+      <td><a href="{{row.groups.value}}">{{ row.name.value }}</a></td>
+      <td>{{ row.cCount.value }}</td>
+  </tr>
+  {% endfor %}
+  </table>
+</div>
+
+{%include "../../includes/footer.inc"%}
