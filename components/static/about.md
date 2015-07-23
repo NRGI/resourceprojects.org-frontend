@@ -18,7 +18,7 @@ Project information has a multitude of applications beyond fiscal modeling. It c
 
 Right now, the project information that is disclosed is often very scattered - reported in fragmentary tables in PDF reports, or mixed together with aggregate country, company and corporate group information. It is difficult to find the relationships between projects, contracts, companies and corporate groups. 
 
-Through this prototype we have established **a data model** for bringing together data on countries, companies, projects, and payments related to them. We are adding support for license, contract and concession information, building a rich [linked data](https://en.wikipedia.org/wiki/Linked_data) platform. 
+Through this prototype we have established [a data model](/model.html) for bringing together data on countries, companies, projects, and payments related to them. We are adding support for license, contract and concession information, building a rich [linked data](https://en.wikipedia.org/wiki/Linked_data) platform. 
 
 Data from a number of sources has been loaded into the prototype, showing how we can bring together multiple project level reports to get a more comprehensive view of the extractives industry. 
 
@@ -46,6 +46,6 @@ We will be working to add:
 
 You can support the development of this project by:
 
-* Contributing project-level data;
+* [Contributing project-level data](/contribute.html);
 
 * Sharing your feedback;

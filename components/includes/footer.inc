@@ -23,10 +23,8 @@
           </ul>
         </div>
         <div class="col-md-4">
-          <h2 class="block-title">
                <h2 class="block-title">Links</h2>
                <ul class="list-unstyled"><li><a href="http://www.resourcegovernance.org/">Natural Resource Governance Institute (Main Website)</a></li></ul>         
-          </h2>
         </div>
       </div>
     </div>
