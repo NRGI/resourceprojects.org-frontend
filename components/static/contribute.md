@@ -18,7 +18,7 @@ You can [access a copy of the spreadsheet here](https://docs.google.com/spreadsh
 
 ## Using the template
 
-### There are four stages to getting data onto the Resource Projects platform. Most of the time you just need to work on stage (1) and (2), and then get in touch and we’ll be able to take it from there. 
+There are four stages to getting data onto the Resource Projects platform. Most of the time you just need to work on stage (1) and (2), and then get in touch and we’ll be able to take it from there. 
 
 ### (1) Get your copy
 
@@ -57,9 +57,7 @@ Set up the virtual environment, and load all the required tools, and then you wi
 In that folder, run the command:
 
 ```
-
 python transform-from-gdocs.py <spreadsheetURI> <identifier>
-
 ```
 
 with the web address of the google spreadsheet, and a short identifier which will be used as the filename of the converted file.
