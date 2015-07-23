@@ -5,6 +5,7 @@
       </div>
       <div class="row">
         <div class="col-md-4">
+            <h2 class="block-title">ResourceProjects.org</h2>
             <p>This site is a prototype, based on under-contributed data. No warranty of the accuracy or completeness of data is provided, and users should always check against original sources before making decisions based upon the data presented here. 
             </p>
             <p>
