@@ -5,7 +5,9 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT * WHERE {
-    ?companyPayment rp:payer <{{uri}}> .
+    <{{uri}}> rp:groupMember ?members .
+    ?members rp:organisation ?company .
+    ?companyPayment rp:payer ?company .
     OPTIONAL { ?companyPayment rp:payee ?payee .
               ?payee skos_:prefLabel ?payee_name
               }

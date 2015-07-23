@@ -3,7 +3,7 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT ?project ?name ?country ?country_name ?share  ?commodityType WHERE {
-    <{{uri}}> rp:hasStakeholding ?stakes .
+    <{{uri}}> rp:hasStake ?stakes .
     ?stakes rp:isStakeIn ?project .
     ?project a rp:Project  .
     ?project skos_:prefLabel ?name .

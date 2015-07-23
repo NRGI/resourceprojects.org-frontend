@@ -5,18 +5,10 @@ SELECT DISTINCT ?name ?uri ?commodityType (COUNT(?commodityType) as ?cCount) WHE
     ?uri a rp:Country .
     ?project rp:hasLocation ?uri
     OPTIONAL { ?uri skos:prefLabel ?name }
-    OPTIONAL { ?project rp_misc:commodityType ?commodityType }
+    OPTIONAL { ?project rp:commodity ?commodity .
+              ?commodity rp_misc:commodityType ?commodityType }
 }
 GROUP BY ?uri ?commodityType  ?name
 
 ORDER BY (?name)
 limit {{lodspk.maxResults}}
-
-
-
-
-
-
-
-
-
