@@ -29,7 +29,7 @@
   <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <div class="banner">This is a <a href="/about.htm">prototype site</a>: site links and contents are subject to change.</div>
+          <div class="banner">This is a <a href="/about.html">prototype site</a>: site links and contents are subject to change.</div>
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
