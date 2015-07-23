@@ -64,3 +64,26 @@ To upload data go to Linked Data -> Quad Store Upload ( http://localhost:8890/co
 * Hit the upload button
 
 (If you've generated the data locally, you can use the "File" option instead).
+
+
+License
+-------
+
+This license does not apply to the NRGI logo that is also included in this repository. Some included dependencies also have their own licenses, which are specified within those dependencies.
+
+```
+Copyright (c) 2015 Natural Resource Governance Institute
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+```
