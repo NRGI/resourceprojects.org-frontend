@@ -1,8 +1,0 @@
-prefix rp: <http://resourceprojects.org/def/>
-
-SELECT ?s ?p  WHERE {
-    ?s ?p <{{uri}}> .
-    FILTER NOT EXISTS {
-        ?s a rp:Project
-    }
-} LIMIT {{lodspk.maxResults}}
