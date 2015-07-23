@@ -6,7 +6,7 @@
 
       <table class="table table-striped">
         <thead>
-          <tr><th>ID</th><th>Currency</th><th>Payment Date</th><th>Paid by</th><th>Paid To</th><th>Value</th></tr>
+          <tr><th>ID</th><th>Currency</th><th>Payment Year</th><th>Paid by</th><th>Paid To</th><th>Value</th></tr>
         </thead>
         {% for row in models.payments %}    
         <tr>
