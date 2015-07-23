@@ -1,0 +1,10 @@
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+prefix skos_: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?group ?name WHERE {
+    ?groupMember rp:organisation <{{uri}}> .
+    ?group rp:groupMember ?groupMember .
+    OPTIONAL { ?group skos:prefLabel ?name }
+}
+GROUP BY ?name

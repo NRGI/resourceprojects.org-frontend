@@ -4,8 +4,11 @@
           <h1>{{first.main.name.value}} <small>Company</small></h1>
       </div>
       <p>Our Company ID: {{uri|explode:"/"|pop}} </p>
+      <p>Part of: 
+      {% for row in models.group %} <a href="{{ row.group.value }}">{{ row.name.value }}</a>{%if !forloop.last%},{% endif %}
+       {% endfor %}
 
-      <p>Description (with provenance of description?)</p>
+      <!--<p>Description (with provenance of description?)</p>-->
       <p>
       Active in:
        {% for row in models.countries %}
@@ -16,13 +19,11 @@
       <h2>Projects</h2>
       <table class="table table-striped">
         <thead>
-          <tr><th>ID</th><th>Name</th><th>Country</th><th>Commodity Type</th><th>Share</th></tr>
+          <tr><th>Name</th><th>Country</th><th>Commodity Type</th><th>Share</th></tr>
         </thead>
         {% for row in models.projects %}    
         <tr>
-            <td><a href="{{ row.project.value }}">{{ row.project.value}}</a></td>
-            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
-            <td>{{ row.name.value }}</td>
+            <td><a href="{{ row.project.value }}">{{ row.name.value }}</a></td>
             <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
             <td>{{ row.commodityType.value }}</td>
             <td>{{ row.share.value }}</td>
@@ -37,7 +38,7 @@
         </thead>
         {% for row in models.payments %}    
         <tr>
-            <td><a href="{{ row.companyPayment.value }}">{{ row.companyPayment.value }}</a></td>
+            <td><a href="{{ row.companyPayment.value }}">{{ row.companyPayment.value|explode:"/"|pop }}</a></td>
             <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
             <td>{{ row.currency.value }}</td>
             {%if row.date%}
