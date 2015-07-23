@@ -46,6 +46,6 @@ We will be working to add:
 
 You can support the development of this project by:
 
-* Contributing project-level data;
+* [Contributing project-level data](/contribute.html);
 
 * Sharing your feedback;
