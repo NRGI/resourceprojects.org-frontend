@@ -1,0 +1,11 @@
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+# We can't use the prefix 'skos' as lodspeakr will then put a prefix satement
+# before the DEFINE statement, which is not allowed.
+prefix skos_: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?commodityType WHERE {
+    OPTIONAL { <{{uri}}> rp:commodity ?commodity .
+              ?commodity rp_misc:commodityType ?commodityType }
+}
+GROUP BY ?commodityType
