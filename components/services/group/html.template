@@ -7,12 +7,13 @@
 
   <table class="table table-striped">
   <thead>
-    <tr><th>Name</th><th>No. Companies</th></tr>
+    <tr><th>Name</th><th>No. Companies</th><th>No. Projects</th></tr>
   </thead>
   {% for row in models.main %}    
   <tr>
       <td><a href="{{row.groups.value}}">{{ row.name.value }}</a></td>
       <td>{{ row.cCount.value }}</td>
+      <td>{{ row.pCount.value }}</td>
   </tr>
   {% endfor %}
   </table>

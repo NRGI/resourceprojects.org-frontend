@@ -15,7 +15,7 @@
         <tr>
             <td><a href="{{ row.company.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.company.curie }}{% endif %}</a></td>
             <td>{% if row.groupname.value %}<a href="{{ row.group.value }}">{{row.groupname.value}}</a>{% endif %}</td>
-            <td></td>
+            <td>{{ row.pCount.value }}</td>
         </tr>
         {% endfor %}
       </table>

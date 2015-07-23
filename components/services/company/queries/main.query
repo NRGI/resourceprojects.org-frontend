@@ -1,12 +1,16 @@
 prefix rp: <http://resourceprojects.org/def/>
 
-SELECT DISTINCT ?company ?name ?group ?groupname WHERE {
+SELECT DISTINCT ?company ?name ?group ?groupname (COUNT(?project) as ?pCount) WHERE {
     ?company a rp:Company
     OPTIONAL { ?company skos:prefLabel ?name }
     OPTIONAL {  ?groupMembership rp:organisation ?company.
                 ?group rp:groupMember ?groupMembership.
                 ?group skos:prefLabel ?groupname.
     } 
+    OPTIONAL {  ?stake rp:isStakeIn ?company .    
+                ?stake rp:isStakeIn ?project .
+                ?project a rp:Project
+              }
      
 }
 ORDER BY (?name)
