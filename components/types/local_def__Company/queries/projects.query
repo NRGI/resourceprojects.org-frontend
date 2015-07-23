@@ -1,10 +1,8 @@
-DEFINE input:same-as "yes"
-
 prefix rp: <http://resourceprojects.org/def/>
 prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT * WHERE {
+SELECT ?project ?name ?country ?country_name ?share  ?commodityType WHERE {
     <{{uri}}> rp:hasStakeholding ?stakes .
     ?stakes rp:isStakeIn ?project .
     ?project a rp:Project  .
@@ -12,5 +10,8 @@ SELECT * WHERE {
     ?project rp:hasLocation ?country .
     ?country skos_:prefLabel ?country_name 
     OPTIONAL { ?participant rp_misc:share ?share }
-    OPTIONAL { ?project rp_misc:commodityType ?commodityType }
+    OPTIONAL { ?project rp:commodity ?commodity .
+              ?commodity rp_misc:commodityType ?commodityType }
 }
+GROUP BY ?project ?name
+ORDER BY ?name
