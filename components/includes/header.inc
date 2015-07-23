@@ -29,7 +29,7 @@
   <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <div class="banner">Some message here to let people know this site is still in production</div>
+          <div class="banner">This is a <a href="/about.html">prototype site</a>: site links and contents are subject to change.</div>
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -40,9 +40,11 @@
           <div class="nav-collapse">
             <ul class="nav list-inline">
               <!--<li><a href="{{lodspk.home}}">Home</a></li>-->
+              <li><a href="{{lodspk.home}}about.html">About</a></li>
               <li><a href="{{lodspk.home}}project">Projects</a></li>
               <li><a href="{{lodspk.home}}country">Countries</a></li>
               <li><a href="{{lodspk.home}}company">Companies</a></li>
+              <li><a href="{{lodspk.home}}source">Data sources</a></li>
             </ul>
             <form class="navbar-search pull-left" action="">
               <input type="text" data-provide="typeahead" class="typeahead search-query span2" placeholder="Search"/>

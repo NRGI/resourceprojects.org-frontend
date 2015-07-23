@@ -6,7 +6,7 @@ body {
 }
 
 .navbar-fixed-top {
-  border-top: 25px solid rgba(3,151,215,0.3);
+  border-top: 25px solid #B0D6F2;
   border-bottom: 1px rgb(85,114,136) solid;
   border-bottom: 1px solid #EEEFE8;
 }
@@ -68,7 +68,7 @@ h2.block-title {
 }
 
 .strapline {
-font-size: 1.2em;
+font-size: 1.1em;
 }
 
 footer a {
