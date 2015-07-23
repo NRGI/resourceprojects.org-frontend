@@ -16,17 +16,19 @@
             </p>
         </div>
         <div class="col-md-4">
-          <h2 class="block-title">Advanced</h2>
+          <h2 class="block-title">Technical Details</h2>
           <ul class="list-unstyled">
-            <li><a href="/classes">Classes</a></li>
-              <li><a href="/namedGraphs">Named Graphs</a></li>
+             <li><a href="/contribute.html">Contribution Template</a></li>
+             <li><a href="/model.html">Data Model</a></li>
+             <li><a href="/classes">Classes</a></li>
+             <li><a href="/namedGraphs">Named Graphs</a></li>
+             <li><a href="/sparql/">SPARQL</a></li>
           </ul>
         </div>
         <div class="col-md-4">
-          <h2 class="block-title">
                <h2 class="block-title">Links</h2>
                <ul class="list-unstyled"><li><a href="http://www.resourcegovernance.org/">Natural Resource Governance Institute (Main Website)</a></li></ul>         
-          </h2>
+               <ul class="list-unstyled"><li><a href="http://www.resourcecontracts.org/">ResourceContracts.org</a></li></ul> 
         </div>
       </div>
     </div>

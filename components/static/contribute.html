@@ -1,0 +1,49 @@
+{%include "../includes/header.inc"%}
+
+<div class="container">
+      <div class="page-header">
+        <h1>Contribute</h1>        
+      </div>
+      
+      <p>We’re developing approaches to make it easy for you to contribute data to Resource Projects, either by:</p>
+      <ul>
+      <li><p>Submitting new project level reporting data</p></li>
+      <li><p>Submitting corrections and enhancements to the existing data</p></li>
+      </ul>
+      <p>We’ve prepared a simple Google Spreadsheet template that steps you through providing key data on:</p>
+      <ul>
+      <li><p>Companies and corporate groupings</p></li>
+      <li><p>Projects and sites</p></li>
+      <li><p>Company payments to government, and government receipts</p></li>
+      </ul>
+      <p>You can <a href="https://docs.google.com/spreadsheets/d/19pLirq9l-4W0DudIxb_P5KEMx6HP2smxDksUBVoyQ3I/edit?usp=sharing">access a copy of the spreadsheet here</a>.</p>
+      <h2 id="using-the-template">Using the template</h2>
+      <p>There are four stages to getting data onto the Resource Projects platform. Most of the time you just need to work on stage (1) and (2), and then get in touch and we’ll be able to take it from there.</p>
+      <h3 id="get-your-copy">(1) Get your copy</h3>
+      <p>Making sure you are have a <a href="http://google.com/accounts/">Google Account</a> and are logged in, <a href="https://docs.google.com/spreadsheets/d/19pLirq9l-4W0DudIxb_P5KEMx6HP2smxDksUBVoyQ3I/edit?usp=sharing">follow this link to view the spreadsheet template</a>.</p>
+      <p>From the file menu, choose ‘Make a copy...’</p>
+      <h3 id="enter-data">(2) Enter data</h3>
+      <p>Work through the instructions in the spreadsheet to enter your data.</p>
+      <p>You may wish to copy your source data into a new tab of the sheet.</p>
+      <p>Once you’ve filled in all your data:</p>
+      <ol style="list-style-type: decimal">
+      <li><p>Set the sharing settings of your spreadsheet so that anyone can view it;</p></li>
+      <li><p>Choose ‘Publish to the web’ from the file menu, and choose ‘Publish’;</p></li>
+      </ol>
+      <p>If you’re not comfortable with advanced formula and python, then now is the time to get in touch with the Resource Projects team to let us know your data is ready to convert and load onto the platform.</p>
+      <h3 id="reconcile-identifiers">(3) Reconcile identifiers</h3>
+      <p>Before the data is loaded, we need to make sure we match key entities to existing data on the platform.</p>
+      <p>Essentially, what needs to happen is that all the project, company, group and site records in your data need to be checked against any existing records in ResourceProjects.org and if they are already mentioned there, the ResourceProjects.org identifier needs to be added to your spreadsheet.</p>
+      <p>This can be done using the <a href="http://refine.deri.ie/">RDF Open Refine extension</a> against our SPARQL endpoint (searching on skos:prefLabel), or by exporting a full list of companies, projects, and groups into your spreadsheet, and using query or vlookup formula to reconcile IDs.</p>
+      <h3 id="convert-the-data-to-rdf">(4) Convert the data to RDF</h3>
+      <p>This last stage is all a bit rough-and-ready right now, but if you are comfortable with python you will find the tools you need <a href="https://github.com/NRGI/resource-projects-etl/">in this repository</a> to get from the template to RDF data for loading into the platform.</p>
+      <p>Set up the virtual environment, and load all the required tools, and then you will need the script in process/google-docs-reader/</p>
+      <p>In that folder, run the command:</p>
+      <pre><code>python transform-from-gdocs.py &lt;spreadsheetURI&gt; &lt;identifier&gt;</code></pre>
+      <p>with the web address of the google spreadsheet, and a short identifier which will be used as the filename of the converted file.</p>
+      <p>The template includes a hidden row which contains markup that we can use to convert from the spreadsheet to RDF. This uses the taglifter.py module which was written for this project, as an experiment in finding terse ways to mark-up spreadsheets for conversion to RDF.</p>
+      <p>The output will drop into the /data/ directory, ready to be loaded into a named graph on ResourceProjects.org</p>
+      
+</div>  
+    
+{%include "../includes/footer.inc"%}
