@@ -7,7 +7,9 @@ SELECT * WHERE {
     OPTIONAL {
         ?project skos:prefLabel ?name
     }
-    OPTIONAL { ?project rp_misc:commodityType ?commodityType }
+    OPTIONAL { ?project rp:commodity ?commodity.
+               ?commodity rp_misc:commodityType ?commodityType 
+    }
     FILTER NOT EXISTS {
         ?project owl:sameAs ?b
     }
