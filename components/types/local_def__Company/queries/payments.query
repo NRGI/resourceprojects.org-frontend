@@ -2,20 +2,21 @@ prefix rp: <http://resourceprojects.org/def/>
 prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?companyPayment ?payee_name ?currency (replace(?value,",","") as ?value) ?date ?year ?type WHERE {
-    ?companyPayment rp:payer <{{uri}}> .
-    ?companyPayment rp:value ?value
+SELECT ?transaction ?paymentOrReceipt ?payee_name ?currency (replace(?value,",","") as ?value) ?date ?year ?type WHERE {
+    ?transaction rp:payer <{{uri}}>.
+    ?transaction rp:value ?value.
+    ?transaction a ?paymentOrReceipt.
 
-    OPTIONAL { ?companyPayment rp:payee ?payee .
+    OPTIONAL { ?transaction rp:payee ?payee .
               ?payee skos_:prefLabel ?payee_name
     }
-    OPTIONAL { ?companyPayment rp:currency ?currency }
+    OPTIONAL { ?transaction rp:currency ?currency }
 
-    OPTIONAL { ?companyPayment rp:date ?date } 
-    OPTIONAL { ?companyPayment rp:year ?year }
-    OPTIONAL { ?companyPayment rp:paymentType ?paymentType.
+    OPTIONAL { ?transaction rp:date ?date } 
+    OPTIONAL { ?transaction rp:year ?year }
+    OPTIONAL { ?transaction rp:paymentType ?paymentType.
                ?paymentType skos:prefLabel ?type.
     }
     
 }
-GROUP BY ?companyPayment
+GROUP BY ?transaction
