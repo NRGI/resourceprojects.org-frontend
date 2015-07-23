@@ -1,6 +1,6 @@
 prefix rp: <http://resourceprojects.org/def/>
 
-SELECT DISTINCT ?company ?name ?group ?groupname (COUNT(?project) as ?pCount) WHERE {
+SELECT DISTINCT ?company ?name ?group ?groupname (COUNT(DISTINCT ?project) as ?pCount) WHERE {
     ?company a rp:Company
     OPTIONAL { ?company skos:prefLabel ?name }
     OPTIONAL {  ?groupMembership rp:organisation ?company.
