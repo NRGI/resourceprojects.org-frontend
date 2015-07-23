@@ -42,7 +42,7 @@
       $('.typeahead').typeahead({
           source: function (query, process) {
             $('.typeahead').addClass('wait');
-            return $.get('{{lodspk.home}}search/'+encodeURIComponent(query), { }, function (data) {
+            return $.get('/search/'+encodeURIComponent(query), { }, function (data) {
                 $('.typeahead').removeClass('wait');
                 return process(data);
             }, 'json');

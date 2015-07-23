@@ -17,7 +17,7 @@
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
       .wait{
-        background-image:url('{{lodspk.home}}img/wait.gif');
+        background-image:url('/img/wait.gif');
         background-repeat:no-repeat;
         padding-right:20px;
         background-position: right;
@@ -35,11 +35,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <!--<a class="brand" href="{{lodspk.home}}">{{lodspk.title}}</a>-->
+          <!--<a class="brand" href="/">{{lodspk.title}}</a>-->
           <a class="brand" href="/"><img src="/img/NRGI_Logo_RGB_no_strapline.jpg" width="185" height="65" alt="Natural Resource Governance Institute Logo"/></a>
           <div class="nav-collapse">
             <ul class="nav list-inline">
-              <!--<li><a href="{{lodspk.home}}">Home</a></li>-->
+              <!--<li><a href="/">Home</a></li>-->
               <li><a href="/about.html">About</a></li>
               <li><a href="/project">Projects</a></li>
               <li><a href="/country">Countries</a></li>
