@@ -52,7 +52,7 @@
             {%endif%}
             <td>{{ row.type.value }}</td>
             <td><a href="{{ row.payee.value }}">{{ row.payee_name.value }}</a></td>
-            <td>{{ row.value.value }}</td>
+            <td>{{ row.value.value|intval }}</td>
         </tr>
         {% endfor %}
       </table>
