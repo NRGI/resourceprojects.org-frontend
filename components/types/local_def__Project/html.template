@@ -55,10 +55,10 @@
         <thead>
           <tr><th>Name</th><th>Share</th></tr>
         </thead>
-        {% for company in models.companies %}    
+        {% for row in models.companies %}    
         <tr>
-            <td><a href="{{ company.company.value }}">{{ company.company_name.value }}</a></td>
-            <td>{{ company.share.value }}</td>
+            <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
+            <td>{{ row.share.value }}</td>
         </tr>
         {% endfor %}
       </table>
