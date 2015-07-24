@@ -1,6 +1,8 @@
 prefix rp: <http://resourceprojects.org/def/>
 prefix prov: <http://www.w3.org/ns/prov#>
 
+{% if lodspk.args.all %}
+
 SELECT DISTINCT ?name ?sourceDate ?description ?retrievedDate ?sourceType ?url ?contributor_name ?mail_box ?contributor_link WHERE {
     <{{lodspk.args.all|deurifier}}> prov:wasDerivedFrom ?sources .
     ?source prov:wasDerivedFrom ?sources .
@@ -23,3 +25,30 @@ SELECT DISTINCT ?name ?sourceDate ?description ?retrievedDate ?sourceType ?url ?
 } 
 GROUP BY (?name)
 LIMIT {{lodspk.maxResults}}
+
+{% else %}
+
+SELECT DISTINCT ?source ?name ?sourceDate ?description ?retrievedDate ?sourceType ?url ?contributor_name ?mail_box ?contributor_link WHERE {
+    ?source prov:wasDerivedFrom ?sources .
+    ?source a rp:Source
+    OPTIONAL {
+        ?source skos:prefLabel ?name .
+        ?source rp:sourceDate ?sourceDate .
+        ?source rp:description ?description .
+        ?source rp:retrievedDate ?retrievedDate .
+        ?source rp:sourceType ?sourceType .
+        ?source rp:url ?url
+        }
+    OPTIONAL {
+        ?source rp:wasAttributedTo ?contributor .
+        ?contributor skos:prefLabel ?contributor_name .
+        ?contributor rp:mbox ?mail_box .
+        ?contributor rp:url ?contributor_link
+      }
+        
+} 
+GROUP BY (?name)
+LIMIT {{lodspk.maxResults}}
+
+
+{% endif %}
