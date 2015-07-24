@@ -1,0 +1,36 @@
+{%include "../../includes/header.inc"%}
+    <div class="container">
+      <div class="page-header">
+          <h1>{{ uri|explode:"/"|pop }} <small>Government Receipt</small></h1>
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+          <tr><th>Paid by</th><th>Paid To</th><th>Payment Year</th><!--<th>Payment or receipt?</th>--><th>Payment Type</th><th>Currency</th><th>Value</th></tr>
+        </thead>
+        {% for row in models.payments %}    
+        <tr>
+            <!--<td>{{ uri|explode:"/"|pop }}</td>-->
+            <td><a href="{{ row.payer.value }}">{{ row.payer_name.value }}</a></td>
+            <td><a href="{{ row.payee.value }}">{{ row.payee_name.value }}</a></td>
+            {%if row.date%}
+              <td>{{ row.date.value|date:"Y" }}</td>
+              {%else%}
+                {%if row.year%}
+                  <td>{{ row.year.value }}</td>
+                {%else%}
+                  <td></td>
+                {%endif%}
+            {%endif%}
+            <!--<td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>-->
+            <td>{{ row.type.value }}</td>
+            <td>{{ row.currency.value }}</td>
+            <td>{{ row.amount.value }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      
+      {%include "../../includes/advanced_links.inc"%}
+      
+    </div>    
+{%include "../../includes/footer.inc"%}

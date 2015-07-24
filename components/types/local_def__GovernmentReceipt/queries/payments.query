@@ -1,0 +1,24 @@
+DEFINE input:same-as "yes"
+
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+prefix skos_: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?currency ?date ?year ?payer ?payee ?payer_name ?payee_name ?type ?paymentOrReceipt (replace(?amount,",","") as ?amount) WHERE {
+
+    OPTIONAL { <{{uri}}> rp:currency ?currency } .
+    OPTIONAL { <{{uri}}> rp:value ?amount } .
+    OPTIONAL { <{{uri}}> rp:date ?date } .
+    OPTIONAL { <{{uri}}> rp:year ?year } .
+    OPTIONAL { <{{uri}}> rp:paymentType ?paymentType .
+               ?paymentType skos_:prefLabel ?type }
+    OPTIONAL { <{{uri}}> a ?paymentOrReceipt }
+    OPTIONAL { 
+        <{{uri}}> rp:payer ?payer .
+        ?payer skos_:prefLabel ?payer_name
+     } .
+     OPTIONAL { 
+        <{{uri}}> rp:payee ?payee .
+        ?payee skos_:prefLabel ?payee_name
+     }
+}
