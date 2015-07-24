@@ -174,6 +174,9 @@ footer a:hover {
 .page-header {
   margin: 70px 0 20px;
 }
+.page-header .btn-group {
+  margin-top:20px;
+}
 
 div.advanced-links {
   margin:20px 0;

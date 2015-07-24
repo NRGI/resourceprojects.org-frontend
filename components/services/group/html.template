@@ -2,7 +2,16 @@
   
 <div class="container">
   <div class="page-header">
-    <h1>Groups <small></small></h1>
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Company Groups <small></small></h1>
+      </div>
+      <div class="col-md-3">
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-default"><a href="/company">Switch to Companies view</a></button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <table class="table table-striped">
