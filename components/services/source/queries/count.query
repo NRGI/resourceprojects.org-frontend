@@ -1,0 +1,6 @@
+prefix rp: <http://resourceprojects.org/def/>
+prefix prov: <http://www.w3.org/ns/prov#>
+
+SELECT count(DISTINCT ?source) as ?count WHERE {
+  ?source a rp:Source.
+}

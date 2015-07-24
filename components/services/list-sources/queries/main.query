@@ -1,7 +1,8 @@
 prefix rp: <http://resourceprojects.org/def/>
 prefix prov: <http://www.w3.org/ns/prov#>
 
-SELECT DISTINCT ?source ?name ?sourceDate ?description ?retrievedDate ?sourceType ?url ?contributor_name ?mail_box ?contributor_link WHERE {
+SELECT DISTINCT ?name ?source ?sourceDate ?description ?retrievedDate ?sourceType ?url ?contributor_name ?mail_box ?contributor_link WHERE {
+    <{{lodspk.args.all|deurifier}}> prov:wasDerivedFrom ?sources .
     ?source prov:wasDerivedFrom ?sources .
     ?source a rp:Source
     OPTIONAL {

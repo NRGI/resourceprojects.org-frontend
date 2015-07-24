@@ -2,53 +2,33 @@
     
     <div class="container">
       <div class="page-header">
-        <h1>{{first.main.name.value}} <small>Source</small></h1>
+        <h1>Sources</h1>
       </div>
-      
-      {% for row in models.main %}
-        <p>Description: {{ row.description.value }}  </p>
-        <p>Source date: {{ row.sourceDate.value|date:"Y-m-d"}} </p>
-        <p>Retreived date: {{ row.retrievedDate.value|date:"Y-m-d" }}  </p>
-        <p>Type: {{ row.sourceType.value }}  </p>
-        <p>Link: {{ row.url.value }}  </p>
-        <p>Contributor: {{ row.contributor_name.value }} <a href="mailto:{{ row.mail_box.value }}">mail</a> <a href="{{ row.contributor_link.value }}">link</a></p>
-      {% endfor %}
 
-   <!-- <table class="table table-striped" about="{{uri}}">
-    <thead>
-      <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
-    </thead>
-    {% for row in models.po %}
-     <tr>
-<td>{%if forloop.first%}<a href='{{lodspk.this.value}}'>{{lodspk.this.curie}}</a>{%endif%}</td>
-     <td><a href='{{row.p.value}}'>{{row.p.curie}}</a></td>
-     
-        <td>
-        {%if row.o.uri == 1%}
-        <a rel='{{row.p.value}}' href='{{row.o.value}}'>{{row.o.curie}}</a>
-        {%else%}
-        <span property='{{row.p.value}}'>{{row.o.value}}</span>
-        {%endif%}
-        </td>
+      <p>
+      This website is built up through user contributions, transforming company reports and filings into accessible open data. Find out <a href="/contribute.html">how you can contribute here</a>.
+      </p>
 
-        </tr>
-    {% endfor %}
-
-    {% for row in models.sp %}
-      <tr>
-        <td><a href='{{row.s.value}}'>{{row.s.curie}}</a></td>
-
-        <td><a rev='{{row.s.value}}' href='{{row.p.value}}'>{{row.p.curie}}</a></td>
-<td>{%if forloop.first%}<a href='{{lodspk.this.value}}'>{{lodspk.this.curie}}</a>{%endif%}</td>
-        </tr>
-    {% endfor %}
-    <thead>
-      <tr><th>Subject</th><th>Predicate</th><th>Object</th></tr>
-    </thead>
-
-    </table> -->
+    <p>
+      The site currently incorporates {{ first.count.count.value }} sources
+    </p>
     
-    {%include "../../includes/advanced_links.inc"%}
+    <table class="table table-striped" about="{{uri}}">
+          <thead>
+            <tr><th>Source</th><th>Source type</th><th>Source date</th><th>Contributor</th><th>Details</th></tr>
+          </thead>
+
+          {% for row in models.main %}
+            <tr>
+                <td><a href="{{ row.source.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.company.curie }}{% endif %}</a></td>
+                <td>{{row.sourceType.value}}</td>
+                <td>{{ row.sourceDate.value|date:"Y-m-d"}} </td>
+                <td><a href="{{row.contributor_link.value }}">{{ row.contributor_name.value }}</a> </td>
+                <td><a href="{{ row.source.value }}">Details</a></td>
+            </tr>
+            {% endfor %}
+    </table>
+   
     
     </div>     
 
