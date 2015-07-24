@@ -2,44 +2,20 @@
     
     <div class="container">
       <div class="page-header">
-        <h1>{{first.main.name.value}} <small>Sources</small></h1>
+        <h1>{{lodspk.args.all|deurifier}} <small>Sources</small></h1>
       </div>
 
       <p>
       This website is built up through user contributions, transforming company reports and filings into accessible open data. Find out <a href="/contribute.html">how you can contribute here</a>.
       </p>
 
+    The page at <a href="{{lodspk.args.all|deurifier}}">{{lodspk.args.all|deurifier}}</a> has data from:
+
+    <ul>
       {% for row in models.main %}
-
-    <table class="table table-striped">
-        <tr>
-            <th>Description</th>
-            <td>{{ row.description.value }}</td>
-        </tr>
-        <tr>
-            <th>Type</th>
-            <td>{{ row.type.value }}</td>
-        </tr>
-        <tr>
-            <th>Source date</th>
-            <td>{{ row.sourceDate.value|date:"Y-m-d"}} </td>
-        </tr>
-        <tr>
-            <th>Retrieved date</th>
-            <td>{{ row.retrievedDate.value|date:"Y-m-d" }} </td>
-        </tr>
-        <tr>
-            <th>Access source</th>
-            <td><a href="{{ row.url.value }}">Link</a></td>
-        </tr>
-        <tr>
-             <th>Contributor</th>
-             <td><a href="{{ row.contributor_link.value }}">{{ row.contributor_name.value }}</a> {%if row.mail_box.value %}(<a href="mailto:{{ row.mail_box.value }}">{{ row.mail_box.value }}</a>){%endif%}</td>
-        </tr>
-      </table>
-
-
+    <li><a href="{{ row.source.value }}">{{ row.name.value }}</a></li>
       {% endfor %}
+    </ul>
 <!--
 <div class="advanced-links">
   <div class="container">
