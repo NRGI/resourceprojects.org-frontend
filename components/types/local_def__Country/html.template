@@ -36,7 +36,7 @@
       <h2>Payments</h2>
       <table class="table table-striped">
         <thead>
-          <tr><th>ID</th><th>Payment Year</th><th>Payment or receipt?</th><th>Currency</th><th>Payment Type</th><th>Paid to</th><th>Value</th></tr>
+          <tr><th>ID</th><th>Payment Year</th><th>Payment or receipt?</th><th>Currency</th><th>Payment Type</th><th>Paid by</th><th>Value</th></tr>
         </thead>
         {% for row in models.payments %}    
         <tr>
