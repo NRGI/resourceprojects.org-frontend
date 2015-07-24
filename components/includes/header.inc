@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
           </a>
           <!--<a class="brand" href="/">{{lodspk.title}}</a>-->
-          <a class="brand" href="/"><img src="/img/NRGI_Logo_RGB_no_strapline.jpg" width="185" height="65" alt="Natural Resource Governance Institute Logo"/></a>
+          <a class="brand" href="/"><img src="/img/print-logo.jpg" width="185" height="65" alt="Natural Resource Governance Institute Logo"/></a>
           <div class="nav-collapse">
             <ul class="nav list-inline">
               <!--<li><a href="/">Home</a></li>-->
