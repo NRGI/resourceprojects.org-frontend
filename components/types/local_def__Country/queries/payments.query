@@ -2,14 +2,14 @@ prefix rp: <http://resourceprojects.org/def/>
 prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?companyPayment ?company ?paymentOrReceipt ?company_name ?currency (replace(?value,",","") as ?value) ?date ?year ?type WHERE {
+SELECT ?companyPayment ?company ?paymentOrReceipt ?company_name ?currency (replace(?amount,",","") as ?amount) ?date ?year ?type WHERE {
     ?project rp:hasLocation <{{uri}}> .
     ?companyPayment rp:relatedProject ?project .
     ?companyPayment rp:payer ?company .
     ?companyPayment a ?paymentOrReceipt
     OPTIONAL { ?company skos_:prefLabel ?company_name }
     OPTIONAL { ?companyPayment rp:currency ?currency }
-    OPTIONAL { ?companyPayment rp:value ?value } 
+    OPTIONAL { ?companyPayment rp:value ?amount } 
     OPTIONAL { ?companyPayment rp:date ?date } 
     OPTIONAL { ?companyPayment rp:year ?year }
     OPTIONAL { ?companyPayment rp_misc:type ?type }

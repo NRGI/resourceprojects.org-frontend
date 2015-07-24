@@ -2,9 +2,9 @@ prefix rp: <http://resourceprojects.org/def/>
 prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?transaction ?paymentOrReceipt ?payee_name ?currency (replace(?value,",","") as ?value) ?date ?year ?type WHERE {
+SELECT ?transaction ?paymentOrReceipt ?payee_name ?currency (replace(?amount,",","") as ?amount) ?date ?year ?type WHERE {
     ?transaction rp:payer <{{uri}}>.
-    ?transaction rp:value ?value.
+    ?transaction rp:value ?amount.
     ?transaction a ?paymentOrReceipt.
 
     OPTIONAL { ?transaction rp:payee ?payee .

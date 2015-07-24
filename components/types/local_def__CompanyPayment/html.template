@@ -25,7 +25,7 @@
             <!--<td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>-->
             <td>{{ row.type.value }}</td>
             <td>{{ row.currency.value }}</td>
-            <td>{{ row.value.value }}</td>
+            <td>{{ row.amount.value }}</td>
         </tr>
         {% endfor %}
       </table>
