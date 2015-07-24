@@ -4,7 +4,7 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 # before the DEFINE statement, which is not allowed.
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?companyPayment ?company ?paymentOrReceipt ?country ?country_name ?company_name ?currency (replace(?value,",","") as ?value) ?date ?year ?type  WHERE {
+SELECT ?companyPayment ?company ?paymentOrReceipt ?country ?country_name ?company_name ?currency (replace(?amount,",","") as ?amount) ?date ?year ?type  WHERE {
 
         ?companyPayment rp:relatedProject <{{uri}}> .
         ?companyPayment a rp:CompanyPayment .
@@ -15,7 +15,7 @@ SELECT ?companyPayment ?company ?paymentOrReceipt ?country ?country_name ?compan
                    ?country skos_:prefLabel ?country_name }
         OPTIONAL { ?company skos_:prefLabel ?company_name }
         OPTIONAL { ?companyPayment rp:currency ?currency }
-        OPTIONAL { ?companyPayment rp:value ?value } 
+        OPTIONAL { ?companyPayment rp:value ?amount } 
         OPTIONAL { ?companyPayment rp:date ?date } 
         OPTIONAL { ?companyPayment rp:year ?year }
         OPTIONAL { ?companyPayment rp_misc:type ?type }
