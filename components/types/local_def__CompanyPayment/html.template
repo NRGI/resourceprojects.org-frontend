@@ -1,18 +1,17 @@
 {%include "../../includes/header.inc"%}
     <div class="container">
       <div class="page-header">
-          <h1>{{first.main.name.value}} <small>Payment</small></h1>
+          <h1>{{ uri|explode:"/"|pop }} <small>Company Payment</small></h1>
       </div>
 
       <table class="table table-striped">
         <thead>
-          <tr><th>ID</th><th>Currency</th><th>Payment Year</th><th>Paid by</th><th>Paid To</th><th>Value</th></tr>
+          <tr><th>Payment Year</th><!--<th>Payment or receipt?</th>--><th>Currency</th><th>Payment Type</th><th>Paid by</th><th>Paid To</th><th>Value</th></tr>
         </thead>
         {% for row in models.payments %}    
         <tr>
-            <td><a href="{{ uri }}">{{ uri|explode:"/"|pop }}</a></td>
-            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
-            <td>{{ row.currency.value }}</td>
+            <!--<td>{{ uri|explode:"/"|pop }}</td>-->
+            
             {%if row.date%}
               <td>{{ row.date.value|date:"Y" }}</td>
               {%else%}
@@ -22,6 +21,9 @@
                   <td></td>
                 {%endif%}
             {%endif%}
+            <!--<td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>-->
+            <td>{{ row.currency.value }}</td>
+            <td>{{ row.type.value }}</td>
             <td><a href="{{ row.payer.value }}">{{ row.payer_name.value }}</a></td>
             <td><a href="{{ row.payee.value }}">{{ row.payee_name.value }}</a></td>
             <td>{{ row.value.value }}</td>
