@@ -44,7 +44,7 @@
               <li><a href="/project">Projects</a></li>
               <li><a href="/country">Countries</a></li>
               <li><a href="/company">Companies</a></li>
-              <li><a href="/sources">Data sources</a></li>
+              <li><a href="/source">Data sources</a></li>
             </ul>
             <form class="navbar-search pull-left" action="">
               <input type="text" data-provide="typeahead" class="typeahead search-query span2" placeholder="Search"/>
