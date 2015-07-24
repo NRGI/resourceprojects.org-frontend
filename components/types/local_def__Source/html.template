@@ -1,0 +1,47 @@
+{%include "../../includes/header.inc"%}
+    <div class="container">
+      <div class="page-header">
+          <h1>{{first.main.name.value}} <small>Source</small></h1>
+      </div>
+ 
+    {% for row in models.main %}
+      <table class="table table-striped">
+        <tr>
+            <th>Description</th>
+            <td>{{ row.description.value }}</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>{{ row.type.value }}</td>
+        </tr>
+        <tr>
+            <th>Source date</th>
+            <td>{{ row.sourceDate.value|date:"Y-m-d"}} </td>
+        </tr>
+        <tr>
+            <th>Retrieved date</th>
+            <td>{{ row.retrievedDate.value|date:"Y-m-d" }} </td>
+        </tr>
+        <tr>
+            <th>Access source</th>
+            <td><a href="{{ row.url.value }}">Link</a></td>
+        </tr>
+        <tr>
+             <th>Contributor</th>
+             <td><a href="{{ row.contributor_link.value }}">{{ row.contributor_name.value }}</a> {%if row.mail_box.value %}(<a href="mailto:{{ row.mail_box.value }}">{{ row.mail_box.value }}</a>){%endif%}</td>
+        </tr>
+      </table>
+    {% endfor %}    
+    </div>    
+    
+    <div class="advanced-links">
+      <div class="container">
+        <h3>Links <small>Advanced</small></h3>
+        <ul>
+          <li><a href="{{lodspk.baseUrl}}default-view/{{ uri|urifier }}">Triples View</a></li>
+        </ul>
+      </div>
+    </div>
+
+    
+{%include "../../includes/footer.inc"%}

@@ -1,0 +1,19 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT DISTINCT ?name ?sourceDate ?description ?retrievedDate ?sourceType ?url ?contributor_name ?mail_box ?contributor_link WHERE {
+    OPTIONAL {
+        <{{uri}}> skos:prefLabel ?name .
+        <{{uri}}> rp:sourceDate ?sourceDate .
+        <{{uri}}> rp:description ?description .
+        <{{uri}}> rp:retrievedDate ?retrievedDate .
+        <{{uri}}> rp:sourceType ?sourceType .
+        <{{uri}}> rp:url ?url
+        }
+    OPTIONAL {
+        <{{uri}}> rp:wasAttributedTo ?contributor .
+        ?contributor skos:prefLabel ?contributor_name .
+        ?contributor rp:mbox ?mail_box .
+        ?contributor rp:url ?contributor_link
+      }
+        
+} 
