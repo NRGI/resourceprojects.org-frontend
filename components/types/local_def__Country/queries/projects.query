@@ -1,7 +1,7 @@
 prefix rp: <http://resourceprojects.org/def/>
 prefix rp_misc: <http://resourceprojects.org/def/misc/>
 
-SELECT * WHERE {
+SELECT DISTINCT ?project ?commodityType ?name WHERE {
     ?project rp:hasLocation <{{uri}}> .
     ?project a rp:Project .
     OPTIONAL {
