@@ -1,0 +1,9 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT ?uri ?name WHERE {
+    # These first two lines are a cheat to get the query to return the uri that
+    # we pass to it, so that lodspeakr then does the necessary uri rewriting for us.
+    values ?uri { <{{lodspk.args.all|deurifier}}> }
+    ?uri ?a ?b .
+    OPTIONAL { ?uri skos:prefLabel ?name }
+} LIMIT 1
