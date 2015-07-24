@@ -180,3 +180,6 @@ div.advanced-links {
   border-top: 1px solid #EEEFE8;
   padding-top: 20px;
 }
+.dropdown form.inline {
+  display:inline;
+}

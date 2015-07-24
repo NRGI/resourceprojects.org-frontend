@@ -5,9 +5,9 @@
     <h1>Projects <small></small></h1>
   </div>
 
-  <div>Showing {{lodspk.offset}} to {% if lodspk.next < first.count.uriCount.value %}{{lodspk.next}}{% else %}{{first.count.uriCount.value}}{% endif %} of {{first.count.uriCount.value}} projects.</div>
+  <div class="dropdown">Showing {{lodspk.offset}} to {% if lodspk.next < first.count.uriCount.value %}{{lodspk.next}}{% else %}{{first.count.uriCount.value}}{% endif %} of {{first.count.uriCount.value}} projects. Number of records per page:
 
-  <div><form>Limit: <select name="limit" onclick="this.form.submit()">
+  <form class="inline"><select name="limit" onclick="this.form.submit()">
     <option {% if lodspk.limit == 50 %}selected{% endif %}>50</option>
     <option {% if lodspk.limit == 200 %}selected{% endif %}>200</option>
     <option {% if lodspk.limit == 1000 %}selected{% endif %}>1000</option>
