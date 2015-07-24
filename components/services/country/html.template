@@ -6,7 +6,7 @@
   </div>
   <table class="table table-striped" about="{{uri}}">
     <thead>
-      <tr><th>Country</th><th>No. Projects</th><th>Oil</th><th>Gas</th><th>Oil &amp; Gas</th><th>Mining</th></tr>
+      <tr><th>Country</th><th>No. Projects</th><th>Oil</th><th>Gas</th><th>Oil and Gas</th><th>Mining</th></tr>
     </thead>
     {% for row in models.projects %}
       <tr>
@@ -32,7 +32,7 @@
         </td>
         <td>
         {% for comm_row in models.commodities %}
-          {% if comm_row.commodityType.value == 'Oil & Gas' %}
+          {% if comm_row.commodityType.value == 'Oil and Gas' %}
             {% if row.uri.value == comm_row.uri.value %}
               {{comm_row.cCount.value}}
             {% endif %}
