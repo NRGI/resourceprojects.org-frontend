@@ -1,4 +1,3 @@
-
       <div class="pager">
         <ul class="inline">
           {% if lodspk.offset != 0 %}
