@@ -34,14 +34,11 @@
       <h2>Payments</h2>
       <table class="table table-striped">
         <thead>
-          <tr><th>ID</th><th>Payment or receipt?</th><th>Currency</th><th>Payment Year</th><th>Type</th><th>Paid to</th><th>Value</th></tr>
+          <tr><th>ID</th><th>Payment Year</th><th>Payment or receipt?</th><th>Currency</th><th>Payment Type</th><th>Paid to</th><th>Value</th></tr>
         </thead>
         {% for row in models.payments %}    
         <tr>
             <td><a href="{{ row.transaction.value }}">{{ row.transaction.value|explode:"/"|pop }}</a></td>
-            <td>{{ row.paymentOrReceipt.value}}</td>
-
-            <td>{{ row.currency.value }}</td>
             {%if row.date%}
               <td>{{ row.date.value|date:"Y" }}</td>
               {%else%}
@@ -51,6 +48,8 @@
                   <td></td>
                 {%endif%}
             {%endif%}
+            <td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>
+            <td>{{ row.currency.value }}</td>
             <td>{{ row.type.value }}</td>
             <td><a href="{{ row.payee.value }}">{{ row.payee_name.value }}</a></td>
             <td>{{ row.value.value}}</td>
