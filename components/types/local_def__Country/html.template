@@ -36,13 +36,12 @@
       <h2>Payments</h2>
       <table class="table table-striped">
         <thead>
-          <tr><th>ID</th><th>Payment Year</th><th>Payment or receipt?</th><th>Currency</th><th>Payment Type</th><th>Paid by</th><th>Value</th></tr>
+          <tr><th>Paid by</th><th>ID</th><th>Payment Year</th><th>Payment or receipt?</th><th>Payment Type</th><th>Currency</th><th>Value</th></tr>
         </thead>
         {% for row in models.payments %}    
         <tr>
+            <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
             <td><a href="{{ row.companyPayment.value }}">{{ row.companyPayment.value|explode:"/"|pop }}</a></td>
-            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
-            
             {%if row.date%}
               <td>{{ row.date.value|date:"Y" }}</td>
               {%else%}
@@ -53,9 +52,8 @@
                 {%endif%}
             {%endif%}
             <td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>
-            <td>{{ row.currency.value }}</td>
             <td>{{ row.type.value }}</td>
-            <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
+            <td>{{ row.currency.value }}</td>
             <td>{{ row.value.value }}</td>
         </tr>
         {% endfor %}
