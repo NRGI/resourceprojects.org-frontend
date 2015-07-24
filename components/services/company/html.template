@@ -4,6 +4,9 @@
   <div class="page-header">
     <h1>Companies <small></small></h1>
   </div>
+
+  <div>Showing {{lodspk.offset}} to {% if lodspk.next < first.count.uriCount.value %}{{lodspk.next}}{% else %}{{first.count.uriCount.value}}{% endif %} of {{first.count.uriCount.value}}</div>
+
   {%include "../../includes/pager.inc"%}
   
   <table class="table table-striped" about="{{uri}}">

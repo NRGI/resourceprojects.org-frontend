@@ -1,0 +1,6 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT DISTINCT (COUNT(?uri) as ?uriCount) WHERE {
+    ?uri a rp:Project
+}
+
