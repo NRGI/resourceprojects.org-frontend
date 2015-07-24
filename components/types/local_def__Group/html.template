@@ -45,7 +45,7 @@
       <h2>Payments</h2>
       <table class="table table-striped">
         <thead>
-          <tr><th>ID</th><th>Currency</th><th>Payment Date</th><th>Type</th><th>Paid to</th><th>Value</th></tr>
+          <tr><th>ID</th><th>Currency</th><th>Payment Year</th><th>Type</th><th>Paid to</th><th>Value</th></tr>
         </thead>
         {% for row in models.payments %}    
         <tr>
