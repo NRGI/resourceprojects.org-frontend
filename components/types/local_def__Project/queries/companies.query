@@ -9,7 +9,6 @@ SELECT DISTINCT ?company ?company_name ?stake ?share WHERE {
     ?company a rp:Company
     OPTIONAL { ?company skos_:prefLabel ?company_name } 
     OPTIONAL {?stakes rp:share ?share} 
-    FILTER (BOUND(?share))
 }
 GROUP BY ?stake ?share
 ORDER BY ?company_name
