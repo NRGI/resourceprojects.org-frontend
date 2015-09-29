@@ -3,36 +3,82 @@
       <div class="page-header">
           <h1>{{first.main.name.value}} <small>Country</small></h1>
       </div>
-
-      <h2>Projects</h2>
-
-      <table class="table table-striped">
-      <thead>
-        <tr><th>Name</th><th>Commodity Type</th></tr>
-      </thead>
-      {% for project in models.projects %}    
-      <tr>
-          <td><a href="{{project.project.value}}">{{ project.name.value }}</a></td>
-          <!--<td><a href="{{project.project.value}}">{{ project.project.value }}</a></td>-->
-          <td>{{ project.commodityType.value }}</td>
-      </tr>
-      {% endfor %}
-      </table>
+      <div class="row">
+        <div class="col-md-10">
+          <div id="map"></div>
+        </div>
+        
+        <div class="col-md-2">
+          <div id="filters">
+            <!--<h3>Filters</h3>-->
+            <h4>Project</h4>
+            <form method="post">
+              <input type="checkbox" name="projectType" value="gas" /> Gas <br />
+              <input type="checkbox" name="projectType" value="oil" /> Oil<br />
+              <input type="checkbox" name="projectType" value="active" /> Active<br />
+              <!--<input type="submit" value="Submit now" />-->
+            </form>
+            
+            <h4>Company Group</h4>
+            <select>
+              <option value="volvo">StatOil</option>
+              <option value="saab">BP</option>
+              <option value="mercedes">Tullow</option>
+            </select>
+            
+            <h4>Tags</h4>
+            <p>Oil Gas Algeria</p>
+          </div>
+          
+        
+        </div>
+      </div><!--end row-->
+      <script type="text/javascript">
+        var map = L.map('map').setView([28, 3], 5);
+        
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                      maxZoom: 19,
+                      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    }).addTo(map);
+      </script>
       
-      <h2>Companies</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Companies</h2>
 
-      <table class="table table-striped">
-      <thead>
-        <tr><th>Name</th></tr>
-      </thead>
-      {% for row in models.companies %}    
-      <tr>
-          <td><a href="{{row.company.value}}">{{ row.name.value }}</a></td>
-          <!--<td><a href="{{row.company.value}}">{{ row.company.value|explode:"/"|pop }}</a></td>-->
-      </tr>
-      {% endfor %}
-      </table>
-      
+          <table class="table table-striped">
+          <thead>
+            <tr><th>Name</th><th>Group</th></tr>
+          </thead>
+          {% for row in models.companies %}    
+          <tr>
+              <td><a href="{{row.company.value}}">{{ row.name.value }}</a></td>
+              <td></td>
+              <!--<td><a href="{{row.company.value}}">{{ row.company.value|explode:"/"|pop }}</a></td>-->
+          </tr>
+          {% endfor %}
+          </table>
+        </div>
+        <div class="col-md-6">
+          <h2>Projects</h2>
+
+          <table class="table table-striped">
+          <thead>
+            <tr><th>Name</th><th>Commodity</th><th>Status</th><th>No. Companies</th></tr>
+          </thead>
+          {% for project in models.projects %}    
+          <tr>
+              <td><a href="{{project.project.value}}">{{ project.name.value }}</a></td>
+              <!--<td><a href="{{project.project.value}}">{{ project.project.value }}</a></td>-->
+              <td>{{ project.commodityType.value }}</td>
+              <td></td>
+              <td></td>
+          </tr>
+          {% endfor %}
+          </table>
+        </div>
+      </div>
+
       <h2>Payments</h2>
       <table class="table table-striped">
         <thead>
