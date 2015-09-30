@@ -12,4 +12,4 @@ script:
 
 after_success:
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    - docker push opendataservices/resourceprojects.org-frontend
+    - if [[ $TRAVIS_PULL_REQUEST -eq "false" ]]; then docker tag opendataservices/resourceprojects.org-frontend opendataservices/resourceprojects.org-frontend:${TRAVIS_TAG:-$TRAVIS_BRANCH}; docker push opendataservices/resourceprojects.org-frontend:${TRAVIS_TAG:-$TRAVIS_BRANCH}; fi
