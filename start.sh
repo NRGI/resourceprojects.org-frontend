@@ -6,4 +6,6 @@
 if [ $DEBUG ]; then
     /bin/sed -i "s|\$conf\['debug'\] = false;|\$conf\['debug'\] = true;|" settings.inc.php
 fi
+# This should be in the Dockerfile, but the travis build doesn't like it for some reason
+rm ../index.html
 apache2-foreground

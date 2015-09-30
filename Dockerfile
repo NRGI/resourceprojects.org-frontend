@@ -10,9 +10,6 @@ RUN apt-get install -y git sqlite3
 # Enable apache's rewrite module
 RUN a2enmod rewrite
 
-# Remove default apache page
-RUN rm index.html
-
 # Clone the lodspeakr repository
 RUN git clone https://github.com/alangrafu/lodspeakr.git lodspeakr
 
