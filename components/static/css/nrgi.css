@@ -187,9 +187,9 @@ div.advanced-links {
   display:inline;
 }
 
-#map, #filters { height: 480px; }
+#map, #filters, #info-box { height: 480px; }
 
-#filters {
+#filters, #info-box {
   border:1px solid #eee;
   padding: 5px;
 }

@@ -3,36 +3,106 @@
       <div class="page-header">
         <h1>{{first.main.name.value}} <small>Project</small></h1>
       </div>
-      <p>Our Project ID: 
-          {% for i,path_item in uri|explode:"/" %}
-            {% if i >= 4  %}
-              {{ path_item }}
-                {% if i == 4  %}
-                   /
+      
+      <div class="row">
+        <div class="col-md-10">
+          <div id="map"></div>
+          <script type="text/javascript">
+            var map = L.map('map').setView([28, 3], 5);
+            var marker = L.marker([28, 3]).addTo(map);
+            marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+          </script>
+          {%include "../../includes/default_map.js.inc"%}
+        </div>
+        
+        <div class="col-md-2">
+          <div id="info-box">
+            <h4>Project Info</h4>
+            <p>ID: 
+              {% for i,path_item in uri|explode:"/" %}
+                {% if i >= 4  %}
+                  {{ path_item }}
+                    {% if i == 4  %}
+                       /
+                    {% endif %}
                 {% endif %}
-            {% endif %}
+              {% endfor %}
+            </p>
+            Location: {% for location in models.countries %} <a href="{{ location.location.value }}">{{ location.location_name.value }}</a>{%if !forloop.last%},{% endif %}
+            {% endfor %}
+            </p>
+            <p>
+            Commodity: {% for row in models.commodities %} {{ row.commodityType.value }} {%if !forloop.last%},{% endif %}
+            {% endfor %}
+            </p>
+            
+            <h4>Company Group</h4>
+            <select>
+              <option value="volvo">StatOil</option>
+              <option value="saab">BP</option>
+              <option value="mercedes">Tullow</option>
+            </select>
+            
+            
+            <!--<p>
+            Commodity Details: {{ first.main.commodityDetails.value }}
+            </p>
+            <p>
+            Identifier: {{ first.main.identifier.value }}
+            </p>
+            <p>
+            Project Type: {{ first.main.projectType.value }}
+            </p>
+            <p>
+            Link: {{ first.main.url.value }}
+            </p>-->
+            
+            <h4>Tags</h4>
+            <p>Oil Gas Algeria</p>
+          </div>
+          
+        </div>
+      </div><!--end row-->
+      
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Description</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim risus urna, fringilla scelerisque neque luctus nec. Donec porta at felis ac consequat. Donec molestie id mauris quis ultricies. Aenean sollicitudin felis in molestie congue. Etiam euismod, tortor nec pharetra euismod, leo eros dapibus leo, nec sodales dolor arcu vitae dolor. Vestibulum eget justo mi. Morbi ultrices, eros quis pellentesque facilisis, purus arcu pretium velit, ut lobortis nulla sem ac felis. Ut in tristique nulla. Proin bibendum, tellus id bibendum volutpat, leo mauris rhoncus arcu, a maximus sem metus sit amet enim. Vivamus maximus gravida aliquet. Nulla et convallis nulla. Praesent vitae arcu porttitor, bibendum turpis ac, pellentesque sapien. Aliquam lacinia tempus commodo. Pellentesque feugiat, nisi nec venenatis euismod, ipsum ex consequat orci, a porttitor neque magna vitae ex. Sed imperdiet accumsan lacus, non accumsan leo rutrum consequat.</p>
+          <p>Pellentesque pulvinar felis volutpat massa lobortis cursus ut dictum sem. Nunc ut nibh tincidunt, pretium elit et, auctor risus. Nulla auctor ligula id risus sollicitudin pretium. Nulla et nunc orci. Aliquam tempus gravida ante, eu sodales augue ultrices et. Phasellus nibh sapien, ultrices a facilisis et, laoreet non purus. Suspendisse potenti.</p>
+        </div>
+        <div class="col-md-6">
+          <h2>Companies</h2>
+
+          <table class="table table-striped">
+          <thead>
+            <tr><th>Name</th><th>Group</th><th>Share</th></tr>
+          </thead>
+          {% for row in models.companies %}    
+          <tr>
+              <td><a href="{{row.company.value}}">{{ row.company_name.value }}</a></td>
+              <td></td>
+              <td>{{ row.share.value }}</td>
+              <!--<td><a href="{{row.company.value}}">{{ row.company.value|explode:"/"|pop }}</a></td>-->
+          </tr>
           {% endfor %}
-      </p>
-      <!--<p>Description (with provenance of description?)</p>-->
-      Location: {% for location in models.countries %} <a href="{{ location.location.value }}">{{ location.location_name.value }}</a>{%if !forloop.last%},{% endif %}
-      {% endfor %}
-      </p>
-      <p>
-      Commodity Type: {% for row in models.commodities %} {{ row.commodityType.value }} {%if !forloop.last%},{% endif %}
-      {% endfor %}
-      </p>
-      <!--<p>
-      Commodity Details: {{ first.main.commodityDetails.value }}
-      </p>-->
-      <!--<p>
-      Identifier: {{ first.main.identifier.value }}
-      </p>
-      <p>
-      Project Type: {{ first.main.projectType.value }}
-      </p>
-      <p>
-      Link: {{ first.main.url.value }}
-      </p>-->
+          </table>
+        
+        
+        <!--<h2>Participanting Companies</h2>
+          <table class="table table-striped">
+            <thead>
+              <tr><th>Name</th><th>Share</th></tr>
+            </thead>
+            {% for row in models.companies %}    
+            <tr>
+                <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
+                <td>{{ row.share.value }}</td>
+            </tr>
+            {% endfor %}
+          </table>-->
+        </div>
+      </div>
+      
       <h2>Production Stats</h2>
        <table class="table table-striped">
         <thead>
@@ -50,18 +120,7 @@
         {% endfor %}
       </table>
 
-      <h2>Participanting Companies</h2>
-      <table class="table table-striped">
-        <thead>
-          <tr><th>Name</th><th>Share</th></tr>
-        </thead>
-        {% for row in models.companies %}    
-        <tr>
-            <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
-            <td>{{ row.share.value }}</td>
-        </tr>
-        {% endfor %}
-      </table>
+
 
       <h2>Payments</h2>
       <table class="table table-striped">
