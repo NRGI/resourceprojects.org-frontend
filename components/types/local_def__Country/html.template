@@ -5,13 +5,17 @@
       </div>
       <div class="row">
         <div class="col-md-10">
-          <div id="map"></div>
+          <div id="map"></div><p>CartoBD</p>
           <script type="text/javascript">
             var map = L.map('map').setView([28, 3], 5);
             var marker = L.marker([28, 3]).addTo(map);
-            marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+            marker.bindPopup('<b><a href="#">Project</a></b><br>(Operator)').openPopup();
           </script>
-          {%include "../../includes/default_map.js.inc"%}
+          <script>
+            L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+                        }).addTo(map);;
+          </script>
         </div>
         
         <div class="col-md-2">
@@ -19,9 +23,9 @@
             <!--<h3>Filters</h3>-->
             <h4>Project</h4>
             <form method="post">
-              <input type="checkbox" name="projectType" value="gas" /> Gas <br />
-              <input type="checkbox" name="projectType" value="oil" /> Oil<br />
-              <input type="checkbox" name="projectType" value="active" /> Active<br />
+              <input type="checkbox" name="projectType" value="gas" /> Oil+Gas <br />
+              <input type="checkbox" name="projectType" value="oil" /> Mining <br />
+              <input type="checkbox" name="projectType" value="active" /> Active <br />
               <!--<input type="submit" value="Submit now" />-->
             </form>
             
@@ -43,22 +47,6 @@
       
       <div class="row">
         <div class="col-md-6">
-          <h2>Companies</h2>
-
-          <table class="table table-striped">
-          <thead>
-            <tr><th>Name</th><th>Group</th></tr>
-          </thead>
-          {% for row in models.companies %}    
-          <tr>
-              <td><a href="{{row.company.value}}">{{ row.name.value }}</a></td>
-              <td></td>
-              <!--<td><a href="{{row.company.value}}">{{ row.company.value|explode:"/"|pop }}</a></td>-->
-          </tr>
-          {% endfor %}
-          </table>
-        </div>
-        <div class="col-md-6">
           <h2>Projects</h2>
 
           <table class="table table-striped">
@@ -72,6 +60,22 @@
               <td>{{ project.commodityType.value }}</td>
               <td></td>
               <td></td>
+          </tr>
+          {% endfor %}
+          </table>
+        </div>
+        <div class="col-md-6">
+          <h2>Companies <small>Companies active in this country</small></h2>
+
+          <table class="table table-striped">
+          <thead>
+            <tr><th>Name</th><th>Group</th></tr>
+          </thead>
+          {% for row in models.companies %}    
+          <tr>
+              <td><a href="{{row.company.value}}">{{ row.name.value }}</a></td>
+              <td></td>
+              <!--<td><a href="{{row.company.value}}">{{ row.company.value|explode:"/"|pop }}</a></td>-->
           </tr>
           {% endfor %}
           </table>

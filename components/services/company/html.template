@@ -29,9 +29,8 @@
       <div class="col-md-2">
         <select>
           <option value="volvo">- Commodity Filter -</option>
-          <option value="volvo">Oil</option>
-          <option value="saab">Gas</option>
-          <option value="mercedes">Other</option>
+          <option value="volvo">Oil+Gas</option>
+          <option value="saab">Mining</option>
         </select>
       </div>
     </div><!--end row-->
@@ -71,7 +70,7 @@
     </div>
     
     <div class="col-md-6">
-      <div id="map"></div>
+      <div id="map"></div><p>OpenStreetMap</p>
       <script type="text/javascript">
         var map = L.map('map').setView([28, 3], 2);
         var marker = L.marker([28, 30]).addTo(map);
@@ -80,11 +79,11 @@
         var marker3 = L.marker([29, 44]).addTo(map);
         var marker4 = L.marker([24, 55]).addTo(map);
         
-        marker.bindPopup("<b>Hello world!</b><br>I am a popup.");
-        marker1.bindPopup("<b>Hello world!</b><br>I am a popup.");
-        marker2.bindPopup("<b>Hello world!</b><br>I am a popup.");
-        marker3.bindPopup("<b>Hello world!</b><br>I am a popup.");
-        marker4.bindPopup("<b>Hello world!</b><br>I am a popup.");
+        marker.bindPopup('<b><a href="#">Project</a></b><br>(Operator)');
+        marker1.bindPopup('<b><a href="#">Project</a></b><br>(Operator)');
+        marker2.bindPopup('<b><a href="#">Project</a></b><br>(Operator)');
+        marker3.bindPopup('<b><a href="#">Project</a></b><br>(Operator)');
+        marker4.bindPopup('<b><a href="#">Project</a></b><br>(Operator)');
       </script>
       {%include "../../includes/default_map.js.inc"%}
     </div>
