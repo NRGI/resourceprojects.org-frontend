@@ -6,7 +6,7 @@ prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT * WHERE {
     OPTIONAL { <{{uri}}> rp:lat ?lat }
-    OPTIONAL { <{{uri}}> rp:lng ?lng }
+    OPTIONAL { <{{uri}}> rp:long ?lng }
     OPTIONAL { <{{uri}}> skos_:prefLabel ?name }
     OPTIONAL { <{{uri}}> rp:commodity ?commodity }
     OPTIONAL { ?commodity skos_:prefLabel ?commodity_name }
