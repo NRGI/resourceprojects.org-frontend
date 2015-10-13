@@ -1,15 +1,38 @@
 sudo: required
+language: python
+
+python:
+  - "3.4"
 
 services:
     - docker
 
 before_install:
-    - docker pull opendataservices/resourceprojects.org-frontend
+    # Reset some timestamps to get more docker caching
+    - find ./ | grep -v .git | xargs touch -t 200001010000.00
+    - docker pull opendataservices/resourceprojects.org-frontend || true
+    - docker pull opendataservices/resourceprojects.org-frontend:${TRAVIS_TAG:-$TRAVIS_BRANCH} || true
     - docker build -t opendataservices/resourceprojects.org-frontend .
+#    https://github.com/travis-ci/travis-ci/issues/4778
+    - sudo service docker restart ; sleep 10
+    # Run virtuoso
+    - docker run -d -p 127.0.0.1:8890:8890 --name virtuoso caprenter/automated-build-virtuoso
+    # Run the frontend
+    - docker run -d --publish=127.0.0.2:80:80 --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ -e SPARQL_ENDPOINT=http://virtuoso:8890/sparql -e DEBUG --name frontend opendataservices/resourceprojects.org-frontend
+    - sudo apt-get update
+    - sudo apt-get install xvfb firefox
+    - "export DISPLAY=:99.0"
+    - "sh -e /etc/init.d/xvfb start"
+
+install:
+    - pip install -r requirements_test.txt
+
+before_script:
+    - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+    - docker push opendataservices/resourceprojects.org-frontend
 
 script:
-    - true
+    - py.test fts
 
 after_success:
-    - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    - if [[ $TRAVIS_PULL_REQUEST -eq "false" ]]; then docker tag opendataservices/resourceprojects.org-frontend opendataservices/resourceprojects.org-frontend:${TRAVIS_TAG:-$TRAVIS_BRANCH}; docker push opendataservices/resourceprojects.org-frontend:${TRAVIS_TAG:-$TRAVIS_BRANCH}; fi
+    - if [[ $TRAVIS_PULL_REQUEST -eq "false" ]]; then docker tag -f opendataservices/resourceprojects.org-frontend opendataservices/resourceprojects.org-frontend:${TRAVIS_TAG:-$TRAVIS_BRANCH}; docker push opendataservices/resourceprojects.org-frontend:${TRAVIS_TAG:-$TRAVIS_BRANCH}; fi
