@@ -1,6 +1,6 @@
 prefix rp: <http://resourceprojects.org/def/>
 
-SELECT DISTINCT ?project  ?commodity ?statusType  ?commodityLabel ?commodityType ?name ?company ?companyName ?group ?groupName WHERE {
+SELECT DISTINCT ?project  ?commodity ?statusType  ?commodityLabel ?commodityType ?name WHERE {
     ?project rp:hasLocation <{{uri}}> .
     ?project a rp:Project .
     OPTIONAL {

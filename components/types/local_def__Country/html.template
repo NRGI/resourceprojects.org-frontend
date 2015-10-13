@@ -53,11 +53,13 @@
         
         </div>
       </div><!--end row-->
-      
-      
+     
+
       <div class="row">
         <div class="col-md-6">
           <h2>Projects</h2>
+
+         <a href="http://virtuoso.nrgi-dev2.default.opendataservices.uk0.bigv.io/sparql?default-graph-uri=&query={{ lodspk.queryText.projects|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">CSV</a>
 
           <table class="table table-striped">
           <thead>
@@ -76,6 +78,8 @@
         </div>
         <div class="col-md-6">
           <h2>Companies <small>Companies active in this country</small></h2>
+
+         <a href="http://virtuoso.nrgi-dev2.default.opendataservices.uk0.bigv.io/sparql?default-graph-uri=&query={{ lodspk.queryText.companies|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">CSV</a>
 
           <table class="table table-striped">
           <thead>
