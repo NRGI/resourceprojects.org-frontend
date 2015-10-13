@@ -10,6 +10,12 @@ SELECT * WHERE {
         <{{uri}}> skos_:prefLabel ?name
     }
     OPTIONAL {
+        <{{uri}}>	rp:long	?long
+    }
+    OPTIONAL {
+        <{{uri}}>	rp:lat ?lat
+    }
+    OPTIONAL {
         <{{uri}}> rp:hasLocation ?location .
         ?location skos_:prefLabel ?location_name
     }

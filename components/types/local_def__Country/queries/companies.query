@@ -1,19 +1,25 @@
 prefix rp: <http://resourceprojects.org/def/>
-prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT DISTINCT ?company ?name WHERE {
+SELECT DISTINCT ?company ?companyName ?group ?groupName WHERE {
     ?project rp:hasLocation <{{uri}}> .
-    ?project rp:hasStake ?stake .
-    ?stake rp:isStakeIn ?company .
-    ?company a rp:Company 
-    OPTIONAL {
-        ?company skos_:prefLabel ?name
+    ?project a rp:Project
+    
+    OPTIONAL { ?project rp:hasStake ?stake .
+               ?stake rp:hasStakeholder ?company .
+               ?company a rp:Company .
+               ?company skos:prefLabel ?companyName
     }
+    OPTIONAL { ?groupMembership rp:organisation ?company .
+               ?group rp:groupMember ?groupMembership .
+               ?group skos:prefLabel ?groupName
+    }
+    
+    
     FILTER NOT EXISTS {
         ?project owl:sameAs ?b
     }
 } 
-GROUP BY ?company ?name
-ORDER BY ?name
+GROUP BY ?company ?companyName
+ORDER BY ?companyName
 
 LIMIT {{lodspk.maxResults}}

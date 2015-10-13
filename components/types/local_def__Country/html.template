@@ -7,7 +7,7 @@
         <div class="col-md-10">
           <div id="map"></div><p>CartoBD</p>
           <script type="text/javascript">
-            var map = L.map('map').setView([28, 3], 5);
+            var map = L.map('map').setView([{{first.main.lat.value}}, {{first.main.long.value}}], 5);
           </script>
             {% for site in models.sites %}
           <script type="text/javascript">
@@ -64,7 +64,7 @@
               <td><a href="{{project.project.value}}">{{ project.name.value }}</a></td>
               <!--<td><a href="{{project.project.value}}">{{ project.project.value }}</a></td>-->
               <td>{{ project.commodityType.value }}</td>
-              <td></td>
+              <td>{{ project.statusType.value}}</td>
               <td></td>
           </tr>
           {% endfor %}
@@ -79,8 +79,8 @@
           </thead>
           {% for row in models.companies %}    
           <tr>
-              <td><a href="{{row.company.value}}">{{ row.name.value }}</a></td>
-              <td></td>
+              <td><a href="{{row.company.value}}">{{ row.companyName.value }}</a></td>
+              <td><a href="{{row.group.value}}">{{ row.groupName.value }}</a></td>
               <!--<td><a href="{{row.company.value}}">{{ row.company.value|explode:"/"|pop }}</a></td>-->
           </tr>
           {% endfor %}
