@@ -28,22 +28,22 @@
           <div id="filters">
             <!--<h3>Filters</h3>-->
             <h4>Project</h4>
-            <form method="post">
-              <input type="checkbox" name="projectType" value="gas" /> Oil+Gas <br />
-              <input type="checkbox" name="projectType" value="oil" /> Mining <br />
-              <input type="checkbox" name="projectType" value="active" /> Active <br />
-              <!--<input type="submit" value="Submit now" />-->
+            <form method="get">
+              <input type="checkbox" name="commodity[]" value="Oil and Gas" {% if 'Oil and Gas' in lodspk.GET.commodity %}checked{% endif %} /> Oil and Gas <br />
+              <input type="checkbox" name="commodity[]" value="Mining" {% if 'Mining' in lodspk.GET.commodity %}checked{% endif %} /> Mining <br />
+            
+              <h4>Company Group</h4>
+              <select>
+                <option value="volvo">StatOil</option>
+                <option value="saab">BP</option>
+                <option value="mercedes">Tullow</option>
+              </select>
+            
+              <h4>Tags</h4>
+              <p>Oil Gas Algeria</p>
+
+              <input type="submit" value="Submit now" />
             </form>
-            
-            <h4>Company Group</h4>
-            <select>
-              <option value="volvo">StatOil</option>
-              <option value="saab">BP</option>
-              <option value="mercedes">Tullow</option>
-            </select>
-            
-            <h4>Tags</h4>
-            <p>Oil Gas Algeria</p>
           </div>
           
         

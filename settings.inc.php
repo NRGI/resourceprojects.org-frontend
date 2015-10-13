@@ -18,6 +18,8 @@ $lodspk['limit'] = $limit;
 $lodspk['next'] = $offset + $limit;
 $lodspk['prev'] = $offset - $limit;
 
+$lodspk['GET'] = $_GET;
+
 if ($lodspk['prev'] <= 0) {
       $lodspk['prev'] = 0;
     }

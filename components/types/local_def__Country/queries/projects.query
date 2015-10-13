@@ -1,5 +1,4 @@
 prefix rp: <http://resourceprojects.org/def/>
-prefix rp_misc: <http://resourceprojects.org/def/misc/>
 
 SELECT DISTINCT ?project ?commodityType ?name WHERE {
     ?project rp:hasLocation <{{uri}}> .
@@ -7,8 +6,8 @@ SELECT DISTINCT ?project ?commodityType ?name WHERE {
     OPTIONAL {
         ?project skos:prefLabel ?name
     }
-    OPTIONAL { ?project rp:commodity ?commodity.
-               ?commodity rp_misc:commodityType ?commodityType 
+    OPTIONAL { ?project rp:hasCommodity ?commodity .
+               ?commodity rp:commodityType ?commodityType 
     }
     FILTER NOT EXISTS {
         ?project owl:sameAs ?b
