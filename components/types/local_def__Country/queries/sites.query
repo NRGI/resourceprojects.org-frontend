@@ -14,6 +14,7 @@ SELECT DISTINCT ?site, ?project, ?lat, ?lng, ?project_name, ?site_name WHERE {
     {% else %}
         OPTIONAL { ?project rp:hasLocation ?site }
     {% endif %}
+
     OPTIONAL { ?site rp:lat ?lat }
     OPTIONAL { ?site rp:long ?lng }
     OPTIONAL { ?site skos:prefLabel ?site_name }

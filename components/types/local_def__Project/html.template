@@ -13,18 +13,14 @@
       
       <div class="row">
         <div class="col-md-10">
-          <div id="map" style="height:240px"></div><p>Esri</p>
+          <div id="map" style="height:240px"></div>
           <script type="text/javascript">
             var map = L.map('map').setView([28, 3], 5);
             var marker = L.marker([28, 3]).addTo(map);
             marker.bindPopup('<b><a href="#">Project</a></b><br>(Operator)').openPopup();
           </script>
-          <script>        
-            L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-                          maxZoom: 19,
-                          attribution: 'Tiles: &copy; Esri'
-                        }).addTo(map);
-          </script>
+          
+          {%include "../../includes/default_map.js.inc"%}
 
         </div>
         

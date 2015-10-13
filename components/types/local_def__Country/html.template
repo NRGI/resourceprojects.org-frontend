@@ -5,23 +5,24 @@
       </div>
       <div class="row">
         <div class="col-md-10">
-          <div id="map"></div><p>CartoBD</p>
+          <div id="map"></div>
           <script type="text/javascript">
             var map = L.map('map').setView([{{first.main.lat.value}}, {{first.main.long.value}}], 5);
           </script>
             {% for site in models.sites %}
+              {%if site.lat.value %}
+                {%if site.lng.value %}
           <script type="text/javascript">
             var marker_{{site.site_name.value}} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
 
             marker_{{site.site_name.value}}.bindPopup('<b><a href="{{site.site.value}}">{{site.site_name.value}}</a></b><br>(Operator)<br>{{site.project_name.value}}').openPopup();
           </script>
+                {%endif%}
+              {%endif%}
             {% endfor %}
           
-          <script>
-            L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-                          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
-                        }).addTo(map);;
-          </script>
+          {%include "../../includes/default_map.js.inc"%}
+          
         </div>
         
         <div class="col-md-2">
@@ -31,6 +32,9 @@
             <form method="get">
               <input type="checkbox" name="commodity[]" value="Oil and Gas" {% if 'Oil and Gas' in lodspk.GET.commodity %}checked{% endif %} /> Oil and Gas <br />
               <input type="checkbox" name="commodity[]" value="Mining" {% if 'Mining' in lodspk.GET.commodity %}checked{% endif %} /> Mining <br />
+            
+              <h4>Status</h4>
+              
             
               <h4>Company Group</h4>
               <select>
