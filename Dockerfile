@@ -11,7 +11,7 @@ RUN apt-get install -y git sqlite3
 RUN a2enmod rewrite
 
 # Clone the lodspeakr repository
-RUN git clone https://github.com/alangrafu/lodspeakr.git lodspeakr
+RUN git clone https://github.com/OpenDataServices/lodspeakr.git lodspeakr && cd lodspeakr && git checkout 245afd6dfc976197b9f68ec55c50d2a3db0bf1cd
 
 WORKDIR lodspeakr
 
