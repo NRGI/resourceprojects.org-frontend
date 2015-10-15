@@ -68,7 +68,7 @@
               <!--<td><a href="{{project.project.value}}">{{ project.project.value }}</a></td>-->
               <td>{{ project.commodityType.value }}</td>
               <td>{{ project.statusType.value}}</td>
-              <td></td>
+              <td>{{ project.companyCount.value}}</td>
           </tr>
           {% endfor %}
           </table>
