@@ -16,16 +16,12 @@ def browser(request):
     return browser
 
 
-@pytest.mark.parametrize(('nav_item'), [
-    ('About'),
-    ('Projects'),
-    ('Countries'),
-    ('Companies'),
-    ('Data sources')
-    ])
-def test_main_nav(browser,nav_item):
+def test_main_nav(browser):
     browser.get(server_url)
-    assert nav_item in browser.find_element_by_css_selector('.nav-collapse').text
+    navigation = ['About','Projects','Countries','Companies','Data sources']
+    found_navigation_items = browser.find_element_by_css_selector('.nav-collapse').text
+    for nav_item in navigation:
+        assert nav_item in found_navigation_items
 
 
 def test_index_page(browser):
