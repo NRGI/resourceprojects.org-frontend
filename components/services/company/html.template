@@ -11,7 +11,7 @@
           <button type="button" class="btn btn-default"><a href="/group">Switch to Company Groups view</a></button>
         </div>
       </div>
-      <div class="col-md-2">
+      <!--<div class="col-md-2">
         <select>
           <option value="volvo">- Company Group Filter -</option>
           <option value="volvo">StatOil</option>
@@ -32,7 +32,7 @@
           <option value="volvo">Oil+Gas</option>
           <option value="saab">Mining</option>
         </select>
-      </div>
+      </div>-->
     </div><!--end row-->
   </div><!--end page-header-->
   
@@ -48,7 +48,7 @@
 
   
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
       {%include "../../includes/pager.inc"%}
 
       <table class="table table-striped" about="{{uri}}">
@@ -69,24 +69,7 @@
       
     </div>
     
-    <div class="col-md-6">
-      <div id="map"></div>
-      <script type="text/javascript">
-        var map = L.map('map').setView([28, 3], 2);
-        var marker = L.marker([28, 30]).addTo(map);
-        var marker1 = L.marker([22, 13]).addTo(map);
-        var marker2 = L.marker([27, 22]).addTo(map);
-        var marker3 = L.marker([29, 44]).addTo(map);
-        var marker4 = L.marker([24, 55]).addTo(map);
-        
-        marker.bindPopup('<b><a href="#">Project</a></b><br>(Operator)');
-        marker1.bindPopup('<b><a href="#">Project</a></b><br>(Operator)');
-        marker2.bindPopup('<b><a href="#">Project</a></b><br>(Operator)');
-        marker3.bindPopup('<b><a href="#">Project</a></b><br>(Operator)');
-        marker4.bindPopup('<b><a href="#">Project</a></b><br>(Operator)');
-      </script>
-      {%include "../../includes/default_map.js.inc"%}
-    </div>
+    
   </div><!--end row-->
 </div>
 

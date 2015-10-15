@@ -7,7 +7,7 @@
         <div class="col-md-10">
           <div id="map"></div>
           <script type="text/javascript">
-            var map = L.map('map').setView([{{first.main.lat.value}}, {{first.main.long.value}}], 5);
+            var map = L.map('map',{ fullscreenControl: true }).setView([{{first.main.lat.value}}, {{first.main.long.value}}], 5);
           </script>
             {% for site in models.sites %}
               {%if site.lat.value %}
@@ -42,9 +42,6 @@
                 <option value="saab">BP</option>
                 <option value="mercedes">Tullow</option>
               </select>
-            
-              <h4>Tags</h4>
-              <p>Oil Gas Algeria</p>
 
               <input type="submit" value="Submit now" />
             </form>
@@ -58,8 +55,8 @@
       <div class="row">
         <div class="col-md-6">
           <h2>Projects</h2>
-
-         <a href="http://virtuoso.nrgi-dev2.default.opendataservices.uk0.bigv.io/sparql?default-graph-uri=&query={{ lodspk.queryText.projects|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">CSV</a>
+         
+          
 
           <table class="table table-striped">
           <thead>
@@ -71,15 +68,19 @@
               <!--<td><a href="{{project.project.value}}">{{ project.project.value }}</a></td>-->
               <td>{{ project.commodityType.value }}</td>
               <td>{{ project.statusType.value}}</td>
-              <td></td>
+              <td>{{ project.companyCount.value}}</td>
           </tr>
           {% endfor %}
           </table>
+          <div class="download">
+            <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="http://virtuoso.nrgi-dev2.default.opendataservices.uk0.bigv.io/sparql?default-graph-uri=&query={{ lodspk.queryText.projects|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Projects CSV</a></span>
+          </div>
+
         </div>
         <div class="col-md-6">
           <h2>Companies <small>Companies active in this country</small></h2>
 
-         <a href="http://virtuoso.nrgi-dev2.default.opendataservices.uk0.bigv.io/sparql?default-graph-uri=&query={{ lodspk.queryText.companies|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">CSV</a>
+         
 
           <table class="table table-striped">
           <thead>
@@ -93,6 +94,9 @@
           </tr>
           {% endfor %}
           </table>
+          <div class="download">
+            <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="http://virtuoso.nrgi-dev2.default.opendataservices.uk0.bigv.io/sparql?default-graph-uri=&query={{ lodspk.queryText.companies|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Companies CSV</a>
+          </div>
         </div>
       </div>
 
