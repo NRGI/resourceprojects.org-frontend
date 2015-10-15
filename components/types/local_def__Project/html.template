@@ -11,10 +11,19 @@
         <div class="col-md-12">
           <div id="map" style="height:240px"></div>
           <script type="text/javascript">
-            var map = L.map('map').setView([28, 3], 5);
-            var marker = L.marker([28, 3]).addTo(map);
-            marker.bindPopup('<b><a href="#">Project</a></b><br>(Operator)').openPopup();
+            var map = L.map('map',{ fullscreenControl: true }).setView([{{first.main.lat.value}}, {{first.main.long.value}}], 5);
           </script>
+             {% for site in models.sites %}
+              {%if site.lat.value %}
+                {%if site.lng.value %}
+                  <script type="text/javascript">
+                    var marker_{{ site.site.value|explode:'/'|pop|cut:'-' }} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
+
+                    marker_{{ site.site.value|explode:'/'|pop|cut:'-' }}.bindPopup('<b><a href="{{site.site.value}}">{{site.site_name.value}}</a></b><br>(Operator)<br>{{site.project_name.value}}').openPopup();
+                  </script>
+                {%endif%}
+              {%endif%}
+            {% endfor %}
           
           {%include "../../includes/default_map.js.inc"%}
 
