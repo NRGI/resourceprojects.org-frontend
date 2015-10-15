@@ -50,12 +50,15 @@
               {% endfor %}
             </p>
             <ul style="margin: 0;padding-left: 18px;">
-            <li>Aliases: </li>
-            <li> Commodity: {% for row in models.commodities %} {{ row.commodityType.value }} {%if !forloop.last%},{% endif %}
-            {% endfor %}</li>
+            <li>Aliases: {% for row in models.main %} {{ row.altLabel.value }}{% if !forloop.last %}, {% endif %}{% endfor %}</li>
+            <li>Commodity: {% for row in models.commodities %} {{ row.commodityType.value }}{%if !forloop.last%}, {% endif %}{% endfor %}</li>
             <li>status (status history): </li>
-            <li>Location: {% for location in models.countries %} <a href="{{ location.location.value }}">{{ location.location_name.value }}</a>{%if !forloop.last%},{% endif %}
-            {% endfor %}</li>
+            <li>Location: {% for row in models.sites %} 
+              {% if row.site_name.value %}
+                <a href="{{ row.site.value }}">{{ row.site_name.value }}</a>,
+              {% endif %}
+              {% endfor %}
+            </li>
             <li>associated contracts (link)</li>
             <li>associated concessions (link)</li>
             </ul>
