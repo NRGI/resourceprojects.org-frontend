@@ -42,9 +42,6 @@
                 <option value="saab">BP</option>
                 <option value="mercedes">Tullow</option>
               </select>
-            
-              <h4>Tags</h4>
-              <p>Oil Gas Algeria</p>
 
               <input type="submit" value="Submit now" />
             </form>

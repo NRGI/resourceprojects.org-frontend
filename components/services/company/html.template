@@ -11,7 +11,7 @@
           <button type="button" class="btn btn-default"><a href="/group">Switch to Company Groups view</a></button>
         </div>
       </div>
-      <div class="col-md-2">
+      <!--<div class="col-md-2">
         <select>
           <option value="volvo">- Company Group Filter -</option>
           <option value="volvo">StatOil</option>
@@ -32,7 +32,7 @@
           <option value="volvo">Oil+Gas</option>
           <option value="saab">Mining</option>
         </select>
-      </div>
+      </div>-->
     </div><!--end row-->
   </div><!--end page-header-->
   

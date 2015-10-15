@@ -2,17 +2,13 @@
     <div class="container">
       <div class="page-header">
         <div class="row">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <h1>{{first.main.name.value}} <small>Project</small></h1>
-          </div>
-          <div class="col-md-2">
-            <h4></h4>
-            <h4>Tags: <small>Oil Gas Algeria</small></h4>
           </div>
       </div>
       
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
           <div id="map" style="height:240px"></div>
           <script type="text/javascript">
             var map = L.map('map').setView([28, 3], 5);
@@ -25,7 +21,14 @@
         </div>
         
         <div class="col-md-2">
-          <div id="info-box" style="height:240px">
+          
+          
+        </div>
+      </div><!--end row-->
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="info-box">
             <h4>Project Info</h4>
             <p>ID: 
               {% for i,path_item in uri|explode:"/" %}
@@ -72,15 +75,6 @@
             
             
           </div>
-          
-        </div>
-      </div><!--end row-->
-      
-      <div class="row">
-        <div class="col-md-6">
-          <h2>Description</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim risus urna, fringilla scelerisque neque luctus nec. Donec porta at felis ac consequat. Donec molestie id mauris quis ultricies. Aenean sollicitudin felis in molestie congue. Etiam euismod, tortor nec pharetra euismod, leo eros dapibus leo, nec sodales dolor arcu vitae dolor. Vestibulum eget justo mi. Morbi ultrices, eros quis pellentesque facilisis, purus arcu pretium velit, ut lobortis nulla sem ac felis. Ut in tristique nulla. Proin bibendum, tellus id bibendum volutpat, leo mauris rhoncus arcu, a maximus sem metus sit amet enim. Vivamus maximus gravida aliquet. Nulla et convallis nulla. Praesent vitae arcu porttitor, bibendum turpis ac, pellentesque sapien. Aliquam lacinia tempus commodo. Pellentesque feugiat, nisi nec venenatis euismod, ipsum ex consequat orci, a porttitor neque magna vitae ex. Sed imperdiet accumsan lacus, non accumsan leo rutrum consequat.</p>
-          <p>Pellentesque pulvinar felis volutpat massa lobortis cursus ut dictum sem. Nunc ut nibh tincidunt, pretium elit et, auctor risus. Nulla auctor ligula id risus sollicitudin pretium. Nulla et nunc orci. Aliquam tempus gravida ante, eu sodales augue ultrices et. Phasellus nibh sapien, ultrices a facilisis et, laoreet non purus. Suspendisse potenti.</p>
         </div>
         <div class="col-md-6">
           <h2>Companies</h2>
