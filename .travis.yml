@@ -16,7 +16,7 @@ before_install:
 #    https://github.com/travis-ci/travis-ci/issues/4778
     - sudo service docker restart ; sleep 10
     # Run virtuoso
-    - docker run -d -p 127.0.0.1:8890:8890 --name virtuoso caprenter/automated-build-virtuoso
+    - docker run -d -p 127.0.0.1:8890:8890 --name virtuoso opendataservices/virtuoso:master
     # Run the frontend
     - docker run -d --publish=127.0.0.2:80:80 --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ -e SPARQL_ENDPOINT=http://virtuoso:8890/sparql -e DEBUG --name frontend opendataservices/resourceprojects.org-frontend
     # The docker containers take some time to start up, so we install these
