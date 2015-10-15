@@ -16,56 +16,55 @@ def browser(request):
     return browser
 
 
-@pytest.mark.parametrize(('nav_item'), [
-    ('About'),
-    ('Projects'),
-    ('Countries'),
-    ('Companies'),
-    ('Data sources')
+class TestIndexPage:
+    @pytest.fixture(autouse=True, scope='module')
+    def load_index_page(self, browser):
+        browser.get(server_url)
+
+    @pytest.mark.parametrize(('nav_item'), [
+        ('About'),
+        ('Projects'),
+        ('Countries'),
+        ('Companies'),
+        ('Data sources')
+        ])
+    def test_main_nav(self, browser, nav_item):
+        assert nav_item in browser.find_element_by_css_selector('.nav-collapse').text
+
+    def test_index_page(self, browser):
+        assert "Natural Resource Governance Institute" in browser.title
+        assert 'ResourceProjects.org' in browser.find_element_by_tag_name('body').text
+
+
+def test_country_page(browser):
+    expected_titles = set([
+        ('Projects'),
+        ('Companies Companies active in this country')
     ])
-def test_main_nav(browser,nav_item):
-    browser.get(server_url)
-    assert nav_item in browser.find_element_by_css_selector('.nav-collapse').text
-
-
-def test_index_page(browser):
-    browser.get(server_url)
-    assert "Natural Resource Governance Institute" in browser.title
-    assert 'ResourceProjects.org' in browser.find_element_by_tag_name('body').text
-
-
-@pytest.mark.parametrize(('heading'), [
-    ('Projects'),
-    ('Companies Companies active in this country')
-    ])
-def test_country_page(browser,heading):
     browser.get(server_url + 'country/AO')
     titles = []
     #assert "Natural Resource Governance Institute" in browser.title
     section_titles = browser.find_elements_by_tag_name('h2')
-    for h2 in section_titles:
-        titles.append(h2.text)
-    #assert 'Projects' in titles
-    assert heading in titles
+    section_titles_text = set([ x.text for x in section_titles ])
+    assert expected_titles <= section_titles_text
 
 
 # Table in the projects page
-@pytest.mark.parametrize(('column_header'), [
-    #Company Table
-    ('Name'),
-    ('Group'),
-    #Production Stats
-    ('Year'),
-    ('Price'),
-    ('Price per unit'),
-    ('Unit'),
-    ('Volume'),
-    ('ID')
+def test_table_columns (browser):
+    expected_headers = set([
+        #Company Table
+        ('Name'),
+        ('Group'),
+        #Production Stats
+        ('Year'),
+        ('Price'),
+        ('Price per unit'),
+        ('Unit'),
+        ('Volume'),
+        ('ID')
     ])
-def test_table_columns (browser, column_header):
     browser.get(server_url + 'project/ao/bl40-ptvrql')
     headers = []
     table_headers = browser.find_elements_by_tag_name('th')
-    for th in table_headers:
-        headers.append(th.text)
-    assert column_header in headers
+    table_headers_text = set([ x.text for x in table_headers ])
+    assert expected_headers <= table_headers_text
