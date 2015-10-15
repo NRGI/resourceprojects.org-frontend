@@ -47,3 +47,25 @@ def test_country_page(browser,heading):
         titles.append(h2.text)
     #assert 'Projects' in titles
     assert heading in titles
+
+
+# Table in the projects page
+@pytest.mark.parametrize(('column_header'), [
+    #Company Table
+    ('Name'),
+    ('Group'),
+    #Production Stats
+    ('Year'),
+    ('Price'),
+    ('Price per unit'),
+    ('Unit'),
+    ('Volume'),
+    ('ID')
+    ])
+def test_table_columns (browser, column_header):
+    browser.get(server_url + 'project/ao/bl40-ptvrql')
+    headers = []
+    table_headers = browser.find_elements_by_tag_name('th')
+    for th in table_headers:
+        headers.append(th.text)
+    assert column_header in headers

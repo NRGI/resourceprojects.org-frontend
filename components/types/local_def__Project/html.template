@@ -88,15 +88,22 @@
         <div class="col-md-6">
           <h2>Companies</h2>
 
-          <table class="table table-striped">
+          <table class="table table-striped companies">
           <thead>
-            <tr><th>Name</th><th>Group</th><th>Share</th></tr>
+            <tr><th>Name</th><th>Group</th><!--<th>Share</th>--></tr>
           </thead>
           {% for row in models.companies %}    
           <tr>
               <td><a href="{{row.company.value}}">{{ row.company_name.value }}</a></td>
-              <td></td>
-              <td>{{ row.share.value }}</td>
+              <td><a href="{{row.group.value}}">{{ row.groupName.value }}</a></td>
+              <!--<td>
+                {% if row.share.value  %}
+                    {{ row.share.value }}
+                {% else %}
+                  Not Known
+                {% endif %}
+              
+              </td>-->
               <!--<td><a href="{{row.company.value}}">{{ row.company.value|explode:"/"|pop }}</a></td>-->
           </tr>
           {% endfor %}
