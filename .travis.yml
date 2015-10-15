@@ -20,7 +20,7 @@ before_install:
     # Run the frontend
     - docker run -d --publish=127.0.0.2:80:80 --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ -e SPARQL_ENDPOINT=http://virtuoso:8890/sparql -e DEBUG --name frontend opendataservices/resourceprojects.org-frontend
     - sudo apt-get update
-    - sudo apt-get install xvfb firefox
+    - sudo apt-get install -y xvfb firefox
     - "export DISPLAY=:99.0"
     - "sh -e /etc/init.d/xvfb start"
 
