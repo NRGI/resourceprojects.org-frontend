@@ -36,6 +36,84 @@ class TestIndexPage:
         assert 'ResourceProjects.org' in browser.find_element_by_tag_name('body').text
 
 
+#List pages - Countries, Projects, Companies, Company Groups
+
+
+# Countries list
+def test_countries_page(browser):
+    #Table headers
+    expected_headers = set([
+        ('Country'),
+        ('No. Projects'),
+        ('No.Companies'),
+        ('Commodities')
+    ])
+    browser.get(server_url + 'country')
+    #assert "Natural Resource Governance Institute" in browser.title
+    table_headers = browser.find_elements_by_tag_name('th')
+    table_headers_text = set([ x.text for x in table_headers ])
+    assert expected_headers == table_headers_text
+    #Page title
+    assert 'Countries' in browser.find_element_by_tag_name('h1').text
+
+
+#Projects List page
+def test_projects_page(browser):
+    #Table headers
+    expected_headers = set([
+        ('Project'),
+        ('Country'),
+        ('Commodity Types'),
+        ('No.Companies')
+    ])
+    browser.get(server_url + 'project')
+    #assert "Natural Resource Governance Institute" in browser.title
+    table_headers = browser.find_elements_by_tag_name('th')
+    table_headers_text = set([ x.text for x in table_headers ])
+    assert expected_headers == table_headers_text
+    #Page title
+    assert 'Projects' in browser.find_element_by_tag_name('h1').text
+
+
+#Companies List page
+def test_companies_page(browser):
+    #Table headers
+    expected_headers = set([
+        ('Company'),
+        ('Group'),
+        ('No. Projects')
+    ])
+    browser.get(server_url + 'company')
+    #assert "Natural Resource Governance Institute" in browser.title
+    table_headers = browser.find_elements_by_tag_name('th')
+    table_headers_text = set([ x.text for x in table_headers ])
+    assert expected_headers == table_headers_text
+    #Page title
+    assert 'Companies' in browser.find_element_by_tag_name('h1').text
+    assert 'Switch to Company Groups view' in browser.find_element_by_tag_name('button').text
+
+
+#Company Groups List page
+def test_company_groups_page(browser):
+    #Table headers
+    expected_headers = set([
+        ('Name'),
+        ('No. Companies'),
+        ('No. Projects')
+    ])
+    browser.get(server_url + 'group')
+    #assert "Natural Resource Governance Institute" in browser.title
+    table_headers = browser.find_elements_by_tag_name('th')
+    table_headers_text = set([ x.text for x in table_headers ])
+    assert expected_headers == table_headers_text
+    #Page title
+    assert 'Company Groups' in browser.find_element_by_tag_name('h1').text
+    assert 'Switch to Companies view' in browser.find_element_by_tag_name('button').text
+    
+    
+## Idividual pages tests
+
+#Country page table titles
 def test_country_page(browser):
     expected_titles = set([
         ('Projects'),
@@ -64,7 +142,6 @@ def test_table_columns (browser):
         ('ID')
     ])
     browser.get(server_url + 'project/ao/bl40-ptvrql')
-    headers = []
     table_headers = browser.find_elements_by_tag_name('th')
     table_headers_text = set([ x.text for x in table_headers ])
     assert expected_headers <= table_headers_text
