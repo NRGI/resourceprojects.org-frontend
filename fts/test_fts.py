@@ -117,14 +117,44 @@ def test_company_groups_page(browser):
 def test_country_page(browser):
     expected_titles = set([
         ('Projects'),
-        ('Companies Companies active in this country')
+        ('Companies Companies active in this country'),
+        ('Payments')
     ])
     browser.get(server_url + 'country/AO')
     titles = []
     #assert "Natural Resource Governance Institute" in browser.title
     section_titles = browser.find_elements_by_tag_name('h2')
     section_titles_text = set([ x.text for x in section_titles ])
-    assert expected_titles <= section_titles_text
+    assert expected_titles == section_titles_text
+    
+
+#Company page table titles
+def test_company_page(browser):
+    expected_titles = set([
+        ('Company Info'),
+        ('Projects'),
+        ('Payments')
+    ])
+    browser.get(server_url + 'company/140af236fafe23da')
+    titles = []
+    #assert "Natural Resource Governance Institute" in browser.title
+    section_titles = browser.find_elements_by_tag_name('h2')
+    section_titles_text = set([ x.text for x in section_titles ])
+    assert expected_titles == section_titles_text
+
+
+# Table in the company page
+def test_company_page_table_columns (browser):
+    expected_headers = set([
+        #Project Table
+        ('Name'),
+        ('Country'),
+        ('Commodity Type')
+    ])
+    browser.get(server_url + 'company/140af236fafe23da.html')
+    table_headers = browser.find_elements_by_tag_name('th')
+    table_headers_text = set([ x.text for x in table_headers ])
+    assert expected_headers <= table_headers_text
 
 
 # Table in the projects page
