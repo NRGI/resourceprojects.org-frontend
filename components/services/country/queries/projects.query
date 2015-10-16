@@ -4,7 +4,8 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 
 SELECT DISTINCT ?uri ?name (COUNT(?project) as ?pCount) WHERE {
     ?uri a rp:Country .
-    ?project rp:hasLocation ?uri
+    ?project rp:hasLocation ?uri .
+    ?project a rp:Project
     OPTIONAL { ?uri skos:prefLabel ?name }
 }
 GROUP BY ?uri ?name
