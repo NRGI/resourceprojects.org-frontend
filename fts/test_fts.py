@@ -45,8 +45,8 @@ def test_countries_page(browser):
     expected_headers = set([
         ('Country'),
         ('No. Projects'),
-        ('No.Companies'),
-        ('Commodities')
+        ('Oil and Gas'),
+        ('Mining')
     ])
     browser.get(server_url + 'country')
     #assert "Natural Resource Governance Institute" in browser.title

@@ -1,9 +1,30 @@
 prefix rp: <http://resourceprojects.org/def/>
 
-SELECT DISTINCT * WHERE {
-    ?uri a rp:Country
-    OPTIONAL { ?uri skos:prefLabel ?name }
-}
-ORDER BY (?name)
-limit {{lodspk.maxResults}}
+SELECT ?country ?countryName ?countryCode count(distinct ?project) as ?projectCount count(distinct ?oilProject) as ?oilAndGasProjectCount count(distinct ?miningProject) as ?miningProjectCount  WHERE {
 
+ ?country a rp:Country.
+ ?country skos:prefLabel ?countryName.
+ ?country rp:identifier ?countryCode.
+
+ OPTIONAL {
+   ?project a rp:Project.
+   ?project rp:hasLocation ?country.
+ }
+
+ OPTIONAL {
+   ?oilProject a rp:Project.
+   ?oilProject rp:hasLocation ?country.
+   ?oilProject rp:hasCommodity ?oil.
+   ?oil rp:commodityType "Oil and Gas".
+   FILTER(?oil != <http://resourceprojects.org/commodity/>)
+  }
+
+ OPTIONAL {
+   ?miningProject a rp:Project.
+   ?miningProject rp:hasLocation ?country.
+   ?miningProject rp:hasCommodity ?mine.
+   ?mine rp:commodityType "Mining".
+   FILTER(?mine != <http://resourceprojects.org/commodity/>)
+  }
+
+} GROUP BY ?country ?countryName ?countryCode ORDER BY ASC(?countryName)
