@@ -39,8 +39,8 @@ class TestIndexPage:
 #List pages - Countries, Projects, Companies, Company Groups
 
 
-# Countries list
 def test_countries_page(browser):
+    '''Countries list'''
     #Table headers
     expected_headers = set([
         ('Country'),
@@ -57,8 +57,8 @@ def test_countries_page(browser):
     assert 'Countries' in browser.find_element_by_tag_name('h1').text
 
 
-#Projects List page
 def test_projects_page(browser):
+    '''Projects List page'''
     #Table headers
     expected_headers = set([
         ('Project'),
@@ -75,8 +75,8 @@ def test_projects_page(browser):
     assert 'Projects' in browser.find_element_by_tag_name('h1').text
 
 
-#Companies List page
 def test_companies_page(browser):
+    '''Companies List page'''
     #Table headers
     expected_headers = set([
         ('Company'),
@@ -93,8 +93,8 @@ def test_companies_page(browser):
     assert 'Switch to Company Groups view' in browser.find_element_by_tag_name('button').text
 
 
-#Company Groups List page
 def test_company_groups_page(browser):
+    '''Company Groups List page'''
     #Table headers
     expected_headers = set([
         ('Name'),
@@ -113,8 +113,8 @@ def test_company_groups_page(browser):
     
 ## Idividual pages tests
 
-#Country page table titles
 def test_country_page(browser):
+    '''Country page table titles'''
     expected_titles = set([
         ('Projects'),
         ('Companies Companies active in this country'),
@@ -128,8 +128,8 @@ def test_country_page(browser):
     assert expected_titles == section_titles_text
     
 
-#Company page table titles
 def test_company_page(browser):
+    '''Company page table titles'''
     expected_titles = set([
         ('Company Info'),
         ('Projects'),
@@ -143,8 +143,8 @@ def test_company_page(browser):
     assert expected_titles == section_titles_text
 
 
-# Table in the company page
 def test_company_page_table_columns (browser):
+    '''Table in the company page'''
     expected_headers = set([
         #Project Table
         ('Name'),
@@ -157,8 +157,8 @@ def test_company_page_table_columns (browser):
     assert expected_headers <= table_headers_text
 
 
-# Table in the projects page
 def test_table_columns (browser):
+    '''Table in the projects page'''
     expected_headers = set([
         #Company Table
         ('Name'),
