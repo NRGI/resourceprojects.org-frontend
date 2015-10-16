@@ -128,33 +128,36 @@ def test_country_page(browser):
     assert expected_titles == section_titles_text
     
 
-def test_company_page(browser):
-    '''Company page table titles'''
-    expected_titles = set([
-        ('Company Info'),
-        ('Projects'),
-        ('Payments')
-    ])
-    browser.get(server_url + 'company/140af236fafe23da')
-    titles = []
-    #assert "Natural Resource Governance Institute" in browser.title
-    section_titles = browser.find_elements_by_tag_name('h2')
-    section_titles_text = set([ x.text for x in section_titles ])
-    assert expected_titles == section_titles_text
+class TestCompanyPage:
+    @pytest.fixture(autouse=True, scope='module')
+    def load_company_page(self, browser):
+        browser.get(server_url + 'company/140af236fafe23da')
+
+    def test_company_page(self, browser):
+        '''Company page table titles'''
+        expected_titles = set([
+            ('Company Info'),
+            ('Projects'),
+            ('Payments')
+        ])
+        titles = []
+        #assert "Natural Resource Governance Institute" in browser.title
+        section_titles = browser.find_elements_by_tag_name('h2')
+        section_titles_text = set([ x.text for x in section_titles ])
+        assert expected_titles == section_titles_text
 
 
-def test_company_page_table_columns (browser):
-    '''Table in the company page'''
-    expected_headers = set([
-        #Project Table
-        ('Name'),
-        ('Country'),
-        ('Commodity Type')
-    ])
-    browser.get(server_url + 'company/140af236fafe23da.html')
-    table_headers = browser.find_elements_by_tag_name('th')
-    table_headers_text = set([ x.text for x in table_headers ])
-    assert expected_headers <= table_headers_text
+    def test_company_page_table_columns (self, browser):
+        '''Table in the company page'''
+        expected_headers = set([
+            #Project Table
+            ('Name'),
+            ('Country'),
+            ('Commodity Type')
+        ])
+        table_headers = browser.find_elements_by_tag_name('th')
+        table_headers_text = set([ x.text for x in table_headers ])
+        assert expected_headers <= table_headers_text
 
 
 def test_table_columns (browser):
