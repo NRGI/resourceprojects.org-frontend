@@ -5,7 +5,7 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-            <h2 class="block-title">ResourceProjects.org</h2>
+            <h4 class="block-title">ResourceProjects.org</h4>
             <p>This site is a prototype, based on under-contributed data. No warranty of the accuracy or completeness of data is provided, and users should always check against original sources before making decisions based upon the data presented here. 
             </p>
             <p>
@@ -16,7 +16,7 @@
             </p>
         </div>
         <div class="col-md-4">
-          <h2 class="block-title">Technical Details</h2>
+          <h4 class="block-title">Technical Details</h4>
           <ul class="list-unstyled">
              <li><a href="/contribute.html">Contribution Template</a></li>
              <li><a href="/model.html">Data Model</a></li>
@@ -26,7 +26,7 @@
           </ul>
         </div>
         <div class="col-md-4">
-               <h2 class="block-title">Links</h2>
+               <h4 class="block-title">Links</h4>
                <ul class="list-unstyled"><li><a href="http://www.resourcegovernance.org/">Natural Resource Governance Institute (Main Website)</a></li></ul>         
                <ul class="list-unstyled"><li><a href="http://www.resourcecontracts.org/">ResourceContracts.org</a></li></ul> 
         </div>

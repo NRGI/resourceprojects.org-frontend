@@ -6,13 +6,16 @@
   </div>
   <table class="table table-striped" about="{{uri}}">
     <thead>
-      <tr><th>Country</th><th>No. Projects</th><th>Oil</th><th>Gas</th><th>Oil and Gas</th><th>Mining</th></tr>
+      <tr><th>Country</th><th>No. Projects</th><!--<th>No.Companies</th><th>Oil</th><th>Gas</th>--><th>Oil and Gas</th><th>Mining</th></tr>
     </thead>
-    {% for row in models.projects %}
+    {% for row in models.main %}
       <tr>
-        <td><a href="{{ row.uri.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li></td>
-        <td>{{row.pCount.value}}</td>
-        <td>
+        <td><a href="{{ row.country.value }}">{% if row.countryName.value %}{{row.countryName.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></li></td>
+        <td>{{row.projectCount.value}}</td>
+        <td>{{row.oilAndGasProjectCount.value}}</td>
+        <td>{{row.miningProjectCount.value}}</td>
+        <td></td>
+        <!--<td>
         {% for comm_row in models.commodities %}
           {% if comm_row.commodityType.value == 'Oil' %}
             {% if row.uri.value == comm_row.uri.value %}
@@ -29,8 +32,8 @@
             {% endif %}
            {% endif %}
         {% endfor %}
-        </td>
-        <td>
+        </td>-->
+        <!--<td>
         {% for comm_row in models.commodities %}
           {% if comm_row.commodityType.value == 'Oil and Gas' %}
             {% if row.uri.value == comm_row.uri.value %}
@@ -47,7 +50,7 @@
             {% endif %}
            {% endif %}
         {% endfor %}
-        </td>
+        </td>-->
       </tr>
     {% endfor %}
   </table>

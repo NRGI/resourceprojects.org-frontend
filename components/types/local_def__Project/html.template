@@ -28,11 +28,6 @@
           {%include "../../includes/default_map.js.inc"%}
 
         </div>
-        
-        <div class="col-md-2">
-          
-          
-        </div>
       </div><!--end row-->
       
       <div class="row">

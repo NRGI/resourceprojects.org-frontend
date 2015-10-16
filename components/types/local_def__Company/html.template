@@ -3,33 +3,68 @@
       <div class="page-header">
           <h1>{{first.main.name.value}} <small>Company</small></h1>
       </div>
-      <p>Our Company ID: {{uri|explode:"/"|pop}} </p>
-      <p>Part of: 
-      {% for row in models.group %} <a href="{{ row.group.value }}">{{ row.name.value }}</a>{%if !forloop.last%},{% endif %}
-       {% endfor %}
-
-      <!--<p>Description (with provenance of description?)</p>-->
-      <p>
-      Active in:
-       {% for row in models.countries %}
-       <a href="{{ row.country.value }}">{{ row.country_name.value }}</a>{%if !forloop.last%},{% endif %}
-       {% endfor %}
-      </p>
       
-      <h2>Projects</h2>
-      <table class="table table-striped">
-        <thead>
-          <tr><th>Name</th><th>Country</th><th>Commodity Type</th><th>Share</th></tr>
-        </thead>
-        {% for row in models.projects %}    
-        <tr>
-            <td><a href="{{ row.project.value }}">{{ row.name.value }}</a></td>
-            <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
-            <td>{{ row.commodityType.value }}</td>
-            <td>{{ row.share.value }}</td>
-        </tr>
-        {% endfor %}
-      </table>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="map" style="height:240px"></div>
+          <script type="text/javascript">
+            //var map = L.map('map',{ fullscreenControl: true }).setView([{{first.main.lat.value}}, {{first.main.long.value}}], 5);
+            var map = L.map('map',{ fullscreenControl: true }).setView([0, 0], 2);
+          </script>
+             {% for site in models.sites %}
+              {%if site.lat.value %}
+                {%if site.lng.value %}
+                  <script type="text/javascript">
+                    var marker_{{ site.site.value|explode:'/'|pop|cut:'-' }} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
+
+                    marker_{{ site.site.value|explode:'/'|pop|cut:'-' }}.bindPopup('<b><a href="{{site.site.value}}">{{site.site_name.value}}</a></b><br>(Operator)<br>{{site.project_name.value}}').openPopup();
+                  </script>
+                {%endif%}
+              {%endif%}
+            {% endfor %}
+          
+          {%include "../../includes/default_map.js.inc"%}
+
+        </div>
+      </div><!--end row-->
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="info-box">
+            <h2>Company Info</h2>
+            <p>Our Company ID: {{uri|explode:"/"|pop}} </p>
+            <p>Part of: 
+            {% for row in models.group %} <a href="{{ row.group.value }}">{{ row.name.value }}</a>{%if !forloop.last%},{% endif %}
+             {% endfor %}
+
+            <!--<p>Description (with provenance of description?)</p>-->
+            <!--<p>
+            Active in:
+             {% for row in models.countries %}
+             <a href="{{ row.country.value }}">{{ row.country_name.value }}</a>{%if !forloop.last%},{% endif %}
+             {% endfor %}
+            </p>-->
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <h2>Projects</h2>
+          <table class="table table-striped">
+            <thead>
+              <tr><th>Name</th><th>Country</th><th>Commodity Type</th><!--<th>Share</th>--></tr>
+            </thead>
+            {% for row in models.projects %}    
+            <tr>
+                <td><a href="{{ row.project.value }}">{{ row.name.value }}</a></td>
+                <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
+                <td>{{ row.commodityType.value }}</td>
+                <!--<td>{{ row.share.value }}</td>-->
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+        
+      </div><!--end row-->
       
       <h2>Payments</h2>
       <table class="table table-striped">
