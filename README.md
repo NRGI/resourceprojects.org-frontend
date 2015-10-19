@@ -23,7 +23,7 @@ Running from docker hub
 # Pull the latest version
 docker pull opendataservices/resourceprojects.org-frontend:master
 # Run it
-docker run --publish=127.0.0.2:80:80 --name=frontend --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ opendataservices/resourceprojects.org-frontend:master
+docker run --publish=127.0.0.2:80:80 --name=frontend --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ -e SPARQL_ENDPOINT=http://virtuoso:8890/sparql opendataservices/resourceprojects.org-frontend:master
 ```
 
 Development
@@ -31,7 +31,7 @@ Development
 
 ```
 docker build -t resourceprojects.org-frontend .
-docker run --publish=127.0.0.2:80:80 --name=frontend --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ resourceprojects.org-frontend
+docker run --publish=127.0.0.2:80:80 --name=frontend --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ -e SPARQL_ENDPOINT=http://virtuoso:8890/sparql resourceprojects.org-frontend
 ```
 
 Then visit http://127.0.0.2/
@@ -41,7 +41,7 @@ If you wish to enable debug mode, also add `-e DEBUG=true` before the container 
 Running a docker build each time you change a file can be a bit too slow for development pursposes, so instead you can mount the components directory in the container from the host filesystem:
 
 ```
-docker run --publish=127.0.0.2:80:80 --name=frontend --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/  -v `pwd`/components:/var/www/html/lodspeakr/components resourceprojects.org-frontend
+docker run --publish=127.0.0.2:80:80 --name=frontend --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ -e SPARQL_ENDPOINT=http://virtuoso:8890/sparql -v `pwd`/components:/var/www/html/lodspeakr/components resourceprojects.org-frontend
 ```
 
 Uploading data into virtuoso
