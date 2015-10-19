@@ -34,52 +34,66 @@
         <div class="col-md-6">
           <div class="info-box">
             <h2>Project Info</h2>
-            <p>ID: 
-              {% for i,path_item in uri|explode:"/" %}
-                {% if i >= 4  %}
-                  {{ path_item }}
-                    {% if i == 4  %}
-                       /
-                    {% endif %}
-                {% endif %}
-              {% endfor %}
-            </p>
-            <ul style="margin: 0;padding-left: 18px;">
-            <li>Aliases: {% for row in models.main %} {{ row.altLabel.value }}{% if !forloop.last %}, {% endif %}{% endfor %}</li>
-            <li>Commodity: {% for row in models.commodities %} {{ row.commodityType.value }}{%if !forloop.last%}, {% endif %}{% endfor %}</li>
-            <li>status (status history): </li>
-            <li>Location: {% for row in models.sites %} 
-              {% if row.site_name.value %}
-                <a href="{{ row.site.value }}">{{ row.site_name.value }}</a>,
-              {% endif %}
-              {% endfor %}
-            </li>
-            <li>associated contracts (link)</li>
-            <li>associated concessions (link)</li>
-            </ul>
+             <!--<div class="row">
+                <div class="col-md-6">-->
+                  <table id="project-info">
+                  <tr>
+                    <td class="project-label">ID:</td>
+                    <td>{% for i,path_item in uri|explode:"/" %}
+                      {% if i >= 4  %}
+                        {{ path_item }}
+                          {% if i == 4  %}
+                             /
+                          {% endif %}
+                      {% endif %}
+                    {% endfor %}</td>
+                  </tr>
+                  <tr>
+                    <td class="project-label">Aliases:</td>
+                    <td>{% for row in models.main %} {{ row.altLabel.value }}{% if !forloop.last %}, {% endif %}{% endfor %}</td>
+                  </tr>
+                  <tr>
+                    <td class="project-label">Commodity:</td>
+                    <td>{% for row in models.commodities %} {{ row.commodityType.value }}{%if !forloop.last%}, {% endif %}{% endfor %}</td>
+                  </tr>
+                  <tr>
+                    <td class="project-label">Location(s):</td>
+                    <td>
+                      {% for row in models.sites %} 
+                        {% if row.site_name.value %}
+                          <a href="{{ row.site.value }}">{{ row.site_name.value }}</a>,
+                        {% endif %}
+                      {% endfor %}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="project-label">Status:</td>
+                    <td>
+                    {% for row in models.status %} 
+                      {{ row.statusType.value}} (True at: {{row.trueAtDate.value|date:"Y-m-d"}})</br>
+                    {% endfor %}
+                  </td>
+                  </tr>
+                  <tr>
+                    <td class="project-label">Associated Contracts:</td>
+                    <td></td>
+                  </tr>
+                                    <tr>
+                    <td class="project-label">Associated Concessions:</td>
+                    <td></td>
+                  </tr>
+                  </table>
 
+
+                <!--</div><!--col-md-3-->
+              <!--</div>-->
             
-            <h4>Company Group</h4>
+            <!--<h4>Company Group</h4>
             <select>
               <option value="volvo">StatOil</option>
               <option value="saab">BP</option>
               <option value="mercedes">Tullow</option>
-            </select>
-            
-            
-            <!--<p>
-            Commodity Details: {{ first.main.commodityDetails.value }}
-            </p>
-            <p>
-            Identifier: {{ first.main.identifier.value }}
-            </p>
-            <p>
-            Project Type: {{ first.main.projectType.value }}
-            </p>
-            <p>
-            Link: {{ first.main.url.value }}
-            </p>-->
-            
+            </select>    -->        
             
           </div>
         </div>
@@ -126,17 +140,16 @@
       <h2>Production Stats</h2>
        <table class="table table-striped">
         <thead>
-          <tr><th>Year</th><th>Price</th><th>Price per unit</th><th>Unit</th><th>Volume</th><th>ID</th></tr>
+          <tr><th>Year</th><th>Volume</th><th>Unit</th><th>Price</th><th>Price per unit</th><th>ID</th></tr>
         </thead>
       {% for row in models.production_stats %} 
        <tr>
           <td>{{ row.year.value }}</td>
+          <td>{{ row.volume.value }}</td>
+          <td>{{ row.unit.value }}</td>
           <td>{{ row.price.value }}</td>
           <td>{{ row.priceUnit.value }}</td>
-          <td>{{ row.unit.value }}</td>
-          <td>{{ row.volume.value }}</td>
           <td><a href="{{ row.stats.value }} "><span data-toggle="tooltip" data-placement="left" title="{{ row.stats.value|explode:"/"|pop }}" class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></td>
-
        </tr>
         {% endfor %}
       </table>

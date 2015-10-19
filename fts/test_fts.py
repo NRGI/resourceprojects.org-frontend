@@ -178,10 +178,10 @@ def test_table_columns (browser):
         ('Group'),
         #Production Stats
         ('Year'),
-        ('Price'),
-        ('Price per unit'),
-        ('Unit'),
         ('Volume'),
+        ('Unit'),
+        ('Price'),
+        ('Price per unit'),        
         ('ID')
     ])
     browser.get(server_url + 'project/ao/bl40-ptvrql')

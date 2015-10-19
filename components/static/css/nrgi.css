@@ -193,3 +193,12 @@ div.advanced-links {
   border:1px solid #eee;
   padding: 5px;
 }
+
+#project-info {
+}
+
+td.project-label {
+  width:150px;
+  font-weight: bold;
+  padding: 2px 5px 0 2px
+}
