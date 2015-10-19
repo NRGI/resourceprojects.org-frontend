@@ -67,12 +67,22 @@ def test_projects_page(browser):
         ('No.Companies')
     ])
     browser.get(server_url + 'project')
+    
     #assert "Natural Resource Governance Institute" in browser.title
     table_headers = browser.find_elements_by_tag_name('th')
     table_headers_text = set([ x.text for x in table_headers ])
     assert expected_headers == table_headers_text
     #Page title
     assert 'Projects' in browser.find_element_by_tag_name('h1').text
+    
+    #Test data in first row matches text data from our fixture
+    table = browser.find_element_by_id('projects')
+    rows = table.find_elements_by_tag_name('tr')
+    assert 'Angola' in rows[1].text
+    assert 'Block 0 A' in rows[1].text
+    assert 'Oil and Gas' in rows[1].text
+    assert '4' in rows[1].text
+
 
 
 def test_companies_page(browser):
