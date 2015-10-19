@@ -26,7 +26,8 @@ class TestIndexPage:
         ('Projects'),
         ('Countries'),
         ('Companies'),
-        ('Data sources')
+        ('Data sources'),
+        ('Glossary')
         ])
     def test_main_nav(self, browser, nav_item):
         assert nav_item in browser.find_element_by_css_selector('.nav-collapse').text
