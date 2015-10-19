@@ -188,3 +188,19 @@ def test_table_columns (browser):
     table_headers = browser.find_elements_by_tag_name('th')
     table_headers_text = set([ x.text for x in table_headers ])
     assert expected_headers <= table_headers_text
+
+
+def test_glossary_page(browser):
+    browser.get(server_url + 'glossary.html')
+    assert "Glossary" in browser.find_element_by_tag_name('h1').text
+    expected_headings= set([
+            ('Projects and interrelated key concepts:'),
+            ('Company attributes:'),
+            ('Project attributes:'),
+            ('Payment attributes:'),
+            ('Useful sources:')
+        ])
+    headings = []
+    section_titles = browser.find_elements_by_tag_name('h2')
+    section_titles_text = set([ x.text for x in section_titles ])
+    assert expected_headings == section_titles_text
