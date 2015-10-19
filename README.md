@@ -4,8 +4,8 @@ Introduction
 
 This is the code (will) run the http://resourceprojects.org website.
 
-It is deployed using a Docker container, which is built on Docker hub at:
-https://registry.hub.docker.com/u/bjwebb/resourceprojects.org-frontend/
+It is deployed using a Docker container, which build using Travis, and hosted on Docker Hub at:
+https://hub.docker.com/r/opendataservices/resourceprojects.org-frontend/
 
 Pre-requisites
 --------------
@@ -21,27 +21,27 @@ Running from docker hub
 
 ```
 # Pull the latest version
-docker pull bjwebb/resourceprojects.org-frontend
+docker pull opendataservices/resourceprojects.org-frontend:master
 # Run it
-docker run --publish=127.0.0.2:80:80 --name=lodspeakr-container --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ bjwebb/resourceprojects.org-frontend
+docker run --publish=127.0.0.2:80:80 --name=frontend --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ opendataservices/resourceprojects.org-frontend:master
 ```
 
 Development
 -----------
 
 ```
-docker build -t lodspeakr .
-docker run --publish=127.0.0.2:80:80 --name=lodspeakr-container --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ lodspeakr
+docker build -t resourceprojects.org-frontend .
+docker run --publish=127.0.0.2:80:80 --name=frontend --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/ resourceprojects.org-frontend
 ```
 
 Then visit http://127.0.0.2/
 
-If you wish to enable debug mode, also add `-e DEBUG=true` before `lodspeakr`. This turns on PHP debugging, and also allows you to see extra logs at http://127.0.0.2/logs
+If you wish to enable debug mode, also add `-e DEBUG=true` before the container name (`resourceprojects.org-frontend`). This turns on PHP debugging, and also allows you to see extra logs at http://127.0.0.2/logs
 
 Running a docker build each time you change a file can be a bit too slow for development pursposes, so instead you can mount the components directory in the container from the host filesystem:
 
 ```
-docker run --publish=127.0.0.2:80:80 --name=lodspeakr-container --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/  -v `pwd`/components:/var/www/html/lodspeakr/components lodspeakr
+docker run --publish=127.0.0.2:80:80 --name=frontend --rm --link virtuoso:virtuoso -e BASE_URL=http://127.0.0.2/  -v `pwd`/components:/var/www/html/lodspeakr/components resourceprojects.org-frontend
 ```
 
 Uploading data into virtuoso
