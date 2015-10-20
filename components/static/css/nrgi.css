@@ -194,11 +194,15 @@ div.advanced-links {
   padding: 5px;
 }
 
-#project-info {
+#project-info td {
 }
 
 td.project-label {
   width:150px;
   font-weight: bold;
-  padding: 2px 5px 0 2px
+  padding: 2px 5px 0 2px;
+  vertical-align:top;
+}
+td.project-label table {
+font-weight: normal;
 }

@@ -179,6 +179,7 @@ class TestProjectPage:
     @pytest.mark.parametrize(('table_css', 'expected_headers'), [
         ('.companies', ['Name', 'Group']),
         ('.production_stats', ['Year', 'Volume', 'Unit', 'Price', 'Price per unit', 'ID']),
+        ('.locations', ['Name', 'Lat', 'Lng']),
     ])
     def test_table_columns (self, browser, table_css, expected_headers):
         '''Tables in the projects page'''
