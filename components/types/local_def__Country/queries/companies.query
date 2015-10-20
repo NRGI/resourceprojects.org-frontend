@@ -7,13 +7,12 @@ SELECT DISTINCT ?company ?companyName ?group ?groupName WHERE {
     OPTIONAL { ?project rp:hasStake ?stake .
                ?stake rp:hasStakeholder ?company .
                ?company a rp:Company .
-               ?company skos:prefLabel ?companyName
-    }
-    OPTIONAL { ?groupMembership rp:organisation ?company .
-               ?group rp:groupMember ?groupMembership .
-               ?group skos:prefLabel ?groupName
-    }
-    
+               ?company skos:prefLabel ?companyName .
+        OPTIONAL { ?groupMembership rp:organisation ?company .
+                   ?group rp:groupMember ?groupMembership .
+                   ?group skos:prefLabel ?groupName
+        }
+    } 
     
     FILTER NOT EXISTS {
         ?project owl:sameAs ?b
