@@ -57,16 +57,6 @@
                     <td>{% for row in models.commodities %} {{ row.commodityType.value }}{%if !forloop.last%}, {% endif %}{% endfor %}</td>
                   </tr>
                   <tr>
-                    <td class="project-label">Location(s):</td>
-                    <td>
-                      {% for row in models.sites %} 
-                        {% if row.site_name.value %}
-                          <a href="{{ row.site.value }}">{{ row.site_name.value }}</a>,
-                        {% endif %}
-                      {% endfor %}
-                    </td>
-                  </tr>
-                  <tr>
                     <td class="project-label">Status:</td>
                     <td>
                     {% for row in models.status %} 
@@ -78,10 +68,35 @@
                     <td class="project-label">Associated Contracts:</td>
                     <td></td>
                   </tr>
-                                    <tr>
+                  <tr>
                     <td class="project-label">Associated Concessions:</td>
                     <td></td>
                   </tr>
+                  <tr>
+                    <td class="project-label" colspan="2">Location(s)
+                      {% for row in models.sites %} 
+                        {%  if forloop.first %}
+                        <table class="table table-striped">
+                          <tr>
+                            <th>Name</th>
+                            <th>Lat</th>
+                            <th>Lng</th>
+                          </tr>
+                        {% endif %} 
+                        
+                          {% if row.site_name.value %}
+                          <tr>
+                            <td><a href="{{ row.site.value }}">{{ row.site_name.value }}</a></td>
+                            <td>{{ row.lat.value }}</td>
+                            <td>{{ row.lng.value }}</td>
+                          </tr>
+                          {% endif %}
+                        {% endfor %}
+
+                      </table>
+                    </td>
+                  </tr>
+
                   </table>
 
 
