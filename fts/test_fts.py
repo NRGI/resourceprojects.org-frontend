@@ -26,7 +26,8 @@ class TestIndexPage:
         ('Projects'),
         ('Countries'),
         ('Companies'),
-        ('Data sources')
+        ('Data sources'),
+        ('Glossary')
         ])
     def test_main_nav(self, browser, nav_item):
         assert nav_item in browser.find_element_by_css_selector('.nav-collapse').text
@@ -45,8 +46,8 @@ def test_countries_page(browser):
     expected_headers = set([
         ('Country'),
         ('No. Projects'),
-        ('Oil and Gas'),
-        ('Mining')
+        #('Oil and Gas'),
+        #('Mining')
     ])
     browser.get(server_url + 'country')
     #assert "Natural Resource Governance Institute" in browser.title
@@ -170,24 +171,31 @@ class TestCompanyPage:
         assert expected_headers <= table_headers_text
 
 
-def test_table_columns (browser):
-    '''Table in the projects page'''
-    expected_headers = set([
-        #Company Table
-        ('Name'),
-        ('Group'),
-        #Production Stats
-        ('Year'),
-        ('Price'),
-        ('Price per unit'),
-        ('Unit'),
-        ('Volume'),
-        ('ID')
+class TestProjectPage:
+    @pytest.fixture(autouse=True, scope='module')
+    def load_project_page(self, browser):
+        browser.get(server_url + 'project/AO/bl0-0q2anl')
+
+    @pytest.mark.parametrize(('table_css', 'expected_headers'), [
+        ('.companies', ['Name', 'Group']),
+        ('.production_stats', ['Year', 'Volume', 'Unit', 'Price', 'Price per unit', 'ID']),
+        ('.locations', ['Name', 'Lat', 'Lng']),
     ])
-    browser.get(server_url + 'project/ao/bl40-ptvrql')
-    table_headers = browser.find_elements_by_tag_name('th')
-    table_headers_text = set([ x.text for x in table_headers ])
-    assert expected_headers <= table_headers_text
+    def test_table_columns (self, browser, table_css, expected_headers):
+        '''Tables in the projects page'''
+        table = browser.find_element_by_css_selector(table_css)
+        table_headers = table.find_elements_by_tag_name('th')
+        table_headers_text = [ x.text for x in table_headers ]
+        assert table_headers_text == expected_headers
+    
+    def test_company_table_rows (self, browser):
+        '''Counts the number of expected rows'''
+        table = browser.find_element_by_css_selector('.companies')
+        rows = table.find_elements_by_tag_name('tr')
+        assert len(rows) == 5
+        
+    def test_aliases (self, browser):
+        assert 'BLOCO 0 A, Block 0- Area A offshore,' in browser.find_element_by_css_selector('.aliases').text
 
 
 def test_glossary_page(browser):

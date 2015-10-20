@@ -1,0 +1,9 @@
+# We can't use the prefix 'skos' as lodspeakr will then put a prefix satement
+# before the DEFINE statement, which is not allowed.
+prefix skos_: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?altLabel WHERE {
+    OPTIONAL {
+        <{{uri}}> skos_:altLabel	?altLabel
+    }
+}

@@ -73,7 +73,7 @@
           {% endfor %}
           </table>
           <div class="download">
-            <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="http://virtuoso.nrgi-dev2.default.opendataservices.uk0.bigv.io/sparql?default-graph-uri=&query={{ lodspk.queryText.projects|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Projects CSV</a></span>
+            <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.projects|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Projects CSV</a></span>
           </div>
 
         </div>
@@ -95,7 +95,7 @@
           {% endfor %}
           </table>
           <div class="download">
-            <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="http://virtuoso.nrgi-dev2.default.opendataservices.uk0.bigv.io/sparql?default-graph-uri=&query={{ lodspk.queryText.companies|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Companies CSV</a>
+            <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.companies|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Companies CSV</a>
           </div>
         </div>
       </div>
