@@ -4,8 +4,10 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 # before the DEFINE statement, which is not allowed.
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?commodityType WHERE {
-    OPTIONAL { <{{uri}}> rp:hasCommodity ?commodity .
-              ?commodity rp:commodityType ?commodityType }
+SELECT ?statusType ?trueAtDate WHERE {
+    OPTIONAL {
+        <{{uri}}> rp:state ?status .
+        ?status rp:statusType ?statusType .
+        ?status rp:trueAt ?trueAtDate
+    }
 }
-GROUP BY ?commodityType
