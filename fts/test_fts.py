@@ -192,6 +192,9 @@ class TestProjectPage:
         table = browser.find_element_by_css_selector('.companies')
         rows = table.find_elements_by_tag_name('tr')
         assert len(rows) == 5
+        
+    def test_aliases (self, browser):
+        assert 'BLOCO 0 A, Block 0- Area A offshore,' in browser.find_element_by_css_selector('.aliases').text
 
 
 def test_glossary_page(browser):
