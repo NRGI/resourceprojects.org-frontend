@@ -6,13 +6,14 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 # before the DEFINE statement, which is not allowed.
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?name ?long ?lat WHERE {
+SELECT ?name ?long ?lat ?country_name ?country WHERE {
     OPTIONAL {
         <{{uri}}> skos_:prefLabel ?name
     }  
     OPTIONAL { 
         <{{uri}}> rp:hasLocation	?country .
-        ?country a rp:Country
+        ?country a rp:Country .
+        ?country skos_:prefLabel ?country_name
     }
     OPTIONAL { ?country	rp:long	?long }
     OPTIONAL { ?country	rp:lat ?lat }

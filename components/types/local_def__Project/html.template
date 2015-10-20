@@ -47,6 +47,10 @@
                     {% endfor %}</td>
                   </tr>
                   <tr>
+                    <td class="project-label">Country:</td>
+                    <td><a href="{{ first.main.country.value }}">{{ first.main.country_name.value }}</a></td>
+                  </tr>
+                  <tr>
                     <td class="project-label">Aliases:</td>
                     <td class="aliases">{% for row in models.alias %} {{ row.altLabel.value }}, {% endfor %}</td>
                   </tr>
