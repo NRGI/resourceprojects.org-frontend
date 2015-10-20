@@ -170,24 +170,21 @@ class TestCompanyPage:
         assert expected_headers <= table_headers_text
 
 
-def test_table_columns (browser):
-    '''Table in the projects page'''
-    expected_headers = set([
-        #Company Table
-        ('Name'),
-        ('Group'),
-        #Production Stats
-        ('Year'),
-        ('Volume'),
-        ('Unit'),
-        ('Price'),
-        ('Price per unit'),        
-        ('ID')
+class TestProjectPage:
+    @pytest.fixture(autouse=True, scope='module')
+    def load_project_page(self, browser):
+        browser.get(server_url + 'project/ao/bl40-ptvrql')
+
+    @pytest.mark.parametrize(('table_css', 'expected_headers'), [
+        ('.companies', ['Name', 'Group']),
+        ('.production_stats', ['Year', 'Volume', 'Unit', 'Price', 'Price per unit', 'ID']),
     ])
-    browser.get(server_url + 'project/ao/bl40-ptvrql')
-    table_headers = browser.find_elements_by_tag_name('th')
-    table_headers_text = set([ x.text for x in table_headers ])
-    assert expected_headers <= table_headers_text
+    def test_table_columns (self, browser, table_css, expected_headers):
+        '''Tables in the projects page'''
+        table = browser.find_element_by_css_selector(table_css)
+        table_headers = table.find_elements_by_tag_name('th')
+        table_headers_text = [ x.text for x in table_headers ]
+        assert table_headers_text == expected_headers
 
 
 def test_glossary_page(browser):
