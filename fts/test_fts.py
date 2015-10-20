@@ -180,6 +180,7 @@ class TestProjectPage:
         ('.companies', ['Name', 'Group']),
         ('.production_stats', ['Year', 'Volume', 'Unit', 'Price', 'Price per unit', 'ID']),
         ('.locations', ['Name', 'Lat', 'Lng']),
+        ('.payments', ['Year','Paid by', 'Paid to', 'Payment or receipt?', 'Payment Type', 'Currency', 'Value', 'ID']),
     ])
     def test_table_columns (self, browser, table_css, expected_headers):
         '''Tables in the projects page'''

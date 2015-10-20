@@ -19,6 +19,9 @@ SELECT ?companyPayment ?company ?paymentOrReceipt ?country ?country_name ?compan
         OPTIONAL { ?companyPayment rp:date ?date } 
         OPTIONAL { ?companyPayment rp:year ?year }
         OPTIONAL { ?companyPayment rp_misc:type ?type }
+        OPTIONAL { ?companyPayment rp:paymentType ?paymentType .
+               ?paymentType skos_:prefLabel ?type }
 
-}
+
 GROUP BY ?companyPayment
+ORDER BY ?date ?year

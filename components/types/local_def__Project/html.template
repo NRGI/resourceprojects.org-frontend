@@ -179,13 +179,10 @@
       <h2>Payments</h2>
       <table class="table table-striped payments">
         <thead>
-          <tr><th>Paid by</th><th>Paid to</th><th>ID</th><th>Payment Year</th><th>Payment or receipt?</th><th>Payment Type</th><th>Currency</th><th>Value</th></tr>
+          <tr><th>Year</th><th>Paid by</th><th>Paid to</th><th>Payment or receipt?</th><th>Payment Type</th><th>Currency</th><th>Value</th><th>ID</th></tr>
         </thead>
         {% for row in models.payments %}    
         <tr>
-            <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
-            <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
-            <td><a href="{{ row.companyPayment.value }}">{{ row.companyPayment.value|explode:"/"|pop }}</a></td>
             {%if row.date%}
               <td>{{ row.date.value|date:"Y" }}</td>
               {%else%}
@@ -195,10 +192,35 @@
                   <td></td>
                 {%endif%}
             {%endif%}
+            <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
+            <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
+            
             <td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>
             <td>{{ row.type.value }}</td>
             <td>{{ row.currency.value }}</td>
             <td>{{ row.amount.value }}</td>
+            <td><a href="{{ row.companyPayment.value }}"><span data-toggle="tooltip" data-placement="left" title="{{ row.companyPayment.value|explode:"/"|pop }}" class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></td>
+        </tr>
+        {% endfor %}
+        {% for row in models.receipt %}    
+        <tr>
+            {%if row.date%}
+              <td>{{ row.date.value|date:"Y" }}</td>
+              {%else%}
+                {%if row.year%}
+                  <td>{{ row.year.value }}</td>
+                {%else%}
+                  <td></td>
+                {%endif%}
+            {%endif%}
+            <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
+            <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
+            
+            <td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>
+            <td>{{ row.type.value }}</td>
+            <td>{{ row.currency.value }}</td>
+            <td>{{ row.amount.value }}</td>
+            <td><a href="{{ row.GovernmentReceipt.value }}"><span data-toggle="tooltip" data-placement="left" title="{{ row.GovernmentReceipt.value|explode:"/"|pop }}" class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></td>
         </tr>
         {% endfor %}
       </table>

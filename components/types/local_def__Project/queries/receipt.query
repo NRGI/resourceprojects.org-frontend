@@ -1,0 +1,23 @@
+prefix rp: <http://resourceprojects.org/def/>
+# We can't use the prefix 'skos' as lodspeakr will then put a prefix satement
+# before the DEFINE statement, which is not allowed.
+prefix skos_: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?GovernmentReceipt ?paymentOrReceipt ?country ?country_name ?currency (replace(?amount,",","") as ?amount) ?date ?year ?type  WHERE {
+
+        ?GovernmentReceipt rp:relatedProject <http://resourceprojects.org/project/AO/bl0-0q2anl> .
+        ?GovernmentReceipt a rp:GovernmentReceipt .
+        ?GovernmentReceipt rp:payee ?country .
+        ?GovernmentReceipt a ?paymentOrReceipt .        
+        ?country skos_:prefLabel ?country_name 
+        
+        OPTIONAL { ?GovernmentReceipt rp:currency ?currency }
+        OPTIONAL { ?GovernmentReceipt rp:value ?amount } 
+        OPTIONAL { ?GovernmentReceipt rp:date ?date } 
+        OPTIONAL { ?GovernmentReceipt rp:year ?year }
+        OPTIONAL { ?GovernmentReceipt rp:paymentType ?paymentType .
+               ?paymentType skos_:prefLabel ?type }
+
+}
+GROUP BY ?GovernmentReceipt
+ORDER BY ?date ?year
