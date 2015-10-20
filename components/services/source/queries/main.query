@@ -1,24 +1,15 @@
 prefix rp: <http://resourceprojects.org/def/>
 prefix prov: <http://www.w3.org/ns/prov#>
 
-SELECT DISTINCT ?source ?name ?sourceDate ?description ?retrievedDate ?sourceType ?url ?contributor_name ?mail_box ?contributor_link WHERE {
-    ?source prov:wasDerivedFrom ?sources .
-    ?source a rp:Source
-    OPTIONAL {
-        ?source skos:prefLabel ?name .
-        ?source rp:sourceDate ?sourceDate .
-        ?source rp:description ?description .
-        ?source rp:retrievedDate ?retrievedDate .
-        ?source rp:sourceType ?sourceType .
-        ?source rp:url ?url
-        }
-    OPTIONAL {
-        ?source rp:wasAttributedTo ?contributor .
-        ?contributor skos:prefLabel ?contributor_name .
-        ?contributor rp:mbox ?mail_box .
-        ?contributor rp:url ?contributor_link
-      }
-        
-} 
-GROUP BY (?name)
+SELECT DISTINCT * WHERE {
+        ?source a rp:Source.
+        ?source skos:prefLabel ?name.
+        OPTIONAL { ?source rp:sourceType ?type. 
+                   ?type skos:prefLabel ?sourceType}
+        OPTIONAL { ?source rp:url ?url.}
+        OPTIONAL { ?source rp:urlType ?urlType.}
+        OPTIONAL { ?source rp:sourceDate ?sourceDate }
+        OPTIONAL { ?source rp:retrievedDate ?retrievedDate }
+}
+GROUP BY ?name
 LIMIT {{lodspk.maxResults}}
