@@ -174,7 +174,7 @@ class TestCompanyPage:
 class TestProjectPage:
     @pytest.fixture(autouse=True, scope='module')
     def load_project_page(self, browser):
-        browser.get(server_url + 'project/ao/bl40-ptvrql')
+        browser.get(server_url + 'project/AO/bl0-0q2anl')
 
     @pytest.mark.parametrize(('table_css', 'expected_headers'), [
         ('.companies', ['Name', 'Group']),
@@ -186,6 +186,15 @@ class TestProjectPage:
         table_headers = table.find_elements_by_tag_name('th')
         table_headers_text = [ x.text for x in table_headers ]
         assert table_headers_text == expected_headers
+    
+    def test_company_table_rows (self, browser):
+        '''Counts the number of expected rows'''
+        table = browser.find_element_by_css_selector('.companies')
+        rows = table.find_elements_by_tag_name('tr')
+        assert len(rows) == 5
+        
+    def test_aliases (self, browser):
+        assert 'BLOCO 0 A, Block 0- Area A offshore,' in browser.find_element_by_css_selector('.aliases').text
 
 
 def test_glossary_page(browser):

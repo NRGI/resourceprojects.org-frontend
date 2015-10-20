@@ -50,7 +50,7 @@
                   </tr>
                   <tr>
                     <td class="project-label">Aliases:</td>
-                    <td>{% for row in models.main %} {{ row.altLabel.value }}{% if !forloop.last %}, {% endif %}{% endfor %}</td>
+                    <td class="aliases">{% for row in models.alias %} {{ row.altLabel.value }}, {% endfor %}</td>
                   </tr>
                   <tr>
                     <td class="project-label">Commodity:</td>

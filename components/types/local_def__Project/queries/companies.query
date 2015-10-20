@@ -1,18 +1,15 @@
 prefix rp: <http://resourceprojects.org/def/>
-prefix rp_misc: <http://resourceprojects.org/def/misc/>
 
-
-SELECT DISTINCT ?company ?company_name ?stake ?share ?group ?groupName WHERE {
+SELECT DISTINCT ?company ?company_name ?group ?groupName WHERE {
     <{{uri}}> rp:hasStake ?stake .
     ?stake rp:hasStakeholder ?company .
     ?company a rp:Company
     OPTIONAL { ?company skos:prefLabel ?company_name } 
-    OPTIONAL {?stakes rp:share ?share} 
     
     OPTIONAL { ?groupMembership rp:organisation ?company .
                ?group rp:groupMember ?groupMembership .
                ?group skos:prefLabel ?groupName
     }
 }
-GROUP BY ?stake ?share
+GROUP BY ?company ?stake 
 ORDER BY ?company_name
