@@ -84,13 +84,13 @@
                           </tr>
                         {% endif %} 
                         
-                          {% if row.site_name.value %}
+                         
                           <tr>
-                            <td><a href="{{ row.site.value }}">{{ row.site_name.value }}</a></td>
+                            <td> {% if row.site_name.value == "" %}<a href="{{ row.site.value }}">{{ row.site.value| explode:"/"|pop }}</a>{% else %}<a href="{{ row.site.value }}">{{ row.site_name.value }}</a>{% endif %}</td>
                             <td>{{ row.lat.value }}</td>
                             <td>{{ row.lng.value }}</td>
                           </tr>
-                          {% endif %}
+                          
                         {% endfor %}
 
                       </table>
