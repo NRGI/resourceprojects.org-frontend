@@ -2,17 +2,23 @@ prefix rp: <http://resourceprojects.org/def/>
 prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?project ?name ?country ?country_name ?share  ?commodityType WHERE {
+SELECT DISTINCT ?project ?name ?country ?country_name ?commodityType WHERE {
     <{{uri}}> rp:holdsStake ?stakes .
     ?stakes rp:isStakeIn ?project .
     ?project a rp:Project  .
     ?project skos_:prefLabel ?name .
-    ?project rp:hasLocation ?country .
-    ?country a rp:Country .
-    ?country skos_:prefLabel ?country_name 
-    OPTIONAL { ?participant rp_misc:share ?share }
-    OPTIONAL { ?project rp:hasCommodity ?commodity .
-              ?commodity rp:commodityType ?commodityType }
+    
+    OPTIONAL {
+
+      ?project rp:hasLocation ?country .
+      ?country a rp:Country .
+      ?country skos_:prefLabel ?country_name 
+      OPTIONAL { ?project rp:hasCommodity ?commodity .
+                ?commodity rp:commodityType ?commodityType 
+      }
+      
+    }
+
 }
 GROUP BY ?project ?name
 ORDER BY ?name
