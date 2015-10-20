@@ -76,7 +76,7 @@
                     <td class="project-label" colspan="2">Location(s)
                       {% for row in models.sites %} 
                         {%  if forloop.first %}
-                        <table class="table table-striped">
+                        <table class="table table-striped locations">
                           <tr>
                             <th>Name</th>
                             <th>Lat</th>

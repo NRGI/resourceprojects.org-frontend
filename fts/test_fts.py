@@ -174,11 +174,12 @@ class TestCompanyPage:
 class TestProjectPage:
     @pytest.fixture(autouse=True, scope='module')
     def load_project_page(self, browser):
-        browser.get(server_url + 'project/ao/bl40-ptvrql')
+        browser.get(server_url + 'project/AO/bl0-0q2anl')
 
     @pytest.mark.parametrize(('table_css', 'expected_headers'), [
         ('.companies', ['Name', 'Group']),
         ('.production_stats', ['Year', 'Volume', 'Unit', 'Price', 'Price per unit', 'ID']),
+        ('.locations', ['Name', 'Lat', 'Lng']),
     ])
     def test_table_columns (self, browser, table_css, expected_headers):
         '''Tables in the projects page'''
