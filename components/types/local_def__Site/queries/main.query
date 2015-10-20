@@ -8,8 +8,8 @@ SELECT * WHERE {
     OPTIONAL { <{{uri}}> rp:lat ?lat }
     OPTIONAL { <{{uri}}> rp:long ?lng }
     OPTIONAL { <{{uri}}> skos_:prefLabel ?name }
-    OPTIONAL { <{{uri}}> rp:commodity ?commodity }
-    OPTIONAL { ?commodity skos_:prefLabel ?commodity_name }
+
+
     OPTIONAL { <{{uri}}> rp_misc:address	?address }
     OPTIONAL { <{{uri}}> rp_misc:capacity	?capacity }
     OPTIONAL { <{{uri}}> rp_misc:cite	?cite }
@@ -19,6 +19,18 @@ SELECT * WHERE {
     OPTIONAL { <{{uri}}> rp_misc:status	?status }
     OPTIONAL { <{{uri}}> rp_misc:units	?units }
     OPTIONAL { <{{uri}}> rp:trueAt ?trueAt }
+    OPTIONAL { <{{uri}}> rp:hasLocation ?country .
+                ?country a rp:Country .
+                ?country skos_:prefLabel ?country_name
+              }
+    OPTIONAL { ?country rp:lat ?country_lat }
+    OPTIONAL { ?country rp:long ?country_lng }
+    OPTIONAL { ?project rp:hasLocation <{{uri}}> .
+               ?project a rp:Project .
+               ?project skos_:prefLabel ?project_name .
+               ?project rp:hasCommodity ?commodity .
+               ?commodity skos_:prefLabel ?commodity_name
+              }
 
 }
 

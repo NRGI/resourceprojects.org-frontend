@@ -4,49 +4,49 @@
           <h1>{{first.main.name.value}} <small>Site</small></h1>
       </div>
       
-      <p>Notes: {{first.main.notes.value}}</p>
-      <p>Co-ordinates: Lat {{first.main.lat.value}} Lng {{first.main.lng.value}}</p>
-      
-      
-          <p>Commodity: <a href="{{first.main.commodity.value}}">{{first.main.commodity_name.value}}</a></p>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="map" style="height:240px"></div>
+          <script type="text/javascript">
+            var map = L.map('map',{ fullscreenControl: true }).setView([{{first.main.country_lat.value}}, {{first.main.country_lng.value}}], 5);
+            var marker = L.marker([{{first.main.lat.value}}, {{first.main.lng.value}}]).addTo(map);
+            marker.bindPopup('<b>{{first.main.name.value}}</b><br/><a href="{{first.main.project.value}}">{{first.main.project_name.value}}</a>').openPopup();
+          </script>         
+          {%include "../../includes/default_map.js.inc"%}
 
-          <p>Address: {{first.main.address.value}}</p>
-          <p>Capacity: {{first.main.capacity.value}}</p>
-          <p>Cite: {{first.main.cite.value}}</p>
-          <p>LocationPrecision: {{first.main.locationPrecision.value}}</p>
-          <p>Notes: {{first.main.notes.value}}</p>
-          <p>SiteType: {{first.main.siteType.value}}</p>
-          <p>Status: {{first.main.status.value}}</p>
-          <p>Units: {{first.main.units.value}}</p>
-          <p>True at: {{first.main.trueAt.value}}</p>
-          {{models.main|googlemaps:"lat,lng,name,zoom=3"}}
-
+        </div>
+      </div><!--end row-->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="info-box">
+            <h2>Site Info</h2>
+            <table id="project-info" class="table table-striped site-info">
+              <tr>
+                <td class="project-label">Country:</td>
+                <td><a href="{{first.main.country.value}}">{{first.main.country_name.value}}</a></td>
+              </tr>
+              <tr>
+                <td class="project-label">Project:</td>
+                <td><a href="{{first.main.project.value}}">{{first.main.project_name.value}}</a></td>
+              </tr>
+              <tr>
+                <td class="project-label">Notes:</td>
+                <td>{{first.main.address.value}}</td>
+              </tr>
+              <tr>
+                <td class="project-label">Co-ordinates (lat,lng):</td>
+                <td>{{first.main.lat.value}},{{first.main.lng.value}}</td>
+              </tr>
+              <tr>
+                <td class="project-label">Commodity:</td>
+                <td>{{first.main.commodity_name.value}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
           
-      <!--<h2>Payments</h2>
-      <table class="table table-striped">
-        <thead>
-          <tr><th>ID</th><th>Currency</th><th>Payment Year</th><th>Paid by</th><th>Paid To</th><th>Value</th></tr>
-        </thead>
-        {% for row in models.payments %}    
-        <tr>
-            <td><a href="{{ uri }}">{{ uri|explode:"/"|pop }}</a></td>
-            <!--<td><a href="{{ row.project.value }}">{{ row.project.value|explode:"/"|pop }}</a></td>-->
-            <td>{{ row.currency.value }}</td>
-            {%if row.date%}
-              <td>{{ row.date.value|date:"Y" }}</td>
-              {%else%}
-                {%if row.year%}
-                  <td>{{ row.year.value }}</td>
-                {%else%}
-                  <td></td>
-                {%endif%}
-            {%endif%}
-            <td><a href="{{ row.payer.value }}">{{ row.payer_name.value }}</a></td>
-            <td><a href="{{ row.payee.value }}">{{ row.payee_name.value }}</a></td>
-            <td>{{ row.value.value }}</td>
-        </tr>
-        {% endfor %}
-      </table>--->
+
       
       {%include "../../includes/advanced_links.inc"%}
       
