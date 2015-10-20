@@ -212,3 +212,22 @@ def test_glossary_page(browser):
     section_titles = browser.find_elements_by_tag_name('h2')
     section_titles_text = set([ x.text for x in section_titles ])
     assert expected_headings == section_titles_text
+
+
+class TestSitePage:
+    @pytest.fixture(autouse=True, scope='module')
+    def load_project_page(self, browser):
+        browser.get(server_url + 'site/XX/mano-87nv9k')
+
+    def test_table_rows (self, browser):
+        '''Sites Info'''
+        expected_cells= set([
+            ('Country:'),
+            ('Project:'),
+            ('Notes:'),
+            ('Co-ordinates (lat,lng):'),
+            ('Commodity:')
+        ])
+        table_cells = browser.find_elements_by_css_selector('.project-label')
+        table_cells_text =  set([ x.text for x in table_cells ])
+        assert table_cells_text == expected_cells
