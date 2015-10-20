@@ -55,8 +55,12 @@
                     <td class="aliases">{% for row in models.alias %} {{ row.altLabel.value }}, {% endfor %}</td>
                   </tr>
                   <tr>
-                    <td class="project-label">Commodity:</td>
+                    <td class="project-label">Commodity Type(s):</td>
                     <td>{% for row in models.commodities %} {{ row.commodityType.value }}{%if !forloop.last%}, {% endif %}{% endfor %}</td>
+                  </tr>
+                  <tr>
+                    <td class="project-label">Commodities:</td>
+                    <td>{% for row in models.commodities %} {{ row.commodityName.value }}{%if !forloop.last%}, {% endif %}{% endfor %}</td>
                   </tr>
                   <tr>
                     <td class="project-label">Status:</td>

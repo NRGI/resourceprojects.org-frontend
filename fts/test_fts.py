@@ -206,7 +206,8 @@ class TestProjectPage:
         expected_cells= set([
             ('Country:'),
             ('Aliases:'),
-            ('Commodity:'),
+            ('Commodity Type(s):'),
+            ('Commodities:'),
             ('Status:'),
             ('Associated Contracts:'),
             ('Associated Concessions:'),
