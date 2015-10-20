@@ -3,36 +3,103 @@
       <div class="page-header">
           <h1>{{first.main.name.value}} <small>Country</small></h1>
       </div>
+      <div class="row">
+        <div class="col-md-10">
+          <div id="map"></div>
+          <script type="text/javascript">
+            var map = L.map('map',{ fullscreenControl: true }).setView([{{first.main.lat.value}}, {{first.main.long.value}}], 5);
+          </script>
+            {% for site in models.sites %}
+              {%if site.lat.value %}
+                {%if site.lng.value %}
+          <script type="text/javascript">
+            var marker_{{site.site_name.value}} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
 
-      <h2>Projects</h2>
+            marker_{{site.site_name.value}}.bindPopup('<b><a href="{{site.site.value}}">{{site.site_name.value}}</a></b><br>(Operator)<br>{{site.project_name.value}}').openPopup();
+          </script>
+                {%endif%}
+              {%endif%}
+            {% endfor %}
+          
+          {%include "../../includes/default_map.js.inc"%}
+          
+        </div>
+        
+        <div class="col-md-2">
+          <div id="filters">
+            <!--<h3>Filters</h3>-->
+            <h4>Project</h4>
+            <form method="get">
+              <input type="checkbox" name="commodity[]" value="Oil and Gas" {% if 'Oil and Gas' in lodspk.GET.commodity %}checked{% endif %} /> Oil and Gas <br />
+              <input type="checkbox" name="commodity[]" value="Mining" {% if 'Mining' in lodspk.GET.commodity %}checked{% endif %} /> Mining <br />
+            
+              <h4>Status</h4>
+              
+            
+              <h4>Company Group</h4>
+              <select>
+                <option value="volvo">StatOil</option>
+                <option value="saab">BP</option>
+                <option value="mercedes">Tullow</option>
+              </select>
 
-      <table class="table table-striped">
-      <thead>
-        <tr><th>Name</th><th>Commodity Type</th></tr>
-      </thead>
-      {% for project in models.projects %}    
-      <tr>
-          <td><a href="{{project.project.value}}">{{ project.name.value }}</a></td>
-          <!--<td><a href="{{project.project.value}}">{{ project.project.value }}</a></td>-->
-          <td>{{ project.commodityType.value }}</td>
-      </tr>
-      {% endfor %}
-      </table>
-      
-      <h2>Companies</h2>
+              <input type="submit" value="Submit now" />
+            </form>
+          </div>
+          
+        
+        </div>
+      </div><!--end row-->
+     
 
-      <table class="table table-striped">
-      <thead>
-        <tr><th>Name</th></tr>
-      </thead>
-      {% for row in models.companies %}    
-      <tr>
-          <td><a href="{{row.company.value}}">{{ row.name.value }}</a></td>
-          <!--<td><a href="{{row.company.value}}">{{ row.company.value|explode:"/"|pop }}</a></td>-->
-      </tr>
-      {% endfor %}
-      </table>
-      
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Projects</h2>
+         
+          
+
+          <table class="table table-striped">
+          <thead>
+            <tr><th>Name</th><th>Commodity</th><th>Status</th><th>No. Companies</th></tr>
+          </thead>
+          {% for project in models.projects %}    
+          <tr>
+              <td><a href="{{project.project.value}}">{{ project.name.value }}</a></td>
+              <!--<td><a href="{{project.project.value}}">{{ project.project.value }}</a></td>-->
+              <td>{{ project.commodityType.value }}</td>
+              <td>{{ project.statusType.value}}</td>
+              <td>{{ project.companyCount.value}}</td>
+          </tr>
+          {% endfor %}
+          </table>
+          <div class="download">
+            <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="http://virtuoso.nrgi-dev2.default.opendataservices.uk0.bigv.io/sparql?default-graph-uri=&query={{ lodspk.queryText.projects|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Projects CSV</a></span>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <h2>Companies <small>Companies active in this country</small></h2>
+
+         
+
+          <table class="table table-striped">
+          <thead>
+            <tr><th>Name</th><th>Group</th></tr>
+          </thead>
+          {% for row in models.companies %}    
+          <tr>
+              <td><a href="{{row.company.value}}">{{ row.companyName.value }}</a></td>
+              <td><a href="{{row.group.value}}">{{ row.groupName.value }}</a></td>
+              <!--<td><a href="{{row.company.value}}">{{ row.company.value|explode:"/"|pop }}</a></td>-->
+          </tr>
+          {% endfor %}
+          </table>
+          <div class="download">
+            <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="http://virtuoso.nrgi-dev2.default.opendataservices.uk0.bigv.io/sparql?default-graph-uri=&query={{ lodspk.queryText.companies|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Companies CSV</a>
+          </div>
+        </div>
+      </div>
+
       <h2>Payments</h2>
       <table class="table table-striped">
         <thead>

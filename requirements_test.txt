@@ -1,0 +1,7 @@
+py==1.4.30
+pytest==2.8.2
+requests==2.8.0
+
+# selenium
+selenium==2.48.0
+

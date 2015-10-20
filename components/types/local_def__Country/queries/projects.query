@@ -1,14 +1,21 @@
 prefix rp: <http://resourceprojects.org/def/>
-prefix rp_misc: <http://resourceprojects.org/def/misc/>
 
-SELECT DISTINCT ?project ?commodityType ?name WHERE {
+SELECT DISTINCT ?project  ?commodity ?statusType  ?commodityLabel ?commodityType ?name (COUNT(?company) as ?companyCount) WHERE {
     ?project rp:hasLocation <{{uri}}> .
     ?project a rp:Project .
     OPTIONAL {
         ?project skos:prefLabel ?name
     }
-    OPTIONAL { ?project rp:commodity ?commodity.
-               ?commodity rp_misc:commodityType ?commodityType 
+    OPTIONAL { ?project rp:hasCommodity ?commodity .
+               ?commodity skos:prefLabel ?commodityLabel .
+               ?commodity rp:commodityType ?commodityType 
+    }
+    OPTIONAL { ?project rp:state ?status .
+               ?status rp:statusType ?statusType 
+    }
+    OPTIONAL { ?project rp:hasStake ?stake .
+               ?stake rp:hasStakeholder ?company .
+               ?company a rp:Company 
     }
     FILTER NOT EXISTS {
         ?project owl:sameAs ?b

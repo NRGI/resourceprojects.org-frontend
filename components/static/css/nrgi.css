@@ -186,3 +186,10 @@ div.advanced-links {
 .dropdown form.inline {
   display:inline;
 }
+
+#map, #filters, #info-box { height: 480px; }
+
+#filters, #info-box {
+  border:1px solid #eee;
+  padding: 5px;
+}

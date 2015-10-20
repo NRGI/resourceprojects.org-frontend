@@ -1,16 +1,21 @@
 prefix rp: <http://resourceprojects.org/def/>
-prefix rp_misc: <http://resourceprojects.org/def/misc/>
 
-SELECT DISTINCT ?project ?country ?country_name ?name ?commodityType WHERE {
+SELECT DISTINCT ?project ?country ?country_name ?name ?commodityType count(distinct ?company) as ?companyCount WHERE {
     ?project a rp:Project .
-    ?project rp:hasLocation ?country
+    ?project rp:hasLocation ?country .
+    ?country a rp:Country
     OPTIONAL { ?country skos:prefLabel ?country_name }
     OPTIONAL { ?project skos:prefLabel ?name }
-    OPTIONAL { ?project rp:commodity ?commodity.
-    ?commodity rp_misc:commodityType ?commodityType }
+    OPTIONAL { ?project rp:hasCommodity ?commodity.
+    ?commodity rp:commodityType ?commodityType }
+    OPTIONAL {?project rp:hasStake ?stake .
+              ?stake rp:hasStakeholder ?company .
+              ?company a rp:Company
+              }
 }
-GROUP BY ?name ?country_name
+GROUP BY ?project ?name ?country ?country_name ?commodityType
 ORDER BY ?name ?country_name
+
 LIMIT {{lodspk.limit}}
 OFFSET {{lodspk.offset}}
 

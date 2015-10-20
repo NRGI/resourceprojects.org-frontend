@@ -1,0 +1,15 @@
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+
+
+SELECT DISTINCT ?site,  ?lat, ?lng,  ?site_name WHERE {
+    <{{uri}}> rp:hasLocation ?site  .
+    ?site a rp:Site
+
+
+    OPTIONAL { ?site rp:lat ?lat }
+    OPTIONAL { ?site rp:long ?lng }
+    OPTIONAL { ?site skos:prefLabel ?site_name }
+    OPTIONAL { ?project skos:prefLabel ?project_name }
+}
+GROUP BY ?site

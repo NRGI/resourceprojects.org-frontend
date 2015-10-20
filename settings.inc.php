@@ -18,11 +18,13 @@ $lodspk['limit'] = $limit;
 $lodspk['next'] = $offset + $limit;
 $lodspk['prev'] = $offset - $limit;
 
+$lodspk['GET'] = $_GET;
+
 if ($lodspk['prev'] <= 0) {
       $lodspk['prev'] = 0;
     }
 
-$conf['endpoint']['local'] = 'http://virtuoso:8890/sparql';
+$conf['endpoint']['local'] = 'SPARQL_ENDPOINT';
 $conf['home'] = '/var/www/html/lodspeakr/';
 $conf['basedir'] = 'BASE_URL';
 $conf['debug'] = false;

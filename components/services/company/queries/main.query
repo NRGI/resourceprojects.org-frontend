@@ -7,7 +7,7 @@ SELECT DISTINCT ?company ?name ?group ?groupname (COUNT(DISTINCT ?project) as ?p
                 ?group rp:groupMember ?groupMembership.
                 ?group skos:prefLabel ?groupname.
     } 
-    OPTIONAL {  ?stake rp:isStakeIn ?company .    
+    OPTIONAL {  ?stake rp:hasStakeholder ?company .    
                 ?stake rp:isStakeIn ?project .
                 ?project a rp:Project
               }

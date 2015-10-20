@@ -13,7 +13,7 @@ Pre-requisites
 To run lodspeakr you will need an instance of virtuoso running.
 
 ```
-docker run -p 127.0.0.1:8890:8890 --name=virtuoso -v /usr/local/var/lib/virtuoso/db caprenter/automated-build-virtuoso 
+docker run -p 127.0.0.1:8890:8890 --name=virtuoso -v /usr/local/var/lib/virtuoso/db opendataservices/virtuoso:master
 ```
 
 Running from docker hub
@@ -65,6 +65,18 @@ To upload data go to Linked Data -> Quad Store Upload ( http://localhost:8890/co
 
 (If you've generated the data locally, you can use the "File" option instead).
 
+Tests
+-----
+
+There are some selenium tests that can be run against the interface using pytest.
+Run 
+
+```
+py.test
+```
+
+The `run_tests_locally.sh` script will build docker images, load data into virtuoso and run tests.
+This will take a while to build the first time, but should be much quicker there after.
 
 License
 -------

@@ -15,15 +15,16 @@
 
   {%include "../../includes/pager.inc"%}
   
-  <table class="table table-striped" about="{{uri}}">
+  <table id="projects" class="table table-striped" about="{{uri}}">
     <thead>
-      <tr><th>Project</th><th>Country</th><th>Commodity Type</th></tr>
+      <tr><th>Project</th><th>Country</th><th>Commodity Types</th><th>No.Companies</th></tr>
     </thead>
     {% for row in models.main %}
     <tr>
         <td><a href="{{ row.project.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.uri.curie }}{% endif %}</a></td>
-        <td>{{row.country_name.value}}</td>
+        <td><a href="{{row.country.value}}">{{row.country_name.value}}</a></td>
         <td>{{row.commodityType.value}}</td>
+        <td>{{row.companyCount.value}}</td>
     </tr>
     {% endfor %}
   </table>
