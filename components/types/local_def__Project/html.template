@@ -6,6 +6,7 @@
             <h1>{{first.main.name.value}} <small>Project</small></h1>
           </div>
       </div>
+    </div>
       
       <div class="row">
         <div class="col-md-12">
