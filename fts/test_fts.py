@@ -140,12 +140,34 @@ class TestCountryPage:
         section_titles = browser.find_elements_by_tag_name('h2')
         section_titles_text = set([ x.text for x in section_titles ])
         assert expected_titles == section_titles_text
+    
+    @pytest.mark.parametrize(('table_css', 'expected_headers'), [
+        ('.companies', ['Name', 'Group']),
+        ('.projects', ['Name', 'Commodity', 'Status', 'No. Companies' ]),
+        ('.payments', ['Year','Paid by', 'Payment Type', 'Currency', 'Value', 'Payment or receipt?', 'ID']),
+    ])
+    def test_table_columns (self, browser, table_css, expected_headers):
+        '''Tables in the countries page'''
+        table = browser.find_element_by_css_selector(table_css)
+        table_headers = table.find_elements_by_tag_name('th')
+        table_headers_text = [ x.text for x in table_headers ]
+        assert table_headers_text == expected_headers
         
     def test_project_table_rows (self, browser):
-            '''Counts the number of expected rows'''
-            table = browser.find_element_by_css_selector('.projects')
-            rows = table.find_elements_by_tag_name('tr')
-            assert len(rows) == 20
+        '''Counts the number of expected rows'''
+        table = browser.find_element_by_css_selector('.projects')
+        rows = table.find_elements_by_tag_name('tr')
+        assert len(rows) == 20
+    
+    @pytest.mark.parametrize(('downloadtext'), [
+        ('Payments CSV'),
+        ('Companies CSV'),
+        ('Projects CSV')
+    ])
+    def test_download_links (self, browser, downloadtext):
+        body = browser.find_element_by_tag_name('body')
+        assert downloadtext in body.text
+
     
 
 class TestCompanyPage:
