@@ -82,7 +82,7 @@
 
          
 
-          <table class="table table-striped">
+          <table class="table table-striped companies">
           <thead>
             <tr><th>Name</th><th>Group</th></tr>
           </thead>
@@ -101,14 +101,13 @@
       </div>
 
       <h2>Payments</h2>
-      <table class="table table-striped">
+      <table class="table table-striped payments">
         <thead>
-          <tr><th>Paid by</th><th>ID</th><th>Payment Year</th><th>Payment or receipt?</th><th>Payment Type</th><th>Currency</th><th>Value</th></tr>
+          <tr><th>Year</th><th>Paid by</th><th>Payment Type</th><th>Currency</th><th>Value</th><th>Payment or receipt?</th><th>ID</th></tr>
         </thead>
         {% for row in models.payments %}    
         <tr>
-            <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
-            <td><a href="{{ row.companyPayment.value }}">{{ row.companyPayment.value|explode:"/"|pop }}</a></td>
+            <td><a href="{{ row.payer.value }}">{{ row.payer_name.value }}</a></td>
             {%if row.date%}
               <td>{{ row.date.value|date:"Y" }}</td>
               {%else%}
@@ -118,13 +117,18 @@
                   <td></td>
                 {%endif%}
             {%endif%}
-            <td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>
-            <td>{{ row.type.value }}</td>
+            
+            <td>{{ row.type_name.value }}</td>
             <td>{{ row.currency.value }}</td>
             <td>{{ row.amount.value }}</td>
+            <td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>
+            <td><a href="{{ row.payment.value }}"><span data-toggle="tooltip" data-placement="left" title="{{ row.payment.value|explode:"/"|pop }}" class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></td>
         </tr>
         {% endfor %}
       </table>
+      <div class="download">
+        <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.payments|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Payments CSV</a>
+      </div>
       
       {%include "../../includes/advanced_links.inc"%}
       
