@@ -32,10 +32,31 @@
         <div class="col-md-6">
           <div class="info-box">
             <h2>Company Info</h2>
-            <p>Our Company ID: {{uri|explode:"/"|pop}} </p>
-            <p>Part of: 
-            {% for row in models.group %} <a href="{{ row.group.value }}">{{ row.name.value }}</a>{%if !forloop.last%},{% endif %}
-             {% endfor %}
+            <table id="project-info">
+              <tr>
+                <td class="project-label">Our Company ID:</td>
+                <td>{{uri|explode:"/"|pop}}</td>
+              </tr>
+              <tr>
+                <td class="project-label">Website:</td>
+                <td><a href="{{first.main.website.value}}">{{first.main.website.value}}</a></td>
+              </tr>
+              <tr>
+                <td class="project-label">Part of:</td>
+                <td>
+                  {% for row in models.group %} 
+                    <a href="{{ row.group.value }}">{{ row.name.value }}</a>{%if !forloop.last%},{% endif %}
+                  {% endfor %}
+                </td>
+              </tr>
+              <tr>
+                <td class="project-label">Open Corporates:</td>
+                <td> <a href="{{first.main.openCorporatesURL.value}}">{{first.main.openCorporatesURL.value}}</a></td>
+              </tr>
+              
+            </table>
+            
+
 
             <!--<p>Description (with provenance of description?)</p>-->
             <!--<p>
@@ -67,6 +88,7 @@
       </div><!--end row-->
       
       <h2>Payments</h2>
+      {% if models.payments|length %}
       <table class="table table-striped">
         <thead>
           <tr><th>Paid to</th><th>ID</th><th>Payment Year</th><th>Payment or receipt?</th><th>Payment Type</th><th>Currency</th><th>Value</th></tr>
@@ -91,7 +113,9 @@
         </tr>
         {% endfor %}
       </table>
-      
+      {% else %}
+      <p class="no-data">No data available</p>
+      {%endif%}
       {%include "../../includes/advanced_links.inc"%}
       
     </div>
