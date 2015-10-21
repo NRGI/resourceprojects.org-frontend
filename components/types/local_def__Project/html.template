@@ -57,15 +57,22 @@
                   </tr>
                   <tr>
                     <td class="project-label">Commodity Type(s):</td>
-                    <td>{% for row in models.commodities %} {{ row.commodityType.value }}{%if !forloop.last%}, {% endif %}{% endfor %}</td>
+                    <td class="commodity-types">
+                      {% for row in models.commodities %} 
+                        {%if lastSeenStatus != row.commodityType.value %}
+                          {{ row.commodityType.value }}, 
+                          {% set lastSeenStatus = row.commodityType.value %}
+                        {% endif %}
+                      {% endfor %}
+                    </td>
                   </tr>
                   <tr>
                     <td class="project-label">Commodities:</td>
-                    <td>{% for row in models.commodities %} {{ row.commodityName.value }}{%if !forloop.last%}, {% endif %}{% endfor %}</td>
+                    <td class="commodities">{% for row in models.commodities %} {{ row.commodityName.value }}, {% endfor %}</td>
                   </tr>
                   <tr>
                     <td class="project-label">Status:</td>
-                    <td>
+                    <td class="status">
                     {% for row in models.status %} 
                       {{ row.statusType.value}} (True at: {{row.trueAtDate.value|date:"Y-m-d"}})</br>
                     {% endfor %}
