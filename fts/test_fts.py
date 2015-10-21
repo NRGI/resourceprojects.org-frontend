@@ -144,7 +144,7 @@ class TestCountryPage:
     @pytest.mark.parametrize(('table_css', 'expected_headers'), [
         ('.companies', ['Name', 'Group']),
         ('.projects', ['Name', 'Commodity', 'Status', 'No. Companies' ]),
-        ('.payments', ['Year','Paid by', 'Payment Type', 'Currency', 'Value', 'Payment or receipt?', 'ID']),
+        ('.payments', ['Year', 'Project', 'Paid by', 'Payment Type', 'Currency', 'Value', 'Payment or receipt?', 'ID']),
     ])
     def test_table_columns (self, browser, table_css, expected_headers):
         '''Tables in the countries page'''
@@ -159,14 +159,16 @@ class TestCountryPage:
         rows = table.find_elements_by_tag_name('tr')
         assert len(rows) == 20
     
-    @pytest.mark.parametrize(('downloadtext'), [
-        ('Payments CSV'),
-        ('Companies CSV'),
-        ('Projects CSV')
-    ])
-    def test_download_links (self, browser, downloadtext):
-        body = browser.find_element_by_tag_name('body')
-        assert downloadtext in body.text
+    def test_download_links (self, browser):
+        expected_download_text = set([
+            ('Download: Payments CSV'),
+            ('Download: Companies CSV'),
+            ('Download: Projects CSV')
+        ])
+        downloads = browser.find_elements_by_css_selector('.download')
+        download_text = set([ x.text for x in downloads ])
+        assert expected_download_text == download_text
+
 
     
 

@@ -103,11 +103,11 @@
       <h2>Payments</h2>
       <table class="table table-striped payments">
         <thead>
-          <tr><th>Year</th><th>Paid by</th><th>Payment Type</th><th>Currency</th><th>Value</th><th>Payment or receipt?</th><th>ID</th></tr>
+          <tr><th>Year</th><th>Project</th><th>Paid by</th><th>Payment Type</th><th>Currency</th><th>Value</th><th>Payment or receipt?</th><th>ID</th></tr>
         </thead>
         {% for row in models.payments %}    
         <tr>
-            <td><a href="{{ row.payer.value }}">{{ row.payer_name.value }}</a></td>
+            
             {%if row.date%}
               <td>{{ row.date.value|date:"Y" }}</td>
               {%else%}
@@ -117,7 +117,8 @@
                   <td></td>
                 {%endif%}
             {%endif%}
-            
+            <td><a href="{{ row.project.value }}">{{ row.project_name.value }}</a></td>
+            <td><a href="{{ row.payer.value }}">{{ row.payer_name.value }}</a></td>
             <td>{{ row.type_name.value }}</td>
             <td>{{ row.currency.value }}</td>
             <td>{{ row.amount.value }}</td>

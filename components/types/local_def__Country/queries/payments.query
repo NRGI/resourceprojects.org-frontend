@@ -2,7 +2,7 @@ prefix rp: <http://resourceprojects.org/def/>
 prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?payment ?paymentOrReceipt ?currency ?amount ?date ?year ?type_name ?payer ?payer_name WHERE {
+SELECT ?payment ?paymentOrReceipt ?currency ?amount ?date ?year ?type_name ?payer ?payer_name ?project ?project_name WHERE {
     ?payment rp:payee <{{uri}}> .
     ?payment a ?paymentOrReceipt
 
@@ -16,6 +16,12 @@ SELECT ?payment ?paymentOrReceipt ?currency ?amount ?date ?year ?type_name ?paye
     OPTIONAL { ?payment rp:payer ?payer .
                ?payer skos_:prefLabel ?payer_name
              }
+    OPTIONAL { ?payment rp:relatedProject ?project .
+               ?project skos_:prefLabel ?project_name
+             }
+    #The filter is needed because this project name is used twice: 
+    #https://github.com/NRGI/resourceprojects.org-frontend/issues/197
+    FILTER (str(?type_name) != "Taxes levied on the income, production or profits of companies,")
 }
 
 GROUP BY ?payment
