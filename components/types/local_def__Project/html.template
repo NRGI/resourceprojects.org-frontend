@@ -20,7 +20,7 @@
                   <script type="text/javascript">
                     var marker_{{ site.site.value|explode:'/'|pop|cut:'-' }} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
 
-                    marker_{{ site.site.value|explode:'/'|pop|cut:'-' }}.bindPopup('<b><a href="{{site.site.value}}">{{site.site_name.value}}</a></b>').openPopup();
+                    marker_{{ site.site.value|explode:'/'|pop|cut:'-' }}.bindPopup('<b>{{site.site_name.value}}</b>').openPopup();
                   </script>
                 {%endif%}
               {%endif%}
@@ -85,7 +85,13 @@
                         
                          
                           <tr>
-                            <td> {% if row.site_name.value == "" %}<a href="{{ row.site.value }}">{{ row.site.value| explode:"/"|pop }}</a>{% else %}<a href="{{ row.site.value }}">{{ row.site_name.value }}</a>{% endif %}</td>
+                            <td>
+                              {% if row.site_name.value == "" %}
+                                {{ row.site.value| explode:"/"|pop }}
+                              {% else %}
+                                {{ row.site_name.value }}
+                              {% endif %}
+                            </td>
                             <td>{{ row.lat.value }}</td>
                             <td>{{ row.lng.value }}</td>
                           </tr>

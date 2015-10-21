@@ -15,7 +15,7 @@
           <script type="text/javascript">
             var marker_{{site.site_name.value}} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
 
-            marker_{{site.site_name.value}}.bindPopup('<b><a href="{{site.site.value}}">{{site.site_name.value}}</a></b><br><a href="{{site.project.value}}">{{site.project_name.value}}</a>').openPopup();
+            marker_{{site.site_name.value}}.bindPopup('<b><a href="{{site.project.value}}">{{site.project_name.value}}</a></b><br>{{site.site_name.value}}<br>').openPopup();
           </script>
                 {%endif%}
               {%endif%}
