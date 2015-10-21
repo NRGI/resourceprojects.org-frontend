@@ -123,20 +123,29 @@ def test_company_groups_page(browser):
     
     
 ## Idividual pages tests
-
-def test_country_page(browser):
-    '''Country page table titles'''
-    expected_titles = set([
-        ('Projects'),
-        ('Companies Companies active in this country'),
-        ('Payments')
-    ])
-    browser.get(server_url + 'country/AO')
-    titles = []
-    #assert "Natural Resource Governance Institute" in browser.title
-    section_titles = browser.find_elements_by_tag_name('h2')
-    section_titles_text = set([ x.text for x in section_titles ])
-    assert expected_titles == section_titles_text
+class TestCountryPage:
+    @pytest.fixture(autouse=True, scope='module')
+    def load_company_page(self, browser):
+        browser.get(server_url + 'country/AO')
+    
+    def test_country_page(self, browser):
+        '''Country page table titles'''
+        expected_titles = set([
+            ('Projects'),
+            ('Companies Companies active in this country'),
+            ('Payments')
+        ])
+        titles = []
+        #assert "Natural Resource Governance Institute" in browser.title
+        section_titles = browser.find_elements_by_tag_name('h2')
+        section_titles_text = set([ x.text for x in section_titles ])
+        assert expected_titles == section_titles_text
+        
+    def test_project_table_rows (self, browser):
+            '''Counts the number of expected rows'''
+            table = browser.find_element_by_css_selector('.projects')
+            rows = table.find_elements_by_tag_name('tr')
+            assert len(rows) == 20
     
 
 class TestCompanyPage:

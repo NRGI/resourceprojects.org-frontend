@@ -1,8 +1,13 @@
 prefix rp: <http://resourceprojects.org/def/>
 
-SELECT DISTINCT ?project  ?commodity ?statusType  ?commodityLabel ?commodityType ?name ?companyCount WHERE {
+SELECT DISTINCT ?project  ?commodity ?statusType  ?commodityLabel ?commodityType ?name (COUNT(distinct ?company) as ?companyCount) WHERE {
     ?project rp:hasLocation <{{uri}}> .
     ?project a rp:Project .
+    OPTIONAL {
+               ?project rp:hasStake ?stake .
+               ?stake rp:hasStakeholder ?company .
+               ?company a rp:Company 
+    }
     OPTIONAL {
         ?project skos:prefLabel ?name
     }
@@ -13,15 +18,10 @@ SELECT DISTINCT ?project  ?commodity ?statusType  ?commodityLabel ?commodityType
     OPTIONAL { ?project rp:state ?status .
                ?status rp:statusType ?statusType 
     }
-    { SELECT (COUNT(?company) as ?companyCount) ?project WHERE {
-               ?project rp:hasStake ?stake .
-               ?stake rp:hasStakeholder ?company .
-               ?company a rp:Company 
-    }  }
     FILTER NOT EXISTS {
         ?project owl:sameAs ?b
     }
 } 
 ORDER BY (?name)
 
-LIMIT {{lodspk.maxResults}}
+
