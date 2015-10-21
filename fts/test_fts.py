@@ -181,7 +181,7 @@ class TestProjectPage:
 
     @pytest.mark.parametrize(('table_css', 'expected_headers'), [
         ('.companies', ['Name', 'Group']),
-        ('.production_stats', ['Year', 'Volume', 'Unit', 'Price', 'Price per unit', 'ID']),
+        ('.production_stats', ['Year', 'Volume', 'Unit', 'Commodity', 'Price', 'Price per unit', 'ID']),
         ('.locations', ['Name', 'Lat', 'Lng']),
         ('.payments', ['Year','Paid by', 'Paid to', 'Payment or receipt?', 'Payment Type', 'Currency', 'Value', 'ID']),
     ])
