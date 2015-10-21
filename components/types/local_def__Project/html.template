@@ -19,7 +19,7 @@
                   <script type="text/javascript">
                     var marker_{{ site.site.value|explode:'/'|pop|cut:'-' }} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
 
-                    marker_{{ site.site.value|explode:'/'|pop|cut:'-' }}.bindPopup('<b><a href="{{site.site.value}}">{{site.site_name.value}}</a></b><br>(Operator)<br>{{site.project_name.value}}').openPopup();
+                    marker_{{ site.site.value|explode:'/'|pop|cut:'-' }}.bindPopup('<b><a href="{{site.site.value}}">{{site.site_name.value}}</a></b>').openPopup();
                   </script>
                 {%endif%}
               {%endif%}
@@ -34,9 +34,7 @@
         <div class="col-md-6">
           <div class="info-box">
             <h2>Project Info</h2>
-             <!--<div class="row">
-                <div class="col-md-6">-->
-                  <table id="project-info">
+                <table id="project-info">
                   <tr>
                     <td class="project-label">ID:</td>
                     <td>{% for i,path_item in uri|explode:"/" %}
@@ -98,10 +96,6 @@
                   </tr>
 
                   </table>
-
-
-                <!--</div><!--col-md-3-->
-              <!--</div>-->
             
             <!--<h4>Company Group</h4>
             <select>
@@ -110,8 +104,8 @@
               <option value="mercedes">Tullow</option>
             </select>    -->        
             
-          </div>
-        </div>
+          </div><!--info-box-->
+        </div><!-- col-md-6 -->
         <div class="col-md-6">
           <h2>Companies</h2>
 
@@ -135,22 +129,9 @@
           </tr>
           {% endfor %}
           </table>
-        
-        
-        <!--<h2>Participanting Companies</h2>
-          <table class="table table-striped">
-            <thead>
-              <tr><th>Name</th><th>Share</th></tr>
-            </thead>
-            {% for row in models.companies %}    
-            <tr>
-                <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
-                <td>{{ row.share.value }}</td>
-            </tr>
-            {% endfor %}
-          </table>-->
-        </div>
-      </div>
+      
+        </div><!-- col-md-6 -->
+      </div><!--row-->
       
       <h2>Production Stats</h2>
        <table class="table table-striped production_stats">
@@ -168,12 +149,6 @@
        </tr>
         {% endfor %}
       </table>
-
-
-
-
-
-
 
 
       <h2>Payments</h2>
