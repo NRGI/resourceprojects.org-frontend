@@ -15,7 +15,7 @@
     
     <table class="table table-striped" about="{{uri}}">
           <thead>
-            <tr><th>Source</th><th>Source type</th><th>Source date</th><th>Contributor</th><th>Details</th></tr>
+            <tr><th>Source</th><th>Source type</th><th>Source date</th><th>Details</th></tr>
           </thead>
 
           {% for row in models.main %}
