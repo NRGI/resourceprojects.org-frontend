@@ -1,6 +1,6 @@
 prefix rp: <http://resourceprojects.org/def/>
 
-SELECT ?country ?countryName ?countryCode count(distinct ?project) as ?projectCount  WHERE {
+SELECT ?country  ?countryName ?countryCode  count(distinct ?project) as ?projectCount  WHERE {
 
    ?project a rp:Project.
    ?project rp:hasLocation ?country.

@@ -58,7 +58,7 @@
          
           
 
-          <table class="table table-striped">
+          <table class="table table-striped projects">
           <thead>
             <tr><th>Name</th><th>Commodity</th><th>Status</th><th>No. Companies</th></tr>
           </thead>

@@ -13,15 +13,16 @@ SELECT DISTINCT ?project  ?commodity ?statusType  ?commodityLabel ?commodityType
     OPTIONAL { ?project rp:state ?status .
                ?status rp:statusType ?statusType 
     }
-    { SELECT (COUNT(?company) as ?companyCount) ?project WHERE {
+    OPTIONAL { SELECT (COUNT(distinct ?company) as ?companyCount) ?project WHERE {
                ?project rp:hasStake ?stake .
                ?stake rp:hasStakeholder ?company .
                ?company a rp:Company 
-    }  }
+               }
+    }
     FILTER NOT EXISTS {
         ?project owl:sameAs ?b
     }
 } 
 ORDER BY (?name)
 
-LIMIT {{lodspk.maxResults}}
+
