@@ -190,7 +190,7 @@ class TestProjectPage:
 
     @pytest.mark.parametrize(('table_css', 'expected_headers'), [
         ('.companies', ['Name', 'Group']),
-        ('.production_stats', ['Year', 'Volume', 'Unit', 'Price', 'Price per unit', 'ID']),
+        ('.production_stats', ['Year', 'Volume', 'Unit', 'Commodity', 'Price', 'Price per unit', 'ID']),
         ('.locations', ['Name', 'Lat', 'Lng']),
         ('.payments', ['Year','Paid by', 'Paid to', 'Payment or receipt?', 'Payment Type', 'Currency', 'Value', 'ID']),
     ])
@@ -209,6 +209,22 @@ class TestProjectPage:
         
     def test_aliases (self, browser):
         assert 'BLOCO 0 A, Block 0- Area A offshore,' in browser.find_element_by_css_selector('.aliases').text
+        
+    def test_project_info_table (self, browser):
+        '''Project Info'''
+        expected_cells= set([
+            ('Country:'),
+            ('Aliases:'),
+            ('Commodity Type(s):'),
+            ('Commodities:'),
+            ('Status:'),
+            ('Associated Contracts:'),
+            ('Associated Concessions:'),
+            #('Location(s)') #This cell also contains a table, so this test is not good enough
+        ])
+        table_cells = browser.find_elements_by_css_selector('.project-label')
+        table_cells_text =  set([ x.text for x in table_cells ])
+        assert table_cells_text >= expected_cells # >= because Location(s) and a table should also be in found data
 
 
 def test_glossary_page(browser):

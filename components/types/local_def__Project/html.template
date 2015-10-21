@@ -48,12 +48,20 @@
                     {% endfor %}</td>
                   </tr>
                   <tr>
+                    <td class="project-label">Country:</td>
+                    <td><a href="{{ first.main.country.value }}">{{ first.main.country_name.value }}</a></td>
+                  </tr>
+                  <tr>
                     <td class="project-label">Aliases:</td>
                     <td class="aliases">{% for row in models.alias %} {{ row.altLabel.value }}, {% endfor %}</td>
                   </tr>
                   <tr>
-                    <td class="project-label">Commodity:</td>
+                    <td class="project-label">Commodity Type(s):</td>
                     <td>{% for row in models.commodities %} {{ row.commodityType.value }}{%if !forloop.last%}, {% endif %}{% endfor %}</td>
+                  </tr>
+                  <tr>
+                    <td class="project-label">Commodities:</td>
+                    <td>{% for row in models.commodities %} {{ row.commodityName.value }}{%if !forloop.last%}, {% endif %}{% endfor %}</td>
                   </tr>
                   <tr>
                     <td class="project-label">Status:</td>
@@ -135,15 +143,17 @@
       </div><!--row-->
       
       <h2>Production Stats</h2>
+      {% if models.production_stats|length %}
        <table class="table table-striped production_stats">
         <thead>
-          <tr><th>Year</th><th>Volume</th><th>Unit</th><th>Price</th><th>Price per unit</th><th>ID</th></tr>
+          <tr><th>Year</th><th>Volume</th><th>Unit</th><th>Commodity</th><th>Price</th><th>Price per unit</th><th>ID</th></tr>
         </thead>
       {% for row in models.production_stats %} 
        <tr>
           <td>{{ row.year.value }}</td>
           <td>{{ row.volume.value }}</td>
           <td>{{ row.unit.value }}</td>
+          <td>{{ row.commodity.value }}</td>
           <td>{{ row.price.value }}</td>
           <td>{{ row.priceUnit.value }}</td>
           <td><a href="{{ row.stats.value }} "><span data-toggle="tooltip" data-placement="left" title="{{ row.stats.value|explode:"/"|pop }}" class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></td>
@@ -151,8 +161,12 @@
         {% endfor %}
       </table>
 
+      {% else %}
+      <p>No data available</p>
+      {% endif %}
 
       <h2>Payments</h2>
+      {% if models.payments|length OR models.receipt|length %}
       <table class="table table-striped payments">
         <thead>
           <tr><th>Year</th><th>Paid by</th><th>Paid to</th><th>Payment or receipt?</th><th>Payment Type</th><th>Currency</th><th>Value</th><th>ID</th></tr>
@@ -200,6 +214,9 @@
         </tr>
         {% endfor %}
       </table>
+      {% else %}
+      <p>No data available</p>
+      {% endif %}
 
       {%include "../../includes/advanced_links.inc"%}
       
