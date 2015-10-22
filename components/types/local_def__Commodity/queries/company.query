@@ -1,0 +1,17 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT ?company ?company_name ?group ?group_name WHERE {
+
+    ?project rp:hasCommodity <{{uri}}> .
+    ?project  rp:hasStake ?stake .
+    ?stake rp:hasStakeholder ?company .
+    ?company a rp:Company
+    OPTIONAL { ?company skos:prefLabel ?company_name } 
+    
+    OPTIONAL { ?groupMembership rp:organisation ?company .
+               ?group rp:groupMember ?groupMembership .
+               ?group skos:prefLabel ?group_name
+    }
+}
+GROUP BY ?company 
+ORDER BY ?company_name

@@ -346,3 +346,21 @@ class TestMapPage:
 def test_payments_table (browser, page):
     browser.get(server_url + page)
     assert 'Taxes levied on the income, production or profits of companies,' not in browser.find_element_by_css_selector('.payments').text
+
+
+class TestCommodityPage:
+    @pytest.fixture(autouse=True, scope='module')
+    def load_project_page(self, browser):
+        browser.get(server_url + '/commodity/Copper')
+
+    @pytest.mark.parametrize(('table_css', 'expected_headers'), [
+        ('.companies', ['Name', 'Group']),
+        ('.projects', ['Name', 'Country']),
+    ])
+    def test_table_columns (self, browser, table_css, expected_headers):
+        '''Tables in the commodity page'''
+        table = browser.find_element_by_css_selector(table_css)
+        table_headers = table.find_elements_by_tag_name('th')
+        table_headers_text = [ x.text for x in table_headers ]
+        assert table_headers_text == expected_headers
+

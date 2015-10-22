@@ -1,0 +1,14 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT  ?commodities ?commodity_name (COUNT(DISTINCT ?project) as ?pCount) WHERE {
+        ?commodities a rp:Commodity .
+        ?commodities skos:prefLabel ?commodity_name .
+        ?commodities rp:commodityType ?commodityType .
+        FILTER (str(?commodity_name) != "") 
+
+        OPTIONAL {  ?project rp:hasCommodity ?commodities .
+                    ?project skos:prefLabel ?project_name
+        }
+}
+ORDER BY (?commodity_name)
+
