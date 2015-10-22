@@ -284,3 +284,15 @@ class TestSitePage:
         table_cells = browser.find_elements_by_css_selector('.project-label')
         table_cells_text =  set([ x.text for x in table_cells ])
         assert table_cells_text == expected_cells
+
+
+class TestMapPage:
+    @pytest.fixture(autouse=True, scope='module')
+    def load_project_page(self, browser):
+        browser.get(server_url + 'map')
+    
+    def test_page_title (self, browser):
+        assert 'Projects Map' in browser.find_element_by_tag_name('h1').text
+    
+    #def test_map_present (self, browser):
+    #    browser.find_elements_by_css_selector('.leaflet-map-pane')
