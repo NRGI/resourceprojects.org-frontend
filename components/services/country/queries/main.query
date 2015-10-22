@@ -3,7 +3,9 @@ prefix rp: <http://resourceprojects.org/def/>
 SELECT ?country  ?countryName ?countryCode  count(distinct ?project) as ?projectCount  WHERE {
 
    ?project a rp:Project.
+   ?project skos:prefLabel ?name .
    ?project rp:hasLocation ?country.
+   
    ?country a rp:Country.
    ?country skos:prefLabel ?countryName.
    ?country rp:identifier ?countryCode.
