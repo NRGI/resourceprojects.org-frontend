@@ -25,6 +25,9 @@ if ($lodspk['prev'] <= 0) {
     }
 
 $conf['endpoint']['local'] = 'SPARQL_ENDPOINT';
+$conf['endpointParams']['config'] = array(
+    'default-graph-uri' => 'DEFAULT_GRAPH_URI'
+);
 $conf['home'] = '/var/www/html/lodspeakr/';
 $conf['basedir'] = 'BASE_URL';
 $conf['debug'] = false;
