@@ -169,7 +169,15 @@ class TestCountryPage:
         download_text = set([ x.text for x in downloads ])
         assert expected_download_text == download_text
 
+    @pytest.mark.parametrize(('expected_headers'), [
+        ('Status'),
+        ('Company Grooup'),
+        ('Commodity')
+    ])
+    def test_filters_are_gone (self, browser, expected_headers):
+        assert expected_headers not in browser.find_element_by_tag_name('h4').text
 
+    
 class TestCompanyPage:
     @pytest.fixture(autouse=True, scope='module')
     def load_company_page(self, browser):

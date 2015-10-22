@@ -4,7 +4,7 @@
           <h1>{{first.main.name.value}} <small>Country</small></h1>
       </div>
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
           <div id="map"></div>
           <script type="text/javascript">
             var map = L.map('map',{ fullscreenControl: true }).setView([{{first.main.lat.value}}, {{first.main.long.value}}], 5);
@@ -25,10 +25,10 @@
           
         </div>
         
-        <div class="col-md-2">
-          <div id="filters">
+        <!--<div class="col-md-2">
+          <div id="filters">-->
             <!--<h3>Filters</h3>-->
-            <h4>Project</h4>
+            <!--<h4>Commodity</h4>
             <form method="get">
               <input type="checkbox" name="commodity[]" value="Oil and Gas" {% if 'Oil and Gas' in lodspk.GET.commodity %}checked{% endif %} /> Oil and Gas <br />
               <input type="checkbox" name="commodity[]" value="Mining" {% if 'Mining' in lodspk.GET.commodity %}checked{% endif %} /> Mining <br />
@@ -42,13 +42,14 @@
                 <option value="saab">BP</option>
                 <option value="mercedes">Tullow</option>
               </select>
-
-              <input type="submit" value="Submit now" />
+              
+              <br>
+              <input type="submit" value="Submit" />
             </form>
           </div>
           
         
-        </div>
+        </div>-->
       </div><!--end row-->
      
 
