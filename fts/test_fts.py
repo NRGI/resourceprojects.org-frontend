@@ -157,7 +157,7 @@ class TestCountryPage:
         '''Counts the number of expected rows'''
         table = browser.find_element_by_css_selector('.projects')
         rows = table.find_elements_by_tag_name('tr')
-        assert len(rows) == 20
+        assert len(rows) == 16
     
     def test_download_links (self, browser):
         expected_download_text = set([
@@ -175,7 +175,7 @@ class TestCountryPage:
 class TestCompanyPage:
     @pytest.fixture(autouse=True, scope='module')
     def load_company_page(self, browser):
-        browser.get(server_url + 'company/140af236fafe23da')
+        browser.get(server_url + 'company/5b682b0b720c3597')
 
     def test_company_page(self, browser):
         '''Company page table titles'''
@@ -210,7 +210,7 @@ class TestCompanyPage:
 class TestProjectPage:
     @pytest.fixture(autouse=True, scope='module')
     def load_project_page(self, browser):
-        browser.get(server_url + 'project/AO/bl0-0q2anl')
+        browser.get(server_url + 'project/AO/bl0-c9kv88')
 
     @pytest.mark.parametrize(('table_css', 'expected_headers'), [
         ('.companies', ['Name', 'Group']),
@@ -265,25 +265,6 @@ def test_glossary_page(browser):
     section_titles = browser.find_elements_by_tag_name('h2')
     section_titles_text = set([ x.text for x in section_titles ])
     assert expected_headings == section_titles_text
-
-
-class TestSitePage:
-    @pytest.fixture(autouse=True, scope='module')
-    def load_project_page(self, browser):
-        browser.get(server_url + 'site/XX/mano-87nv9k')
-
-    def test_table_rows (self, browser):
-        '''Sites Info'''
-        expected_cells= set([
-            ('Country:'),
-            ('Project:'),
-            ('Notes:'),
-            ('Co-ordinates (lat,lng):'),
-            ('Commodity:')
-        ])
-        table_cells = browser.find_elements_by_css_selector('.project-label')
-        table_cells_text =  set([ x.text for x in table_cells ])
-        assert table_cells_text == expected_cells
 
 
 class TestMapPage:
