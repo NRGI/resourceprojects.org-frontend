@@ -79,10 +79,10 @@ def test_projects_page(browser):
     #Test data in first row matches text data from our fixture
     table = browser.find_element_by_id('projects')
     rows = table.find_elements_by_tag_name('tr')
-    assert 'Angola' in rows[1].text
-    assert 'Block 0 A' in rows[1].text
-    assert 'Oil and Gas' in rows[1].text
-    assert '4' in rows[1].text
+    assert 'Angola' in rows[20].text
+    assert 'Block 0 A' in rows[20].text
+    assert 'Oil and Gas' in rows[20].text
+    assert '4' in rows[20].text
 
 
 
