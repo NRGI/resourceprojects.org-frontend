@@ -187,7 +187,7 @@ div.advanced-links {
   display:inline;
 }
 
-#map, #filters, #info-box { height: 480px; }
+#map, #filters, #info-box { height: 240px; }
 
 #filters, #info-box {
   border:1px solid #eee;

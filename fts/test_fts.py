@@ -328,6 +328,46 @@ class TestProjectPage2:
         assert found_text == expected_text
         
 
+class TestCompanyGroupPage:
+    @pytest.fixture(autouse=True, scope='module')
+    def load_project_page(self, browser):
+        browser.get(server_url + 'group/bp-3067') #BP
+
+    @pytest.mark.parametrize(('css', 'expected_no_rows'), [
+        ('.companies', 2),
+        ('.projects', 5),
+        #('.payments', 10),
+    ])
+    def test_company_table_rows (self, browser, css, expected_no_rows):
+        '''Counts the number of expected rows'''
+        table = browser.find_element_by_css_selector(css)
+        rows = table.find_elements_by_tag_name('tr')
+        assert len(rows) == expected_no_rows
+
+    def test_project_info_table (self, browser):
+        '''Group Info'''
+        expected_cells= set([
+            ('Our Company Group ID:'),
+        ])
+        table_cells = browser.find_elements_by_css_selector('.project-label')
+        table_cells_text =  set([ x.text for x in table_cells ])
+        assert table_cells_text == expected_cells 
+    
+    #NB BP only has no data in this table with current test fixture data
+    def test_empty_payments_table (self, browser):
+        assert 'No data available' in browser.find_element_by_css_selector('.no-data').text
+        
+    def test_download_links (self, browser):
+        expected_download_text = set([
+            #('Download: Payments CSV'), # Not in this company group as it has no payments!
+            ('Download: Companies CSV'),
+            ('Download: Projects CSV') 
+        ])
+        downloads = browser.find_elements_by_css_selector('.download')
+        download_text = set([ x.text for x in downloads ])
+        assert expected_download_text == download_text
+
+
 def test_glossary_page(browser):
     browser.get(server_url + 'glossary.html')
     assert "Glossary" in browser.find_element_by_tag_name('h1').text

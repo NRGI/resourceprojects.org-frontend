@@ -18,5 +18,7 @@ SELECT ?companyPayment ?company ?company_name ?paymentOrReceipt ?payee ?payee_na
     OPTIONAL { ?companyPayment rp:value ?amount } 
     OPTIONAL { ?companyPayment rp:date ?date } 
     OPTIONAL { ?companyPayment rp:year ?year }
-    OPTIONAL { ?companyPayment rp_misc:type ?type }
+    OPTIONAL { ?companyPayment rp:paymentType ?paymentType.
+               ?paymentType skos_:prefLabel ?type.
+    }
 }
