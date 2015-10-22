@@ -1,5 +1,5 @@
 prefix rp: <http://resourceprojects.org/def/>
-prefix rp_misc: <http://resourceprojects.org/def/misc/>
+
 # We can't use the prefix 'skos' as lodspeakr will then put a prefix satement
 # before the DEFINE statement, which is not allowed.
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
@@ -8,19 +8,25 @@ SELECT ?companyPayment ?company ?paymentOrReceipt ?country ?country_name ?compan
 
         ?companyPayment rp:relatedProject <{{uri}}> .
         ?companyPayment a rp:CompanyPayment .
-        ?companyPayment rp:payer ?company .
         ?companyPayment a ?paymentOrReceipt
         
         OPTIONAL { ?companyPayment rp:payee ?country .
-                   ?country skos_:prefLabel ?country_name }
-        OPTIONAL { ?company skos_:prefLabel ?company_name }
+                   ?country skos_:prefLabel ?country_name 
+        }
+        OPTIONAL { ?companyPayment rp:payer ?company .
+                   ?company skos_:prefLabel ?company_name 
+        }
         OPTIONAL { ?companyPayment rp:currency ?currency }
         OPTIONAL { ?companyPayment rp:value ?amount } 
         OPTIONAL { ?companyPayment rp:date ?date } 
         OPTIONAL { ?companyPayment rp:year ?year }
-        OPTIONAL { ?companyPayment rp_misc:type ?type }
         OPTIONAL { ?companyPayment rp:paymentType ?paymentType .
-               ?paymentType skos_:prefLabel ?type }
+                   ?paymentType skos_:prefLabel ?type 
+        }
+        
+        #The filter is needed because this project name is used twice: 
+        #https://github.com/NRGI/resourceprojects.org-frontend/issues/197
+        FILTER (str(?type) != "Taxes levied on the income, production or profits of companies,")
 
 }
 GROUP BY ?companyPayment

@@ -15,8 +15,11 @@ SELECT ?transaction ?paymentOrReceipt ?payee_name ?currency (replace(?amount,","
     OPTIONAL { ?transaction rp:date ?date } 
     OPTIONAL { ?transaction rp:year ?year }
     OPTIONAL { ?transaction rp:paymentType ?paymentType.
-               ?paymentType skos:prefLabel ?type.
+               ?paymentType skos:prefLabel ?type
     }
-    
+    #The filter is needed because this project name is used twice: 
+    #https://github.com/NRGI/resourceprojects.org-frontend/issues/197
+    FILTER (str(?type) != "Taxes levied on the income, production or profits of companies,")
 }
 GROUP BY ?transaction
+ORDER BY ?date ?year
