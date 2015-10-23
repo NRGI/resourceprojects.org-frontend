@@ -15,7 +15,7 @@
     
     <table class="table table-striped" about="{{uri}}">
           <thead>
-            <tr><th>Source</th><th>Source type</th><th>Source date</th><th>Contributor</th><th>Details</th></tr>
+            <tr><th>Source</th><th>Source type</th><th>Source date</th><th>Details</th></tr>
           </thead>
 
           {% for row in models.main %}
@@ -23,7 +23,6 @@
                 <td><a href="{{ row.source.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.company.curie }}{% endif %}</a></td>
                 <td>{{row.sourceType.value}}</td>
                 <td>{{ row.sourceDate.value|date:"Y-m-d"}} </td>
-                <td><a href="{{row.contributor_link.value }}">{{ row.contributor_name.value }}</a> </td>
                 <td><a href="{{ row.source.value }}">Details</a></td>
             </tr>
             {% endfor %}

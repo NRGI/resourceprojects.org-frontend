@@ -1,25 +1,19 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 prefix rp: <http://resourceprojects.org/def/>
 prefix prov: <http://www.w3.org/ns/prov#>
 
-SELECT DISTINCT ?name ?source ?sourceDate ?description ?retrievedDate ?sourceType ?url ?contributor_name ?mail_box ?contributor_link WHERE {
-    <{{lodspk.args.all|deurifier}}> prov:wasDerivedFrom ?sources .
-    ?source prov:wasDerivedFrom ?sources .
-    ?source a rp:Source
-    OPTIONAL {
-        ?source skos:prefLabel ?name .
-        ?source rp:sourceDate ?sourceDate .
-        ?source rp:description ?description .
-        ?source rp:retrievedDate ?retrievedDate .
-        ?source rp:sourceType ?sourceType .
-        ?source rp:url ?url
-        }
-    OPTIONAL {
-        ?source rp:wasAttributedTo ?contributor .
-        ?contributor skos:prefLabel ?contributor_name .
-        ?contributor rp:mbox ?mail_box .
-        ?contributor rp:url ?contributor_link
-      }
-        
-} 
-GROUP BY (?name)
+SELECT DISTINCT * WHERE {
+  GRAPH ?graph {
+    <http://resourceprojects.org/company/56519873ff2225f8> rp:source ?source .
+    ?source skos:prefLabel ?sourceName.
+    <http://resourceprojects.org/company/56519873ff2225f8> prov:wasDerivedFrom ?sourceRow .
+    OPTIONAL { ?sourceRow prov:wasDerivedFrom ?sourceTable. 
+    ?sourceTable rp:sheet ?sourceTableName. }
+   }
+
+
+}
+GROUP BY (?sourceName)
+ORDER BY ASC(?sourceName)
 LIMIT {{lodspk.maxResults}}

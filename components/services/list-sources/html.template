@@ -9,15 +9,23 @@
       This website is built up through user contributions, transforming company reports and filings into accessible open data. Find out <a href="/contribute.html">how you can contribute here</a>.
       </p>
 
-    The page at <a href="{{first.instance.uri.value}}">{{first.instance.uri.value}}</a> has data from:
+    The resource <a href="{{first.instance.uri.value}}">{{first.instance.uri.value}}</a> has data from the following sources.
 
-    <ul>
+   <ul>
       {% for row in models.main %}
-    <li><a href="{{ row.source.value }}">{{ row.name.value }}</a></li>
+        {% if row.source.value != source %}
+           {% if second == 1 %}</ul></li>{%endif%}<li><h4><a href="{{row.source.value}}">{{ row.sourceName.value }}</a></h4>
+           <p><strong>Converted from graph:</strong> {{ row.graph.value}}</p>
+	   <p><strong>With content in sheets:</strong>
+              <ul>
+        {%endif%}
+	      <li>{{row.sourceTableName.value}} on or around row {{row.sourceRow.value|explode:"/"|pop}}</li>
+        {% set source = first.main.source.value %}{% set second = 1 %}
       {% endfor %}
-    </ul>
-<!--
-<div class="advanced-links">
+      {%if second == 1 %}</ul></li>{%endif%}
+   </ul>
+
+<!-- <div class="advanced-links">
   <div class="container">
     <h3>Links <small>Advanced</small></h3>
     <ul>

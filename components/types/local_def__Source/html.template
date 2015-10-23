@@ -12,7 +12,7 @@
         </tr>
         <tr>
             <th>Type</th>
-            <td>{{ row.type.value }}</td>
+            <td>{{ row.sourceType.value }}</td>
         </tr>
         <tr>
             <th>Source date</th>
@@ -24,11 +24,11 @@
         </tr>
         <tr>
             <th>Access source</th>
-            <td><a href="{{ row.url.value }}">Link</a></td>
+            <td><a href="{{ row.url.value }}">Link</a> ({{row.urlType.value}}) {% if row.archiveCopy.value %} <a href="{{row.archiveCopy.value}}">Archive copy</a>{% endif%}</td>
         </tr>
         <tr>
-             <th>Contributor</th>
-             <td><a href="{{ row.contributor_link.value }}">{{ row.contributor_name.value }}</a> {%if row.mail_box.value %}(<a href="mailto:{{ row.mail_box.value }}">{{ row.mail_box.value }}</a>){%endif%}</td>
+            <th>Found in graph</th>
+	    <td>{{row.graph.curie}}</td>
         </tr>
       </table>
     {% endfor %}    
