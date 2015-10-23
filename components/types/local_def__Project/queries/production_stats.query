@@ -14,6 +14,9 @@ SELECT * WHERE {
           OPTIONAL { ?stats rp:unit ?unit }
           OPTIONAL { ?stats rp:volume ?volume }
           OPTIONAL { ?stats rp:year ?year }
+          OPTIONAL { ?stats rp:hasCommodity ?commodity .
+              ?commodity skos_:prefLabel ?commodityName 
+          }
           
         }
 } 

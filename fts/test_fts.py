@@ -200,7 +200,7 @@ class TestCountryPage:
 
     @pytest.mark.parametrize(('expected_headers'), [
         ('Status'),
-        ('Company Grooup'),
+        ('Company Group'),
         ('Commodity')
     ])
     def test_filters_are_gone (self, browser, expected_headers):
@@ -345,6 +345,10 @@ class TestProjectPage:
         downloads = browser.find_elements_by_css_selector('.download')
         download_text = set([ x.text for x in downloads ])
         assert expected_download_text == download_text
+        
+    def test_production_stats_table (self, browser): 
+        table = browser.find_element_by_css_selector('.production_stats')
+        assert 'Oil' in table.text
 
 
 class TestProjectPage2:
