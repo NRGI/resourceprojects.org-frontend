@@ -7,6 +7,7 @@ SELECT  ?commodities ?commodity_name (COUNT(DISTINCT ?project) as ?pCount) WHERE
         FILTER (str(?commodity_name) != "") 
 
         OPTIONAL {  ?project rp:hasCommodity ?commodities .
+                    ?project a rp:Project .
                     ?project skos:prefLabel ?project_name
         }
 }
