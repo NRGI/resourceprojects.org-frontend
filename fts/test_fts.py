@@ -127,6 +127,28 @@ def test_company_groups_page(browser):
     #Page title
     assert 'Company Groups' in browser.find_element_by_tag_name('h1').text
     assert 'Switch to Companies view' in browser.find_element_by_tag_name('button').text
+
+
+def test_commodities_page(browser):
+    '''Commodities List page'''
+    #Table headers
+    expected_headers = set([
+        ('Name'),
+        ('No. Projects')
+    ])
+    browser.get(server_url + 'commodity')
+    #assert "Natural Resource Governance Institute" in browser.title
+    table_headers = browser.find_elements_by_tag_name('th')
+    table_headers_text = set([ x.text for x in table_headers ])
+    assert expected_headers == table_headers_text
+    #Page title
+    assert 'Commodities' in browser.find_element_by_tag_name('h1').text
+
+    #Test data in first row matches text data from our fixture
+    table = browser.find_element_by_id('commodities')
+    rows = table.find_elements_by_tag_name('tr')
+    assert 'Bauxite' in rows[1].text
+    assert '2' in rows[1].text
     
     
 ## Idividual pages tests
