@@ -39,7 +39,7 @@
               </tr>
               <tr>
                 <td class="project-label website">Website:</td>
-                <td><a href="{{first.main.website.value}}">{{first.main.website.value}}</a></td>
+                <td><a href="{{first.company.website.value}}">{{first.company.website.value|truncatechars:60}}</a></td>
               </tr>
               <tr>
                 <td class="project-label country">Country:</td>
@@ -55,7 +55,7 @@
               </tr>
               <tr>
                 <td class="project-label open-corporates">Open Corporates:</td>
-                <td> <a href="{{first.main.openCorporatesURL.value}}">{{first.main.openCorporatesURL.value}}</a></td>
+                <td> <a href="{{first.company.openCorporatesURL.value}}">{{first.company.openCorporatesURL.value|truncatechars:60}}</a></td>
               </tr>
               
             </table>
