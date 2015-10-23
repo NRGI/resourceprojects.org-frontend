@@ -5,9 +5,10 @@ SELECT DISTINCT ?groups ?name (COUNT(DISTINCT ?company) as ?cCount) (COUNT(DISTI
     ?groups rp:groupMember ?members .
     ?members rp:organisation ?company
     OPTIONAL { ?groups skos:prefLabel ?name }
-    OPTIONAL {  ?stake rp:isStakeIn ?company .    
+    OPTIONAL {  ?stake rp:hasStakeholder ?company .    
                 ?stake rp:isStakeIn ?project .
-                ?project a rp:Project
+                ?project a rp:Project .
+                ?project skos:prefLabel ?project_name
               }
 }
 ORDER BY (?name)
