@@ -60,21 +60,13 @@
               
             </table>
             
-
-
-            <!--<p>Description (with provenance of description?)</p>-->
-            <!--<p>
-            Active in:
-             {% for row in models.countries %}
-             <a href="{{ row.country.value }}">{{ row.country_name.value }}</a>{%if !forloop.last%},{% endif %}
-             {% endfor %}
-            </p>-->
           </div>
         </div>
         
         <div class="col-md-6">
           <h2>Projects</h2>
-          <table class="table table-striped">
+          {% if models.projects|length %}
+          <table class="table table-striped projects">
             <thead>
               <tr><th>Name</th><th>Country</th><th>Commodity Type</th><!--<th>Share</th>--></tr>
             </thead>
@@ -90,6 +82,9 @@
           <div class="download">
             <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.projects|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Projects CSV</a></span>
           </div>
+          {% else %}
+          <p class="no-data">No data available</p>
+          {%endif%}
         </div>
         
       </div><!--end row-->

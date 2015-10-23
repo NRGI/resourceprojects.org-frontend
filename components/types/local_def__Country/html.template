@@ -56,9 +56,7 @@
       <div class="row">
         <div class="col-md-6">
           <h2>Projects</h2>
-         
-          
-
+          {% if models.projects|length %}
           <table class="table table-striped projects">
           <thead>
             <tr><th>Name</th><th>Commodity</th><th>Status</th><th>No. Companies</th></tr>
@@ -86,13 +84,14 @@
           <div class="download">
             <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.projects|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Projects CSV</a></span>
           </div>
-
+          {% else %}
+          <p class="no-data">No data available</p>
+          {%endif%}
         </div>
+        
         <div class="col-md-6">
           <h2>Companies <small>Companies active in this country</small></h2>
-
-         
-
+          {% if models.companies|length %}
           <table class="table table-striped companies">
           <thead>
             <tr><th>Name</th><th>Group</th></tr>
@@ -108,10 +107,14 @@
           <div class="download">
             <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.companies|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Companies CSV</a>
           </div>
+          {% else %}
+          <p class="no-data">No data available</p>
+          {%endif%}
         </div>
       </div>
 
       <h2>Payments</h2>
+      {% if models.payments|length %}
       <table class="table table-striped payments">
         <thead>
           <tr><th>Year</th><th>Project</th><th>Paid by</th><th>Payment Type</th><th>Currency</th><th>Value</th><th>Payment or receipt?</th><th>ID</th></tr>
@@ -141,6 +144,9 @@
       <div class="download">
         <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.payments|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Payments CSV</a>
       </div>
+      {% else %}
+      <p class="no-data">No data available</p>
+      {%endif%}
       
       {%include "../../includes/advanced_links.inc"%}
       
