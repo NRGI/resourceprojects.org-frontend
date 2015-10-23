@@ -86,6 +86,10 @@ def test_projects_page(browser):
     assert 'Block 0 A' in rows[22].text
     assert 'Oil and Gas' in rows[22].text
     assert '4' in rows[22].text
+    
+    #Test link to map page exists
+    assert 'Projects Map' in browser.find_element_by_css_selector('.page-header').text
+    #could add a click through to see if we get to /map
 
 
 
