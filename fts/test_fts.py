@@ -56,6 +56,9 @@ def test_countries_page(browser):
     assert expected_headers == table_headers_text
     #Page title
     assert 'Countries' in browser.find_element_by_tag_name('h1').text
+    # All 'count' cells have css class="count"
+    # This works while we only have one country in our fixtures
+    assert '15' in browser.find_element_by_css_selector('.count').text
 
 
 def test_projects_page(browser):
