@@ -2,7 +2,16 @@
   
 <div class="container">
   <div class="page-header">
-    <h1>Projects <small></small></h1>
+    <div class="row">
+      <div class="col-md-3">
+        <h1>Projects <small></small></h1>
+      </div>
+      <div class="col-md-3">
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-default"><a href="/map">Projects Map</a></button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="dropdown">Showing {{lodspk.offset}} to {% if lodspk.next < first.count.uriCount.value %}{{lodspk.next}}{% else %}{{first.count.uriCount.value}}{% endif %} of {{first.count.uriCount.value}} projects. Number of records per page:
