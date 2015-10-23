@@ -26,7 +26,8 @@ class TestIndexPage:
         ('Projects'),
         ('Countries'),
         ('Companies'),
-        ('Data sources'),
+        ('Commodities'),
+        ('Sources'),
         ('Glossary')
         ])
     def test_main_nav(self, browser, nav_item):
@@ -86,7 +87,6 @@ def test_projects_page(browser):
     assert 'Block 0 A' in rows[22].text
     assert 'Oil and Gas' in rows[22].text
     assert '4' in rows[22].text
-
 
 
 def test_companies_page(browser):
