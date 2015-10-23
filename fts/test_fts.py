@@ -26,7 +26,8 @@ class TestIndexPage:
         ('Projects'),
         ('Countries'),
         ('Companies'),
-        ('Data sources'),
+        ('Commodities'),
+        ('Sources'),
         ('Glossary')
         ])
     def test_main_nav(self, browser, nav_item):
@@ -90,7 +91,6 @@ def test_projects_page(browser):
     #Test link to map page exists
     assert 'Projects Map' in browser.find_element_by_css_selector('.page-header').text
     #could add a click through to see if we get to /map
-
 
 
 def test_companies_page(browser):

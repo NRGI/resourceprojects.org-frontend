@@ -48,7 +48,8 @@
               <li><a href="/project">Projects</a></li>
               <li><a href="/country">Countries</a></li>
               <li><a href="/company">Companies</a></li>
-              <li><a href="/source">Data sources</a></li>
+              <li><a href="/commodity">Commodities</a></li>
+              <li><a href="/source">Sources</a></li>
               <li><a href="/glossary.html">Glossary</a></li>
             </ul>
             <form class="navbar-search pull-left" action="">
