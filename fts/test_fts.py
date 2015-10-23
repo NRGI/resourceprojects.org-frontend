@@ -200,10 +200,10 @@ class TestCompanyPage:
         table_headers = browser.find_elements_by_tag_name('th')
         table_headers_text = set([ x.text for x in table_headers ])
         assert expected_headers <= table_headers_text
-        
+    '''
     def test_empty_payments_table (self, browser):
         assert 'No data available' in browser.find_element_by_css_selector('.no-data').text
-    
+    '''
     def test_company_info_table (self, browser):
         '''Company Info'''
         expected_cells= set([
@@ -234,7 +234,7 @@ class TestCompanyPage2:
         
     def test_download_links (self, browser):
         expected_download_text = set([
-            ('Download: Payments CSV'),
+            #('Download: Payments CSV'),
             ('Download: Projects CSV')
         ])
         downloads = browser.find_elements_by_css_selector('.download')
