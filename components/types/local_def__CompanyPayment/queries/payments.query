@@ -22,3 +22,4 @@ SELECT ?currency ?date ?year ?payer ?payee ?payer_name ?payee_name ?type ?paymen
         ?payee skos_:prefLabel ?payee_name
      }
 }
+LIMIT 1
