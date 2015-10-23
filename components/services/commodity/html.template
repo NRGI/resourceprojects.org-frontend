@@ -1,0 +1,25 @@
+{%include "../../includes/header.inc"%}
+  
+<div class="container">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Commodities</h1>
+      </div>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+  <thead>
+    <tr><th>Name</th><th>No. Projects</th></tr>
+  </thead>
+  {% for row in models.main %}    
+  <tr>
+      <td><a href="{{row.commodities.value}}">{{ row.commodity_name.value }}</a></td>
+      <td>{{ row.pCount.value }}</td>
+  </tr>
+  {% endfor %}
+  </table>
+</div>
+
+{%include "../../includes/footer.inc"%}

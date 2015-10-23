@@ -1,0 +1,18 @@
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+prefix skos_: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?project ?name ?country_name WHERE {
+   
+
+    ?project rp:hasCommodity <{{uri}}> .
+    ?project a rp:Project  .
+    ?project skos:prefLabel ?name .
+    ?project rp:hasLocation ?country .
+    ?country a rp:Country .
+    ?country skos_:prefLabel ?country_name 
+
+
+}
+GROUP BY ?project ?name
+ORDER BY ?name
