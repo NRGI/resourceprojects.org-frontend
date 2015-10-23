@@ -5,15 +5,17 @@ prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 SELECT ?project ?name ?country_name ?commodityType WHERE {
     <{{uri}}> rp:groupMember ?members .
     ?members rp:organisation ?company .
-    ?company rp:hasStake ?stakes .
+    ?company rp:holdsStake ?stakes .
     ?stakes rp:isStakeIn ?project .
     ?project a rp:Project  .
     ?project skos_:prefLabel ?name .
     ?project rp:hasLocation ?country .
+    ?country a rp:Country .
     ?country skos_:prefLabel ?country_name 
-    OPTIONAL { ?participant rp_misc:share ?share }
-    OPTIONAL { ?project rp:commodity ?commodity .
-              ?commodity rp_misc:commodityType ?commodityType }
+    
+    OPTIONAL { ?project rp:hasCommodity ?commodity .
+               ?commodity rp:commodityType ?commodityType 
+    }
 
 }
 GROUP BY ?project ?name
