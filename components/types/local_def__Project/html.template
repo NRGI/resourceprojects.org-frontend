@@ -35,96 +35,90 @@
         <div class="col-md-6">
           <div class="info-box">
             <h2>Project Info</h2>
-                <table id="project-info">
-                  <tr>
-                    <td class="project-label">ID:</td>
-                    <td>{% for i,path_item in uri|explode:"/" %}
-                      {% if i >= 4  %}
-                        {{ path_item }}
-                          {% if i == 4  %}
-                             /
-                          {% endif %}
+            <table id="project-info">
+              <tr>
+                <td class="project-label">ID:</td>
+                <td>{% for i,path_item in uri|explode:"/" %}
+                  {% if i >= 4  %}
+                    {{ path_item }}
+                      {% if i == 4  %}
+                         /
                       {% endif %}
-                    {% endfor %}</td>
-                  </tr>
-                  <tr>
-                    <td class="project-label">Country:</td>
-                    <td><a href="{{ first.main.country.value }}">{{ first.main.country_name.value }}</a></td>
-                  </tr>
-                  <tr>
-                    <td class="project-label">Aliases:</td>
-                    <td class="aliases">{% for row in models.alias %} {{ row.altLabel.value }}, {% endfor %}</td>
-                  </tr>
-                  <tr>
-                    <td class="project-label">Commodity Type(s):</td>
-                    <td class="commodity-types">
-                      {% for row in models.commodities %} 
-                        {%if lastSeenStatus != row.commodityType.value %}
-                          {{ row.commodityType.value }}, 
-                          {% set lastSeenStatus = row.commodityType.value %}
-                        {% endif %}
-                      {% endfor %}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="project-label">Commodities:</td>
-                    <td class="commodities">{% for row in models.commodities %} {{ row.commodityName.value }}, {% endfor %}</td>
-                  </tr>
-                  <tr>
-                    <td class="project-label">Status:</td>
-                    <td class="status">
-                    {% for row in models.status %} 
-                      {{ row.statusType.value}} (True at: {{row.trueAtDate.value|date:"Y-m-d"}})</br>
+                  {% endif %}
+                {% endfor %}</td>
+              </tr>
+              <tr>
+                <td class="project-label">Country:</td>
+                <td><a href="{{ first.main.country.value }}">{{ first.main.country_name.value }}</a></td>
+              </tr>
+              <tr>
+                <td class="project-label">Aliases:</td>
+                <td class="aliases">{% for row in models.alias %} {{ row.altLabel.value }}, {% endfor %}</td>
+              </tr>
+              <tr>
+                <td class="project-label">Commodity Type(s):</td>
+                <td class="commodity-types">
+                  {% for row in models.commodities %} 
+                    {%if lastSeenStatus != row.commodityType.value %}
+                      {{ row.commodityType.value }}, 
+                      {% set lastSeenStatus = row.commodityType.value %}
+                    {% endif %}
+                  {% endfor %}
+                </td>
+              </tr>
+              <tr>
+                <td class="project-label">Commodities:</td>
+                <td class="commodities">{% for row in models.commodities %} <a href="{{ row.commodity.value }}">{{ row.commodityName.value }}</a>, {% endfor %}</td>
+              </tr>
+              <tr>
+                <td class="project-label">Status:</td>
+                <td class="status">
+                {% for row in models.status %} 
+                  {{ row.statusType.value}} (True at: {{row.trueAtDate.value|date:"Y-m-d"}})</br>
+                {% endfor %}
+              </td>
+              </tr>
+              <tr>
+                <td class="project-label">Associated Contracts:</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="project-label">Associated Concessions:</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="project-label" colspan="2">Location(s)
+                  {% for row in models.sites %} 
+                    {%  if forloop.first %}
+                    <table class="table table-striped locations">
+                      <tr>
+                        <th>Name</th>
+                        <th>Lat</th>
+                        <th>Lng</th>
+                      </tr>
+                    {% endif %} 
+                    
+                     
+                      <tr>
+                        <td>
+                          {% if row.site_name.value == "" %}
+                            {{ row.site.value| explode:"/"|pop }}
+                          {% else %}
+                            {{ row.site_name.value }}
+                          {% endif %}
+                        </td>
+                        <td>{{ row.lat.value }}</td>
+                        <td>{{ row.lng.value }}</td>
+                      </tr>
+                      
                     {% endfor %}
-                  </td>
-                  </tr>
-                  <tr>
-                    <td class="project-label">Associated Contracts:</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td class="project-label">Associated Concessions:</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td class="project-label" colspan="2">Location(s)
-                      {% for row in models.sites %} 
-                        {%  if forloop.first %}
-                        <table class="table table-striped locations">
-                          <tr>
-                            <th>Name</th>
-                            <th>Lat</th>
-                            <th>Lng</th>
-                          </tr>
-                        {% endif %} 
-                        
-                         
-                          <tr>
-                            <td>
-                              {% if row.site_name.value == "" %}
-                                {{ row.site.value| explode:"/"|pop }}
-                              {% else %}
-                                {{ row.site_name.value }}
-                              {% endif %}
-                            </td>
-                            <td>{{ row.lat.value }}</td>
-                            <td>{{ row.lng.value }}</td>
-                          </tr>
-                          
-                        {% endfor %}
-
-                      </table>
-                    </td>
-                  </tr>
 
                   </table>
-            
-            <!--<h4>Company Group</h4>
-            <select>
-              <option value="volvo">StatOil</option>
-              <option value="saab">BP</option>
-              <option value="mercedes">Tullow</option>
-            </select>    -->        
+                </td>
+              </tr>
+
+          </table>
+                   
             
           </div><!--info-box-->
         </div><!-- col-md-6 -->
@@ -139,15 +133,6 @@
           <tr>
               <td><a href="{{row.company.value}}">{{ row.company_name.value }}</a></td>
               <td><a href="{{row.group.value}}">{{ row.groupName.value }}</a></td>
-              <!--<td>
-                {% if row.share.value  %}
-                    {{ row.share.value }}
-                {% else %}
-                  Not Known
-                {% endif %}
-              
-              </td>-->
-              <!--<td><a href="{{row.company.value}}">{{ row.company.value|explode:"/"|pop }}</a></td>-->
           </tr>
           {% endfor %}
           </table>
@@ -169,7 +154,7 @@
           <td>{{ row.year.value }}</td>
           <td>{{ row.volume.value }}</td>
           <td>{{ row.unit.value }}</td>
-          <td>{{ row.commodity.value }}</td>
+          <td><a href="{{ row.commodity.value }}">{{ row.commodityName.value }}</a></td>
           <td>{{ row.price.value }}</td>
           <td>{{ row.priceUnit.value }}</td>
           <td><a href="{{ row.stats.value }} "><span data-toggle="tooltip" data-placement="left" title="{{ row.stats.value|explode:"/"|pop }}" class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></td>
