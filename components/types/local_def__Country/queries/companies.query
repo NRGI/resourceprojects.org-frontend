@@ -2,23 +2,18 @@ prefix rp: <http://resourceprojects.org/def/>
 
 SELECT DISTINCT ?company ?companyName ?group ?groupName WHERE {
     ?project rp:hasLocation <{{uri}}> .
-    ?project a rp:Project
+    ?project a rp:Project .
+    ?project skos:prefLabel ?project_name
     
     OPTIONAL { ?project rp:hasStake ?stake .
                ?stake rp:hasStakeholder ?company .
                ?company a rp:Company .
-               ?company skos:prefLabel ?companyName .
+               ?company skos:prefLabel ?companyName
         OPTIONAL { ?groupMembership rp:organisation ?company .
                    ?group rp:groupMember ?groupMembership .
                    ?group skos:prefLabel ?groupName
         }
     } 
-    
-    FILTER NOT EXISTS {
-        ?project owl:sameAs ?b
-    }
 } 
 GROUP BY ?company ?companyName
 ORDER BY ?companyName
-
-LIMIT {{lodspk.maxResults}}

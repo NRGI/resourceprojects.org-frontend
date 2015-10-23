@@ -9,16 +9,6 @@ SELECT DISTINCT ?project  ?commodity ?statusType ?commodityLabel ?commodityType 
                ?stake rp:hasStakeholder ?company .
                ?company a rp:Company 
     }
-    OPTIONAL { ?project rp:hasCommodity ?commodity .
-               ?commodity skos:prefLabel ?commodityLabel .
-               ?commodity rp:commodityType ?commodityType 
-    }
-    OPTIONAL { ?project rp:state ?status .
-               ?status rp:statusType ?statusType 
-    }
-    FILTER NOT EXISTS {
-        ?project owl:sameAs ?b
-    }
 } 
 ORDER BY (?name)
 

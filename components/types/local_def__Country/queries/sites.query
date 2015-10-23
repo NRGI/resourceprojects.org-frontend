@@ -3,21 +3,13 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT ?site, ?project, ?lat, ?lng, ?project_name, ?site_name WHERE {
+    
     ?site rp:hasLocation <{{uri}}> .
     ?site a rp:Site .
-    {% if lodspk.GET.commodity %}
-        ?project rp:hasLocation ?site .
-        {% for commodity in lodspk.GET.commodity %}
-           ?project rp:hasCommodity ?commodity .
-           ?commodity rp:commodityType "{{ commodity }}"
-        {% endfor %}
-    {% else %}
-        OPTIONAL { ?project rp:hasLocation ?site }
-    {% endif %}
-
-    OPTIONAL { ?site rp:lat ?lat }
-    OPTIONAL { ?site rp:long ?lng }
+    ?site rp:lat ?lat .
+    ?site rp:long ?lng .
     OPTIONAL { ?site skos:prefLabel ?site_name }
-    OPTIONAL { ?project skos:prefLabel ?project_name }
+    OPTIONAL { ?project rp:hasLocation ?site . 
+               ?project skos:prefLabel ?project_name }
 }
 GROUP BY ?site

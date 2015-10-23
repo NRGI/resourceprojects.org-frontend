@@ -67,8 +67,19 @@
           <tr>
               <td><a href="{{project.project.value}}">{{ project.name.value }}</a></td>
               <!--<td><a href="{{project.project.value}}">{{ project.project.value }}</a></td>-->
-              <td>{{ project.commodityType.value }}</td>
-              <td>{{ project.statusType.value}}</td>
+              <td>
+              {% for row in models.commodities %}
+                {% if row.project.value == project.project.value %}
+                  {{ row.commodityType_name.value }}
+                {% endif %}
+              {% endfor %}
+              </td>
+              <td>{% for row in models.status %}
+                {% if row.project.value == project.project.value %}
+                  {{ row.statusType.value }}
+                {% endif %}
+              {% endfor %}
+              </td>
               <td>{{ project.companyCount.value}}</td>
           </tr>
           {% endfor %}
