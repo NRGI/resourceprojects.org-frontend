@@ -1,0 +1,11 @@
+prefix rp: <http://resourceprojects.org/def/>
+
+SELECT DISTINCT ?project ?statusType WHERE {
+    ?project rp:hasLocation <{{uri}}> .
+    ?project a rp:Project .
+    ?project skos:prefLabel ?name .
+    ?project rp:state ?status .
+    ?status rp:statusType ?statusType 
+} 
+
+
