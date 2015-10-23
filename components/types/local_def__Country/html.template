@@ -68,17 +68,16 @@
               <td><a href="{{project.project.value}}">{{ project.name.value }}</a></td>
               <!--<td><a href="{{project.project.value}}">{{ project.project.value }}</a></td>-->
               <td>
-              {% for row in models.commodities %}
-                {% if row.project.value == project.project.value %}
+                <!-- Don't add whitespace between for and if statements, see
+                     https://github.com/NRGI/resourceprojects.org-frontend/issues/235#issuecomment-150623552 -->
+                {% for row in models.commodities %}{% if row.project.value == project.project.value %}
                   {{ row.commodityType_name.value }}
-                {% endif %}
-              {% endfor %}
+                {% endif %}{% endfor %}
               </td>
-              <td>{% for row in models.status %}
-                {% if row.project.value == project.project.value %}
+              <td>
+                {% for row in models.status %}{% if row.project.value == project.project.value %}
                   {{ row.statusType.value }}
-                {% endif %}
-              {% endfor %}
+                {% endif %}{% endfor %}
               </td>
               <td>{{ project.companyCount.value}}</td>
           </tr>
