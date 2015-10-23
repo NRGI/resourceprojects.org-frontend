@@ -116,15 +116,15 @@
                   </table>
                 </td>
               </tr>
-
-          </table>
-                   
+            </table>
             
           </div><!--info-box-->
         </div><!-- col-md-6 -->
+        
         <div class="col-md-6">
           <h2>Companies</h2>
-
+          {% if models.companies|length %}
+          
           <table class="table table-striped companies">
           <thead>
             <tr><th>Name</th><th>Group</th><!--<th>Share</th>--></tr>
@@ -139,12 +139,17 @@
           <div class="download">
             <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.companies|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Companies CSV</a></span>
           </div>
+          
+          {% else %}
+          <p>No data available</p>
+          {% endif %}
       
         </div><!-- col-md-6 -->
       </div><!--row-->
       
       <h2>Production Stats</h2>
       {% if models.production_stats|length %}
+       
        <table class="table table-striped production_stats">
         <thead>
           <tr><th>Year</th><th>Volume</th><th>Unit</th><th>Commodity</th><th>Price</th><th>Price per unit</th><th>ID</th></tr>
@@ -171,6 +176,7 @@
 
       <h2>Payments</h2>
       {% if models.payments|length OR models.receipt|length %}
+      
       <table class="table table-striped payments">
         <thead>
           <tr><th>Year</th><th>Paid by</th><th>Paid to</th><th>Payment Type</th><th>Currency</th><th>Value</th><th>Payment or receipt?</th><th>ID</th></tr>
@@ -219,6 +225,7 @@
       <div class="download">
         <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.payments|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Payments CSV</a>
       </div>
+      
       {% else %}
       <p>No data available</p>
       {% endif %}
