@@ -231,7 +231,7 @@ class TestCompanyPage:
         table_cells = browser.find_elements_by_css_selector('.project-label')
         table_cells_text =  set([ x.text for x in table_cells ])
         assert table_cells_text >= expected_cells # >= because Location(s) and a table should also be in found data
-        
+
         
 class TestCompanyPage2:
     @pytest.fixture(autouse=True, scope='module')
@@ -257,10 +257,19 @@ class TestCompanyPage2:
         assert expected_download_text == download_text
         
         
+# Various company page data tests
 def test_empty_payments_table (browser):
       browser.get(server_url + 'company/5b682b0b720c3597')
       assert 'No data available' in browser.find_element_by_css_selector('.no-data').text
+      
+def test_website_link (browser):
+      browser.get(server_url + 'company/2fe073c29814ab6d')
+      assert 'http://peruvianpmc.com/corporate/about/' in browser.find_element_by_css_selector('.info-box').text
 
+def test_open_corporates_link (browser):
+      browser.get(server_url + 'company/b6e57c43738d9979')
+      assert 'https://opencorporates.com/companies/je/EXTUID_266101' in browser.find_element_by_css_selector('.info-box').text
+      
 
 class TestProjectPage:
     @pytest.fixture(autouse=True, scope='module')
