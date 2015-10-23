@@ -10,3 +10,4 @@ SELECT DISTINCT ?commodityType ?commodity ?commodityName WHERE {
               ?commodity rp:commodityType ?commodityType }
 }
 GROUP BY ?commodityType
+ORDER BY ?commodityName
