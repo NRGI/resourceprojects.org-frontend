@@ -144,6 +144,9 @@
           </tr>
           {% endfor %}
           </table>
+          <div class="download">
+            <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.companies|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Companies CSV</a></span>
+          </div>
       
         </div><!-- col-md-6 -->
       </div><!--row-->
@@ -166,6 +169,9 @@
        </tr>
         {% endfor %}
       </table>
+      <div class="download">
+        <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.production_stats|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Production Stats CSV</a></span>
+      </div>
 
       {% else %}
       <p>No data available</p>
@@ -175,7 +181,7 @@
       {% if models.payments|length OR models.receipt|length %}
       <table class="table table-striped payments">
         <thead>
-          <tr><th>Year</th><th>Paid by</th><th>Paid to</th><th>Payment or receipt?</th><th>Payment Type</th><th>Currency</th><th>Value</th><th>ID</th></tr>
+          <tr><th>Year</th><th>Paid by</th><th>Paid to</th><th>Payment Type</th><th>Currency</th><th>Value</th><th>Payment or receipt?</th><th>ID</th></tr>
         </thead>
         {% for row in models.payments %}    
         <tr>
@@ -190,11 +196,10 @@
             {%endif%}
             <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
             <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
-            
-            <td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>
             <td>{{ row.type.value }}</td>
             <td>{{ row.currency.value }}</td>
             <td>{{ row.amount.value }}</td>
+            <td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>
             <td><a href="{{ row.companyPayment.value }}"><span data-toggle="tooltip" data-placement="left" title="{{ row.companyPayment.value|explode:"/"|pop }}" class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></td>
         </tr>
         {% endfor %}
@@ -211,15 +216,17 @@
             {%endif%}
             <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
             <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
-            
-            <td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>
             <td>{{ row.type.value }}</td>
             <td>{{ row.currency.value }}</td>
             <td>{{ row.amount.value }}</td>
+            <td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>
             <td><a href="{{ row.GovernmentReceipt.value }}"><span data-toggle="tooltip" data-placement="left" title="{{ row.GovernmentReceipt.value|explode:"/"|pop }}" class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></td>
         </tr>
         {% endfor %}
       </table>
+      <div class="download">
+        <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.payments|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Payments CSV</a>
+      </div>
       {% else %}
       <p>No data available</p>
       {% endif %}

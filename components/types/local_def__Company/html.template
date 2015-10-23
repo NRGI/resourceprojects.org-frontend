@@ -87,20 +87,21 @@
             </tr>
             {% endfor %}
           </table>
+          <div class="download">
+            <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.projects|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Projects CSV</a></span>
+          </div>
         </div>
         
       </div><!--end row-->
       
       <h2>Payments</h2>
       {% if models.payments|length %}
-      <table class="table table-striped">
+      <table class="table table-striped payments">
         <thead>
-          <tr><th>Paid to</th><th>ID</th><th>Payment Year</th><th>Payment or receipt?</th><th>Payment Type</th><th>Currency</th><th>Value</th></tr>
+          <tr><th>Year</th><th>Paid to</th><th>Payment Type</th><th>Currency</th><th>Value</th><th>Payment or receipt?</th><th>ID</th></tr>
         </thead>
         {% for row in models.payments %}    
         <tr>
-            <td><a href="{{ row.payee.value }}">{{ row.payee_name.value }}</a></td>
-            <td><a href="{{ row.transaction.value }}">{{ row.transaction.value|explode:"/"|pop }}</a></td>
             {%if row.date%}
               <td>{{ row.date.value|date:"Y" }}</td>
               {%else%}
@@ -110,13 +111,18 @@
                   <td></td>
                 {%endif%}
             {%endif%}
-            <td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>
+            <td><a href="{{ row.payee.value }}">{{ row.payee_name.value }}</a></td>
             <td>{{ row.type.value }}</td>
             <td>{{ row.currency.value }}</td>            
             <td>{{ row.amount.value}}</td>
+            <td>{{ row.paymentOrReceipt.value|explode:"/"|pop }}</td>
+            <td><a href="{{ row.transaction.value }}"><span data-toggle="tooltip" data-placement="left" title="{{ row.transaction.value|explode:"/"|pop }}" class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></td>
         </tr>
         {% endfor %}
       </table>
+      <div class="download">
+        <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.transaction|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Payments CSV</a>
+      </div>
       {% else %}
       <p class="no-data">No data available</p>
       {%endif%}

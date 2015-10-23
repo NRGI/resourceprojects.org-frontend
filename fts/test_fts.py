@@ -79,10 +79,10 @@ def test_projects_page(browser):
     #Test data in first row matches text data from our fixture
     table = browser.find_element_by_id('projects')
     rows = table.find_elements_by_tag_name('tr')
-    assert 'Angola' in rows[20].text
-    assert 'Block 0 A' in rows[20].text
-    assert 'Oil and Gas' in rows[20].text
-    assert '4' in rows[20].text
+    assert 'Angola' in rows[22].text
+    assert 'Block 0 A' in rows[22].text
+    assert 'Oil and Gas' in rows[22].text
+    assert '4' in rows[22].text
 
 
 
@@ -181,7 +181,7 @@ class TestCountryPage:
 class TestCompanyPage:
     @pytest.fixture(autouse=True, scope='module')
     def load_company_page(self, browser):
-        browser.get(server_url + 'company/5b682b0b720c3597')
+        browser.get(server_url + 'company/3ba56569aac5dcc3'), #Mineracao Paragominas SA
 
     def test_company_page(self, browser):
         '''Company page table titles'''
@@ -208,10 +208,10 @@ class TestCompanyPage:
         table_headers = browser.find_elements_by_tag_name('th')
         table_headers_text = set([ x.text for x in table_headers ])
         assert expected_headers <= table_headers_text
-        
+    '''
     def test_empty_payments_table (self, browser):
         assert 'No data available' in browser.find_element_by_css_selector('.no-data').text
-    
+    '''
     def test_company_info_table (self, browser):
         '''Company Info'''
         expected_cells= set([
@@ -239,6 +239,20 @@ class TestCompanyPage2:
         '''Company Info'''
         table = browser.find_element_by_css_selector('#project-info')
         assert linkText in table.text
+        
+    def test_download_links (self, browser):
+        expected_download_text = set([
+            #('Download: Payments CSV'),
+            ('Download: Projects CSV')
+        ])
+        downloads = browser.find_elements_by_css_selector('.download')
+        download_text = set([ x.text for x in downloads ])
+        assert expected_download_text == download_text
+        
+        
+def test_empty_payments_table (browser):
+      browser.get(server_url + 'company/5b682b0b720c3597')
+      assert 'No data available' in browser.find_element_by_css_selector('.no-data').text
 
 
 class TestProjectPage:
@@ -250,7 +264,7 @@ class TestProjectPage:
         ('.companies', ['Name', 'Group']),
         ('.production_stats', ['Year', 'Volume', 'Unit', 'Commodity', 'Price', 'Price per unit', 'ID']),
         ('.locations', ['Name', 'Lat', 'Lng']),
-        ('.payments', ['Year','Paid by', 'Paid to', 'Payment or receipt?', 'Payment Type', 'Currency', 'Value', 'ID']),
+        ('.payments', ['Year','Paid by', 'Paid to', 'Payment Type', 'Currency', 'Value', 'Payment or receipt?', 'ID']),
     ])
     def test_table_columns (self, browser, table_css, expected_headers):
         '''Tables in the projects page'''
@@ -283,6 +297,16 @@ class TestProjectPage:
         table_cells = browser.find_elements_by_css_selector('.project-label')
         table_cells_text =  set([ x.text for x in table_cells ])
         assert table_cells_text >= expected_cells # >= because Location(s) and a table should also be in found data
+        
+    def test_download_links (self, browser):
+        expected_download_text = set([
+            ('Download: Payments CSV'),
+            ('Download: Companies CSV'),
+            ('Download: Production Stats CSV')
+        ])
+        downloads = browser.find_elements_by_css_selector('.download')
+        download_text = set([ x.text for x in downloads ])
+        assert expected_download_text == download_text
 
 
 def test_glossary_page(browser):
@@ -311,3 +335,14 @@ class TestMapPage:
     
     #def test_map_present (self, browser):
     #    browser.find_elements_by_css_selector('.leaflet-map-pane')
+
+
+#Test Global Tables
+@pytest.mark.parametrize(('page'), [
+    ('company/3ba56569aac5dcc3'), #Mineracao Paragominas SA
+    ('project/BR/para-s4sbrx'), #Paragominas
+    ('country/AO'), #Angola
+])
+def test_payments_table (browser, page):
+    browser.get(server_url + page)
+    assert 'Taxes levied on the income, production or profits of companies,' not in browser.find_element_by_css_selector('.payments').text
