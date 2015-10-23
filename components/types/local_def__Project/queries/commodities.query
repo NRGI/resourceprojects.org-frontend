@@ -4,7 +4,7 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 # before the DEFINE statement, which is not allowed.
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?commodityType ?commodity ?commodityName WHERE {
+SELECT DISTINCT ?commodityType ?commodity ?commodityName WHERE {
     OPTIONAL { <{{uri}}> rp:hasCommodity ?commodity .
               ?commodity skos_:prefLabel ?commodityName .
               ?commodity rp:commodityType ?commodityType }

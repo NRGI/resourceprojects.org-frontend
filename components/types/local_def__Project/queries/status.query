@@ -4,7 +4,7 @@ prefix rp_misc: <http://resourceprojects.org/def/misc/>
 # before the DEFINE statement, which is not allowed.
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?statusType ?trueAtDate WHERE {
+SELECT DISTINCT ?statusType ?trueAtDate WHERE {
     OPTIONAL {
         <{{uri}}> rp:state ?status .
         ?status rp:statusType ?statusType .

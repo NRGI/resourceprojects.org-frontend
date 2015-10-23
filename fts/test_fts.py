@@ -312,6 +312,22 @@ class TestProjectPage:
         assert expected_download_text == download_text
 
 
+class TestProjectPage2:
+    @pytest.fixture(autouse=True, scope='module')
+    def load_project_page(self, browser):
+        browser.get(server_url + 'project/PE/anim-oy3zxa')
+
+    @pytest.mark.parametrize(('css', 'expected_text'), [
+        ('.commodity-types', 'Mining,'),
+        ('.commodities', 'Copper, Lead, Silver, Zinc,'),
+        ('.status', 'Production (True at: 2014-01-01)'),
+    ])
+    def test_no_duplicates (self, browser, css, expected_text):
+        '''CommodityTypes, Commodities and Status in project info box'''
+        found_text = browser.find_element_by_css_selector(css).text
+        assert found_text == expected_text
+        
+
 def test_glossary_page(browser):
     browser.get(server_url + 'glossary.html')
     assert "Glossary" in browser.find_element_by_tag_name('h1').text
