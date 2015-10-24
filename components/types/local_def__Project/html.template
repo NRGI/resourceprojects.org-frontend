@@ -14,17 +14,12 @@
           <script type="text/javascript">
             var map = L.map('map',{ fullscreenControl: true }).setView([{{first.main.lat.value}}, {{first.main.long.value}}], 5);
           </script>
-             {% for site in models.sites %}
-              {%if site.lat.value %}
-                {%if site.lng.value %}
-                  <script type="text/javascript">
-                    var marker_{{ site.site.value|explode:'/'|pop|cut:'-' }} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
-
-                    marker_{{ site.site.value|explode:'/'|pop|cut:'-' }}.bindPopup('<b>{{site.site_name.value}}</b>').openPopup();
-                  </script>
-                {%endif%}
-              {%endif%}
-            {% endfor %}
+          {% for site in models.sites %}{%if site.lat.value %}{%if site.lng.value %}
+          <script type="text/javascript">
+            var marker_{{ site.site.value|explode:'/'|pop|cut:'-' }} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
+            marker_{{ site.site.value|explode:'/'|pop|cut:'-' }}.bindPopup('<b>{{site.site_name.value}}</b>').openPopup();
+          </script>
+          {%endif%}{%endif%}{% endfor %}
           
           {%include "../../includes/default_map.js.inc"%}
 
@@ -58,12 +53,10 @@
               <tr>
                 <td class="project-label">Commodity Type(s):</td>
                 <td class="commodity-types">
-                  {% for row in models.commodities %} 
-                    {%if lastSeenStatus != row.commodityType.value %}
+                  {% for row in models.commodities %}{%if lastSeenStatus != row.commodityType.value %}
                       {{ row.commodityType.value }}, 
                       {% set lastSeenStatus = row.commodityType.value %}
-                    {% endif %}
-                  {% endfor %}
+                  {% endif %}{% endfor %}
                 </td>
               </tr>
               <tr>
@@ -97,8 +90,6 @@
                         <th>Lng</th>
                       </tr>
                     {% endif %} 
-                    
-                     
                       <tr>
                         <td>
                           {% if row.site_name.value == "" %}
@@ -110,9 +101,7 @@
                         <td>{{ row.lat.value }}</td>
                         <td>{{ row.lng.value }}</td>
                       </tr>
-                      
                     {% endfor %}
-
                   </table>
                 </td>
               </tr>
