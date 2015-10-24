@@ -1,0 +1,9 @@
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+
+SELECT DISTINCT * WHERE {
+    ?concession rp:relatedProject <{{uri}}>.
+    ?concession a rp:Concession.
+    OPTIONAL { ?concession skos:prefLabel ?title }
+}
+GROUP BY ?concession

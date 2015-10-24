@@ -80,11 +80,18 @@
               </tr>
               <tr>
                 <td class="project-label">Associated Contracts:</td>
-                <td></td>
+                <td><ul>{% for row in models.contracts %}
+                       <li>{%if row.url.value %}<a href="{{row.url.value}}" target="_blank">{% endif %}<i class="fa fa-external-link"></i>{{row.title.value}}{%if row.url.value %}</a> (external link){%endif%}</li>
+                    {% endfor %}</ul>
+                </td>
               </tr>
               <tr>
                 <td class="project-label">Associated Concessions:</td>
-                <td></td>
+	                <td><ul>{% for row in models.concessions %}
+				<li><a href="{{row.concession.value}}">{{row.title.value}}</a></li>
+                    {% endfor %}</ul>
+                </td>
+              </tr>
               </tr>
               <tr>
                 <td class="project-label" colspan="2">Location(s)
