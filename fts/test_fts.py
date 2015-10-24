@@ -349,6 +349,9 @@ class TestProjectPage:
     def test_production_stats_table (self, browser): 
         table = browser.find_element_by_css_selector('.production_stats')
         assert 'Oil' in table.text
+        # Add test to check no duplicates in table NB There are no duplicates in the test fixtures at the moment, but there are in live data!
+        rows = table.find_elements_by_tag_name('tr')
+        assert len(rows) == 7
 
 
 class TestProjectPage2:
