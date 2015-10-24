@@ -6,13 +6,14 @@ SELECT DISTINCT ?site, ?project, ?lat, ?lng, ?project_name, ?site_name WHERE {
 
     ?project rp:hasCommodity <{{uri}}> .
     ?project a rp:Project  .
-    ?project skos:prefLabel ?project_name .
+    # Used to filter out projects that don't have a name
+    ?project skos:prefLabel ?project_name . 
     ?project rp:hasLocation ?site .
     ?site a rp:Site .
-
-    OPTIONAL { ?site rp:lat ?lat }
-    OPTIONAL { ?site rp:long ?lng }
+    # Sites must have a lat and lng, otherwise we can't map them!
+    ?site rp:lat ?lat .
+    ?site rp:long ?lng .
     OPTIONAL { ?site skos:prefLabel ?site_name }
-    OPTIONAL { ?project skos:prefLabel ?project_name }
+
 }
 GROUP BY ?site

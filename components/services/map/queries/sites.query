@@ -3,11 +3,12 @@ prefix rp: <http://resourceprojects.org/def/>
 SELECT DISTINCT ?site ?lat ?lng ?project ?project_name  ?site_name WHERE {
     ?project a rp:Project .
     ?project rp:hasLocation ?site .
-    ?site a rp:Site
-
-    OPTIONAL { ?site rp:lat ?lat }
-    OPTIONAL { ?site rp:long ?lng }
+    ?site a rp:Site .
+    ?site rp:lat ?lat .
+    ?site rp:long ?lng .
     OPTIONAL { ?site skos:prefLabel ?site_name }
-    OPTIONAL { ?project skos:prefLabel ?project_name }
+    OPTIONAL { ?project skos:prefLabel ?project_name .
+               ?project skos:prefLabel ?project_name
+    }
 }
 GROUP BY ?site
