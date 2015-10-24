@@ -5,9 +5,9 @@ prefix prov: <http://www.w3.org/ns/prov#>
 
 SELECT DISTINCT * WHERE {
   GRAPH ?graph {
-    <http://resourceprojects.org/company/56519873ff2225f8> rp:source ?source .
+    <{{lodspk.args.all|deurifier}}> rp:source ?source .
     ?source skos:prefLabel ?sourceName.
-    <http://resourceprojects.org/company/56519873ff2225f8> prov:wasDerivedFrom ?sourceRow .
+    <{{lodspk.args.all|deurifier}}> prov:wasDerivedFrom ?sourceRow .
     OPTIONAL { ?sourceRow prov:wasDerivedFrom ?sourceTable. 
     ?sourceTable rp:sheet ?sourceTableName. }
    }
