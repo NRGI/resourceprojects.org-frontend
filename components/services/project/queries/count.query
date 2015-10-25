@@ -1,6 +1,16 @@
 prefix rp: <http://resourceprojects.org/def/>
 
 SELECT DISTINCT (COUNT(?uri) as ?uriCount) WHERE {
-    ?uri a rp:Project
+    ?uri a rp:Project.
+
+  {% if lodspk.GET.search %}
+     ?uri skos:prefLabel ?name.
+     FILTER regex(?name, "{{lodspk.GET.search}}","i")
+  {% endif %}
+  {%if lodspk.GET.country %}
+    ?uri rp:hasLocation ?country.
+    ?country a rp:Country.
+    ?country rp:identifier "{{lodspk.GET.country}}".
+  {%endif%}
 }
 

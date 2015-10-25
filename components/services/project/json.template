@@ -1,6 +1,11 @@
-[
+{
+"result_count":"{{first.count.uriCount.value}}",
+"projects":[
     {% for row in models.main %}{% if ! forloop.first %}, {% endif %}{
-        "uri": "{{ row.uri.value }}"
-        "name": "{{ row.name.value }}"
+        "uri": "{{ row.project.value }}",
+        "identifier":"{% for i,path_item in row.project.value|explode:"/" %}{% if i >= 4  %}{{ path_item }}{% if i == 4  %}/{% endif %}{% endif %}{% endfor %}",
+        "name": "{{ row.name.value }}",
+        "country":"{{row.country.value}}"
     }{% endfor %}
 ]
+}
