@@ -14,7 +14,7 @@ We’ve prepared a simple Google Spreadsheet template that steps you through pro
 
 * Company payments to government, and government receipts
 
-You can [access a copy of the spreadsheet here](https://docs.google.com/spreadsheets/d/19pLirq9l-4W0DudIxb_P5KEMx6HP2smxDksUBVoyQ3I/edit?usp=sharing).
+You can [access a copy of the spreadsheet here](https://docs.google.com/spreadsheets/d/16vuQCT92gYsMGGNGgX-j12-giCmO3SrUak6cG8oulMM/copy).
 
 ## Using the template
 
@@ -22,9 +22,7 @@ There are four stages to getting data onto the Resource Projects platform. Most 
 
 ### (1) Get your copy
 
-Making sure you are have a [Google Account](http://google.com/accounts/) and are logged in, [follow this link to view the spreadsheet template](https://docs.google.com/spreadsheets/d/19pLirq9l-4W0DudIxb_P5KEMx6HP2smxDksUBVoyQ3I/edit?usp=sharing).
-
-From the file menu, choose ‘Make a copy...’
+Making sure you are have a [Google Account](http://google.com/accounts/) and are logged in, [follow this link to make a copy of the spreadsheet template](https://docs.google.com/spreadsheets/d/16vuQCT92gYsMGGNGgX-j12-giCmO3SrUak6cG8oulMM/copy).
 
 ### (2) Enter data
 
@@ -38,30 +36,25 @@ Once you’ve filled in all your data:
 
 2. Choose ‘Publish to the web’ from the file menu, and choose ‘Publish’;
 
-If you’re not comfortable with advanced formula and python, then now is the time to get in touch with the Resource Projects team to let us know your data is ready to convert and load onto the platform. 
-
 ### (3) Reconcile identifiers
 
 Before the data is loaded, we need to make sure we match key entities to existing data on the platform. 
 
-Essentially, what needs to happen is that all the project, company, group and site records in your data need to be checked against any existing records in ResourceProjects.org and if they are already mentioned there, the ResourceProjects.org identifier needs to be added to your spreadsheet. 
+On the 'Add On' menu you should find a menu item called 'ResourceProjects.org' which contains items to:
 
-This can be done using the [RDF Open Refine extension](http://refine.deri.ie/) against our SPARQL endpoint (searching on skos:prefLabel), or by exporting a full list of companies, projects, and groups into your spreadsheet, and using query or vlookup formula to reconcile IDs. 
+* Search for identifier
+* Reconcile column
 
-### (4) Convert the data to RDF
+Selecting a column with project, company or group names, choose one of these options.
 
-This last stage is all a bit rough-and-ready right now, but if you are comfortable with python you will find the tools you need [in this repository](https://github.com/NRGI/resource-projects-etl/) to get from the template to RDF data for loading into the platform. 
+Search for identifier just checks whether the item in the current row is already known on the platform. 
 
-Set up the virtual environment, and load all the required tools, and then you will need the script in process/google-docs-reader/
+Reconcile column works through all the values in the selected column, from the selected cell downwards, looking up their identifiers. You may need to go back to manually reconcile identifiers where the system finds more than one possible match.
 
-In that folder, run the command:
+The first time you run this process you might need to authorise the add on.
 
-```
-python transform-from-gdocs.py <spreadsheetURI> <identifier>
-```
+### (4) Stage and load the data
 
-with the web address of the google spreadsheet, and a short identifier which will be used as the filename of the converted file.
+The team at NRGI will be able to load your data into the staging server, and to check that it all makes sense.
 
-The template includes a hidden row which contains markup that we can use to convert from the spreadsheet to RDF. This uses the taglifter.py module which was written for this project, as an experiment in finding terse ways to mark-up spreadsheets for conversion to RDF. 
-
-The output will drop into the /data/ directory, ready to be loaded into a named graph on ResourceProjects.org
+Once checked, it is then loaded to the live ResourceProjects.org
