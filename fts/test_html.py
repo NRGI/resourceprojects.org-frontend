@@ -13,7 +13,10 @@ from test_fts import server_url
     'company',
     'company/86d42aaadfcf8888',
     'source',
-    'glossary.html'
+    'glossary.html',
+    'map',
+    'commodity',
+    'commodity/Copper'
 ])
 def test_tags_closed(pagename):
     r = requests.get(server_url + pagename)
