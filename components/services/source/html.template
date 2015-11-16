@@ -22,7 +22,7 @@
             <tr>
                 <td><a href="{{ row.source.value }}">{% if row.name.value %}{{row.name.value}}{% else %}{{ row.company.curie }}{% endif %}</a></td>
                 <td>{{row.sourceType.value}}</td>
-                <td>{{ row.sourceDate.value|date:"Y-m-d"}} </td>
+                <td>{% if row.sourceDate.value %}{{ row.sourceDate.value|date:"Y-m-d"}}{% endif %} </td>
                 <td><a href="{{ row.source.value }}">Details</a></td>
             </tr>
             {% endfor %}
