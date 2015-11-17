@@ -383,7 +383,7 @@ class TestProjectPage:
 class TestProjectPage2:
     @pytest.fixture(autouse=True, scope='module')
     def load_project_page(self, browser):
-        browser.get(server_url + 'project/PE/anim-oy3zxa')
+        browser.get(server_url + 'project/PE/anim-oy3zxa') # Animon
 
     @pytest.mark.parametrize(('css', 'expected_text'), [
         ('.commodity-types', 'Mining,'),
@@ -394,6 +394,17 @@ class TestProjectPage2:
         '''CommodityTypes, Commodities and Status in project info box'''
         found_text = browser.find_element_by_css_selector(css).text
         assert found_text == expected_text
+    
+    @pytest.mark.parametrize(('css', 'expected_no_rows'), [
+        ('.companies', 2),
+        ('.production_stats', 5),
+        #('.payments', 10),
+    ])
+    def test_table_rows (self, browser, css, expected_no_rows):
+        '''Counts the number of expected rows'''
+        table = browser.find_element_by_css_selector(css)
+        rows = table.find_elements_by_tag_name('tr')
+        assert len(rows) == expected_no_rows
         
 
 class TestCompanyGroupPage:
