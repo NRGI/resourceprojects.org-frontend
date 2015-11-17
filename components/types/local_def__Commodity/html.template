@@ -10,18 +10,12 @@
           <script type="text/javascript">
             var map = L.map('map',{ fullscreenControl: true }).setView([0, 0], 2);
           </script>
-            {% for site in models.sites %}
-              {%if site.lat.value %}
-                {%if site.lng.value %}
-          <script type="text/javascript">
-            var marker_{{site.site_name.value}} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
-
-            marker_{{site.site_name.value}}.bindPopup('<b><a href="{{site.project.value}}">{{site.project_name.value}}</a></b><br>{{site.site_name.value}}<br>').openPopup();
-          </script>
-                {%endif%}
-              {%endif%}
-            {% endfor %}
-          
+            {% for site in models.sites %}{%if site.lat.value %}{%if site.lng.value %}
+              <script type="text/javascript">
+                var marker_{{site.site_name.value}} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
+                marker_{{site.site_name.value}}.bindPopup('<b><a href="{{site.project.value}}">{{site.project_name.value}}</a></b><br>{{site.site_name.value}}<br>').openPopup();
+              </script>{%endif%}{%endif%}{% endfor %}
+            
           {%include "../../includes/default_map.js.inc"%}
           
         </div>
@@ -46,8 +40,7 @@
             <thead>
               <tr><th>Name</th><th>Country</th><!--<th>Commodity Type</th>--></tr>
             </thead>
-            {% for row in models.projects %}    
-            <tr>
+{% for row in models.projects %}<tr>
                 <td><a href="{{ row.project.value }}">{{ row.name.value }}</a></td>
                 <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
             </tr>
@@ -68,12 +61,10 @@
             <thead>
               <tr><th>Name</th><th>Group</th></tr>
             </thead>
-            {% for row in models.company %}    
-            <tr>
+            {% for row in models.company %}<tr>
                 <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
                 <td><a href="{{ row.group.value }}">{{ row.group_name.value }}</a></td>
-            </tr>
-            {% endfor %}
+            </tr>{% endfor %}
           </table>
           <div class="download">
             <span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.company|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Companies CSV</a>
@@ -82,6 +73,7 @@
           <p class="no-data">No data available</p>
           {%endif%}
         </div>
+        
       </div><!--end row-->     
   
       {%include "../../includes/advanced_links.inc"%}
