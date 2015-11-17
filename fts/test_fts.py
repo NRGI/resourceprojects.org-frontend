@@ -149,7 +149,33 @@ def test_commodities_page(browser):
     rows = table.find_elements_by_tag_name('tr')
     assert 'Bauxite' in rows[1].text
     assert '2' in rows[1].text
-    
+
+
+def test_sources_page(browser):
+    '''Sources List page'''
+    #Table headers
+    expected_headers = set([
+        ('Source'),
+        ('Source type'),
+        ('Source date'),
+        ('Details')
+    ])
+    browser.get(server_url + 'source')
+    #assert "Natural Resource Governance Institute" in browser.title
+    table_headers = browser.find_elements_by_tag_name('th')
+    table_headers_text = set([ x.text for x in table_headers ])
+    assert expected_headers == table_headers_text
+    #Page title
+    assert 'Sources' in browser.find_element_by_tag_name('h1').text
+
+    #Test data in first row matches text data from our fixture
+    table = browser.find_element_by_tag_name('table')
+    rows = table.find_elements_by_tag_name('tr')
+    assert 'Hudbay Minerals' in rows[1].text
+    assert 'Company database' in rows[1].text
+    assert '2015-04-30' in rows[1].text
+    assert '1970-01-01' not in table.text
+
     
 ## Idividual pages tests
 class TestCountryPage:
