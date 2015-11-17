@@ -1,0 +1,16 @@
+prefix rp: <http://resourceprojects.org/def/>
+prefix rp_misc: <http://resourceprojects.org/def/misc/>
+
+SELECT DISTINCT * WHERE {
+    ?contract rp:relatedProject <{{uri}}>.
+    ?contract a rp:Contract.
+    OPTIONAL {
+      {
+          ?contract rp:url ?url.
+      } UNION {
+          ?contract rp_misc:uri ?url. #Temporary whilst data model is being fixed
+      }
+    }
+    OPTIONAL { ?contract skos:prefLabel ?title }
+}
+GROUP BY ?contract
