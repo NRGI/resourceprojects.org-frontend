@@ -4,6 +4,7 @@ SELECT DISTINCT ?project ?country ?country_name ?name ?commodityType count(disti
     ?project a rp:Project .
     ?project rp:hasLocation ?country .
     ?country a rp:Country
+    OPTIONAL { ?project rp:identifier ?identifier. } 
     OPTIONAL { ?country skos:prefLabel ?country_name }
     OPTIONAL { ?project skos:prefLabel ?name }
     OPTIONAL { ?project rp:hasCommodity ?commodity.
@@ -12,6 +13,13 @@ SELECT DISTINCT ?project ?country ?country_name ?name ?commodityType count(disti
               ?stake rp:hasStakeholder ?company .
               ?company a rp:Company
               }
+  {% if lodspk.GET.search %}
+     FILTER regex(?name, "{{lodspk.GET.search}}","i")
+  {% endif %}
+  {%if lodspk.GET.country %}
+    ?country rp:identifier "{{lodspk.GET.country}}".
+  {%endif%}
+
 }
 GROUP BY ?project ?name ?country ?country_name ?commodityType
 ORDER BY ?name ?country_name
