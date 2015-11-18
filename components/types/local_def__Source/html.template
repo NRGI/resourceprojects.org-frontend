@@ -16,11 +16,11 @@
         </tr>
         <tr>
             <th>Source date</th>
-            <td>{{ row.sourceDate.value|date:"Y-m-d"}} </td>
+            <td>{% if row.sourceDate.value %}{{ row.sourceDate.value|date:"Y-m-d"}}{% endif %} </td>
         </tr>
         <tr>
             <th>Retrieved date</th>
-            <td>{{ row.retrievedDate.value|date:"Y-m-d" }} </td>
+            <td>{%if row.retrievedDate.value %}{{ row.retrievedDate.value|date:"Y-m-d" }}{% endif %} </td>
         </tr>
         <tr>
             <th>Access source</th>
