@@ -13,8 +13,7 @@
           <script type="text/javascript">
             var marker_{{ site.site.value|explode:'/'|pop|cut:'-' }} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
             marker_{{ site.site.value|explode:'/'|pop|cut:'-' }}.bindPopup('<b><a href="{{site.project.value}}">{{site.project_name.value}}</a></b><br>{{site.site_name.value}}<br>').openPopup();
-          </script>
-          {%endif%}{%endif%}{% endfor %}
+          </script>{%endif%}{%endif%}{% endfor %}
           
           {%include "../../includes/default_map.js.inc"%}
           
@@ -56,25 +55,14 @@
           <thead>
             <tr><th>Name</th><th>Commodity</th><th>Status</th><th>No. Companies</th></tr>
           </thead>
+          <!-- Don't add whitespace between for and if statements, see: https://github.com/NRGI/resourceprojects.org-frontend/issues/235#issuecomment-150623552 -->
           {% for project in models.projects %}    
           <tr>
               <td><a href="{{project.project.value}}">{{ project.name.value }}</a></td>
-              <!--<td><a href="{{project.project.value}}">{{ project.project.value }}</a></td>-->
-              <td>
-                <!-- Don't add whitespace between for and if statements, see
-                     https://github.com/NRGI/resourceprojects.org-frontend/issues/235#issuecomment-150623552 -->
-                {% for row in models.commodities %}{% if row.project.value == project.project.value %}
-                  {{ row.commodityType_name.value }}
-                {% endif %}{% endfor %}
-              </td>
-              <td>
-                {% for row in models.status %}{% if row.project.value == project.project.value %}
-                  {{ row.statusType.value }}
-                {% endif %}{% endfor %}
-              </td>
+              <td>{% for row in models.commodities %}{% if row.project.value == project.project.value %}{{ row.commodityType_name.value }}{% endif %}{% endfor %}</td>
+              <td>{% for row in models.status %}{% if row.project.value == project.project.value %}{{ row.statusType.value }}{% endif %}{% endfor %}</td>
               <td>{{ project.companyCount.value}}</td>
-          </tr>
-          {% endfor %}
+          </tr>{% endfor %}
           </table>
           <div class="download">
             <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.projects|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Projects CSV</a></span>
@@ -88,16 +76,14 @@
           <h2>Companies <small>Companies active in this country</small></h2>
           {% if models.companies|length %}
           <table class="table table-striped companies">
-          <thead>
-            <tr><th>Name</th><th>Group</th></tr>
-          </thead>
-          {% for row in models.companies %}    
-          <tr>
-              <td><a href="{{row.company.value}}">{{ row.companyName.value }}</a></td>
-              <td><a href="{{row.group.value}}">{{ row.groupName.value }}</a></td>
-              <!--<td><a href="{{row.company.value}}">{{ row.company.value|explode:"/"|pop }}</a></td>-->
-          </tr>
-          {% endfor %}
+            <thead>
+              <tr><th>Name</th><th>Group</th></tr>
+            </thead>
+            {% for row in models.companies %}    
+            <tr>
+                <td><a href="{{row.company.value}}">{{ row.companyName.value }}</a></td>
+                <td><a href="{{row.group.value}}">{{ row.groupName.value }}</a></td>
+            </tr>{% endfor %}
           </table>
           <div class="download">
             <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.companies|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Companies CSV</a>
