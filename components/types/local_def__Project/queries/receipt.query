@@ -3,20 +3,37 @@ prefix rp: <http://resourceprojects.org/def/>
 # before the DEFINE statement, which is not allowed.
 prefix skos_: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT ?GovernmentReceipt ?paymentOrReceipt ?country ?country_name ?currency (replace(?amount,",","") as ?amount) ?date ?year ?type  WHERE {
+# Country is actual recipient: can be either a country or an organisation
 
-        ?GovernmentReceipt rp:relatedProject <{{uri}}> .
+SELECT ?GovernmentReceipt ?paymentOrReceipt ?country ?country_name ?currency (replace(?amount,",","") as ?amount) ?date ?year ?type ?payer_name  WHERE {
+
+        ?GovernmentReceipt rp:relatedProject <{{uri}}>.
         ?GovernmentReceipt a rp:GovernmentReceipt .
-        ?GovernmentReceipt rp:payee ?country .
         ?GovernmentReceipt a ?paymentOrReceipt .        
-        ?country skos_:prefLabel ?country_name 
-        
+
+       OPTIONAL {
+        ?GovernmentReceipt rp:payee ?countryParty .
+        ?countryParty a rp:Country .
+        ?countryParty skos_:prefLabel ?countryParty_name.
+       }
+       OPTIONAL {
+        ?GovernmentReceipt rp:payee ?govParty .
+        ?govParty a rp:GovernmentParty.
+        ?govParty skos_:prefLabel ?govParty_name.
+       }
+
+       ## This should be renamed payee, but for now we stick with country to avoid reworking the html templates
+       BIND(IF(bound(?govParty),?govParty,?countryParty) as ?country)
+       BIND(IF(bound(?govParty),?govParty_name,?countryParty_name) as ?country_name)
+
         OPTIONAL { ?GovernmentReceipt rp:currency ?currency }
         OPTIONAL { ?GovernmentReceipt rp:value ?amount } 
         OPTIONAL { ?GovernmentReceipt rp:date ?date } 
         OPTIONAL { ?GovernmentReceipt rp:year ?year }
         OPTIONAL { ?GovernmentReceipt rp:paymentType ?paymentType .
                ?paymentType skos_:prefLabel ?type }
+        OPTIONAL { ?GovernmentReceipt rp:payer ?payer .
+               ?payer skos_:prefLabel ?payer_name }
 
 }
 GROUP BY ?GovernmentReceipt

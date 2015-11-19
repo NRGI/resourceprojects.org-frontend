@@ -84,10 +84,11 @@ def test_projects_page(browser):
     #Test data in first row matches text data from our fixture
     table = browser.find_element_by_id('projects')
     rows = table.find_elements_by_tag_name('tr')
-    assert 'Angola' in rows[22].text
-    assert 'Block 0 A' in rows[22].text
-    assert 'Oil and Gas' in rows[22].text
-    assert '4' in rows[22].text
+    ## NB These rows will change if more, or less, fixture data is used
+    assert 'Angola' in rows[23].text
+    assert 'Block 0 A' in rows[23].text
+    assert 'Oil and Gas' in rows[23].text
+    assert '4' in rows[23].text
     
     #Test link to map page exists
     assert 'Projects Map' in browser.find_element_by_css_selector('.page-header').text
@@ -172,9 +173,10 @@ def test_sources_page(browser):
     #Test data in first row matches text data from our fixture
     table = browser.find_element_by_tag_name('table')
     rows = table.find_elements_by_tag_name('tr')
-    assert 'Hudbay Minerals' in rows[1].text
-    assert 'Company database' in rows[1].text
-    assert '2015-04-30' in rows[1].text
+    ## NB These rows will change if more, or less, fixture data is used
+    assert 'Hudbay Minerals' in rows[9].text
+    assert 'Company database' in rows[9].text
+    assert '2015-04-30' in rows[9].text
     assert '1970-01-01' not in table.text
 
     
@@ -406,6 +408,31 @@ class TestProjectPage2:
         table = browser.find_element_by_css_selector(css)
         rows = table.find_elements_by_tag_name('tr')
         assert len(rows) == expected_no_rows
+        
+
+class TestProjectPage3:
+    @pytest.fixture(autouse=True, scope='module')
+    def load_project_page(self, browser):
+        browser.get(server_url + '/project/PH/apma-l9nepr') # Apex Maco
+    
+    def test_payments_table_payer (self, browser):
+        '''Checks the payer name is shown'''
+        table = browser.find_element_by_css_selector('.payments')
+        rows = table.find_elements_by_tag_name('tr')
+        rows.pop(0)  #removes the first row of tabkle headers
+        for row in rows:
+            assert 'Apex Mining Company Inc.' in row.text
+            
+    # https://github.com/NRGI/resourceprojects.org-frontend/issues/259
+    def test_payments_table_gov_receipt (self, browser):
+        '''Checks that if GovernmentRecipt then paid to is not Philippines'''
+        table = browser.find_element_by_css_selector('.payments')
+        rows = table.find_elements_by_tag_name('tr')
+        rows.pop(0)  #removes the first row of tabkle headers
+        for row in rows:
+            if 'GovernmentReceipt' in row.text:
+                assert 'Philippines' not in row.text
+
         
 
 class TestCompanyGroupPage:
