@@ -1,0 +1,2046 @@
+@prefix base: <http://resourceprojects.org/def/> .
+@prefix ns1: <http://resourceprojects.org/def/misc/> .
+@prefix ns2: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://resourceprojects.org/companypayment/PH/03c3ce6a036e3764> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/tax> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 2784800 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/11> .
+
+<http://resourceprojects.org/companypayment/PH/0a20f84870cc1ce1> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/e7e6a988ee3e39c8> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 263715 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/14> .
+
+<http://resourceprojects.org/companypayment/PH/221a5736cf934981> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/tax> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 73500000 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/19> .
+
+<http://resourceprojects.org/companypayment/PH/320bd11ca423d5e8> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    ns1:unnamed13 "Tax on property" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 1106295 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/7> .
+
+<http://resourceprojects.org/companypayment/PH/3210a1ea6e7a2146> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/tax> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 5424019 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/3> .
+
+<http://resourceprojects.org/companypayment/PH/4ed5fcd74286b687> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:paymentLevel "company" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/tax> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 2089788 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/12> .
+
+<http://resourceprojects.org/companypayment/PH/52a32cac8ca14733> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    ns1:unnamed13 "Tax on property" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 1098957 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/8> .
+
+<http://resourceprojects.org/companypayment/PH/5454360f2af01c88> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    ns1:unnamed13 "annual inspection Fee " ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 12000 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/5> .
+
+<http://resourceprojects.org/companypayment/PH/5791e21d3fd3b1bc> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    ns1:unnamed13 "Customs and other import duties" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 299600 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/20> .
+
+<http://resourceprojects.org/companypayment/PH/6394451f32df2672> a base:CompanyPayment ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:paymentLevel "project" ;
+    base:relatedProject <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/22> .
+
+<http://resourceprojects.org/companypayment/PH/64585a9a4bb1e586> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/e7e6a988ee3e39c8> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 25511191 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/6> .
+
+<http://resourceprojects.org/companypayment/PH/766ef168ab7dbe6d> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/tax> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 38315152 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/2> .
+
+<http://resourceprojects.org/companypayment/PH/96c058bebf3b3964> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/e7e6a988ee3e39c8> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 120536 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/15> .
+
+<http://resourceprojects.org/companypayment/PH/96d674d9e451a634> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    ns1:unnamed13 "Customs and other import duties" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 400626 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/13> .
+
+<http://resourceprojects.org/companypayment/PH/b195318501f0d9df> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/e7e6a988ee3e39c8> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 712534 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/17> .
+
+<http://resourceprojects.org/companypayment/PH/b8ef1fd5177e39d5> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/e7e6a988ee3e39c8> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 140625 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/9> .
+
+<http://resourceprojects.org/companypayment/PH/ca1681a3ccfc9340> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/tax> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 89754248 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/18> .
+
+<http://resourceprojects.org/companypayment/PH/d8a3c41140302cbe> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 9668 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/16> .
+
+<http://resourceprojects.org/companypayment/PH/dcce677022fe84e6> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/e45f8db78f42a6a7> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 224792959 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/21> .
+
+<http://resourceprojects.org/companypayment/PH/f808491180d12c1c> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 10500 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/10> .
+
+<http://resourceprojects.org/companypayment/PH/fc71b90162b476ae> a base:CompanyPayment ;
+    base:basisOfAccounting "accrual" ;
+    base:currency "PHP" ;
+    ns1:unnamed13 "Customs and other import duties" ;
+    base:payee <http://resourceprojects.org/country/PH> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 83029030 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/4> .
+
+<http://resourceprojects.org/concession/XX/revi-112p1p> a base:Concession ;
+    base:hasLocation <http://resourceprojects.org/country/PH> ;
+    skos:prefLabel "Region VIII"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/5> .
+
+<http://resourceprojects.org/concession/XX/rexi-c7uzhl> a base:Concession ;
+    base:hasLocation <http://resourceprojects.org/country/PH> ;
+    skos:prefLabel "Region XIII"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/6> .
+
+<http://resourceprojects.org/concession/XX/rexi-rjxa6c> a base:Concession ;
+    base:hasLocation <http://resourceprojects.org/country/PH> ;
+    skos:prefLabel "Region XI"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/4> .
+
+<http://resourceprojects.org/governmentreceipt/PH/0508db471268ca97> a base:GovernmentReceipt ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/c810985175cada22> ;
+    base:payer <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:paymentLevel "project" ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/11> .
+
+<http://resourceprojects.org/governmentreceipt/PH/0524d1acbd9bbb64> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/c810985175cada22> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/tax> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 40217094 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/2> .
+
+<http://resourceprojects.org/governmentreceipt/PH/081361612b8e1408> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/a084b658bd8f86b3> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 1084649 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/8> .
+
+<http://resourceprojects.org/governmentreceipt/PH/17caa550c6830cc0> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/a084b658bd8f86b3> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 1084646 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/7> .
+
+<http://resourceprojects.org/governmentreceipt/PH/23925620bb67f547> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/a084b658bd8f86b3> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 10500 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/10> .
+
+<http://resourceprojects.org/governmentreceipt/PH/27bc0bb51c2d2550> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/a084b658bd8f86b3> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/e7e6a988ee3e39c8> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 23461946 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/6> .
+
+<http://resourceprojects.org/governmentreceipt/PH/34e76c9d6593f306> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/a084b658bd8f86b3> ;
+    base:payer <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/e7e6a988ee3e39c8> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 232580 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/14> .
+
+<http://resourceprojects.org/governmentreceipt/PH/5ef2f72bf662d639> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/d6e42e1921cfa6c6> ;
+    base:payer <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/e45f8db78f42a6a7> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 217860959 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/21> .
+
+<http://resourceprojects.org/governmentreceipt/PH/9382c34169c0f3a2> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/a084b658bd8f86b3> ;
+    base:payer <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/e7e6a988ee3e39c8> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 939120 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/17> .
+
+<http://resourceprojects.org/governmentreceipt/PH/a4c0d2056ae7b55b> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/a084b658bd8f86b3> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/e7e6a988ee3e39c8> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 122347 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/9> .
+
+<http://resourceprojects.org/governmentreceipt/PH/a6d2f2960a60ad5f> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/28adaddab25d5ca7> ;
+    base:payer <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/tax> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 88847098 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/19> .
+
+<http://resourceprojects.org/governmentreceipt/PH/a7c3707b305cce00> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/a905cca90e32b33f> ;
+    base:payer <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 89636 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/20> .
+
+<http://resourceprojects.org/governmentreceipt/PH/b12d1478ba9ee7b5> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/c810985175cada22> ;
+    base:payer <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/tax> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 1320278 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/12> .
+
+<http://resourceprojects.org/governmentreceipt/PH/e219cfecda87618e> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/c810985175cada22> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/tax> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 6595521 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/3> .
+
+<http://resourceprojects.org/governmentreceipt/PH/e895f02fb756822b> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/fa2feb1e6db1c3bc> ;
+    base:payer <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 438566 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/13> .
+
+<http://resourceprojects.org/governmentreceipt/PH/eb9747ff79856b81> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/a905cca90e32b33f> ;
+    base:payer <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/other> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 15082998 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/4> .
+
+<http://resourceprojects.org/governmentreceipt/PH/f747d834c27b745b> a base:GovernmentReceipt ;
+    base:basisOfAccounting "cash" ;
+    base:currency "PHP" ;
+    base:payee <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/governmentparty/28adaddab25d5ca7> ;
+    base:payer <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:paymentLevel "project" ;
+    base:paymentType <http://resourceprojects.org/paymenttype/eurd/tax> ;
+    base:relatedProject <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:value 89754248 ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/18> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/10> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/100> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/101> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/102> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/103> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/104> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/105> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/106> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/107> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/108> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/109> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/11> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/110> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/111> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/112> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/113> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/114> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/115> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/116> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/117> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/118> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/119> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/12> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/120> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/121> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/122> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/123> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/124> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/125> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/126> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/127> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/128> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/129> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/13> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/130> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/131> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/132> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/133> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/134> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/135> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/136> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/137> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/138> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/139> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/14> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/140> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/141> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/142> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/143> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/144> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/145> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/146> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/147> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/148> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/149> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/15> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/150> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/151> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/152> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/153> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/154> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/155> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/156> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/157> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/158> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/159> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/16> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/160> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/161> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/162> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/163> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/164> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/165> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/166> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/167> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/168> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/169> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/17> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/170> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/171> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/172> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/173> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/174> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/175> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/176> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/177> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/178> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/179> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/18> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/180> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/181> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/182> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/183> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/184> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/185> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/186> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/187> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/188> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/189> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/19> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/190> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/191> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/192> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/193> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/194> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/195> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/196> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/197> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/198> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/199> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/20> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/200> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/201> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/202> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/21> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/22> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/23> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/24> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/25> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/26> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/27> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/28> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/29> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/30> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/31> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/32> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/33> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/34> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/35> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/36> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/37> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/38> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/39> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/40> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/41> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/42> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/43> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/44> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/45> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/46> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/47> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/48> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/49> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/50> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/51> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/52> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/53> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/54> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/55> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/56> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/57> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/58> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/59> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/6> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/60> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/61> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/62> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/63> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/64> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/65> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/66> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/67> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/68> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/69> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/7> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/70> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/71> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/72> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/73> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/74> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/75> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/76> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/77> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/78> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/79> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/8> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/80> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/81> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/82> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/83> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/84> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/85> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/86> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/87> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/88> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/89> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/9> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/90> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/91> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/92> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/93> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/94> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/95> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/96> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/97> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/98> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/99> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/622952eeec107896/sheet/Contributor/row/3> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/622952eeec107896/sheet/Contributor> ;
+    ns2:mbox "abigailocate@gmail.com"@en ;
+    ns2:name "Abigail Ocate"@en .
+
+<http://resourceprojects.org/prov/source/c16da3c1c0dc586f/sheet/9Reserves> a prov:Entity ;
+    base:sheet "9. Reserves" .
+
+<http://resourceprojects.org/prov/source/e8a6b4be69f4c370/sheet/2SourceList/row/3> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/e8a6b4be69f4c370/sheet/2SourceList> .
+
+<http://resourceprojects.org/prov/source/e8a6b4be69f4c370/sheet/2SourceList/row/4> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/e8a6b4be69f4c370/sheet/2SourceList> .
+
+<http://resourceprojects.org/prov/source/e8a6b4be69f4c370/sheet/2SourceList/row/5> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/e8a6b4be69f4c370/sheet/2SourceList> .
+
+<http://resourceprojects.org/source/PhEITI1stReport-x2nwme> a base:Source ;
+    base:retrievedDate "2015-10-27T00:00:00"^^xsd:dateTime ;
+    base:sourceDate "2014-12-29T00:00:00"^^xsd:dateTime ;
+    base:sourceType <http://resourceprojects.org/sourcetype/eiti> ;
+    base:url "http://ph-eiti.org/document/EITI-Report/First-Country-Report/Completed-Reporting-Templates/Carrascal%20Nickel%20Corporation.pdf" ;
+    base:urlType "Direct link to data in PDF report" ;
+    skos:prefLabel "Ph-EITI 1st Report"@en .
+
+<http://resourceprojects.org/contract/XX/mpno-15xm7w> a base:Contract ;
+    base:hasStake <http://resourceprojects.org/stake/79c486b6e159efde> ;
+    ns1:uri "http://contracts.ph-eiti.org/contract/93" ;
+    skos:prefLabel "MPSA No. 225-2005-XI"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/4> .
+
+<http://resourceprojects.org/contract/XX/mpno-j7kua3> a base:Contract ;
+    base:hasStake <http://resourceprojects.org/stake/5ae808be65ca06dc> ;
+    ns1:uri "http://contracts.ph-eiti.org/contract/75" ;
+    skos:prefLabel "MPSA No. 292-2009-VIII"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/5> .
+
+<http://resourceprojects.org/contract/XX/mpno-spb45s> a base:Contract ;
+    base:hasStake <http://resourceprojects.org/stake/8336becf974e1b6a> ;
+    ns1:uri "http://contracts.ph-eiti.org/contract/97" ;
+    skos:prefLabel "MPSA No. 243-2007-XIII"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/6> .
+
+<http://resourceprojects.org/contract/ocds-591adf-PH0149652678RC> a base:Contract ;
+    base:hasStake <http://resourceprojects.org/stake/e24ab39be71f60f7> ;
+    base:identifier "ocds-591adf-PH0149652678RC" ;
+    base:relatedProject <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/6> .
+
+<http://resourceprojects.org/contract/ocds-591adf-PH3670634886RC> a base:Contract ;
+    base:hasStake <http://resourceprojects.org/stake/ff724493cf65e3d1> ;
+    base:identifier "ocds-591adf-PH3670634886RC" ;
+    base:relatedProject <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/4> .
+
+<http://resourceprojects.org/contract/ocds-591adf-PH6794873572RC> a base:Contract ;
+    base:hasStake <http://resourceprojects.org/stake/69e793441f4230bb> ;
+    base:identifier "ocds-591adf-PH6794873572RC" ;
+    base:relatedProject <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/5> .
+
+<http://resourceprojects.org/governmentparty/d6e42e1921cfa6c6> a base:GovernmentParty ;
+    skos:prefLabel "Mines and Geosciences Bureau"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/21> .
+
+<http://resourceprojects.org/governmentparty/fa2feb1e6db1c3bc> a base:GovernmentParty ;
+    skos:prefLabel "Philippine Ports Authority"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/13> .
+
+<http://resourceprojects.org/production/PH/029bca3aca820ad0> a base:Production ;
+    base:hasCommodity <http://resourceprojects.org/commodity/Gold> ;
+    ns1:price "1,660" ;
+    base:priceUnit "$/oz" ;
+    base:unit "kg" ;
+    base:volume "736.69" ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/3> .
+
+<http://resourceprojects.org/production/PH/39a9f0b5fb107518> a base:Production ;
+    base:hasCommodity <http://resourceprojects.org/commodity/Chromite> ;
+    ns1:price "150.22" ;
+    base:priceUnit "$/tonne" ;
+    base:unit "Metric tonne" ;
+    base:volume "22,500" ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/5> .
+
+<http://resourceprojects.org/production/PH/95d2d53bc87fded7> a base:Production ;
+    base:hasCommodity <http://resourceprojects.org/commodity/Nickel> ;
+    base:unit "Metric tonne" ;
+    base:volume "5,083,545" ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/6> .
+
+<http://resourceprojects.org/production/PH/c9ecbd052fe83b98> a base:Production ;
+    base:hasCommodity <http://resourceprojects.org/commodity/Silver> ;
+    ns1:price "31" ;
+    base:priceUnit "$/oz" ;
+    base:unit "kg" ;
+    base:volume "3,559.55" ;
+    base:year 2012 ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/4> .
+
+<http://resourceprojects.org/prov/source/0e0fbdc5fce52434/sheet/4Projectaliases/row/3> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/0e0fbdc5fce52434/sheet/4Projectaliases> .
+
+<http://resourceprojects.org/prov/source/0e0fbdc5fce52434/sheet/4Projectaliases/row/4> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/0e0fbdc5fce52434/sheet/4Projectaliases> .
+
+<http://resourceprojects.org/prov/source/0e0fbdc5fce52434/sheet/4Projectaliases/row/5> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/0e0fbdc5fce52434/sheet/4Projectaliases> .
+
+<http://resourceprojects.org/prov/source/12fd55e629a80943/sheet/6CompaniesandGroups/row/3> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/12fd55e629a80943/sheet/6CompaniesandGroups> .
+
+<http://resourceprojects.org/prov/source/12fd55e629a80943/sheet/6CompaniesandGroups/row/4> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/12fd55e629a80943/sheet/6CompaniesandGroups> .
+
+<http://resourceprojects.org/prov/source/12fd55e629a80943/sheet/6CompaniesandGroups/row/5> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/12fd55e629a80943/sheet/6CompaniesandGroups> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/3> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/4> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/5> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> .
+
+<http://resourceprojects.org/prov/source/622952eeec107896/sheet/Contributor> a prov:Entity ;
+    base:sheet "Contributor" .
+
+<http://resourceprojects.org/site/XX/casu-uc8sy2> a base:Site ;
+    base:hasLocation <http://resourceprojects.org/country/PH> ;
+    base:lat "9.4333333" ;
+    base:long "125.875" ;
+    ns1:address "Carrascal, Surigao del Sur" ;
+    skos:prefLabel "Carrascal, Surigao del Sur"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity/row/6> .
+
+<http://resourceprojects.org/site/XX/guea-c6gr8i> a base:Site ;
+    base:hasLocation <http://resourceprojects.org/country/PH> ;
+    base:lat "10.7375" ;
+    base:long "125.775" ;
+    ns1:address "Homonhon Island,Guiuan, Eastern Samar" ;
+    skos:prefLabel "Guiuan, Easter Samar"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity/row/5> .
+
+<http://resourceprojects.org/site/XX/maco-7vik8y> a base:Site ;
+    base:hasLocation <http://resourceprojects.org/country/PH> ;
+    base:lat "7.3617806" ;
+    base:long "126.04515" ;
+    ns1:address "Bgy. Masara, Municipality of Maco, Compostela Valley" ;
+    skos:prefLabel "Maco, Compostella Valley Province"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity/row/3>,
+        <http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity/row/4> .
+
+<http://resourceprojects.org/status/XX/1f221a8b4d866309> a base:Status ;
+    base:statusType "Production" ;
+    base:trueAt "2012-01-01T00:00:00"^^xsd:dateTime .
+
+<http://resourceprojects.org/status/XX/3121f7c77052d26b> a base:Status ;
+    base:statusType "Production" ;
+    base:trueAt "2012-01-01T00:00:00"^^xsd:dateTime .
+
+<http://resourceprojects.org/status/XX/76ecd96a171f1da8> a base:Status ;
+    base:statusType "Production" ;
+    base:trueAt "2012-01-01T00:00:00"^^xsd:dateTime .
+
+<http://resourceprojects.org/status/XX/92360741f4c60266> a base:Status ;
+    base:statusType "Production" ;
+    base:trueAt "2012-01-01T00:00:00"^^xsd:dateTime .
+
+<http://resourceprojects.org/commodity/Chromite> a base:Commodity ;
+    base:commodityType "Mining" ;
+    skos:prefLabel "Chromite"@en .
+
+<http://resourceprojects.org/commodity/Gold> a base:Commodity ;
+    base:commodityType "Mining" ;
+    skos:prefLabel "Gold"@en .
+
+<http://resourceprojects.org/commodity/Nickel> a base:Commodity ;
+    base:commodityType "Mining" ;
+    skos:prefLabel "Nickel"@en .
+
+<http://resourceprojects.org/commodity/Silver> a base:Commodity ;
+    base:commodityType "Mining" ;
+    skos:prefLabel "Silver"@en .
+
+<http://resourceprojects.org/governmentparty/28adaddab25d5ca7> a base:GovernmentParty ;
+    skos:prefLabel "Burea of Internal Revenue"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/18>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/19> .
+
+<http://resourceprojects.org/governmentparty/a905cca90e32b33f> a base:GovernmentParty ;
+    skos:prefLabel "Bureau of Customs"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/20>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/4> .
+
+<http://resourceprojects.org/paymenttype/e45f8db78f42a6a7> a base:PaymentType ;
+    skos:prefLabel "Royalties"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/21> .
+
+<http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity/row/3> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity> .
+
+<http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity/row/4> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity> .
+
+<http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity/row/5> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity> .
+
+<http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity/row/6> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity> .
+
+<http://resourceprojects.org/sourcetype/eiti> a base:SourceType ;
+    base:identifier "eiti" ;
+    skos:prefLabel "EITI report"@en .
+
+<http://resourceprojects.org/stake/021b1ed1a437bc29> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/9> .
+
+<http://resourceprojects.org/stake/0b2366e070bf5317> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/17> .
+
+<http://resourceprojects.org/stake/1762740f75e10ec2> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/2> .
+
+<http://resourceprojects.org/stake/1a895f1dc529dc2b> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isOperator true ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    base:share "100%" ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/5> .
+
+<http://resourceprojects.org/stake/21298e84dd61887b> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/18> .
+
+<http://resourceprojects.org/stake/2241837fe94182f7> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/13> .
+
+<http://resourceprojects.org/stake/298cb150f46114c2> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/10> .
+
+<http://resourceprojects.org/stake/2cd658dd36785780> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/6> .
+
+<http://resourceprojects.org/stake/2e6e9d6aebc85827> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/8> .
+
+<http://resourceprojects.org/stake/2eb389236b53be3e> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/15> .
+
+<http://resourceprojects.org/stake/354c409559f3e623> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isOperator true ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    base:share "100%" ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/4> .
+
+<http://resourceprojects.org/stake/372f6da6d0cc2457> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/6> .
+
+<http://resourceprojects.org/stake/3b946ecbe23e1b06> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/4> .
+
+<http://resourceprojects.org/stake/3d5f66291a67ee0c> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/5> .
+
+<http://resourceprojects.org/stake/4278cd93c974d36d> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/12> .
+
+<http://resourceprojects.org/stake/4b1e398f1743c85a> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/14> .
+
+<http://resourceprojects.org/stake/4b5792132b73469e> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/5> .
+
+<http://resourceprojects.org/stake/4f037df933dc1133> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/19> .
+
+<http://resourceprojects.org/stake/590441414d72ee8d> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/22> .
+
+<http://resourceprojects.org/stake/5ae808be65ca06dc> a base:Stake ;
+    base:isStakeIn <http://resourceprojects.org/contract/XX/mpno-j7kua3>,
+        <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/5> .
+
+<http://resourceprojects.org/stake/5cbfe2044b7b501e> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/18> .
+
+<http://resourceprojects.org/stake/5d88b732cfab288f> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/11> .
+
+<http://resourceprojects.org/stake/649985676648bc0a> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/9> .
+
+<http://resourceprojects.org/stake/65b75231f34a5684> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/4> .
+
+<http://resourceprojects.org/stake/68b1adef11a18d3a> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/6> .
+
+<http://resourceprojects.org/stake/69e793441f4230bb> a base:Stake ;
+    base:isStakeIn <http://resourceprojects.org/contract/ocds-591adf-PH6794873572RC>,
+        <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/5> .
+
+<http://resourceprojects.org/stake/75ffd6827c1f527b> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/2> .
+
+<http://resourceprojects.org/stake/7855e9740e1114b9> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/21> .
+
+<http://resourceprojects.org/stake/79c486b6e159efde> a base:Stake ;
+    base:isStakeIn <http://resourceprojects.org/contract/XX/mpno-15xm7w>,
+        <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/4> .
+
+<http://resourceprojects.org/stake/8207597a9cac4e5b> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/21> .
+
+<http://resourceprojects.org/stake/8336becf974e1b6a> a base:Stake ;
+    base:isStakeIn <http://resourceprojects.org/contract/XX/mpno-spb45s>,
+        <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/6> .
+
+<http://resourceprojects.org/stake/86f535576f2ec7b9> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/12> .
+
+<http://resourceprojects.org/stake/8b094a1a0064fbf0> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isOperator true ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/6> .
+
+<http://resourceprojects.org/stake/9079f805e2386bd2> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/19> .
+
+<http://resourceprojects.org/stake/90f6386f1c043bff> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/7> .
+
+<http://resourceprojects.org/stake/91e0c7e7b144020d> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/17> .
+
+<http://resourceprojects.org/stake/942d6eaf3817c148> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/13> .
+
+<http://resourceprojects.org/stake/94db5508c22bbae7> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/3> .
+
+<http://resourceprojects.org/stake/96894592ded3b7fd> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/16> .
+
+<http://resourceprojects.org/stake/9a8c59bc3c7fc358> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/20> .
+
+<http://resourceprojects.org/stake/a45d5a46a38df8d8> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/14> .
+
+<http://resourceprojects.org/stake/a5af47755ce9abc1> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/4> .
+
+<http://resourceprojects.org/stake/aa92959e557483cb> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/6> .
+
+<http://resourceprojects.org/stake/ad4b0c2a60b7677a> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/10> .
+
+<http://resourceprojects.org/stake/b75d06408ae798e6> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/15> .
+
+<http://resourceprojects.org/stake/bab664dd6e339c2a> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/3> .
+
+<http://resourceprojects.org/stake/bf1073758fa877f8> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/3> .
+
+<http://resourceprojects.org/stake/c114914431ba1970> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/8> .
+
+<http://resourceprojects.org/stake/d2c46ea7a223cf11> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/5> .
+
+<http://resourceprojects.org/stake/d46b71d6dab99452> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/4> .
+
+<http://resourceprojects.org/stake/d74d4acb348f20d7> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/7> .
+
+<http://resourceprojects.org/stake/dcd64a3ef90a473b> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/16> .
+
+<http://resourceprojects.org/stake/df02095327a3546a> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/5> .
+
+<http://resourceprojects.org/stake/e24ab39be71f60f7> a base:Stake ;
+    base:isStakeIn <http://resourceprojects.org/contract/ocds-591adf-PH0149652678RC>,
+        <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/6> .
+
+<http://resourceprojects.org/stake/e4dbe8a943becd74> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/ba28d64de2d923b1> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/3> .
+
+<http://resourceprojects.org/stake/e5c06e6feef62045> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/3ad8c44c92761611> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/hoch-qbp4wi> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/11> .
+
+<http://resourceprojects.org/stake/ec94da29971ef35c> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/22> .
+
+<http://resourceprojects.org/stake/eff6b7074e005137> a base:Stake ;
+    base:hasStakeholder <http://resourceprojects.org/company/1d962416852620a6> ;
+    base:isStakeIn <http://resourceprojects.org/project/PH/cani-np41y3> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/20> .
+
+<http://resourceprojects.org/stake/ff724493cf65e3d1> a base:Stake ;
+    base:isStakeIn <http://resourceprojects.org/contract/ocds-591adf-PH3670634886RC>,
+        <http://resourceprojects.org/project/PH/apma-l9nepr> ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/4> .
+
+<http://resourceprojects.org/prov/source/0e0fbdc5fce52434/sheet/4Projectaliases> a prov:Entity ;
+    base:sheet "4. Project aliases" .
+
+<http://resourceprojects.org/prov/source/12fd55e629a80943/sheet/6CompaniesandGroups> a prov:Entity ;
+    base:sheet "6. Companies and Groups" .
+
+<http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies> a prov:Entity ;
+    base:sheet "7. Contracts, concessions and companies" .
+
+<http://resourceprojects.org/prov/source/e8a6b4be69f4c370/sheet/2SourceList> a prov:Entity ;
+    base:sheet "2. Source List" .
+
+<http://resourceprojects.org/governmentparty/c810985175cada22> a base:GovernmentParty ;
+    skos:prefLabel "Bureau of Internal Revenue"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/11>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/12>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/2>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/3> .
+
+<http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity> a prov:Entity ;
+    base:sheet "5. Project location, status, commodity" .
+
+<http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production> a prov:Entity ;
+    base:sheet "8. Production" .
+
+<http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/3> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production> .
+
+<http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/4> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production> .
+
+<http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/5> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production> .
+
+<http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/6> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/22> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/15> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/16> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/5> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/governmentparty/a084b658bd8f86b3> a base:GovernmentParty ;
+    skos:prefLabel "Local Government Unit"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/10>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/14>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/17>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/6>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/7>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/8>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/9> .
+
+<http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/4> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies> .
+
+<http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/5> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies> .
+
+<http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/6> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/10> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/11> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/12> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/13> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/14> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/17> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/18> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/19> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/2> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/20> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/21> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/3> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/4> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/6> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/7> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/8> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/9> a base:SourceRecord ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> .
+
+<http://resourceprojects.org/paymenttype/e7e6a988ee3e39c8> a base:PaymentType ;
+    skos:prefLabel "License fees, rental fees, entry fees, and other considerations for licenses and/or concessions"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/14>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/15>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/17>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/6>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/9> .
+
+<http://resourceprojects.org/paymenttype/eurd/tax> a base:PaymentType ;
+    base:identifier "eurd/tax" ;
+    skos:prefLabel "Taxes levied on the income, production or profits of companies"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/11>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/12>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/18>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/19>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/2>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/3> .
+
+<http://resourceprojects.org/paymenttype/eurd/other> a base:PaymentType ;
+    base:identifier "eurd/other" ;
+    skos:prefLabel "Other"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/10>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/13>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/16>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/20>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/4>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/5>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/7>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/8> .
+
+<http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts> a prov:Entity ;
+    base:sheet "10. Payments and receipts" .
+
+<http://resourceprojects.org/company/1d962416852620a6> a base:Company ;
+    base:hasLocation <http://resourceprojects.org/country/PH> ;
+    base:holdsStake <http://resourceprojects.org/stake/21298e84dd61887b>,
+        <http://resourceprojects.org/stake/2cd658dd36785780>,
+        <http://resourceprojects.org/stake/4f037df933dc1133>,
+        <http://resourceprojects.org/stake/590441414d72ee8d>,
+        <http://resourceprojects.org/stake/5cbfe2044b7b501e>,
+        <http://resourceprojects.org/stake/68b1adef11a18d3a>,
+        <http://resourceprojects.org/stake/7855e9740e1114b9>,
+        <http://resourceprojects.org/stake/8207597a9cac4e5b>,
+        <http://resourceprojects.org/stake/8b094a1a0064fbf0>,
+        <http://resourceprojects.org/stake/9079f805e2386bd2>,
+        <http://resourceprojects.org/stake/9a8c59bc3c7fc358>,
+        <http://resourceprojects.org/stake/ec94da29971ef35c>,
+        <http://resourceprojects.org/stake/eff6b7074e005137> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:website "http://www.cncnickel.com/" ;
+    skos:prefLabel "Carrascal Nickel Corporation"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/12fd55e629a80943/sheet/6CompaniesandGroups/row/5>,
+        <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/6>,
+        <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/6>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/18>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/19>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/20>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/21>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/22> .
+
+<http://resourceprojects.org/project/PH/cani-np41y3> a base:Project ;
+    base:hasCommodity <http://resourceprojects.org/commodity/Nickel> ;
+    base:hasLocation <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/site/XX/casu-uc8sy2> ;
+    base:hasStake <http://resourceprojects.org/stake/21298e84dd61887b>,
+        <http://resourceprojects.org/stake/2cd658dd36785780>,
+        <http://resourceprojects.org/stake/4f037df933dc1133>,
+        <http://resourceprojects.org/stake/590441414d72ee8d>,
+        <http://resourceprojects.org/stake/5cbfe2044b7b501e>,
+        <http://resourceprojects.org/stake/68b1adef11a18d3a>,
+        <http://resourceprojects.org/stake/7855e9740e1114b9>,
+        <http://resourceprojects.org/stake/8207597a9cac4e5b>,
+        <http://resourceprojects.org/stake/8336becf974e1b6a>,
+        <http://resourceprojects.org/stake/8b094a1a0064fbf0>,
+        <http://resourceprojects.org/stake/9079f805e2386bd2>,
+        <http://resourceprojects.org/stake/9a8c59bc3c7fc358>,
+        <http://resourceprojects.org/stake/e24ab39be71f60f7>,
+        <http://resourceprojects.org/stake/ec94da29971ef35c>,
+        <http://resourceprojects.org/stake/eff6b7074e005137> ;
+    base:productionStatistics <http://resourceprojects.org/production/PH/95d2d53bc87fded7> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:state <http://resourceprojects.org/status/XX/1f221a8b4d866309> ;
+    skos:prefLabel "Carrascal Nickel"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/0e0fbdc5fce52434/sheet/4Projectaliases/row/5>,
+        <http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity/row/6>,
+        <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/6>,
+        <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/5>,
+        <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/6>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/18>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/19>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/20>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/21>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/22> .
+
+<http://resourceprojects.org/company/3ad8c44c92761611> a base:Company ;
+    base:hasLocation <http://resourceprojects.org/country/PH> ;
+    base:holdsStake <http://resourceprojects.org/stake/0b2366e070bf5317>,
+        <http://resourceprojects.org/stake/1a895f1dc529dc2b>,
+        <http://resourceprojects.org/stake/2241837fe94182f7>,
+        <http://resourceprojects.org/stake/2eb389236b53be3e>,
+        <http://resourceprojects.org/stake/3d5f66291a67ee0c>,
+        <http://resourceprojects.org/stake/4278cd93c974d36d>,
+        <http://resourceprojects.org/stake/4b1e398f1743c85a>,
+        <http://resourceprojects.org/stake/5d88b732cfab288f>,
+        <http://resourceprojects.org/stake/86f535576f2ec7b9>,
+        <http://resourceprojects.org/stake/91e0c7e7b144020d>,
+        <http://resourceprojects.org/stake/942d6eaf3817c148>,
+        <http://resourceprojects.org/stake/96894592ded3b7fd>,
+        <http://resourceprojects.org/stake/a45d5a46a38df8d8>,
+        <http://resourceprojects.org/stake/b75d06408ae798e6>,
+        <http://resourceprojects.org/stake/d2c46ea7a223cf11>,
+        <http://resourceprojects.org/stake/dcd64a3ef90a473b>,
+        <http://resourceprojects.org/stake/e5c06e6feef62045> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:website "http://www.cambayasmining.com/" ;
+    skos:prefLabel "Cambayas Mining Corporation"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/12fd55e629a80943/sheet/6CompaniesandGroups/row/4>,
+        <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/5>,
+        <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/5>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/11>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/12>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/13>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/14>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/15>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/16>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/17> .
+
+<http://resourceprojects.org/project/PH/hoch-qbp4wi> a base:Project ;
+    base:hasCommodity <http://resourceprojects.org/commodity/Chromite> ;
+    base:hasLocation <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/site/XX/guea-c6gr8i> ;
+    base:hasStake <http://resourceprojects.org/stake/0b2366e070bf5317>,
+        <http://resourceprojects.org/stake/1a895f1dc529dc2b>,
+        <http://resourceprojects.org/stake/2241837fe94182f7>,
+        <http://resourceprojects.org/stake/2eb389236b53be3e>,
+        <http://resourceprojects.org/stake/3d5f66291a67ee0c>,
+        <http://resourceprojects.org/stake/4278cd93c974d36d>,
+        <http://resourceprojects.org/stake/4b1e398f1743c85a>,
+        <http://resourceprojects.org/stake/5ae808be65ca06dc>,
+        <http://resourceprojects.org/stake/5d88b732cfab288f>,
+        <http://resourceprojects.org/stake/69e793441f4230bb>,
+        <http://resourceprojects.org/stake/86f535576f2ec7b9>,
+        <http://resourceprojects.org/stake/91e0c7e7b144020d>,
+        <http://resourceprojects.org/stake/942d6eaf3817c148>,
+        <http://resourceprojects.org/stake/96894592ded3b7fd>,
+        <http://resourceprojects.org/stake/a45d5a46a38df8d8>,
+        <http://resourceprojects.org/stake/b75d06408ae798e6>,
+        <http://resourceprojects.org/stake/d2c46ea7a223cf11>,
+        <http://resourceprojects.org/stake/dcd64a3ef90a473b>,
+        <http://resourceprojects.org/stake/e5c06e6feef62045> ;
+    base:productionStatistics <http://resourceprojects.org/production/PH/39a9f0b5fb107518> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:state <http://resourceprojects.org/status/XX/92360741f4c60266> ;
+    skos:prefLabel "Homonhon Chromite"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/0e0fbdc5fce52434/sheet/4Projectaliases/row/4>,
+        <http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity/row/5>,
+        <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/5>,
+        <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/4>,
+        <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/5>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/11>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/12>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/13>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/14>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/15>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/16>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/17> .
+
+<http://resourceprojects.org/company/ba28d64de2d923b1> a base:Company ;
+    base:hasLocation <http://resourceprojects.org/country/PH> ;
+    base:holdsStake <http://resourceprojects.org/stake/021b1ed1a437bc29>,
+        <http://resourceprojects.org/stake/1762740f75e10ec2>,
+        <http://resourceprojects.org/stake/298cb150f46114c2>,
+        <http://resourceprojects.org/stake/2e6e9d6aebc85827>,
+        <http://resourceprojects.org/stake/354c409559f3e623>,
+        <http://resourceprojects.org/stake/372f6da6d0cc2457>,
+        <http://resourceprojects.org/stake/3b946ecbe23e1b06>,
+        <http://resourceprojects.org/stake/4b5792132b73469e>,
+        <http://resourceprojects.org/stake/649985676648bc0a>,
+        <http://resourceprojects.org/stake/65b75231f34a5684>,
+        <http://resourceprojects.org/stake/75ffd6827c1f527b>,
+        <http://resourceprojects.org/stake/90f6386f1c043bff>,
+        <http://resourceprojects.org/stake/94db5508c22bbae7>,
+        <http://resourceprojects.org/stake/a5af47755ce9abc1>,
+        <http://resourceprojects.org/stake/aa92959e557483cb>,
+        <http://resourceprojects.org/stake/ad4b0c2a60b7677a>,
+        <http://resourceprojects.org/stake/bab664dd6e339c2a>,
+        <http://resourceprojects.org/stake/bf1073758fa877f8>,
+        <http://resourceprojects.org/stake/c114914431ba1970>,
+        <http://resourceprojects.org/stake/d46b71d6dab99452>,
+        <http://resourceprojects.org/stake/d74d4acb348f20d7>,
+        <http://resourceprojects.org/stake/df02095327a3546a>,
+        <http://resourceprojects.org/stake/e4dbe8a943becd74> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:website "http://www.apexmines.com/" ;
+    skos:prefLabel "Apex Mining Company Inc."@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/12fd55e629a80943/sheet/6CompaniesandGroups/row/3>,
+        <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/4>,
+        <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/3>,
+        <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/4>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/10>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/2>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/3>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/4>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/5>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/6>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/7>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/8>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/9> .
+
+<http://resourceprojects.org/project/PH/apma-l9nepr> a base:Project ;
+    base:hasCommodity <http://resourceprojects.org/commodity/Gold>,
+        <http://resourceprojects.org/commodity/Silver> ;
+    base:hasLocation <http://resourceprojects.org/country/PH>,
+        <http://resourceprojects.org/site/XX/maco-7vik8y> ;
+    base:hasStake <http://resourceprojects.org/stake/021b1ed1a437bc29>,
+        <http://resourceprojects.org/stake/1762740f75e10ec2>,
+        <http://resourceprojects.org/stake/298cb150f46114c2>,
+        <http://resourceprojects.org/stake/2e6e9d6aebc85827>,
+        <http://resourceprojects.org/stake/354c409559f3e623>,
+        <http://resourceprojects.org/stake/372f6da6d0cc2457>,
+        <http://resourceprojects.org/stake/3b946ecbe23e1b06>,
+        <http://resourceprojects.org/stake/4b5792132b73469e>,
+        <http://resourceprojects.org/stake/649985676648bc0a>,
+        <http://resourceprojects.org/stake/65b75231f34a5684>,
+        <http://resourceprojects.org/stake/75ffd6827c1f527b>,
+        <http://resourceprojects.org/stake/79c486b6e159efde>,
+        <http://resourceprojects.org/stake/90f6386f1c043bff>,
+        <http://resourceprojects.org/stake/94db5508c22bbae7>,
+        <http://resourceprojects.org/stake/a5af47755ce9abc1>,
+        <http://resourceprojects.org/stake/aa92959e557483cb>,
+        <http://resourceprojects.org/stake/ad4b0c2a60b7677a>,
+        <http://resourceprojects.org/stake/bab664dd6e339c2a>,
+        <http://resourceprojects.org/stake/bf1073758fa877f8>,
+        <http://resourceprojects.org/stake/c114914431ba1970>,
+        <http://resourceprojects.org/stake/d46b71d6dab99452>,
+        <http://resourceprojects.org/stake/d74d4acb348f20d7>,
+        <http://resourceprojects.org/stake/df02095327a3546a>,
+        <http://resourceprojects.org/stake/e4dbe8a943becd74>,
+        <http://resourceprojects.org/stake/ff724493cf65e3d1> ;
+    base:productionStatistics <http://resourceprojects.org/production/PH/029bca3aca820ad0>,
+        <http://resourceprojects.org/production/PH/c9ecbd052fe83b98> ;
+    base:source <http://resourceprojects.org/source/PHEITI1stReport-07j0k1> ;
+    base:state <http://resourceprojects.org/status/XX/3121f7c77052d26b>,
+        <http://resourceprojects.org/status/XX/76ecd96a171f1da8> ;
+    skos:prefLabel "Apex Maco"@en ;
+    prov:wasDerivedFrom <http://resourceprojects.org/prov/source/0e0fbdc5fce52434/sheet/4Projectaliases/row/3>,
+        <http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity/row/3>,
+        <http://resourceprojects.org/prov/source/26c828ddc09af7b0/sheet/5Projectlocationstatuscommodity/row/4>,
+        <http://resourceprojects.org/prov/source/3170e85e95c4acb0/sheet/7Contractsconcessionsandcompanies/row/4>,
+        <http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList/row/3>,
+        <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/3>,
+        <http://resourceprojects.org/prov/source/abcf5018b2ef2070/sheet/8Production/row/4>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/10>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/2>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/3>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/4>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/5>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/6>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/7>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/8>,
+        <http://resourceprojects.org/prov/source/c66f3fcf4f9b91ce/sheet/10Paymentsandreceipts/row/9> .
+
+<http://resourceprojects.org/source/PHEITI1stReport-07j0k1> a base:Source ;
+    base:retrievedDate "2015-10-26T00:00:00"^^xsd:dateTime,
+        "2015-10-27T00:00:00"^^xsd:dateTime ;
+    base:sourceDate "2014-12-29T00:00:00"^^xsd:dateTime ;
+    base:sourceType <http://resourceprojects.org/sourcetype/eiti> ;
+    base:url "http://ph-eiti.org/document/EITI-Report/First-Country-Report/Completed-Reporting-Templates/Apex%20Mining%20Co.%20Inc.pdf",
+        "http://ph-eiti.org/document/EITI-Report/First-Country-Report/Completed-Reporting-Templates/Cambayas%20Mining%20Corporation.pdf" ;
+    base:urlType "Direct link to data in PDF report" ;
+    skos:prefLabel "PH-EITI 1st Report"@en .
+
+<http://resourceprojects.org/country/PH> a base:Country ;
+    base:identifier "PH" ;
+    skos:prefLabel "Philippines"@en .
+
+<http://resourceprojects.org/prov/source/4b8ed983f8c77cf8/sheet/1ProjectList> a prov:Entity ;
+    base:sheet "1. Project List" .
+

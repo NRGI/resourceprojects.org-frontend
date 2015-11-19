@@ -208,7 +208,7 @@
                   <td></td>
                 {%endif%}
             {%endif%}
-            <td><a href="{{ row.company.value }}">{{ row.company_name.value }}</a></td>
+            <td><a href="{{ row.payer.value }}">{{ row.payer_name.value }}</a></td>
             <td><a href="{{ row.country.value }}">{{ row.country_name.value }}</a></td>
             <td>{{ row.type.value }}</td>
             <td>{{ row.currency.value }}</td>
