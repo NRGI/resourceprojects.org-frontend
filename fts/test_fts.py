@@ -84,7 +84,10 @@ def test_projects_page(browser):
     #Test data in first row matches text data from our fixture
     table = browser.find_element_by_id('projects')
     rows = table.find_elements_by_tag_name('tr')
+<<<<<<< HEAD
     ## NB These rows will change if more, or less, fixture data is used
+=======
+>>>>>>> Updates the fixtures with latest data
     assert 'Angola' in rows[23].text
     assert 'Block 0 A' in rows[23].text
     assert 'Oil and Gas' in rows[23].text
@@ -173,7 +176,10 @@ def test_sources_page(browser):
     #Test data in first row matches text data from our fixture
     table = browser.find_element_by_tag_name('table')
     rows = table.find_elements_by_tag_name('tr')
+<<<<<<< HEAD
     ## NB These rows will change if more, or less, fixture data is used
+=======
+>>>>>>> Updates the fixtures with latest data
     assert 'Hudbay Minerals' in rows[9].text
     assert 'Company database' in rows[9].text
     assert '2015-04-30' in rows[9].text
@@ -310,22 +316,26 @@ class TestCompanyPage2:
         
 # Various company page data tests
 def test_empty_payments_table (browser):
-      browser.get(server_url + 'company/5b682b0b720c3597')
+      #browser.get(server_url + 'company/5b682b0b720c3597')  #BTG Pactual
+      browser.get(server_url + 'company/f037c2d364ce0533')  #BTG Pactual
       assert 'No data available' in browser.find_element_by_css_selector('.no-data').text
       
 def test_website_link (browser):
-      browser.get(server_url + 'company/2fe073c29814ab6d')
+      #browser.get(server_url + 'company/2fe073c29814ab6d')  #Peruvian Precious Metals Corp.
+      browser.get(server_url + 'company/2fe073c29814ab6d')  #Peruvian Precious Metals Corp.
       assert 'http://peruvianpmc.com/corporate/about/' in browser.find_element_by_css_selector('.info-box').text
 
 def test_open_corporates_link (browser):
-      browser.get(server_url + 'company/b6e57c43738d9979')
+      #browser.get(server_url + 'company/b6e57c43738d9979')  #Companis Minera Antpaccay Sa
+      browser.get(server_url + 'company/b6e57c43738d9979')  #Companis Minera Antpaccay Sa
       assert 'https://opencorporates.com/companies/je/EXTUID_266101' in browser.find_element_by_css_selector('.info-box').text
       
 
 class TestProjectPage:
     @pytest.fixture(autouse=True, scope='module')
     def load_project_page(self, browser):
-        browser.get(server_url + 'project/AO/bl0-c9kv88')
+        #browser.get(server_url + 'project/AO/bl0-c9kv88')  #Block 0 A
+        browser.get(server_url + 'project/AO/bl0-kp7ie6')  #Block 0 A
 
     @pytest.mark.parametrize(('table_css', 'expected_headers'), [
         ('.companies', ['Name', 'Group']),
@@ -438,7 +448,8 @@ class TestProjectPage3:
 class TestCompanyGroupPage:
     @pytest.fixture(autouse=True, scope='module')
     def load_project_page(self, browser):
-        browser.get(server_url + 'group/bp-3067') #BP
+        #browser.get(server_url + 'group/bp-3067') #BP
+        browser.get(server_url + 'group/BP') #BP
 
     @pytest.mark.parametrize(('css', 'expected_no_rows'), [
         ('.companies', 2),

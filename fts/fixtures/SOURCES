@@ -1,8 +1,23 @@
-test.ttl
+angola.ttl
 Source: https://docs.google.com/spreadsheets/d/1j9IDzCxCd2a70viGa8UejqWfxJDrUS87u7ROl8p8Hgc/edit
 Notes: Converted by us to .ttl
 License: Unclear, but data is gleaned from public documents
 
-countries.ttl
+countrydata.ttl
 Source: https://docs.google.com/spreadsheets/d/1JeQbeXQacUJWNR2nPesGDQb9BJGHhVvri_Nk8zxj1Mg/edit#gid=0
 License: Materials originally created for the NYCRDC GIS workshop on April 8, 2008 at Baruch College CUNY. All of these materials are licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License: http://gothos.info/resources/
+
+eiti-ph.ttl
+Source: https://docs.google.com/spreadsheets/d/1S3aECv4WlUG1d0rIGVY7GJOdVNwWwPHR6z-r3J5Xnz0/edit
+Notes: Converted by us to .ttl
+License: Unclear, but data is gleaned from public documents
+
+norwaytheil.ttl
+Source: https://docs.google.com/spreadsheets/d/1VAIeZus4yscc5J2hSS1OBbD_9TCvu7YukAExupFwZp4/edit
+Notes: Converted by us to .ttl
+License: Unclear, but data is gleaned from public documents
+
+peru.ttl
+Source: https://docs.google.com/spreadsheets/d/1gl3syhKsI-pR_lx3KykuKOLnHrp7ir2fRxjaPTO3DgM/edit
+Notes: Converted by us to .ttl
+License: Unclear, but data is gleaned from public documents
