@@ -55,6 +55,7 @@
           <thead>
             <tr><th>Name</th><th>Commodity</th><th>Status</th><th>No. Companies</th></tr>
           </thead>
+          <!-- Don't add whitespace between for and if statements, see: https://github.com/NRGI/resourceprojects.org-frontend/issues/235#issuecomment-150623552 -->
           {% for project in models.projects %}    
           <tr>
               <td><a href="{{project.project.value}}">{{ project.name.value }}</a></td>
