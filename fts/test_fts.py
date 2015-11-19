@@ -1,3 +1,4 @@
+# This Python file uses the following encoding: utf-8
 import os
 import pytest
 from selenium import webdriver
@@ -501,4 +502,17 @@ class TestCommodityPage:
         table_headers = table.find_elements_by_tag_name('th')
         table_headers_text = [ x.text for x in table_headers ]
         assert table_headers_text == expected_headers
+        
 
+
+@pytest.mark.parametrize(('path', 'dates'), [
+    ('/source/EIACountryAnalysisBriefAngola-60hgg2', ['', '2015-08-09']),  # EIA Country Analysis Brief: Angola
+    ('/source/ExportaeseReceitasdePetrleo2014-udikid', ['2015-01-01', '2015-07-31']),  # Exportações e Receitas de Petróleo 2014
+    ])
+
+def test_source_dates (browser, path, dates): 
+    browser.get(server_url + path)
+    table = browser.find_element_by_tag_name('table')
+    rows = table.find_elements_by_tag_name('tr')
+    assert dates[0] in rows[2].text
+    assert dates[1] in rows[3].text
