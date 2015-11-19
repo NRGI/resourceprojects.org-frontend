@@ -84,10 +84,8 @@ def test_projects_page(browser):
     #Test data in first row matches text data from our fixture
     table = browser.find_element_by_id('projects')
     rows = table.find_elements_by_tag_name('tr')
-<<<<<<< HEAD
+
     ## NB These rows will change if more, or less, fixture data is used
-=======
->>>>>>> Updates the fixtures with latest data
     assert 'Angola' in rows[23].text
     assert 'Block 0 A' in rows[23].text
     assert 'Oil and Gas' in rows[23].text
@@ -176,10 +174,8 @@ def test_sources_page(browser):
     #Test data in first row matches text data from our fixture
     table = browser.find_element_by_tag_name('table')
     rows = table.find_elements_by_tag_name('tr')
-<<<<<<< HEAD
+
     ## NB These rows will change if more, or less, fixture data is used
-=======
->>>>>>> Updates the fixtures with latest data
     assert 'Hudbay Minerals' in rows[9].text
     assert 'Company database' in rows[9].text
     assert '2015-04-30' in rows[9].text
@@ -544,8 +540,10 @@ class TestCommodityPage:
 
 
 @pytest.mark.parametrize(('path', 'dates'), [
-    ('/source/EIACountryAnalysisBriefAngola-60hgg2', ['', '2015-08-09']),  # EIA Country Analysis Brief: Angola
-    ('/source/ExportaeseReceitasdePetrleo2014-udikid', ['2015-01-01', '2015-07-31']),  # Exportações e Receitas de Petróleo 2014
+    #('/source/EIACountryAnalysisBriefAngola-60hgg2', ['', '2015-08-09']),  # EIA Country Analysis Brief: Angola
+    ('/source/EIACountryAnalysisBriefAngola-2van4q', ['', '2015-08-09']),  # EIA Country Analysis Brief: Angola
+    #('/source/ExportaeseReceitasdePetrleo2014-udikid', ['2015-01-01', '2015-07-31']),  # Exportações e Receitas de Petróleo 2014
+    ('/source/ExportaeseReceitasdePetrleo2014-hjklma', ['2015-01-01', '2015-07-31']),  # Exportações e Receitas de Petróleo 2014
     ])
 
 def test_source_dates (browser, path, dates): 
