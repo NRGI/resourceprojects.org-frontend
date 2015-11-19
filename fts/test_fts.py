@@ -173,9 +173,9 @@ def test_sources_page(browser):
     table = browser.find_element_by_tag_name('table')
     rows = table.find_elements_by_tag_name('tr')
     ## NB These rows will change if more, or less, fixture data is used
-    assert 'Hudbay Minerals' in rows[3].text
-    assert 'Company database' in rows[3].text
-    assert '2015-04-30' in rows[3].text
+    assert 'Hudbay Minerals' in rows[9].text
+    assert 'Company database' in rows[9].text
+    assert '2015-04-30' in rows[9].text
     assert '1970-01-01' not in table.text
 
     
