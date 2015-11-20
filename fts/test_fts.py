@@ -420,6 +420,11 @@ class TestProjectPage3:
     @pytest.fixture(autouse=True, scope='module')
     def load_project_page(self, browser):
         browser.get(server_url + '/project/PH/apma-l9nepr') # Apex Maco
+        
+    def test_contracts (self, browser):
+        '''Checks the payer name is shown'''
+        table = browser.find_element_by_css_selector('#project-info')
+        assert 'MPSA No. 225-2005-XI' in table.text
     
     def test_payments_table_payer (self, browser):
         '''Checks the payer name is shown'''
