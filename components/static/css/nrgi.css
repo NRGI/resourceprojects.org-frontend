@@ -194,7 +194,10 @@ div.advanced-links {
   padding: 5px;
 }
 
-#project-info td {
+#project-info ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 td.project-label {
