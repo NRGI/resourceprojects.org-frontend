@@ -325,6 +325,12 @@ def test_open_corporates_link (browser):
       #browser.get(server_url + 'company/b6e57c43738d9979')  #Companis Minera Antpaccay Sa
       browser.get(server_url + 'company/b6e57c43738d9979')  #Companis Minera Antpaccay Sa
       assert 'https://opencorporates.com/companies/je/EXTUID_266101' in browser.find_element_by_css_selector('.info-box').text
+
+# https://github.com/NRGI/resourceprojects.org-frontend/pull/276
+def test_open_corporates_link (browser):
+      browser.get(server_url + 'company/f93f8db766d47883')  #Apex Mining Company Inc.
+      table = browser.find_element_by_css_selector('.payments')
+      assert '(Philippines)' in table.text
       
 
 class TestProjectPage:

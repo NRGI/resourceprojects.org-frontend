@@ -7,9 +7,22 @@ SELECT ?transaction ?paymentOrReceipt ?payee_name ?currency (replace(?amount,","
     ?transaction rp:value ?amount.
     ?transaction a ?paymentOrReceipt.
 
-    OPTIONAL { ?transaction rp:payee ?payee .
-              ?payee skos_:prefLabel ?payee_name
-    }
+       OPTIONAL {
+        ?transaction  rp:payee ?countryParty .
+        ?countryParty a rp:Country .
+        ?countryParty skos_:prefLabel ?countryParty_name.
+       }
+       OPTIONAL {
+        ?transaction  rp:payee ?govParty .
+        ?govParty a rp:GovernmentParty.
+        ?govParty skos_:prefLabel ?govParty_name.
+       }
+
+       ## This should be renamed payee, but for now we stick with country to avoid reworking the html templates
+       BIND(IF(bound(?govParty),?govParty,?countryParty) as ?payee)
+       BIND(IF(bound(?govParty),concat(?govParty_name," (",?countryParty_name,")"),?countryParty_name) as ?payee_name)    
+
+
     OPTIONAL { ?transaction rp:currency ?currency }
 
     OPTIONAL { ?transaction rp:date ?date } 
