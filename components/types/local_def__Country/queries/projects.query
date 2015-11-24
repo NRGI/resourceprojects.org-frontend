@@ -1,6 +1,6 @@
 prefix rp: <http://resourceprojects.org/def/>
 
-SELECT DISTINCT ?project  ?commodity ?statusType ?commodityLabel ?commodityType ?name (COUNT(distinct ?company) as ?companyCount) WHERE {
+SELECT DISTINCT ?project ?name (COUNT(distinct ?company) as ?companyCount) WHERE {
     ?project rp:hasLocation <{{uri}}> .
     ?project a rp:Project .
     ?project skos:prefLabel ?name
