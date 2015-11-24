@@ -1,16 +1,14 @@
 prefix rp: <http://resourceprojects.org/def/>
 prefix prov: <http://www.w3.org/ns/prov#>
 
-SELECT DISTINCT * WHERE {
+SELECT DISTINCT ?source ?name ?type ?sourceType ?url ?urlType ?sourceDate WHERE {
         ?source a rp:Source.
-        ?source skos:prefLabel ?name.
+        ?source skos:prefLabel ?name. 
         OPTIONAL { ?source rp:sourceType ?type. 
                    ?type skos:prefLabel ?sourceType}
         OPTIONAL { ?source rp:url ?url.}
         OPTIONAL { ?source rp:urlType ?urlType.}
         OPTIONAL { ?source rp:sourceDate ?sourceDate }
-        OPTIONAL { ?source rp:retrievedDate ?retrievedDate }
+ 
 }
-GROUP BY ?name
 ORDER BY ?name
-LIMIT {{lodspk.maxResults}}
