@@ -111,7 +111,7 @@
         {% endfor %}
       </table>
       <div class="download">
-        <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.transaction|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Payments CSV</a>
+        <span class="glyphicon glyphicon-download" aria-hidden="true"></span><span> Download: <a href="/sparql?default-graph-uri=&query={{ lodspk.queryText.payments|urlencode }}&format=text%2Fcsv&timeout=0&debug=on">Payments CSV</a>
       </div>
       {% else %}
       <p class="no-data">No data available</p>
