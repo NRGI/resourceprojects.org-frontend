@@ -1,6 +1,6 @@
 prefix rp: <http://resourceprojects.org/def/>
 
-SELECT DISTINCT ?company ?companyName ?group ?groupName WHERE {
+SELECT DISTINCT ?company ?companyName (xsd:string(?group_) as ?group)  ?groupName WHERE {
     ?project rp:hasLocation <{{uri}}> .
     ?project a rp:Project .
     ?project skos:prefLabel ?project_name
@@ -10,8 +10,8 @@ SELECT DISTINCT ?company ?companyName ?group ?groupName WHERE {
                ?company a rp:Company .
                ?company skos:prefLabel ?companyName
         OPTIONAL { ?groupMembership rp:organisation ?company .
-                   ?group rp:groupMember ?groupMembership .
-                   ?group skos:prefLabel ?groupName
+                   ?group_ rp:groupMember ?groupMembership .
+                   ?group_ skos:prefLabel ?groupName
         }
     } 
 } 
