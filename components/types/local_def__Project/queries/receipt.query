@@ -24,7 +24,7 @@ SELECT ?GovernmentReceipt ?paymentOrReceipt ?country ?country_name ?currency (re
 
        ## This should be renamed payee, but for now we stick with country to avoid reworking the html templates
        BIND(IF(bound(?govParty),?govParty,?countryParty) as ?country)
-       BIND(IF(bound(?govParty),?govParty_name,?countryParty_name) as ?country_name)
+       BIND(IF(bound(?govParty),concat(?govParty_name," (",?countryParty_name,")"),?countryParty_name) as ?country_name)
 
         OPTIONAL { ?GovernmentReceipt rp:currency ?currency }
         OPTIONAL { ?GovernmentReceipt rp:value ?amount } 

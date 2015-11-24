@@ -433,16 +433,22 @@ class TestProjectPage3:
         rows.pop(0)  #removes the first row of tabkle headers
         for row in rows:
             assert 'Apex Mining Company Inc.' in row.text
-            
-    # https://github.com/NRGI/resourceprojects.org-frontend/issues/259
+    
+    '''
+       Checks introduced in https://github.com/NRGI/resourceprojects.org-frontend/issues/259
+       to see that if GovernmentRecipt then paid to is not Philippines
+       
+       https://github.com/NRGI/resourceprojects.org-frontend/pull/275 changes this behaviour
+       so that instead (Philippines) should be in the text
+    '''
     def test_payments_table_gov_receipt (self, browser):
-        '''Checks that if GovernmentRecipt then paid to is not Philippines'''
+        '''Checks that if GovernmentRecipt then paid to contains (Philippines)'''
         table = browser.find_element_by_css_selector('.payments')
         rows = table.find_elements_by_tag_name('tr')
         rows.pop(0)  #removes the first row of tabkle headers
         for row in rows:
             if 'GovernmentReceipt' in row.text:
-                assert 'Philippines' not in row.text
+                assert '(Philippines)' in row.text
 
         
 class TestCompanyGroupPage:
