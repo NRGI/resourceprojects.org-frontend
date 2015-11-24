@@ -1,6 +1,6 @@
 prefix rp: <http://resourceprojects.org/def/>
 
-SELECT ?name ?company WHERE {
+SELECT DISTINCT ?name ?company WHERE {
     <{{uri}}> rp:groupMember ?members .
     ?members rp:organisation ?company
     OPTIONAL { ?company skos:prefLabel ?name }
