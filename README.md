@@ -1,5 +1,5 @@
 
-Introduction-test
+Introduction
 ------------
 
 This is the code (will) run the http://resourceprojects.org website.
