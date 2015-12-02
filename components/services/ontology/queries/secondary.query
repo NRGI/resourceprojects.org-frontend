@@ -1,0 +1,36 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT *
+	WHERE { 	?class a owl:Class.
+
+
+            ?class rdfs:subClassOf+ ?restriction.
+	        ?restriction a owl:Restriction. 
+	        ?restriction owl:onProperty ?p1.
+	          {
+              	  {
+	                  ?restriction owl:someValuesFrom ?t1.
+              	  } UNION {  
+	                  ?restriction owl:someValuesFrom ?restrictionClass.
+                      ?t1 rdfs:subClassOf+ ?restrictionClass.
+                  }
+               }
+
+            ?t1 rdfs:subClassOf+ ?restriction2.
+            ?restriction2 a owl:Restriction.
+            ?restriction2 owl:onProperty ?p2.
+            {
+              {
+                 ?restriction2 owl:someValuesFrom ?t2.
+              } UNION {
+                 ?restriction2 owl:someValuesFrom ?restriction2class.
+                 ?t2 rdfs:subClassOf+ ?restriction2class.
+              }
+            }
+
+    FILTER(?t1 != <http://resourceprojects.org/def/Source>)
+    FILTER(?t2 != <http://resourceprojects.org/def/Source>)
+    FILTER(?t1 != <http://resourceprojects.org/def/Project>)
+	} ORDER BY ?class

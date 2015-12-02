@@ -1,0 +1,104 @@
+{%include "../../includes/header.inc"%}
+
+<style><!--
+.hashtag {
+float:right;
+}
+
+.ont-detail {
+    width:100%;
+}
+
+.ont-detail-name, .ont-detail-type, .ont-detail-tag {
+    width:15%;
+}
+
+
+--></style>
+
+    <div class="container">
+    
+    <div class="container">
+      <div class="page-header">
+        <h1>Ontology explorer</h1>
+      </div>
+      
+      <p>
+        The following page lists all the classes in the datastore, along with their recognised properties and relationships.
+      </p>
+      
+
+                    <table>
+            {% for row in models.main %}
+            
+                {% if row.class.localname != current_class %}
+                    <!-- We're about to switch to a new class. Add all the extra stuff we need...-->
+                    {%for srow in models.secondary %}
+                        {%if srow.class.localname == current_class %}
+                            {%if srow.t2.localname != current_class %}
+                                <tr>
+                                    <td class="ont-detail-name">{{srow.t2.localname|Lower}}</td>
+                                    <td class="ont-detail-type">
+                                        <a href="#ont-class-{{row.t2.localname}}">{{srow.t2.localname}}</a>
+                                    </td>
+                                    <td class="ont-detail-desc">Relates {{current_class}} to {{srow.t2.localname}} via  <pre>&lt;{{current_class}}&gt; {{srow.p1.localname}} --> &lt;{{srow.t1.localname}}&gt; --> {{srow.p2.localname}} &lt;{{srow.t2.localname}}&gt;</pre></td>
+                                    <td class="ont-detail-tag"><span class="label label-info">#{{current_class|Lower}}+{{srow.t2.localname|Lower}}</span></td>
+                                </tr>
+                                
+                                   {% for smrow in models.main %}
+                                        {% if smrow.class.localname == srow.t1.localname %}
+                                            {% if row.propType.localname == "DatatypeProperty"%}
+                                                <tr>
+                                                    <td class="ont-detail-name">{{srow.t2.localname|Lower}} &gt; {{smrow.property.localname|Lower}}</td>
+                                                    <td class="ont-detail-type">{{smrow.range.localname}}</td>
+                                                    <td class="ont-detail-desc">{{smrow.propretyDescription.value}}</td>
+                                                    <td class="ont-detail-tag"><span class="label label-info">#{{current_class|Lower}}+{{srow.t2.localname|Lower}}+{{smrow.property.localname}}</span></td>
+                                                </tr>
+
+                                            {% endif %}
+                                        {% endif %}
+
+                                    {% endfor %}
+                                
+                                
+                            {%endif %}
+                        {% endif %}
+                        
+                     
+                        
+                    
+                    {% endfor %}
+                
+                
+                    </table>
+                    <div class="ont-class">
+                        <span class="label label-info hashtag">#{{row.class.localname|Lower}}</span>
+                        <h2 id="ont-class-{{row.class.localname}}">{{row.class.localname}}</h2> 
+                        <span class="ont-description">{{row.description.value}}</span>
+                        
+                    <table class="ont-detail">
+                        <tr>
+                            <th>Property name</th>
+                            <th>Value</th>
+                            <th>Description</th>
+                            <th>Tag</th>
+                        </tr>
+                {% endif %}
+                    <tr>
+                        <td class="ont-detail-name">{{row.property.localname}}</td>
+                        <td class="ont-detail-type">{% if row.propType.localname == "ObjectProperty"%}
+                            <a href="#ont-class-{{row.propRange.localname}}">{{row.propRange.localname}}</a>
+                        {% else %}
+                            {{row.propRange.localname}}
+                        {% endif %}</td>
+                        <td class="ont-detail-desc">{{row.propertyDescription.value}}</td>
+                        <td class="ont-detail-tag"><span class="label label-info">#{{row.class.localname|Lower}}+{{row.property.localname}}</span></td>
+                    </tr>
+                {% set current_class = row.class.localname %}
+            {% endfor %}
+
+                </table>
+
+    </div>    
+    
+{%include "../../includes/footer.inc"%}
