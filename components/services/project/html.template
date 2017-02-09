@@ -24,6 +24,29 @@
 
   {%include "../../includes/pager.inc"%}
   
+  <div class="row">
+        <div class="col-md-12">
+          <div id="map" style="height:240px"></div>
+          <script type="text/javascript">
+            var map = L.map('map',{ fullscreenControl: true }).setView([0, 0], 2);
+          </script>
+             {% for site in models.sites %}
+              {%if site.lat.value %}
+                {%if site.lng.value %}
+                  <script type="text/javascript">
+                    var marker_{{ site.site.value|explode:'/'|pop|cut:'-' }} = L.marker([{{site.lat.value}}, {{site.lng.value}}]).addTo(map);
+
+                    marker_{{ site.site.value|explode:'/'|pop|cut:'-' }}.bindPopup('<b><a href="{{site.project.value}}">{{site.project_name.value}}</a></b><br>{{site.site_name.value}}').openPopup();
+                  </script>
+                {%endif%}
+              {%endif%}
+            {% endfor %}
+          
+          {%include "../../includes/default_map.js.inc"%}
+
+        </div>
+      </div><!--end row-->
+  
   <table id="projects" class="table table-striped" about="{{uri}}">
     <thead>
       <tr><th>Project</th><th>Country</th><th>Commodity Types</th><th>No.Companies</th></tr>

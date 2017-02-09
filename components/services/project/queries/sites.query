@@ -1,11 +1,9 @@
 prefix rp: <http://resourceprojects.org/def/>
-prefix rp_misc: <http://resourceprojects.org/def/misc/>
 
-
-SELECT DISTINCT ?site ?lat ?lng ?site_name WHERE {
-    <{{uri}}> rp:hasLocation ?site  .
+SELECT DISTINCT ?site ?lat ?lng ?project ?project_name  ?site_name WHERE {
+    ?project a rp:Project .
+    ?project rp:hasLocation ?site .
     ?site a rp:Site
-
 
     OPTIONAL { ?site rp:lat ?lat }
     OPTIONAL { ?site rp:long ?lng }
